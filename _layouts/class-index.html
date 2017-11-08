@@ -9,28 +9,32 @@ layout: default
   {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
   {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
   {% for simulation in simulations %}
-    {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
-    <h2>{{ simulationName | capitalize }}</h2>
-    <div class="row">
-      {% assign tiers = site.documents | where: "collection", simulation.name | group_by: "tier" | sort: "name" %}
-      {% for tier in tiers reversed %}
-      <div class="col-sm-6">
-        <h3>{{ tier.name }}</h3>
-        <div class="list-group">
-        {% assign specs = site.documents | where: "collection", simulation.name | where: "tier", tier.name | group_by: "spec" | sort: "name" %}
-        {% for spec in specs %}
-        {% for entry in spec.items %}
-        {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-          <a class="list-group-item" href="{{ entry.url }}">{{ spec.name }}</a>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
+    {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
+    {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
+    {% if simulationNameShorten == classCollectionPrefix %}
+      {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
+      <h2>{{ simulationName | capitalize }}</h2>
+      <div class="row">
+        {% assign tiers = site.documents | where: "collection", simulation.name | group_by: "tier" | sort: "name" %}
+        {% for tier in tiers reversed %}
+        <div class="col-sm-6">
+          <h3>{{ tier.name }}</h3>
+          <div class="list-group">
+          {% assign specs = site.documents | where: "collection", simulation.name | where: "tier", tier.name | group_by: "spec" | sort: "name" %}
+          {% for spec in specs %}
+          {% for entry in spec.items %}
+          {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
+            <a class="list-group-item" href="{{ entry.url }}">{{ spec.name }}</a>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-    {% unless forloop.last %}
-    <hr>
-    {% endunless %}
+      {% unless forloop.last %}
+      <hr>
+      {% endunless %}
+    {% endif %}
   {% endfor %}
 </div>
