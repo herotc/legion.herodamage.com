@@ -15,28 +15,28 @@ collections:
   # Simulations
   death_knight:
     output: true
-    permalink: /death_knight/:name
+    permalink: /death-knight/:name
   death_knight-combinations:
     output: true
-    permalink: /death_knight/combinations/:name
+    permalink: /death-knight/combinations/:name
   death_knight-relics:
     output: true
-    permalink: /death_knight/relics/:name
+    permalink: /death-knight/relics/:name
   death_knight-trinkets:
     output: true
-    permalink: /death_knight/trinkets/:name
+    permalink: /death-knight/trinkets/:name
   demon_hunter:
     output: true
-    permalink: /demon_hunter/:name
+    permalink: /demon-hunter/:name
   demon_hunter-combinations:
     output: true
-    permalink: /demon_hunter/combinations/:name
+    permalink: /demon-hunter/combinations/:name
   demon_hunter-relics:
     output: true
-    permalink: /demon_hunter/relics/:name
+    permalink: /demon-hunter/relics/:name
   demon_hunter-trinkets:
     output: true
-    permalink: /demon_hunter/trinkets/:name
+    permalink: /demon-hunter/trinkets/:name
   druid:
     output: true
     permalink: /druid/:name
