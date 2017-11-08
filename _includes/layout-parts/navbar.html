@@ -14,10 +14,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
-        {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
-        {% for simulation in simulations %}
-          {% unless simulation.name == page.collectionClass %}
+        {% if page.collectionClass %}
+          {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+          {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
+          {% for simulation in simulations %}
             <li class="dropdown">
               {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -41,8 +41,8 @@
                 {% endfor %}
               </ul>
             </li>
-          {% endunless %}
-        {% endfor %}
+          {% endfor %}
+        {% endif %}
         <li><a href="/changelog">Changelog</a></li>
       </ul>
     </div>
