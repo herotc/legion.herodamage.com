@@ -1,7 +1,8 @@
 #header-sidebar {
   position: fixed;
   left: 0;
-  top: 52px;
+  top: 50%;
+  @include translate(0, -50%);
   width: 70px;
 
   a {
