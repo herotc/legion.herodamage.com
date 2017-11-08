@@ -6,9 +6,9 @@ Hero Damage
 ===========
 
 <ul>
-  <!-- <li><a href="/death_knight">Death Knight</a></li>
+  <li><a href="/death_knight">Death Knight</a></li>
   <li><a href="/demon_hunter">Demon Hunter</a></li>
-  <li><a href="/druid">Druid</a></li> -->
+  <!-- <li><a href="/druid">Druid</a></li> -->
   <li><a href="/hunter">Hunter</a></li>
   <!-- <li><a href="/mage">Mage</a></li>
   <li><a href="/monk">Monk</a></li>
