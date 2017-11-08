@@ -1,7 +1,7 @@
 name: Hero Damage
 title: Hero Damage
 description: Hero Damage TC Data Collection Site
-url: https://herodamage.github.io
+url: https://simcminmax.github.io/herodamage
 encoding: utf-8
 timezone: Europe/Paris
 
@@ -511,4 +511,4 @@ plugins:
   - jemoji # Enable GitHub emojis
 
 # GitHub Pages metadata
-repository: SimCMinMax/herodamage.github.io
+repository: SimCMinMax/herodamage

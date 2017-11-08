@@ -3,8 +3,9 @@ require 'bundler/setup'
 require 'json'
 require 'active_support'
 require 'active_support/all'
+require 'yaml'
 
-currentWebsite = Dir.pwd.split('/')[-1]
+Config = YAML.load(File.read("_config.yml"))
 
 dataFolder = "data"
 metaFolder = "data/meta"
@@ -145,11 +146,15 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
 
 
     # Write the view
-    if currentWebsite == 'ravenholdt-tc.github.io'
-      viewFile = "_#{simCollections[reportInfos['type']]}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class']}-#{reportSpecWithSuffix.gsub(' ', '-')}.html"
-    elsif currentWebsite == 'herodamage.github.io'
-      viewFile = "_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}.html"
+    if Config['repository'] == 'Ravenholdt-TC/ravenholdt-tc.github.io'
+      viewDirectory = "_#{simCollections[reportInfos['type']]}"
+    elsif Config['repository'] == 'SimCMinMax/herodamage'
+      viewDirectory = "_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}"
     end
+    if !Dir.exist?(viewDirectory)
+      Dir.mkdir viewDirectory
+    end
+    viewFile = "#{viewDirectory}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}.html"
     File.open(viewFile.downcase, 'w') do |view|
       view.puts "---"
       front.each do |key, value|
