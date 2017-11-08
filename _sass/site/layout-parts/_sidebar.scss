@@ -1,6 +1,6 @@
 #header-sidebar {
   position: fixed;
-  right: 0;
+  left: 0;
   top: 52px;
   width: 70px;
 
@@ -8,7 +8,7 @@
     align-items: center;
     display: flex;
     height: 70px;
-    margin: 0 0 0 auto;
+    margin: 0 auto 0 5px;
     transition: ease 0.3s;
     width: 50px;
 
