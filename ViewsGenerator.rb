@@ -151,6 +151,7 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
     elsif Config['repository'] == 'SimCMinMax/herodamage'
       viewDirectory = "_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}"
     end
+    viewDirectory = viewDirectory.downcase
     if !Dir.exist?(viewDirectory)
       Dir.mkdir viewDirectory
     end
