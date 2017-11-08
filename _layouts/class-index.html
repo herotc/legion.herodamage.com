@@ -6,10 +6,12 @@ layout: default
   {% assign classParts = page.collectionClass | split: "_" %}
   <h1>{% for classPart in classParts %}{{ classPart | capitalize }} {% endfor %}Theorycrafting</h1>
 
-  {% capture validCollections %}"{{ page.collectionClass }}-combinations, {{ page.collectionClass }}-relics, {{ page.collectionClass }}-trinkets"{% endcapture %}
-  {% assign simulations = site.documents | where_exp: "item", "validCollections contains item.collection" | group_by: "collection" | sort: "name" %}
+  {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+  {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
   {% for simulation in simulations %}
-    {% unless simulation.name == page.collectionClass %}
+    {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
+    {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
+    {% if simulationNameShorten == classCollectionPrefix %}
       {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
       <h2>{{ simulationName | capitalize }}</h2>
       <div class="row">
@@ -33,6 +35,6 @@ layout: default
       {% unless forloop.last %}
       <hr>
       {% endunless %}
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 </div>

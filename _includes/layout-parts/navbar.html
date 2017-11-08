@@ -14,35 +14,39 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% capture validCollections %}"{{ page.collectionClass }}-combinations, {{ page.collectionClass }}-relics, {{ page.collectionClass }}-trinkets"{% endcapture %}
-        {% assign simulations = site.documents | where_exp: "item", "validCollections contains item.collection" | group_by: "collection" | sort: "name" %}
-        {% for simulation in simulations %}
-          {% unless simulation.name == page.collectionClass %}
-            <li class="dropdown">
-              {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                {{ simulationName | capitalize }} <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                {% assign tiers = site.documents | where: "collection", simulation.name | group_by: "tier" | sort: "name" %}
-                {% for tier in tiers reversed %}
-                  {% unless forloop.first %}
-                  <li role="separator" class="divider"></li>
-                  {% endunless %}
-                  <li class="dropdown-header text-center"><b>{{ tier.name }}</b></li>
-                  {% assign specs = site.documents | where: "collection", simulation.name | where: "tier", tier.name | group_by: "spec" | sort: "name" %}
-                  {% for spec in specs %}
-                    {% for entry in spec.items %}
-                      {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-                        <li><a href="{{ entry.url }}">{{ spec.name }}</a></li>
-                      {% endif %}
+        {% if page.collectionClass %}
+          {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+          {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
+          {% for simulation in simulations %}
+            {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
+            {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
+            {% if simulationNameShorten == classCollectionPrefix %}
+              <li class="dropdown">
+                {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  {{ simulationName | capitalize }} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  {% assign tiers = site.documents | where: "collection", simulation.name | group_by: "tier" | sort: "name" %}
+                  {% for tier in tiers reversed %}
+                    {% unless forloop.first %}
+                    <li role="separator" class="divider"></li>
+                    {% endunless %}
+                    <li class="dropdown-header text-center"><b>{{ tier.name }}</b></li>
+                    {% assign specs = site.documents | where: "collection", simulation.name | where: "tier", tier.name | group_by: "spec" | sort: "name" %}
+                    {% for spec in specs %}
+                      {% for entry in spec.items %}
+                        {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
+                          <li><a href="{{ entry.url }}">{{ spec.name }}</a></li>
+                        {% endif %}
+                      {% endfor %}
                     {% endfor %}
                   {% endfor %}
-                {% endfor %}
-              </ul>
-            </li>
-          {% endunless %}
-        {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
         <li><a href="/changelog">Changelog</a></li>
       </ul>
     </div>
