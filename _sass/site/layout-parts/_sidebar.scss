@@ -1,0 +1,22 @@
+#header-sidebar {
+  position: fixed;
+  right: 0;
+  width: 70px;
+
+  a {
+    align-items: center;
+    display: flex;
+    height: 70px;
+    margin: 0 0 0 auto;
+    transition: ease 0.3s;
+    width: 50px;
+
+    &:hover {
+      width: 70px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.nav-pills {
+  > li {
+    > a {
+      @include bootstrap-button-lt;
+
+      &:hover, &focus {
+        @include bootstrap-button-lt2;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        @include bootstrap-button-lt2;
+      }
+    }
+  }
+}

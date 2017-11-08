@@ -1,0 +1,34 @@
+.pagination {
+
+  > li > a,
+  > li > span {
+    @include bootstrap-button-lt;
+  }
+
+  > li > a,
+  > li > span {
+    &:hover, &:focus {
+      @include bootstrap-button-lt2;
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      @include bootstrap-button-lt2;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      @include bootstrap-button-lt2;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+body {
+  background-color: $bg;
+  color: $text-dark;
+  padding: $body-inner-padding;
+  padding-top: $body-inner-padding + 50px;
+
+  hr {
+    width: 30%
+  }
+
+  a {
+    color: $link-dark;
+
+    &:hover {
+      color: lighten($link-dark, 20%);
+    }
+  }
+
+  #content {
+    background-color: $content-bg;
+    border: 1px solid $border-dark;
+    padding: 24px;
+  }
+
+  .center {
+    display: block;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,35 @@
+#google-chart {
+  @include MQ($MD, max) {
+    margin: 0 #{-$content-inner-padding};
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  &.full-height {
+    height: 1000px;
+  }
+
+  &.half-height {
+    height: 500px;
+  }
+}
+
+.chart-tooltip {
+  color: #000;
+  font-size: 18px;
+  padding: 12px;
+  white-space: nowrap;
+}
+
+// This allows Google charts in tabs
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: block;
+  height: 0;
+  overflow-y: hidden;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  height: auto;
+}

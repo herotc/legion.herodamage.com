@@ -1,0 +1,5 @@
+.table-hover {
+  > tbody > tr:hover {
+    background-color: $content-bg-lt2;
+  }
+}

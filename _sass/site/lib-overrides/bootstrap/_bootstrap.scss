@@ -1,0 +1,23 @@
+// Considering we have these overrides on multiple class, let's make a mixin that we'll import
+@mixin bootstrap-button-lt {
+  background-color: $content-bg-lt;
+  border-color: $border-dark;
+  color: $text-dark;
+}
+
+@mixin bootstrap-button-lt2 {
+  background-color: $content-bg-lt2;
+  border-color: $border-dark;
+  color: $text-dark;
+}
+
+// We follow the same import order as bootstrap
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+
+@import "dropdowns";
+@import "navs";
+@import "pagination";
+@import "list-group";

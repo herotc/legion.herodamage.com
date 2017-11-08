@@ -1,0 +1,13 @@
+#fightstyle-tabs.nav-pills > li {
+  display: inline-block;
+  float: none;
+  zoom: 1;
+}
+
+#fightstyle-tabs {
+  text-align: center;
+}
+
+#fightstyle-tabs.nav-pills > li > a {
+  border: 1px solid $border-dark;
+}

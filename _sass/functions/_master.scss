@@ -1,0 +1,19 @@
+// Remove the unit from a value
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// Calculate a size in px from a size in rem
+@function calculatePx($remSize) {
+  @return $remSize * 16;
+}
+
+// Calculate a size in rem from a size in px
+@function calculateRem($pxSize) {
+  @return $pxSize / 16;
+}
+
+// Calculate a size value in rem from a size in px
+@function pxRem($px) {
+  @return #{calculateRem($px)}rem;
+}

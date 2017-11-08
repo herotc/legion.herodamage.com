@@ -1,0 +1,162 @@
+---
+layout: default
+---
+
+<div id="content" class="container">
+  <h1>{{ page.title }}</h1>
+  <p>
+    <b>Information:</b><br>
+    These simulations are all based on the {{ page.tier }} default profiles from SimulationCraft. Set pieces and legendaries
+    have been modified accordingly.<br>
+    Furthermore, in order to keep the number of combinations from exploding, only DPS legendaries have been used.<br>
+    The target error was {{ page.targeterror }}% which means you can consider everything within a ~6k DPS range to be mostly equal and requiring a
+    more detailed investigation.
+  </p>
+  <p>
+    The purpose of these simulations is to get a general idea of how different setups of this Tier will compare with each other and not
+    to promote any definitive "best builds". Several variables (like different trinkets, WF/TF or ingame situations) are not
+    taken into account. This is why you, as always, should
+    <b>simulate your own character</b> to find your optimal setup.
+  </p>
+  {% include layout-parts/fightstyletabs.html %}
+  <p>
+    <b>Last Update:</b> {{ page.lastupdate }}<br>
+    <b>WoW-Build:</b> {{ page.build }}<br>
+    <b>Target Error:</b> {{ page.targeterror }}%
+  </p>
+  <table id="combinator-table" class="table table-hover">
+    <thead>
+    <tr id="combinator-table-headers">
+      <th>#</th>
+      <th>Talents</th>
+      <th>Sets</th>
+      <th>Legendaries</th>
+      <th>DPS</th>
+    </tr>
+    <tr id="combinator-table-filters">
+      <th></th>
+      <th>
+        <input id="combinator-table-filter-talents" type="text" class="form-control input-sm" onkeyup="updateCombinatorTable();">
+      </th>
+      <th>
+        <select id="combinator-table-filter-set" class="form-control input-sm" onchange="updateCombinatorTable();">
+          <option>All</option>
+        </select>
+      </th>
+      <th>
+        <select id="combinator-table-filter-legendary" class="form-control input-sm" onchange="updateCombinatorTable();">
+          <option>All</option>
+        </select>
+        <div id="combinator-table-filter-legendary-only-area" class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+            <input id="combinator-table-filter-legendary-only" type="checkbox" autocomplete="off" onchange="updateCombinatorTable();">
+            Only
+          </label>
+        </div>
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody id="combinator-table-data">
+    </tbody>
+  </table>
+  <div id="combinator-loading" class="text-center">
+    <h2>Loading...</h2>
+  </div>
+  <div id="combinator-table-nav" class="text-right"></div>
+</div>
+<script src="/assets/js/jquery.csv-0.8.3.min.js"></script>
+<script src="/assets/js/jquery.twbsPagination-1.4.1.min.js"></script>
+<script>
+  var combinatorData = null;
+  var combinatorRows = null;
+  var hasSingleLegos = false;
+  var hasBossDPS = false;
+
+  function updateCombinatorTable() {
+    if (combinatorData === null)
+      return;
+    var filterTalents = document.getElementById("combinator-table-filter-talents").value;
+    var filterSet = document.getElementById("combinator-table-filter-set").value;
+    var filterLegendary = document.getElementById("combinator-table-filter-legendary").value;
+    var oneLego = hasSingleLegos && document.getElementById("combinator-table-filter-legendary-only").checked;
+    combinatorRows = $.grep(combinatorData, function (columns) {
+      if (filterTalents !== "" && columns[0].indexOf(filterTalents) === -1)
+        return false;
+      if (filterSet !== "All" && columns[1] !== filterSet)
+        return false;
+      if (filterLegendary !== "All" && (columns[2].indexOf(filterLegendary) === -1 || oneLego && columns[2] !== filterLegendary))
+        return false;
+      return true;
+    });
+    var tableData = document.getElementById("combinator-table-data");
+    var $tableNav = $(document.getElementById("combinator-table-nav"));
+    if ($tableNav.data("twbs-pagination"))
+      $tableNav.twbsPagination("destroy");
+    $tableNav.twbsPagination({
+      totalPages: Math.max(1, Math.ceil(combinatorRows.length / 15)),
+      visiblePages: 3,
+      onPageClick: function (event, page) {
+        var html = "";
+        combinatorRows.slice((page - 1) * 15, page * 15).forEach(function (columns) {
+          html += "<tr>";
+          html += "<td>" + columns[columns.length - 1] + "</td>";
+          html += "<td>" + columns[0] + "</td>";
+          html += "<td>" + columns[1] + "</td>";
+          html += "<td>" + columns[2] + "</td>";
+          html += "<td>" + formatNumber(columns[3]) + "</td>";
+          if (hasBossDPS) {
+            html += "<td>";
+            if (columns.length === 6)
+              html += formatNumber(columns[4]);
+            html += "</td>";
+          }
+          html += "</tr>";
+        });
+        tableData.innerHTML = html;
+      }
+    });
+  }
+
+  $(document).ready(function () {
+    $.get("/" + "{{ page.csvfile }}", function (data) {
+      combinatorData = $.csv.toArrays(data);
+      combinatorData.sort(function (a, b) {
+        return b[3] - a[3];
+      });
+      var idx = 0;
+      var sets = [];
+      var legos = [];
+      combinatorData.forEach(function (columns) {
+        idx++;
+        columns.push(idx);
+        if ($.inArray(columns[1], sets) < 0) {
+          sets.push(columns[1]);
+        }
+        if (!hasSingleLegos && columns[2].indexOf(",") === -1)
+          hasSingleLegos = true;
+        columns[2].split(", ").forEach(function (lego) {
+          if ($.inArray(lego, legos) < 0) {
+            legos.push(lego);
+          }
+        });
+        if (!hasBossDPS && columns.length === 6)
+          hasBossDPS = true;
+      });
+      sets.forEach(function (set) {
+        document.getElementById("combinator-table-filter-set").insertAdjacentHTML("beforeend", "<option>" + set + "</option>");
+      });
+      legos.forEach(function (lego) {
+        document.getElementById("combinator-table-filter-legendary").insertAdjacentHTML("beforeend", "<option>" + lego + "</option>");
+      });
+      if (!hasSingleLegos)
+        document.getElementById("combinator-table-filter-legendary-only-area").innerHTML = "";
+      if (hasBossDPS) {
+        document.getElementById("combinator-table-headers").insertAdjacentHTML("beforeend", "<th>Boss DPS</th>");
+        document.getElementById("combinator-table-filters").insertAdjacentHTML("beforeend", "<th></th>");
+      }
+      updateCombinatorTable();
+      document.getElementById("combinator-loading").style.display = "none";
+    });
+  });
+</script>

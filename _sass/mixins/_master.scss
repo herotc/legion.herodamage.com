@@ -1,0 +1,29 @@
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Media Queries (breakpoint based on Bootstrap 4)
+$SM: 576px; // Below, we would use $XS (but considering we use min-width we don't have to specify it)
+$MD: 768px;
+$LG: 992px;
+$XL: 1200px;
+@mixin MQ($canvas, $width: min-width) {
+  @if $width == max {
+    $width: max-width;
+    $canvas: $canvas - 1px;
+  }
+  @media screen and ($width: $canvas) {
+    @content;
+  }
+}
+
+// Wrap to NoWrap flex-wrap defined at a canvas breakpoint
+@mixin flex-wrap-to-nowrap($canvas) {
+  flex-wrap: wrap;
+  @include MQ($canvas) {
+    flex-wrap: nowrap;
+  }
+}

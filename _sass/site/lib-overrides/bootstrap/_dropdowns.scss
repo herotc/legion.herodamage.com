@@ -1,0 +1,18 @@
+.dropdown-menu {
+  background-color: $content-bg-lt;
+  border-color: $border-dark;
+
+  .divider {
+    background-color: $border-dark;
+  }
+
+  > li > a {
+    &, &:hover, &:focus {
+      color: $text-dark;
+    }
+
+    &:hover {
+      background-color: $content-bg-lt2;
+    }
+  }
+}

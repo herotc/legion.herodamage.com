@@ -1,0 +1,18 @@
+.btn-default {
+  @include bootstrap-button-lt;
+
+  &:focus,
+  &:active:focus,
+  &.active:focus,
+  &.focus,
+  &:active.focus,
+  &.active.focus {
+    outline: none;
+  }
+
+  &.active,
+  &:focus,
+  &:active {
+    @include bootstrap-button-lt2;
+  }
+}

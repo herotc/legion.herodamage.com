@@ -1,0 +1,9 @@
+a.list-group-item,
+button.list-group-item {
+  @include bootstrap-button-lt;
+
+  &:hover,
+  &:focus {
+    @include bootstrap-button-lt2;
+  }
+}

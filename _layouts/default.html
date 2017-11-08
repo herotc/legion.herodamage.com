@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% if jekyll.environment == "production" %}
+    {% include lib/google-analytics.html %}
+  {% endif %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} &ndash; {% endif %}{{ site.name }}</title>
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">{% endif %}
+  {% if page.meta %}
+    {% for meta in page.meta %}
+      <meta name="{{ meta.name }}" content="{{ meta.content }}">
+    {% endfor %}
+  {% endif %}
+  <link rel="shortcut icon" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/bootstrap-3.3.7.min.js"></script>
+  <script src="/assets/js/site.min.js"></script>
+  {% if page.head %}{{ page.head }}{% endif %}
+  {% include lib/cookie-consent.html %}
+  {% if jekyll.environment == "production" %}
+    {% include lib/google-adsense.html %}
+  {% endif %}
+</head>
+<body>
+{% include layout-parts/navbar.html %}
+{% include layout-parts/header.html %}
+{% include layout-parts/sidebar.html %}
+{{ content }}
+</body>
+</html>

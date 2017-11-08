@@ -1,0 +1,9 @@
+@function twbs-font-path($path) {
+  @return "../../../assets/fonts/" + $path;
+}
+
+@function twbs-image-path($path) {
+  @return "../../../assets/img/" + $path;
+}
+
+$bootstrap-sass-asset-helper: true;
