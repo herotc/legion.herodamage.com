@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% capture validCollections %}"{{ page.collectionClass }}-combinations, {{ page.collectionClass }}-relics, {{ page.collectionClass }}-trinkets"{% endcapture %}
-        {% assign simulations = site.documents | where_exp: "item", "validCollections contains item.collection" | group_by: "collection" | sort: "name" %}
+        {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+        {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
         {% for simulation in simulations %}
           {% unless simulation.name == page.collectionClass %}
             <li class="dropdown">
