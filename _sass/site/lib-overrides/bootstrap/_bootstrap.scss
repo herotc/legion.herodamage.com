@@ -2,13 +2,13 @@
 @mixin bootstrap-button-lt {
   background-color: $content-bg-lt;
   border-color: $border-dark;
-  color: $text-dark;
+  color: $text;
 }
 
 @mixin bootstrap-button-lt2 {
   background-color: $content-bg-lt2;
   border-color: $border-dark;
-  color: $text-dark;
+  color: $text;
 }
 
 // We follow the same import order as bootstrap

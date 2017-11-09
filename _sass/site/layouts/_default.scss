@@ -1,6 +1,6 @@
 body {
   background-color: $bg;
-  color: $text-dark;
+  color: $text;
   padding: $body-inner-padding;
   padding-top: $body-inner-padding + 50px;
 
@@ -20,6 +20,12 @@ body {
     background-color: $content-bg;
     border: 1px solid $border-dark;
     padding: 24px;
+
+    span.update-date {
+      color: $text-dk3;
+      font-weight: bold;
+      float: right;
+    }
   }
 
   .center {
