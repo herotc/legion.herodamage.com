@@ -14,6 +14,7 @@ simCollections = {
   'Relics' => 'relics',
   'Trinkets' => 'trinkets'
 }
+wowClasses = ['death_knight', 'demon_hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'shaman', 'warlock', 'warrior']
 
 # TODO: Make cleaner fancy things
 fancyCollection = {
@@ -29,12 +30,14 @@ fancyFightstyles = {
   'Mistress' => 'Mistress',
 }
 fancyTier = {
+  'PR' => 'PreRaids',
   'T19' => 'T19',
   'T20' => 'T20',
   'T21' => 'T21',
   'T21H' => 'T21 Heroic',
 }
 fancyTierExpanded = {
+  'PR' => 'Pre-Raids',
   'T19' => 'Tier 19',
   'T20' => 'Tier 20',
   'T21' => 'Tier 21',
@@ -42,9 +45,15 @@ fancyTierExpanded = {
 }
 
 # Empty each collections
-simCollections.each do |key, value|
-  if value != '_combinations' # Do not empty combinations views for now
-    FileUtils.rm_f Dir.glob("value/*")
+if Config['repository'] == 'Ravenholdt-TC/ravenholdt-tc.github.io'
+  simCollections.each do |simType, simColection|
+    FileUtils.rm_f Dir.glob("_#{simColection}/*")
+  end
+elsif Config['repository'] == 'SimCMinMax/herodamage'
+  simCollections.each do |simType, simColection|
+    wowClasses.each do |wowClass|
+      FileUtils.rm_f Dir.glob("_#{wowClass}-#{simColection}/*")
+    end
   end
 end
 
