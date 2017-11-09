@@ -1,5 +1,89 @@
-{% if page.collectionClass %}
-  <nav id="header" class="navbar navbar-inverse container">
-    <a title="{{ site.name }}" href="/{{ site.baseurl }}"><img src="/assets/img/wow-class/logo/{{ page.collectionClass }}.png" alt="{{ site.name }} Logo" width="200" itemprop="logo"></a>
+<header>
+  <nav id="navigation" class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">{{ site.name }}</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          {% if page.collectionClass %}
+            {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+            {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
+            {% for simulation in simulations %}
+              {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
+              {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
+              {% if simulationNameShorten == classCollectionPrefix %}
+                <li class="dropdown">
+                  {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ simulationName | capitalize }} <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    {% assign tiers = site.documents | where: "collection", simulation.name | group_by: "tier" | sort: "name" %}
+                    {% for tier in tiers reversed %}
+                      {% unless forloop.first %}
+                      <li role="separator" class="divider"></li>
+                      {% endunless %}
+                      <li class="dropdown-header text-center"><b>{{ tier.name }}</b></li>
+                      {% assign specs = site.documents | where: "collection", simulation.name | where: "tier", tier.name | group_by: "spec" | sort: "name" %}
+                      {% for spec in specs %}
+                        {% for entry in spec.items %}
+                          {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
+                            <li><a href="{{ entry.url }}">{{ spec.name }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                      {% endfor %}
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <li><a href="/changelog">Changelog</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
-{% endif %}
+  <div id="header-sidebar">
+    <a href="/death-knight">
+      <img src="/assets/img/wow-class/icon/death_knight.png" alt="death knight wow icon">
+    </a>
+    <a href="/demon-hunter">
+      <img src="/assets/img/wow-class/icon/demon_hunter.png" alt="demon hunter wow icon">
+    </a>
+    <a href="/druid">
+      <img src="/assets/img/wow-class/icon/druid.png" alt="druid wow icon">
+    </a>
+    <a href="/hunter">
+      <img src="/assets/img/wow-class/icon/hunter.png" alt="hunter wow icon">
+    </a>
+    <a href="/mage">
+      <img src="/assets/img/wow-class/icon/mage.png" alt="mage wow icon">
+    </a>
+    <a href="/monk">
+      <img src="/assets/img/wow-class/icon/monk.png" alt="monk wow icon">
+    </a>
+    <a href="/paladin">
+      <img src="/assets/img/wow-class/icon/paladin.png" alt="paladin wow icon">
+    </a>
+    <a href="http://tc.ravenholdt.net/" target="_blank">
+      <img src="/assets/img/wow-class/icon/rogue.png" alt="rogue wow icon">
+    </a>
+    <a href="/warlock">
+      <img src="/assets/img/wow-class/icon/warlock.png" alt="warlock wow icon">
+    </a>
+  </div>
+  {% if page.collectionClass %}
+    <nav id="header" class="navbar navbar-inverse container">
+      <a title="{{ site.name }}" href="/{{ page.collectionClass | replace: '_', '-' }}"><img src="/assets/img/wow-class/logo/{{ page.collectionClass }}.png" alt="{{ site.name }} Logo" width="200" itemprop="logo"></a>
+    </nav>
+  {% endif %}
+</header>
