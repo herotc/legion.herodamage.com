@@ -47,7 +47,9 @@
               {% endif %}
             {% endfor %}
           {% endif %}
-          <li><a href="/changelog">Changelog</a></li>
+          {% unless page.collectionClass %}
+            <li><a href="/changelog">Changelog</a></li>
+          {% endunless %}
         </ul>
       </div>
     </div>
