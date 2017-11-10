@@ -17,6 +17,6 @@ Hero Damage
   <li><a href="http://tc.ravenholdt.net/" target="_blank">Rogue</a></li>
   <!-- <li><a href="/shaman">Shaman</a></li> -->
   <li><a href="/warlock">Warlock</a></li>
-  <!-- <li><a href="/warrior">Warrior</a></li> -->
+  <li><a href="/warrior">Warrior</a></li>
 </ul>
 <a href>
