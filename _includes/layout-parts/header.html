@@ -54,44 +54,7 @@
       </div>
     </div>
   </nav>
-  <div id="header-sidebar">
-    <a href="/death-knight">
-      <img src="/assets/img/wow-class/icon/death_knight.png" alt="death knight wow icon">
-    </a>
-    <a href="/demon-hunter">
-      <img src="/assets/img/wow-class/icon/demon_hunter.png" alt="demon hunter wow icon">
-    </a>
-    <a href="/druid">
-      <img src="/assets/img/wow-class/icon/druid.png" alt="druid wow icon">
-    </a>
-    <a href="/hunter">
-      <img src="/assets/img/wow-class/icon/hunter.png" alt="hunter wow icon">
-    </a>
-    <a href="/mage">
-      <img src="/assets/img/wow-class/icon/mage.png" alt="mage wow icon">
-    </a>
-    <a href="/monk">
-      <img src="/assets/img/wow-class/icon/monk.png" alt="monk wow icon">
-    </a>
-    <a href="/paladin">
-      <img src="/assets/img/wow-class/icon/paladin.png" alt="paladin wow icon">
-    </a>
-    <a href="/priest">
-      <img src="/assets/img/wow-class/icon/priest.png" alt="priest wow icon">
-    </a>
-    <a href="http://tc.ravenholdt.net/" target="_blank">
-      <img src="/assets/img/wow-class/icon/rogue.png" alt="rogue wow icon">
-    </a>
-    <a href="/shaman">
-      <img src="/assets/img/wow-class/icon/shaman.png" alt="shaman wow icon">
-    </a>
-    <a href="/warlock">
-      <img src="/assets/img/wow-class/icon/warlock.png" alt="warlock wow icon">
-    </a>
-    <a href="/warrior">
-      <img src="/assets/img/wow-class/icon/warrior.png" alt="warrior wow icon">
-    </a>
-  </div>
+  {% include layout-parts/wowclasspicker.html elementID="header-sidebar" alt="wow icon" dirpath="wow-class/icon" %}
   {% if page.collectionClass %}
     <nav id="header" class="navbar navbar-inverse container">
       <a title="{{ site.name }}" href="/{{ page.collectionClass | replace: '_', '-' }}"><img src="/assets/img/wow-class/logo/{{ page.collectionClass }}.png" alt="{{ site.name }} Logo" width="200" itemprop="logo"></a>
