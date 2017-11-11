@@ -24,7 +24,10 @@ layout: default
           {% for spec in specs %}
           {% for entry in spec.items %}
           {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-            <a class="list-group-item" href="{{ entry.url }}">{{ spec.name }}<span class="update-date">{{ entry.lastupdate | truncatewords: 2 | remove: '...' }}</span></a>
+            <a class="list-group-item" href="{{ entry.url }}">
+              <h4 class="h5">{{ spec.name }}</h4>
+              <span class="update-date">{{ entry.lastupdate | truncatewords: 2 | remove: '...' }}</span>
+            </a>
           {% endif %}
           {% endfor %}
           {% endfor %}
