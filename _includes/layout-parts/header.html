@@ -54,7 +54,9 @@
       </div>
     </div>
   </nav>
-  {% include layout-parts/wowclasspicker.html elementID="header-sidebar" alt="wow icon" dirpath="wow-class/icon" %}
+  {% unless page.url == "/" %}
+    {% include layout-parts/wowclasspicker.html elementID="header-sidebar" alt="wow icon" dirpath="wow-class/icon" %}
+  {% endunless %}
   {% if page.collectionClass %}
     <nav id="header" class="navbar navbar-inverse container">
       <a title="{{ site.name }}" href="/{{ page.collectionClass | replace: '_', '-' }}"><img src="/assets/img/wow-class/logo/{{ page.collectionClass }}.png" alt="{{ site.name }} Logo" width="200" itemprop="logo"></a>
