@@ -1,20 +1,28 @@
 #header-sidebar {
+  $body-padding: 12px;
+  $body-padding-top: 62px;
+  $padding-offset: $body-padding-top + $body-padding * 2;
+
+  $icon-size: calc((100vh - #{$padding-offset}) / 12 / 1.4);
+  $icon-size-hover: calc((100vh - #{$padding-offset}) / 12);
+
   position: fixed;
-  left: 0;
+  left: 12px;
+  margin-top: ($body-padding-top - $body-padding) / 2;
   top: 50%;
   @include translate(0, -50%);
-  width: 70px;
+  width: $icon-size-hover;
 
   a {
     align-items: center;
     display: flex;
-    height: 70px;
-    margin: 0 auto 0 5px;
+    height: $icon-size-hover;
+    margin: 0 auto 0 0;
     transition: ease 0.3s;
-    width: 50px;
+    width: $icon-size;
 
     &:hover {
-      width: 70px;
+      width: $icon-size-hover;
     }
 
     img {
