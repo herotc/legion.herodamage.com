@@ -503,6 +503,7 @@ exclude:
   - devserve.bat
   - README.md
   - ViewsGenerator.rb
+  - assets/img/src
   - assets/js/src
   - data/meta
 

@@ -21,10 +21,60 @@ body {
     border: 1px solid $border-dark;
     padding: 24px;
 
-    span.update-date {
-      color: $text-dk3;
-      font-weight: bold;
-      float: right;
+    div#home-picker {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        display: flex;
+        height: 220px;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        width: 250px;
+
+        figure {
+          img {
+            @include t-scale;
+            width: 180px;
+          }
+          figcaption {
+            bottom: 0;
+            left: 50%;
+            opacity: 0;
+            position: absolute;
+            @include t-scale;
+            @include translate(-50%, 0);
+          }
+        }
+
+        &:hover {
+          figure {
+            background: transparentize($color: $bg, $amount: 0.3);
+            img {
+              width: 220px;
+            }
+            figcaption {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    a.list-group-item {
+      h4.h5 {
+        margin: 0;
+        display: inline;
+      }
+      span.update-date {
+        color: $text-dk3;
+        font-weight: bold;
+        float: right;
+      }
     }
   }
 
