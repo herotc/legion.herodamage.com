@@ -7,4 +7,16 @@
   @media screen and (min-width: 768px) {
     position: fixed;
   }
+
+  a.navbar-brand {
+    float: none;
+    line-height: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+
+    img {
+      display: inline;
+    }
+  }
 }
