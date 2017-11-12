@@ -21,45 +21,6 @@ body {
     border: 1px solid $border-dark;
     padding: 24px;
 
-    div#home-picker {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 3rem;
-
-      a {
-        align-items: center;
-        display: flex;
-        height: 150px;
-        justify-content: center;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        width: 225px;
-
-        figure {
-          img {
-            height: 100px;
-            @include t-scale;
-            width: 100px;
-          }
-          figcaption {
-            display: none;
-          }
-        }
-
-        &:hover {
-          figure {
-            img {
-              height: 130px;
-              width: 130px;
-            }
-          }
-        }
-      }
-    }
-
     a.list-group-item {
       h4.h5 {
         margin: 0;
@@ -69,6 +30,80 @@ body {
         color: $text-dk3;
         font-weight: bold;
         float: right;
+      }
+    }
+  }
+
+  article#home {
+    > section {
+      background-color: $content-bg;
+      border: 1px solid $border-dark;
+      padding: 24px;
+    }
+
+    section#home-introduction {
+      margin-bottom: 24px;
+
+      @include MQ($MD) {
+        display: flex;
+        justify-content: center;
+      }
+
+      > * {
+        padding: 12px;
+      }
+
+      div#introduction-heading {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+
+      p {
+        align-items: center;
+        display: flex;
+      }
+    }
+
+    section#home-picker {
+      nav {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 3rem;
+
+        a {
+          align-items: center;
+          display: flex;
+          height: 150px;
+          justify-content: center;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          width: 225px;
+
+          figure {
+            img {
+              height: 100px;
+              @include t-scale;
+              width: 100px;
+            }
+            figcaption {
+              display: none;
+            }
+          }
+
+          &:hover {
+            figure {
+              img {
+                height: 130px;
+                width: 130px;
+              }
+            }
+          }
+        }
       }
     }
   }
