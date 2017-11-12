@@ -6,14 +6,14 @@ description: Theorycrafting community, latest simulation results and resources -
 
 <article id="home">
   <section id="home-introduction" class="container">
-    <div id="introduction-heading">
+    <figure>
       <img src="/assets/img/logo.svg" alt="{{ site.name }} Logo" height="128" width="128" itemprop="logo">
-      <h1>Hero<br>Damage</h1>
+    </figure>
+    <div id="introduction-text">
+      <h1>Hero Damage</h1>
+      <p>Welcome to Hero Damage, the website where you can see the latest World of Warcraft simulations results for every class.<br>
+      Please select your class below.</p>
     </div>
-    <p>
-    Welcome to Hero Damage, the website where you can see the latest World of Warcraft simulations results for every class.<br>
-    Please select your class below.
-    </p>
   </section>
 
   <section id="home-picker" class="container">

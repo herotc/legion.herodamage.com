@@ -45,6 +45,7 @@ body {
       margin-bottom: 12px;
 
       @include MQ($MD) {
+        align-items: center;
         display: flex;
         justify-content: center;
       }
@@ -53,16 +54,14 @@ body {
         padding: 12px;
       }
 
-      div#introduction-heading {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 24px;
+      figure {
+        text-align: center;
       }
 
-      p {
-        align-items: center;
+      div#introduction-text {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
 
@@ -72,7 +71,6 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 3rem;
 
         a {
           align-items: center;
