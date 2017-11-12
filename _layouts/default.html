@@ -46,7 +46,11 @@
   {% endif %}
 </head>
 <body>
-{% include layout-parts/header.html %}
-{{ content }}
+  <header>
+    {% include layout-parts/header.html %}
+  </header>
+  <main>
+    {{ content }}
+  </main>
 </body>
 </html>
