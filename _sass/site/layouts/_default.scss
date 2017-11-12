@@ -26,6 +26,7 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 3rem;
 
       a {
         align-items: center;
@@ -35,7 +36,7 @@ body {
         position: relative;
         text-align: center;
         text-decoration: none;
-        width: 250px;
+        width: 225px;
 
         figure {
           img {
