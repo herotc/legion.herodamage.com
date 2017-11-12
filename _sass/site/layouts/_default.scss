@@ -42,7 +42,7 @@ body {
     }
 
     section#home-introduction {
-      margin-bottom: 24px;
+      margin-bottom: 12px;
 
       @include MQ($MD) {
         display: flex;
