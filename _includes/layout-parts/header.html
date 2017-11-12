@@ -9,7 +9,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">{{ site.name }}</a>
+        <a class="navbar-brand" href="/">
+          <img src="/assets/img/logo.svg" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
+          {{ site.name }}
+        </a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,11 +58,11 @@
     </div>
   </nav>
   {% unless page.url == "/" %}
-    {% include layout-parts/wowclasspicker.html elementID="header-sidebar" alt="wow icon" dirpath="wow-class/icon" %}
+    {% include layout-parts/wowclasspicker.html elementID="header-sidebar" %}
   {% endunless %}
   {% if page.collectionClass %}
     <nav id="header" class="navbar navbar-inverse container">
-      <a title="{{ site.name }}" href="/{{ page.collectionClass | replace: '_', '-' }}"><img src="/assets/img/wow-class/logo/{{ page.collectionClass }}.png" alt="{{ site.name }} Logo" width="200" itemprop="logo"></a>
+      <a title="{{ site.name }}" href="/{{ page.collectionClass | replace: '_', '-' }}"><img src="/assets/img/wow-class/{{ page.collectionClass }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
     </nav>
   {% endif %}
 </header>
