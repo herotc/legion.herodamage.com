@@ -1,5 +1,69 @@
-#header {
-  margin-bottom: 12px;
-  padding: 6px;
-  text-align: center;
+header {
+  
+  nav#navigation {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  
+    @media screen and (min-width: 768px) {
+      position: fixed;
+    }
+  
+    a.navbar-brand {
+      float: none;
+      line-height: 50px;
+      height: 50px;
+      margin: 0;
+      padding: 0;
+  
+      img {
+        display: inline;
+      }
+    }
+  }
+  aside#sidebar {
+    nav {
+      $body-padding: 12px;
+      $body-padding-top: 62px;
+      $padding-offset: $body-padding-top + $body-padding * 2;
+    
+      $icon-size: calc((100vh - #{$padding-offset}) / 12 / 1.4);
+      $icon-size-hover: calc((100vh - #{$padding-offset}) / 12);
+    
+      position: fixed;
+      left: 12px;
+      margin-top: ($body-padding-top - $body-padding) / 2;
+      top: 50%;
+      @include translate(0, -50%);
+      width: $icon-size-hover;
+
+      a {
+        align-items: center;
+        display: flex;
+        height: $icon-size-hover;
+        margin: 0 auto 0 0;
+        @include t-scale(0.2s);
+        width: $icon-size;
+    
+        figure {
+          img {
+            width: 100%;
+          }
+          figcaption {
+            display: none;
+          }
+        }
+    
+        &:hover {
+          width: $icon-size-hover;
+        }
+      }
+    }
+  }
+  nav#header {
+    margin-bottom: 12px;
+    padding: 6px;
+    text-align: center;
+  }
 }
