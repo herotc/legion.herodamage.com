@@ -1,0 +1,16 @@
+.open {
+  > .btn-default {
+    &.dropdown-toggle,
+    &.dropdown-toggle:hover,
+    &.dropdown-toggle:focus,
+    &.dropdown-toggle.focus {
+      @include bootstrap-button-lt2;
+    }
+  }
+}
+.bootstrap-select {
+  .dropdown-toggle:focus {
+    // Have to use !importang because select uses it, ugh
+    outline: none !important;
+  }
+}

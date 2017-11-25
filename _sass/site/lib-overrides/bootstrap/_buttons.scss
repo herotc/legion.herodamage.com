@@ -6,13 +6,13 @@
   &.active:focus,
   &.focus,
   &:active.focus,
-  &.active.focus {
+  &.active.focus,
+  &:hover,
+  &:active:hover,
+  &.active:hover,
+  &:active,
+  &.active, {
     outline: none;
-  }
-
-  &.active,
-  &:focus,
-  &:active {
     @include bootstrap-button-lt2;
   }
 }

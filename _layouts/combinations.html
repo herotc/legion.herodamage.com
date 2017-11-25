@@ -36,23 +36,17 @@ layout: default
     <tr id="combinator-table-filters">
       <th></th>
       <th>
-        <input id="combinator-table-filter-talents" type="text" class="form-control input-sm" onkeyup="updateCombinatorTable();">
+        <input id="combinator-table-filter-talents" type="text" class="form-control" onkeyup="updateCombinatorTable();">
       </th>
       <th>
-        <select id="combinator-table-filter-set" class="form-control input-sm" onchange="updateCombinatorTable();">
-          <option>All</option>
+        <select id="combinator-table-filter-sets" title="Sets" class="selectpicker"
+          data-selected-text-format="static" onchange="updateCombinatorTable();" multiple>
         </select>
       </th>
       <th>
-        <select id="combinator-table-filter-legendary" class="form-control input-sm" onchange="updateCombinatorTable();">
-          <option>All</option>
+        <select id="combinator-table-filter-legendaries" title="Legendaries" class="selectpicker"
+          data-selected-text-format="static" onchange="updateCombinatorTable();" multiple>
         </select>
-        <div id="combinator-table-filter-legendary-only-area" class="btn-group" data-toggle="buttons">
-          <label class="btn btn-default">
-            <input id="combinator-table-filter-legendary-only" type="checkbox" autocomplete="off" onchange="updateCombinatorTable();">
-            Only
-          </label>
-        </div>
       </th>
       <th></th>
     </tr>
@@ -67,25 +61,25 @@ layout: default
 </div>
 <script src="/assets/js/jquery.csv-0.8.3.min.js"></script>
 <script src="/assets/js/jquery.twbsPagination-1.4.1.min.js"></script>
+<script src="/assets/js/bootstrap-select-1.12.4.min.js"></script>
 <script>
   var combinatorData = null;
   var combinatorRows = null;
-  var hasSingleLegos = false;
   var hasBossDPS = false;
 
   function updateCombinatorTable() {
     if (combinatorData === null)
       return;
     var filterTalents = document.getElementById("combinator-table-filter-talents").value;
-    var filterSet = document.getElementById("combinator-table-filter-set").value;
-    var filterLegendary = document.getElementById("combinator-table-filter-legendary").value;
-    var oneLego = hasSingleLegos && document.getElementById("combinator-table-filter-legendary-only").checked;
+    var filterSets = $('#combinator-table-filter-sets').val();
+    var filterLegendaries = $('#combinator-table-filter-legendaries').val();
     combinatorRows = $.grep(combinatorData, function (columns) {
       if (filterTalents !== "" && columns[0].indexOf(filterTalents) === -1)
         return false;
-      if (filterSet !== "All" && columns[1] !== filterSet)
+      if (filterSets.indexOf(columns[1]) < 0)
         return false;
-      if (filterLegendary !== "All" && (columns[2].indexOf(filterLegendary) === -1 || oneLego && columns[2] !== filterLegendary))
+      var legos = columns[2].split(", ");
+      if ($(filterLegendaries).filter(legos).length < legos.length && columns[2] !== "None")
         return false;
       return true;
     });
@@ -133,24 +127,32 @@ layout: default
         if ($.inArray(columns[1], sets) < 0) {
           sets.push(columns[1]);
         }
-        if (!hasSingleLegos && columns[2].indexOf(",") === -1)
-          hasSingleLegos = true;
         columns[2].split(", ").forEach(function (lego) {
-          if ($.inArray(lego, legos) < 0) {
+          if (lego !== "None" && $.inArray(lego, legos) < 0) {
             legos.push(lego);
           }
         });
         if (!hasBossDPS && columns.length === 6)
           hasBossDPS = true;
       });
+      sets.sort().reverse();
       sets.forEach(function (set) {
-        document.getElementById("combinator-table-filter-set").insertAdjacentHTML("beforeend", "<option>" + set + "</option>");
+        document.getElementById("combinator-table-filter-sets").insertAdjacentHTML("beforeend", "<option>" + set + "</option>");
       });
+      var setSelect = $("#combinator-table-filter-sets");
+      setSelect.selectpicker("val", sets);
+      setSelect.selectpicker("refresh");
+      legos.sort();
       legos.forEach(function (lego) {
-        document.getElementById("combinator-table-filter-legendary").insertAdjacentHTML("beforeend", "<option>" + lego + "</option>");
+        document.getElementById("combinator-table-filter-legendaries").insertAdjacentHTML("beforeend", "<option>" + lego + "</option>");
       });
-      if (!hasSingleLegos)
-        document.getElementById("combinator-table-filter-legendary-only-area").innerHTML = "";
+      var legoSelect = $("#combinator-table-filter-legendaries");
+      var beltIdx = legos.indexOf("Belt"); // Don't show Belt by default
+      if (beltIdx > -1) {
+        legos.splice(beltIdx, 1);
+      }
+      legoSelect.selectpicker("val", legos);
+      legoSelect.selectpicker("refresh");
       if (hasBossDPS) {
         document.getElementById("combinator-table-headers").insertAdjacentHTML("beforeend", "<th>Boss DPS</th>");
         document.getElementById("combinator-table-filters").insertAdjacentHTML("beforeend", "<th></th>");
