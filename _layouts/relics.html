@@ -92,6 +92,7 @@ layout: default
     var CrucibleShadowTraits = ["MasterOfShadows", "MurderousIntent", "Shadowbind", "TormentTheWeak", "ChaoticDarkness", "DarkSorrows"];
 
     // Calculate Differences
+    var CW = {}
     for (row = 0; row < data.getNumberOfRows(); row++) {
       var relicStyle = "";
       if ($.inArray(data.getValue(row, 0), CrucibleLightTraits) >= 0) {
@@ -114,8 +115,10 @@ layout: default
           data.setValue(row, col + 1, "");
         }
         prevVal = curVal > prevVal ? curVal : prevVal;
+        CW[data.getValue(row, col + 1) + "x " + data.getValue(row, 0)] = stepVal.toFixed();
       }
     }
+    console.log(CW);
 
     // Sort crucible traits to the bottom using a temporary column
     var sortCol = data.addColumn("number");
