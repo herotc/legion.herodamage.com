@@ -65,14 +65,18 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
 
   if File.exist?(metaFile)
     # Report Infos
-    reportInfosRaw = reportFilename.split('_')
+    filenameParts = reportFilename.split('-', 2)
+    #Variation name starts after first hyphen, format nicely
+    gearVariationRaw = filenameParts[1]
+    reportInfosRaw = filenameParts[0].split('_')
     reportInfos = {
       'type' => reportInfosRaw[0].gsub('Simulation', 's'),
       'fightstyle' => reportInfosRaw[1],
       'tier' => reportInfosRaw[2],
       'class' => reportInfosRaw[3],
       'spec' => reportInfosRaw[4],
-      'suffix' => reportInfosRaw[5]
+      'suffix' => reportInfosRaw[5],
+      'gearvariation' => gearVariationRaw ? gearVariationRaw.split('_').join(' ') : nil
     }
     # Hotfix for SimC Class/Spec separated by an underscore
     if reportInfosRaw[4] == 'Beast' && reportInfosRaw[5] == 'Mastery'
@@ -117,6 +121,10 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
       'class' => " #{reportInfos['class'].gsub('_', ' ')}",
       'spec' => " #{reportSpecWithSuffix}"
     }
+
+    if reportInfos['gearvariation']
+      front['gearvariation'] = " #{reportInfos['gearvariation']}"
+    end
 
     if reportInfos['type'] == "Relics" || reportInfos['type'] == "Trinkets"
       player = {
@@ -164,7 +172,9 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
     if !Dir.exist?(viewDirectory)
       Dir.mkdir viewDirectory
     end
-    viewFile = "#{viewDirectory}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}.html"
+    viewFile = "#{viewDirectory}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}"
+    viewFile += "-#{gearVariationRaw.gsub('_', '-')}" if gearVariationRaw
+    viewFile += '.html'
     File.open(viewFile.downcase, 'w') do |view|
       view.puts "---"
       front.each do |key, value|

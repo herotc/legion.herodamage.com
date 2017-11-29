@@ -1,0 +1,15 @@
+<p>
+  <ul id="fightstyle-tabs" class="nav nav-pills sub-nav">
+    {% assign fightstyles = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | group_by: "fightstyle" %}
+    {% assign numFightstyles = fightstyles | size %}
+    {% if numFightstyles > 1 %}
+      {% for fightstyle in fightstyles %}
+        {% if fightstyle.name != nil %}
+          <li role="presentation" {% if fightstyle.name == page.fightstyle %} class="active" {% endif %}>
+            <a href="{{ fightstyle.items.first.url }}">{{ fightstyle.name }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </ul>
+</p>

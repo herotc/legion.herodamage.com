@@ -1,0 +1,13 @@
+<p>
+  <ul id="gear-variation-tabs" class="nav nav-pills sub-nav">
+    {% assign variations = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | where: "fightstyle", page.fightstyle | sort: "name" %}
+    {% assign numVariations = variations | size %}
+    {% if numVariations > 1 %}
+      {% for variation in variations %}
+        <li role="presentation" {% if variation.url == page.url %} class="active" {% endif %}>
+          <a href="{{ variation.url }}">{% if variation.gearvariation == nil %}SimC Default{% else %}{{ variation.gearvariation }}{% endif %}</a>
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+</p>
