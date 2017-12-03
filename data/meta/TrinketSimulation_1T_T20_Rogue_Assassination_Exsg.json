@@ -1,0 +1,7498 @@
+{
+  "build_date": "Nov 29 2017",
+  "build_time": "14:16:31",
+  "git_revision": null,
+  "options": {
+    "debug": false,
+    "max_time": 300.0,
+    "expected_iteration_time": 360.0,
+    "vary_combat_length": 0.2,
+    "iterations": 1767,
+    "target_error": 0.2,
+    "threads": 7,
+    "seed": 16543101833345408999,
+    "single_actor_batch": true,
+    "queue_lag": 0.005,
+    "queue_lag_stddev": 0.001,
+    "gcd_lag": 0.15,
+    "gcd_lag_stddev": 0.037,
+    "channel_lag": 0.25,
+    "channel_lag_stddev": 0.062,
+    "queue_gcd_reduction": 0.1,
+    "strict_gcd_queue": 0,
+    "confidence": 0.95,
+    "confidence_estimator": 1.9599639854088815,
+    "world_lag": 0.1,
+    "world_lag_stddev": 0.01,
+    "travel_variance": 0.0,
+    "default_skill": 1.0,
+    "reaction_time": 0.5,
+    "regen_periodicity": 0.25,
+    "ignite_sampling_delta": 0.2,
+    "fixed_time": false,
+    "optimize_expressions": true,
+    "optimal_raid": 1,
+    "log": 0,
+    "debug_each": 0,
+    "auto_ready_trigger": 0,
+    "stat_cache": 1,
+    "max_aoe_enemies": 20,
+    "show_etmi": false,
+    "tmi_window_global": 0.0,
+    "tmi_bin_size": 0.5,
+    "enemy_death_pct": 0.0,
+    "challenge_mode": false,
+    "timewalk": -1,
+    "pvp_crit": false,
+    "rng": {
+      "name": "sse2-sfmt"
+    },
+    "deterministic": 0,
+    "average_range": 1,
+    "average_gauss": 0,
+    "fight_style": "Patchwerk",
+    "default_aura_delay": 0.03,
+    "default_aura_delay_stddev": 0.005,
+    "dbc": {
+      "Live": {
+        "build_level": 25383,
+        "wow_version": "7.3.2"
+      },
+      "version_used": "Live"
+    }
+  },
+  "overrides": {
+    "mortal_wounds": 1,
+    "bleeding": 1,
+    "bloodlust": 1,
+    "bloodlust_percent": 25,
+    "bloodlust_time": 0.5
+  },
+  "statistics": {
+    "elapsed_cpu_seconds": 12.109375,
+    "elapsed_time_seconds": 1.575917,
+    "init_time_seconds": 0.29146072200000006,
+    "merge_time_seconds": 0.0011430760000000002,
+    "analyze_time_seconds": 0.002281178,
+    "simulation_length": {
+      "sum": 527626.3499999996,
+      "count": 1760,
+      "mean": 299.78769886363614,
+      "min": 201.679,
+      "max": 396.742,
+      "median": 300.139,
+      "variance": 1781.0742261968167,
+      "std_dev": 42.20277510065916,
+      "mean_variance": 1.0119739921572821,
+      "mean_std_dev": 1.0059691805205973
+    },
+    "raid_dps": {
+      "sum": 2213397689.3239527,
+      "count": 1760,
+      "mean": 1257612.3234795185
+    },
+    "total_dmg": {
+      "sum": 661758595848.2494,
+      "count": 1760,
+      "mean": 375999202.1865053
+    }
+  },
+  "player": {
+    "name": "Template",
+    "race": "pandaren",
+    "level": 110,
+    "role": "attack",
+    "specialization": "Assassination Rogue",
+    "talents": [
+      {
+        "tier": 1,
+        "id": 22338,
+        "spell_id": 193640,
+        "name": "Elaborate Planning"
+      },
+      {
+        "tier": 2,
+        "id": 22331,
+        "spell_id": 14062,
+        "name": "Nightstalker"
+      },
+      {
+        "tier": 3,
+        "id": 19239,
+        "spell_id": 193531,
+        "name": "Deeper Stratagem"
+      },
+      {
+        "tier": 5,
+        "id": 22341,
+        "spell_id": 196861,
+        "name": "Thuggee"
+      },
+      {
+        "tier": 6,
+        "id": 22344,
+        "spell_id": 200806,
+        "name": "Exsanguinate"
+      },
+      {
+        "tier": 7,
+        "id": 21186,
+        "spell_id": 152152,
+        "name": "Venom Rush"
+      }
+    ],
+    "artifact": [
+      {
+        "id": 1739,
+        "spell_id": 250879,
+        "name": "Netherlight Fortification",
+        "total_rank": 3,
+        "purchased_rank": 0,
+        "crucible_rank": 3,
+        "relic_rank": 0
+      },
+      {
+        "id": 1780,
+        "spell_id": 252906,
+        "name": "Torment the Weak",
+        "total_rank": 3,
+        "purchased_rank": 0,
+        "crucible_rank": 3,
+        "relic_rank": 0
+      },
+      {
+        "id": 323,
+        "spell_id": 192310,
+        "name": "Toxic Blades",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 324,
+        "spell_id": 192315,
+        "name": "Serrated Edge",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 325,
+        "spell_id": 192318,
+        "name": "Master Alchemist",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 326,
+        "spell_id": 192323,
+        "name": "Fade into Shadows",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 327,
+        "spell_id": 192326,
+        "name": "Balanced Blades",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 328,
+        "spell_id": 192329,
+        "name": "Gushing Wound",
+        "total_rank": 7,
+        "purchased_rank": 4,
+        "crucible_rank": 3,
+        "relic_rank": 0
+      },
+      {
+        "id": 329,
+        "spell_id": 192345,
+        "name": "Shadow Walker",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 330,
+        "spell_id": 192349,
+        "name": "Master Assassin",
+        "total_rank": 7,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 3
+      },
+      {
+        "id": 331,
+        "spell_id": 192376,
+        "name": "Poison Knives",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 332,
+        "spell_id": 192384,
+        "name": "Urge to Kill",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 333,
+        "spell_id": 192422,
+        "name": "Shadow Swiftness",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 334,
+        "spell_id": 192424,
+        "name": "Surge of Toxins",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 335,
+        "spell_id": 192428,
+        "name": "From the Shadows",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 337,
+        "spell_id": 192657,
+        "name": "Bag of Tricks",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 346,
+        "spell_id": 192759,
+        "name": "Kingsbane",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 347,
+        "spell_id": 192923,
+        "name": "Blood of the Assassinated",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1276,
+        "spell_id": 214368,
+        "name": "Assassin's Blades",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1384,
+        "spell_id": 214928,
+        "name": "Slayer's Precision",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1577,
+        "spell_id": 238066,
+        "name": "Strangler",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1578,
+        "spell_id": 238102,
+        "name": "Dense Concoction",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1579,
+        "spell_id": 238138,
+        "name": "Sinister Circulation",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1580,
+        "spell_id": 239042,
+        "name": "Concordance of the Legionfall",
+        "total_rank": 24,
+        "purchased_rank": 24,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1651,
+        "spell_id": 241152,
+        "name": "Silence of the Uncrowned",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      }
+    ],
+    "party": 0,
+    "ready_type": 1,
+    "bugs": true,
+    "scale_player": true,
+    "potion_used": false,
+    "timeofday": "DAY_TIME",
+    "invert_scaling": 0,
+    "reaction_offset": 0.1,
+    "reaction_max": 1.4000000000000001,
+    "reaction_mean": 0.3,
+    "reaction_stddev": 0.06,
+    "reaction_nu": 0.25,
+    "world_lag": 0.1,
+    "brain_lag": 0.0,
+    "brain_lag_stddev": 0.0,
+    "world_lag_override": false,
+    "world_lag_stddev_override": false,
+    "dbc": {
+      "Live": {
+        "build_level": 25383,
+        "wow_version": "7.3.2"
+      },
+      "version_used": "Live"
+    },
+    "base_energy_regen_per_second": 10.0,
+    "collected_data": {
+      "fight_length": {
+        "sum": 527626.3499999996,
+        "count": 1760,
+        "mean": 299.78769886363614,
+        "min": 201.679,
+        "max": 396.742,
+        "median": 300.139,
+        "variance": 1781.0742261968167,
+        "std_dev": 42.20277510065916,
+        "mean_variance": 1.0119739921572821,
+        "mean_std_dev": 1.0059691805205973
+      },
+      "waiting_time": {
+        "sum": 116910.80099999998,
+        "count": 1760,
+        "mean": 66.42659147727271,
+        "min": 42.655,
+        "max": 92.259
+      },
+      "executed_foreground_actions": {
+        "sum": 368726.0,
+        "count": 1760,
+        "mean": 209.5034090909091,
+        "min": 145.0,
+        "max": 276.0
+      },
+      "dmg": {
+        "sum": 661758595848.2494,
+        "count": 1760,
+        "mean": 375999202.1865053,
+        "min": 300334412.21736443,
+        "max": 453983139.03962636
+      },
+      "compound_dmg": {
+        "sum": 661758595848.2494,
+        "count": 1760,
+        "mean": 375999202.1865053,
+        "min": 300334412.21736443,
+        "max": 453983139.03962636
+      },
+      "timeline_dmg": {
+        "mean": 1223339.005055348,
+        "mean_std_dev": 664798.2133800184,
+        "min": 273451.8427717844,
+        "max": 6436395.875902973,
+        "data": [
+          273451.8427717844,
+          683858.6135334208,
+          836673.3694645191,
+          1282296.6315963394,
+          3070585.4914155775,
+          547857.206243408,
+          2934066.7918968764,
+          2389108.6082045683,
+          3188139.5805213614,
+          6436395.875902973,
+          2641032.3202111204,
+          2406290.986973106,
+          2706828.7412630287,
+          3872252.3102509477,
+          2379278.9913204657,
+          1938590.499758633,
+          2139948.353349853,
+          3013918.8109291797,
+          2350528.9224973847,
+          1618852.487008763,
+          1878274.2023697614,
+          1128084.0013359443,
+          2395096.312534386,
+          650326.8770129654,
+          1982637.8364757346,
+          532827.2534644776,
+          1413644.3749707239,
+          566078.3668078616,
+          1218437.2233899059,
+          421945.46076446574,
+          1582436.9531613744,
+          451411.8558543661,
+          1051834.045907602,
+          573018.2531679726,
+          631321.2063043679,
+          958163.1189414985,
+          1206502.5882169157,
+          878687.170755019,
+          980620.5719109594,
+          747133.2727065176,
+          1183898.2577088762,
+          792212.4426264463,
+          1031563.1862262366,
+          689147.1403317448,
+          1036927.5613224418,
+          647720.4893997306,
+          875938.5266335629,
+          681910.7182903868,
+          952793.0079336248,
+          1096953.4597789994,
+          1596437.5018974133,
+          1244402.3864670235,
+          1167757.6068159488,
+          968632.1961337347,
+          1628211.7901135753,
+          1984458.2940552104,
+          2228685.2227067407,
+          2360703.9239342147,
+          2045027.4211247244,
+          2149649.4617374027,
+          1829099.7992184612,
+          1929102.7193143412,
+          1502837.921261891,
+          1460114.3880936655,
+          1249984.133546422,
+          1198941.3802118034,
+          1312671.6031858444,
+          1321488.143722084,
+          1190759.8684283453,
+          1180430.1624153217,
+          1042596.4109383291,
+          932588.2954426529,
+          1020464.8717814989,
+          791204.010764953,
+          1069066.841245208,
+          678101.7670349785,
+          895594.7502896986,
+          889747.3336033032,
+          853630.9478314235,
+          989036.6920029727,
+          768699.419841662,
+          830805.0153275556,
+          898786.8757702861,
+          720930.735205133,
+          745883.6195708356,
+          520564.7541176994,
+          857359.343651092,
+          586805.4820927785,
+          732175.9765774312,
+          547897.0556284399,
+          799827.7535439224,
+          607886.6637737334,
+          709925.4206417497,
+          585024.8741816895,
+          648216.7250427246,
+          687191.3593102011,
+          912073.6236298897,
+          832064.9062058742,
+          1132717.707835361,
+          1154788.758874072,
+          1020620.3307414256,
+          1117178.75525271,
+          1570878.2364938427,
+          1884780.6927629136,
+          2138313.631153633,
+          2462211.8211033996,
+          2210342.1668499983,
+          2244417.2931950646,
+          2169425.187138704,
+          2169695.196100415,
+          1783008.8195838823,
+          1779812.867578782,
+          1350080.9300134734,
+          1210993.9189896134,
+          1288500.0077438068,
+          1081390.783808857,
+          1077720.1325952155,
+          1072209.1802663652,
+          1072005.5420324486,
+          792350.5199695223,
+          883587.7596683194,
+          785895.489037724,
+          703273.4539124412,
+          743072.4970206476,
+          749211.0294915631,
+          694494.8138779222,
+          790804.2570420108,
+          820784.6068358959,
+          862691.1589874786,
+          815358.3086494039,
+          853590.5401083002,
+          755474.5173574927,
+          883584.3679276669,
+          797751.8471661886,
+          841881.6942348855,
+          796179.5386944987,
+          783387.1225749396,
+          846727.9993726674,
+          860798.545260398,
+          788668.2458701887,
+          789810.1098721491,
+          810330.9674400942,
+          747022.679482058,
+          713341.8691216462,
+          734758.485841781,
+          666763.7788098729,
+          850816.803482286,
+          1213627.4654203053,
+          1217339.055588331,
+          1428181.788231201,
+          2310333.39498312,
+          3023962.143005208,
+          3495732.678556563,
+          3272779.6951832534,
+          2813259.1251363396,
+          2710016.97576626,
+          2648136.5272920956,
+          2450979.8611576264,
+          2264454.5164644746,
+          2167856.6375680035,
+          1889710.498487303,
+          1764061.01310073,
+          1740388.422582302,
+          1515898.598841084,
+          1344835.4085088263,
+          1436091.0518200425,
+          1200046.9104403642,
+          1048502.3113887269,
+          1130012.8987821264,
+          1087974.7738741806,
+          971922.4150025367,
+          981444.8913101366,
+          786781.9458859354,
+          789732.6594145015,
+          807456.6313952045,
+          804471.697335824,
+          682785.6262525354,
+          771682.0147763217,
+          680582.2129427928,
+          703510.3155263466,
+          797711.4128609955,
+          772602.9051107542,
+          688864.2856937533,
+          757286.3383420049,
+          707520.730267808,
+          712729.6421878946,
+          806700.8463800757,
+          850703.7649210716,
+          750965.0589851906,
+          813769.6245759701,
+          733931.7961817522,
+          824669.6252070258,
+          884752.3887216115,
+          874105.6692817706,
+          816353.6650705456,
+          1160718.0627683024,
+          1179436.0120490496,
+          1142021.5354555754,
+          1332481.2776359178,
+          1680386.7445206884,
+          1985596.668329532,
+          2380688.72575734,
+          2357411.7448819596,
+          2252276.228626884,
+          2307533.0313004777,
+          2141211.6580256512,
+          1857487.0881842081,
+          1709167.6623811256,
+          1448532.329830331,
+          1285542.7303666153,
+          1259824.536817103,
+          1177436.58035682,
+          1075835.414999774,
+          1178067.817999351,
+          1098160.9588861717,
+          1046655.5556011645,
+          1015813.815238854,
+          920187.2109198216,
+          867029.3335078051,
+          919704.7971417458,
+          811413.1605884546,
+          738075.2015646376,
+          876469.0120574624,
+          857322.8053413676,
+          821577.8887134704,
+          883709.4423211555,
+          821591.0318719324,
+          813116.3808770207,
+          912767.0485368256,
+          873487.7545034967,
+          802224.936588202,
+          860016.9921743147,
+          773107.0886833958,
+          719215.6334423126,
+          754575.0141807985,
+          703029.3922571316,
+          645692.329344712,
+          726009.8713903818,
+          655425.8299484921,
+          639848.7718633139,
+          749052.1693696041,
+          700206.4776478779,
+          686805.0928192002,
+          844039.1117947181,
+          943521.7577799726,
+          908438.5897164972,
+          1099265.0676580903,
+          1275912.5554127987,
+          1541554.985284115,
+          1791659.3535055423,
+          1869698.9114045452,
+          1851686.658615891,
+          2072764.631159021,
+          2069211.5775977233,
+          1981433.8402850204,
+          1974685.1740168382,
+          1822752.691745418,
+          1632752.8314412243,
+          1726832.1199761576,
+          1579336.1743496498,
+          1463605.3256879554,
+          1490346.4153071297,
+          1330073.1854150782,
+          1146875.665073585,
+          1118702.4990405315,
+          945196.7528811623,
+          812474.9996158058,
+          835323.493281075,
+          760824.0831654948,
+          695165.6166838739,
+          799296.271725442,
+          725125.3489825962,
+          695484.4975057895,
+          767232.5066329476,
+          685364.214277624,
+          697847.269664145,
+          818419.167914128,
+          770119.3066808847,
+          772084.9021537622,
+          854546.6084624815,
+          823631.9143560875,
+          798016.1654551389,
+          857259.3958024518,
+          801134.6974314434,
+          768845.14253241,
+          819364.5764806087,
+          791896.8557135653,
+          757384.6744873704,
+          836684.9901811919,
+          826010.2933308205,
+          806396.0644790273,
+          938000.4935174901,
+          987760.6512987219,
+          1142224.3872921548,
+          1419567.7581039637,
+          1639279.9704012617,
+          2035898.5737562058,
+          2640558.8471994717,
+          2705494.6304273377,
+          2577297.9260660885,
+          2619129.0352035793,
+          2426284.144692643,
+          2216912.4390057432,
+          2164015.7846966446,
+          2068245.0164001253,
+          1920661.038704989,
+          1892317.884309929,
+          1758833.7312488232,
+          1615050.080893905,
+          1571571.7835924872,
+          1404507.596259321,
+          1263908.119967593,
+          1247592.7012847962,
+          1027834.6451522345,
+          940874.9326655569,
+          1032464.4218502328,
+          949754.0454104478,
+          896288.3124310701,
+          875683.6229354164,
+          870704.7806866157,
+          869633.136586878,
+          878220.2167109174,
+          828813.6954533799,
+          754382.2022611432,
+          811423.3034127011,
+          731886.350426178,
+          689899.3341700535,
+          731841.7774072394,
+          706178.9663608412,
+          648268.0176019113,
+          737648.2942409117,
+          658777.4683404223,
+          673204.1284199336,
+          719638.4924507965,
+          681148.484904147,
+          645132.0896462282,
+          729675.6040451968,
+          724116.6738345019,
+          691306.5574282885,
+          836757.5011915164,
+          850452.9351057641,
+          967727.0162335859,
+          1138699.068432094,
+          1187840.3551528773,
+          1205656.8823910682,
+          1500488.1649738303,
+          1658364.6682162464,
+          1837124.4338988436,
+          1977288.3004702125,
+          2004048.0750301033,
+          1879228.5785834407,
+          2013113.8376683532,
+          1844009.3025399263,
+          1709043.6538168665,
+          1688277.0396247997,
+          1416299.7443192946,
+          1374637.0694336332,
+          1420289.9962902074,
+          1197881.259441027,
+          1105132.2289804483,
+          1057192.626099422,
+          1035456.2382970776,
+          798523.2401211739,
+          930744.6121471907,
+          782945.7886897299,
+          973394.3153579487,
+          835803.5032071339,
+          771524.2095052367,
+          759845.8510950829,
+          834474.2430034826,
+          864052.0209316026,
+          900079.9857906774,
+          757073.2195606065,
+          790462.3105457858,
+          717615.7725705856,
+          749979.4351066424,
+          781117.2347317922,
+          903886.0004757883,
+          720077.9968789367,
+          967963.6215785583,
+          713181.5993180443,
+          879283.9934873208,
+          796500.5421989593,
+          856247.6743130176,
+          834715.164651569,
+          839768.5067912862,
+          622486.6156872885,
+          775960.6446791589,
+          911199.5056074467,
+          967360.0341388574,
+          986430.8396677119,
+          1032564.2233957567,
+          975393.2520988109,
+          1129056.3348556207,
+          1714403.012621386,
+          1655460.8110829697,
+          2059087.482037123
+        ]
+      },
+      "dps": {
+        "sum": 2213397689.3239536,
+        "count": 1760,
+        "mean": 1257612.323479519,
+        "min": 1129523.0300970117,
+        "max": 1496802.5126197927,
+        "median": 1255473.7807007278,
+        "variance": 2885382214.3635697,
+        "std_dev": 53715.75387503716,
+        "mean_variance": 1639421.7127065738,
+        "mean_std_dev": 1280.3990443242972
+      },
+      "dpse": {
+        "sum": 2213397689.3239527,
+        "count": 1760,
+        "mean": 1257612.3234795185,
+        "min": 1129523.0300970117,
+        "max": 1496802.5126197927
+      },
+      "target_metric": {
+        "sum": 2205573687.838629,
+        "count": 1760,
+        "mean": 1257453.6418692297,
+        "min": 1129523.0300970117,
+        "max": 1496802.5126197927,
+        "median": 0.0,
+        "variance": 2875988607.047793,
+        "std_dev": 53628.24448970704,
+        "mean_variance": 1639674.2343487986,
+        "mean_std_dev": 1280.4976510516522
+      }
+    },
+    "gear": {
+      "head": {
+        "name": "fanged_slayers_helm",
+        "encoded_item": "fanged_slayers_helm,id=147172,bonus_id=1512/3563",
+        "ilevel": 930,
+        "stamina": 4305,
+        "agiint": 2870,
+        "haste_rating": 1162,
+        "versatility_rating": 686
+      },
+      "neck": {
+        "name": "locket_of_splintered_souls",
+        "encoded_item": "locket_of_splintered_souls,id=147014,bonus_id=1512/3563,enchant=mark_of_the_hidden_satyr",
+        "ilevel": 930,
+        "stamina": 2422,
+        "mastery_rating": 1911,
+        "crit_rating": 1609
+      },
+      "shoulders": {
+        "name": "mantle_of_the_master_assassin",
+        "encoded_item": "mantle_of_the_master_assassin,id=144236,bonus_id=3570",
+        "ilevel": 970,
+        "stamina": 4687,
+        "agiint": 3124,
+        "haste_rating": 460,
+        "mastery_rating": 1150
+      },
+      "chest": {
+        "name": "fanged_slayers_chestguard",
+        "encoded_item": "fanged_slayers_chestguard,id=147169,bonus_id=1512/3563",
+        "ilevel": 930,
+        "stamina": 4305,
+        "agiint": 2870,
+        "crit_rating": 1202,
+        "mastery_rating": 647
+      },
+      "waist": {
+        "name": "waistguard_of_profane_duplicity",
+        "encoded_item": "waistguard_of_profane_duplicity,id=147347,bonus_id=1522/3563",
+        "ilevel": 940,
+        "stamina": 3544,
+        "agiint": 2362,
+        "mastery_rating": 843,
+        "haste_rating": 596
+      },
+      "legs": {
+        "name": "bonespur_studded_legwraps",
+        "encoded_item": "bonespur_studded_legwraps,id=147035,bonus_id=1512/3563",
+        "ilevel": 930,
+        "stamina": 4305,
+        "agiint": 2870,
+        "versatility_rating": 1241,
+        "crit_rating": 607
+      },
+      "feet": {
+        "name": "duskwalkers_footpads",
+        "encoded_item": "duskwalkers_footpads,id=137030,bonus_id=3570",
+        "ilevel": 970,
+        "stamina": 4687,
+        "agiint": 3124,
+        "mastery_rating": 690,
+        "haste_rating": 920
+      },
+      "wrists": {
+        "name": "sinewstitched_wristguards",
+        "encoded_item": "sinewstitched_wristguards,id=147041,bonus_id=1512/3563",
+        "ilevel": 930,
+        "stamina": 2422,
+        "agiint": 1615,
+        "mastery_rating": 676,
+        "versatility_rating": 364
+      },
+      "hands": {
+        "name": "fanged_slayers_handguards",
+        "encoded_item": "fanged_slayers_handguards,id=147171,bonus_id=1512/3563",
+        "ilevel": 930,
+        "stamina": 3229,
+        "agiint": 2153,
+        "versatility_rating": 871,
+        "crit_rating": 515
+      },
+      "finger1": {
+        "name": "yathaes_thumb_ring",
+        "encoded_item": "yathaes_thumb_ring,id=147021,bonus_id=1512/3563,enchant=binding_of_critical_strike",
+        "ilevel": 930,
+        "stamina": 2422,
+        "crit_rating": 2414,
+        "versatility_rating": 1106
+      },
+      "finger2": {
+        "name": "band_of_rescinded_truths",
+        "encoded_item": "band_of_rescinded_truths,id=147194,bonus_id=1512/3563,enchant=binding_of_critical_strike",
+        "ilevel": 930,
+        "stamina": 2422,
+        "versatility_rating": 2212,
+        "mastery_rating": 1307
+      },
+      "back": {
+        "name": "fanged_slayers_shroud",
+        "encoded_item": "fanged_slayers_shroud,id=147170,bonus_id=1512/3563,enchant=binding_of_agility",
+        "ilevel": 930,
+        "stamina": 2422,
+        "stragiint": 1615,
+        "crit_rating": 609,
+        "haste_rating": 430
+      },
+      "main_hand": {
+        "name": "the_kingslayers",
+        "encoded_item": "the_kingslayers,id=128870,bonus_id=741,gem_id=147110/137543/151189,relic_id=1512:3563/3418:1567/1512:3563",
+        "ilevel": 961,
+        "agility": 1641,
+        "stamina": 2462,
+        "crit_rating": 452,
+        "mastery_rating": 434
+      },
+      "off_hand": {
+        "name": "the_kingslayers",
+        "encoded_item": "the_kingslayers,id=128869",
+        "ilevel": 961,
+        "agility": 1641,
+        "stamina": 2462,
+        "crit_rating": 452,
+        "mastery_rating": 434
+      }
+    },
+    "custom": {
+    }
+  },
+  "profilesets_overrides": {
+    "Arcanogolem Digit_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 935
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 940
+        }
+      }
+    },
+    "Entwined Elemental Foci_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 910
+        }
+      }
+    },
+    "Draught of Souls_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 925
+        }
+      }
+    },
+    "Draught of Souls_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 910
+        }
+      }
+    },
+    "Arcanogolem Digit_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 930
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 945
+        }
+      }
+    },
+    "Entwined Elemental Foci_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 915
+        }
+      }
+    },
+    "Draught of Souls_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 920
+        }
+      }
+    },
+    "Draught of Souls_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 915
+        }
+      }
+    },
+    "Bloodstained Handkerchief_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 910
+        }
+      }
+    },
+    "Draught of Souls_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 945
+        }
+      }
+    },
+    "Draught of Souls_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 930
+        }
+      }
+    },
+    "Bloodstained Handkerchief_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 915
+        }
+      }
+    },
+    "Draught of Souls_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 940
+        }
+      }
+    },
+    "Draught of Souls_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 935
+        }
+      }
+    },
+    "Nightblooming Frond_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 925
+        }
+      }
+    },
+    "Draught of Souls_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 950
+        }
+      }
+    },
+    "Nightblooming Frond_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 920
+        }
+      }
+    },
+    "Draught of Souls_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 955
+        }
+      }
+    },
+    "Bloodstained Handkerchief_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 975
+        }
+      }
+    },
+    "Draught of Souls_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 960
+        }
+      }
+    },
+    "Bloodstained Handkerchief_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 970
+        }
+      }
+    },
+    "Draught of Souls_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 965
+        }
+      }
+    },
+    "Gorshalach's Legacy_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 980
+        }
+      }
+    },
+    "Void Stalker's Contract_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 910
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 935
+        }
+      }
+    },
+    "Six-Feather Fan_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 940
+        }
+      }
+    },
+    "Entwined Elemental Foci_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 985
+        }
+      }
+    },
+    "Convergence of Fates_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 980
+        }
+      }
+    },
+    "Hunger of the Pack_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 965
+        }
+      }
+    },
+    "Draught of Souls_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 970
+        }
+      }
+    },
+    "Gorshalach's Legacy_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 985
+        }
+      }
+    },
+    "Void Stalker's Contract_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 915
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 930
+        }
+      }
+    },
+    "Six-Feather Fan_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 945
+        }
+      }
+    },
+    "Entwined Elemental Foci_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 980
+        }
+      }
+    },
+    "Convergence of Fates_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 985
+        }
+      }
+    },
+    "Hunger of the Pack_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 960
+        }
+      }
+    },
+    "Draught of Souls_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 975
+        }
+      }
+    },
+    "Entwined Elemental Foci_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 975
+        }
+      }
+    },
+    "Bloodthirsty Instict_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 910
+        }
+      }
+    },
+    "Seeping Scourgewing_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 975
+        }
+      }
+    },
+    "Convergence of Fates_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 970
+        }
+      }
+    },
+    "Draught of Souls_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 980
+        }
+      }
+    },
+    "Entwined Elemental Foci_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 970
+        }
+      }
+    },
+    "Bloodthirsty Instict_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 915
+        }
+      }
+    },
+    "Seeping Scourgewing_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 970
+        }
+      }
+    },
+    "Convergence of Fates_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 975
+        }
+      }
+    },
+    "Draught of Souls_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140808,
+          "item_level": 985
+        }
+      }
+    },
+    "Cradle of Anguish_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 985
+        }
+      }
+    },
+    "Convergence of Fates_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 910
+        }
+      }
+    },
+    "Spiked Counterweight_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 955
+        }
+      }
+    },
+    "Bloodthirsty Instict_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 970
+        }
+      }
+    },
+    "Cradle of Anguish_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 980
+        }
+      }
+    },
+    "Convergence of Fates_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 915
+        }
+      }
+    },
+    "Spiked Counterweight_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 950
+        }
+      }
+    },
+    "Bloodthirsty Instict_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 975
+        }
+      }
+    },
+    "Convergence of Fates_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 920
+        }
+      }
+    },
+    "Memento of Angerboda_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 975
+        }
+      }
+    },
+    "Bloodthirsty Instict_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 940
+        }
+      }
+    },
+    "Convergence of Fates_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 925
+        }
+      }
+    },
+    "Memento of Angerboda_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 970
+        }
+      }
+    },
+    "Bloodthirsty Instict_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 945
+        }
+      }
+    },
+    "Convergence of Fates_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 930
+        }
+      }
+    },
+    "Spiked Counterweight_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 935
+        }
+      }
+    },
+    "Bloodthirsty Instict_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 950
+        }
+      }
+    },
+    "Convergence of Fates_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 935
+        }
+      }
+    },
+    "Spiked Counterweight_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 930
+        }
+      }
+    },
+    "Bloodthirsty Instict_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 955
+        }
+      }
+    },
+    "Nightblooming Frond_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 985
+        }
+      }
+    },
+    "Convergence of Fates_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 940
+        }
+      }
+    },
+    "Memento of Angerboda_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 955
+        }
+      }
+    },
+    "Bloodthirsty Instict_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 920
+        }
+      }
+    },
+    "Nightblooming Frond_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 980
+        }
+      }
+    },
+    "Convergence of Fates_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 945
+        }
+      }
+    },
+    "Memento of Angerboda_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 950
+        }
+      }
+    },
+    "Bloodthirsty Instict_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 925
+        }
+      }
+    },
+    "Nightblooming Frond_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 955
+        }
+      }
+    },
+    "Spontaneous Appendages_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 985
+        }
+      }
+    },
+    "Bloodthirsty Instict_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 930
+        }
+      }
+    },
+    "Convergence of Fates_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 950
+        }
+      }
+    },
+    "Nightblooming Frond_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 950
+        }
+      }
+    },
+    "Spontaneous Appendages_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 980
+        }
+      }
+    },
+    "Bloodthirsty Instict_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 935
+        }
+      }
+    },
+    "Convergence of Fates_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 955
+        }
+      }
+    },
+    "Convergence of Fates_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 960
+        }
+      }
+    },
+    "Hunger of the Pack_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 945
+        }
+      }
+    },
+    "Convergence of Fates_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140806,
+          "item_level": 965
+        }
+      }
+    },
+    "Hunger of the Pack_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 940
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 970
+        }
+      }
+    },
+    "Entwined Elemental Foci_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 920
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 975
+        }
+      }
+    },
+    "Entwined Elemental Foci_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 925
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 960
+        }
+      }
+    },
+    "Entwined Elemental Foci_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 930
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 965
+        }
+      }
+    },
+    "Entwined Elemental Foci_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 935
+        }
+      }
+    },
+    "Entwined Elemental Foci_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 940
+        }
+      }
+    },
+    "Entwined Elemental Foci_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 945
+        }
+      }
+    },
+    "Entwined Elemental Foci_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 950
+        }
+      }
+    },
+    "Entwined Elemental Foci_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 955
+        }
+      }
+    },
+    "Entwined Elemental Foci_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 960
+        }
+      }
+    },
+    "Entwined Elemental Foci_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140796,
+          "item_level": 965
+        }
+      }
+    },
+    "Nightblooming Frond_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 910
+        }
+      }
+    },
+    "Stat Haste_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 955
+        }
+      }
+    },
+    "Nightblooming Frond_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 915
+        }
+      }
+    },
+    "Stat Haste_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 950
+        }
+      }
+    },
+    "Stat Crit_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 925
+        }
+      }
+    },
+    "Nightblooming Frond_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 930
+        }
+      }
+    },
+    "Ravaged Seed Pod_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 945
+        }
+      }
+    },
+    "Stat Crit_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 920
+        }
+      }
+    },
+    "Nightblooming Frond_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 935
+        }
+      }
+    },
+    "Ravaged Seed Pod_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 940
+        }
+      }
+    },
+    "Nightblooming Frond_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 940
+        }
+      }
+    },
+    "Nightblooming Frond_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 945
+        }
+      }
+    },
+    "Nightmare Egg Shell_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 935
+        }
+      }
+    },
+    "Nightblooming Frond_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 960
+        }
+      }
+    },
+    "Nightmare Egg Shell_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 930
+        }
+      }
+    },
+    "Nightblooming Frond_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 965
+        }
+      }
+    },
+    "Nightblooming Frond_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 970
+        }
+      }
+    },
+    "Stat Haste_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 975
+        }
+      }
+    },
+    "Nightblooming Frond_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140802,
+          "item_level": 975
+        }
+      }
+    },
+    "Stat Haste_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 970
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 945
+        }
+      }
+    },
+    "Arcanogolem Digit_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 910
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 940
+        }
+      }
+    },
+    "Arcanogolem Digit_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 915
+        }
+      }
+    },
+    "Arcanogolem Digit_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 920
+        }
+      }
+    },
+    "Arcanogolem Digit_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 925
+        }
+      }
+    },
+    "Arcanogolem Digit_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 940
+        }
+      }
+    },
+    "Arcanogolem Digit_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 945
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 915
+        }
+      }
+    },
+    "Arcanogolem Digit_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 950
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 910
+        }
+      }
+    },
+    "Arcanogolem Digit_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 955
+        }
+      }
+    },
+    "Arcanogolem Digit_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 960
+        }
+      }
+    },
+    "Windscar Whetstone_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 925
+        }
+      }
+    },
+    "Arcanogolem Digit_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 965
+        }
+      }
+    },
+    "Windscar Whetstone_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 920
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 975
+        }
+      }
+    },
+    "Arcanogolem Digit_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 970
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 970
+        }
+      }
+    },
+    "Arcanogolem Digit_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 975
+        }
+      }
+    },
+    "Arcanogolem Digit_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 980
+        }
+      }
+    },
+    "Arcanogolem Digit_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 140794,
+          "item_level": 985
+        }
+      }
+    },
+    "Stat Crit_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 970
+        }
+      }
+    },
+    "Ravaged Seed Pod_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 910
+        }
+      }
+    },
+    "Stat Crit_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 975
+        }
+      }
+    },
+    "Ravaged Seed Pod_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 915
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 965
+        }
+      }
+    },
+    "Stat Crit_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 940
+        }
+      }
+    },
+    "Ravaged Seed Pod_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 920
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 960
+        }
+      }
+    },
+    "Stat Crit_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 945
+        }
+      }
+    },
+    "Ravaged Seed Pod_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 925
+        }
+      }
+    },
+    "Stat Crit_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 950
+        }
+      }
+    },
+    "Tirathon's Betrayal_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 980
+        }
+      }
+    },
+    "Ravaged Seed Pod_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 930
+        }
+      }
+    },
+    "Stat Crit_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 955
+        }
+      }
+    },
+    "Tirathon's Betrayal_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 985
+        }
+      }
+    },
+    "Ravaged Seed Pod_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 935
+        }
+      }
+    },
+    "Stat Crit_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 930
+        }
+      }
+    },
+    "Ravaged Seed Pod_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 950
+        }
+      }
+    },
+    "Stat Crit_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 935
+        }
+      }
+    },
+    "Ravaged Seed Pod_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 955
+        }
+      }
+    },
+    "Ravaged Seed Pod_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 960
+        }
+      }
+    },
+    "Ravaged Seed Pod_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 965
+        }
+      }
+    },
+    "Stat Crit_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 910
+        }
+      }
+    },
+    "Ravaged Seed Pod_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 970
+        }
+      }
+    },
+    "Stat Crit_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 915
+        }
+      }
+    },
+    "Ravaged Seed Pod_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 975
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 985
+        }
+      }
+    },
+    "Tirathon's Betrayal_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 930
+        }
+      }
+    },
+    "Ravaged Seed Pod_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 980
+        }
+      }
+    },
+    "Stat Versatility_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 915
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 980
+        }
+      }
+    },
+    "Tirathon's Betrayal_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 935
+        }
+      }
+    },
+    "Ravaged Seed Pod_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139320,
+          "item_level": 985
+        }
+      }
+    },
+    "Stat Versatility_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 910
+        }
+      }
+    },
+    "Spontaneous Appendages_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 910
+        }
+      }
+    },
+    "Spontaneous Appendages_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 915
+        }
+      }
+    },
+    "Spontaneous Appendages_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 920
+        }
+      }
+    },
+    "Stat Versatility_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 965
+        }
+      }
+    },
+    "Spontaneous Appendages_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 925
+        }
+      }
+    },
+    "Stat Versatility_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 960
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 975
+        }
+      }
+    },
+    "Spontaneous Appendages_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 930
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 970
+        }
+      }
+    },
+    "Spontaneous Appendages_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 935
+        }
+      }
+    },
+    "Spontaneous Appendages_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 940
+        }
+      }
+    },
+    "Stat Versatility_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 945
+        }
+      }
+    },
+    "Spontaneous Appendages_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 945
+        }
+      }
+    },
+    "Stat Versatility_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 940
+        }
+      }
+    },
+    "Spontaneous Appendages_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 950
+        }
+      }
+    },
+    "Spontaneous Appendages_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 955
+        }
+      }
+    },
+    "Spontaneous Appendages_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 960
+        }
+      }
+    },
+    "Toe Knee's Promise_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 965
+        }
+      }
+    },
+    "Spontaneous Appendages_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 965
+        }
+      }
+    },
+    "Toe Knee's Promise_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 960
+        }
+      }
+    },
+    "Spontaneous Appendages_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 970
+        }
+      }
+    },
+    "Spontaneous Appendages_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139325,
+          "item_level": 975
+        }
+      }
+    },
+    "Void Stalker's Contract_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 935
+        }
+      }
+    },
+    "Nature's Call_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 910
+        }
+      }
+    },
+    "Six-Feather Fan_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 965
+        }
+      }
+    },
+    "Void Stalker's Contract_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 930
+        }
+      }
+    },
+    "Nature's Call_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 915
+        }
+      }
+    },
+    "Six-Feather Fan_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 960
+        }
+      }
+    },
+    "Infernal Cinders_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 955
+        }
+      }
+    },
+    "Nature's Call_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 920
+        }
+      }
+    },
+    "Infernal Cinders_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 950
+        }
+      }
+    },
+    "Nature's Call_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 925
+        }
+      }
+    },
+    "Void Stalker's Contract_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 955
+        }
+      }
+    },
+    "Nature's Call_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 930
+        }
+      }
+    },
+    "Void Stalker's Contract_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 950
+        }
+      }
+    },
+    "Nature's Call_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 935
+        }
+      }
+    },
+    "Hunger of the Pack_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 925
+        }
+      }
+    },
+    "Infernal Cinders_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 975
+        }
+      }
+    },
+    "Nature's Call_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 940
+        }
+      }
+    },
+    "Hunger of the Pack_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 920
+        }
+      }
+    },
+    "Infernal Cinders_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 970
+        }
+      }
+    },
+    "Nature's Call_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 945
+        }
+      }
+    },
+    "Stat Mastery_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 985
+        }
+      }
+    },
+    "Spiked Counterweight_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 915
+        }
+      }
+    },
+    "Nature's Call_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 950
+        }
+      }
+    },
+    "Stat Mastery_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 980
+        }
+      }
+    },
+    "Spiked Counterweight_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 910
+        }
+      }
+    },
+    "Nature's Call_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 955
+        }
+      }
+    },
+    "Nature's Call_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 960
+        }
+      }
+    },
+    "Nature's Call_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 965
+        }
+      }
+    },
+    "Cradle of Anguish_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 925
+        }
+      }
+    },
+    "Stat Mastery_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 965
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 975
+        }
+      }
+    },
+    "Nature's Call_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 970
+        }
+      }
+    },
+    "Cradle of Anguish_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 920
+        }
+      }
+    },
+    "Stat Mastery_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 960
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 970
+        }
+      }
+    },
+    "Nature's Call_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 975
+        }
+      }
+    },
+    "Nature's Call_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 980
+        }
+      }
+    },
+    "Nature's Call_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139334,
+          "item_level": 985
+        }
+      }
+    },
+    "Bloodthirsty Instict_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 960
+        }
+      }
+    },
+    "Bloodthirsty Instict_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 965
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 985
+        }
+      }
+    },
+    "Bloodthirsty Instict_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 980
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 980
+        }
+      }
+    },
+    "Bloodthirsty Instict_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 139329,
+          "item_level": 985
+        }
+      }
+    },
+    "Chrono Shard_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 925
+        }
+      }
+    },
+    "Eye of Command_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 910
+        }
+      }
+    },
+    "Chrono Shard_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 920
+        }
+      }
+    },
+    "Eye of Command_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 915
+        }
+      }
+    },
+    "Gorshalach's Legacy_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 975
+        }
+      }
+    },
+    "Eye of Command_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 920
+        }
+      }
+    },
+    "Gorshalach's Legacy_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 970
+        }
+      }
+    },
+    "Eye of Command_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 925
+        }
+      }
+    },
+    "Chrono Shard_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 945
+        }
+      }
+    },
+    "Eye of Command_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 930
+        }
+      }
+    },
+    "Chrono Shard_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 940
+        }
+      }
+    },
+    "Eye of Command_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 935
+        }
+      }
+    },
+    "Void Stalker's Contract_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 945
+        }
+      }
+    },
+    "Eye of Command_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 940
+        }
+      }
+    },
+    "Six-Feather Fan_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 915
+        }
+      }
+    },
+    "Void Stalker's Contract_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 940
+        }
+      }
+    },
+    "Eye of Command_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 945
+        }
+      }
+    },
+    "Six-Feather Fan_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 910
+        }
+      }
+    },
+    "Eye of Command_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 950
+        }
+      }
+    },
+    "Eye of Command_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 955
+        }
+      }
+    },
+    "Spiked Counterweight_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 945
+        }
+      }
+    },
+    "Eye of Command_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 960
+        }
+      }
+    },
+    "Spiked Counterweight_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 940
+        }
+      }
+    },
+    "Eye of Command_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 965
+        }
+      }
+    },
+    "Eye of Command_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 970
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 935
+        }
+      }
+    },
+    "Eye of Command_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 975
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 930
+        }
+      }
+    },
+    "Cradle of Anguish_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 935
+        }
+      }
+    },
+    "Stat Mastery_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 975
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 965
+        }
+      }
+    },
+    "Eye of Command_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 980
+        }
+      }
+    },
+    "Cradle of Anguish_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 930
+        }
+      }
+    },
+    "Stat Mastery_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 970
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 960
+        }
+      }
+    },
+    "Eye of Command_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142167,
+          "item_level": 985
+        }
+      }
+    },
+    "Chrono Shard_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 965
+        }
+      }
+    },
+    "Shadow-singed Fang_930": {
+    },
+    "Umbral Moonglaives_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 985
+        }
+      }
+    },
+    "Chaos Talisman_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 910
+        }
+      }
+    },
+    "Chrono Shard_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 960
+        }
+      }
+    },
+    "Shadow-singed Fang_935": {
+    },
+    "Umbral Moonglaives_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 980
+        }
+      }
+    },
+    "Chaos Talisman_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 915
+        }
+      }
+    },
+    "Gorshalach's Legacy_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 935
+        }
+      }
+    },
+    "Chaos Talisman_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 920
+        }
+      }
+    },
+    "Gorshalach's Legacy_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 930
+        }
+      }
+    },
+    "Chaos Talisman_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 925
+        }
+      }
+    },
+    "Specter of Betrayal_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 985
+        }
+      }
+    },
+    "Chaos Talisman_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 930
+        }
+      }
+    },
+    "Shadow-singed Fang_915": {
+    },
+    "Specter of Betrayal_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 980
+        }
+      }
+    },
+    "Chaos Talisman_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 935
+        }
+      }
+    },
+    "Shadow-singed Fang_960": {
+    },
+    "Gorshalach's Legacy_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 915
+        }
+      }
+    },
+    "Void Stalker's Contract_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 985
+        }
+      }
+    },
+    "Chaos Talisman_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 940
+        }
+      }
+    },
+    "Shadow-singed Fang_965": {
+    },
+    "Void Stalker's Contract_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 980
+        }
+      }
+    },
+    "Chaos Talisman_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 945
+        }
+      }
+    },
+    "Shadow-singed Fang_970": {
+    },
+    "Chaos Talisman_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 950
+        }
+      }
+    },
+    "Shadow-singed Fang_975": {
+    },
+    "Chaos Talisman_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 955
+        }
+      }
+    },
+    "Shadow-singed Fang_940": {
+    },
+    "Terminus Signaling Beacon_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 935
+        }
+      }
+    },
+    "Chaos Talisman_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 960
+        }
+      }
+    },
+    "Shadow-singed Fang_945": {
+    },
+    "Terminus Signaling Beacon_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 930
+        }
+      }
+    },
+    "Chaos Talisman_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 965
+        }
+      }
+    },
+    "Shadow-singed Fang_950": {
+    },
+    "Chaos Talisman_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 970
+        }
+      }
+    },
+    "Shadow-singed Fang_955": {
+    },
+    "Chaos Talisman_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 975
+        }
+      }
+    },
+    "Chaos Talisman_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 980
+        }
+      }
+    },
+    "Chaos Talisman_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137459,
+          "item_level": 985
+        }
+      }
+    },
+    "Cradle of Anguish_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 950
+        }
+      }
+    },
+    "Stat Mastery_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 910
+        }
+      }
+    },
+    "Spiked Counterweight_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 980
+        }
+      }
+    },
+    "Cradle of Anguish_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 955
+        }
+      }
+    },
+    "Stat Mastery_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 915
+        }
+      }
+    },
+    "Spiked Counterweight_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 985
+        }
+      }
+    },
+    "Cradle of Anguish_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 960
+        }
+      }
+    },
+    "Stat Mastery_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 920
+        }
+      }
+    },
+    "Cradle of Anguish_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 965
+        }
+      }
+    },
+    "Stat Mastery_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 925
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 920
+        }
+      }
+    },
+    "Faulty Countermeasure_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 945
+        }
+      }
+    },
+    "Cradle of Anguish_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 970
+        }
+      }
+    },
+    "Stat Mastery_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 930
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 925
+        }
+      }
+    },
+    "Faulty Countermeasure_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 940
+        }
+      }
+    },
+    "Cradle of Anguish_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 975
+        }
+      }
+    },
+    "Stat Mastery_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 935
+        }
+      }
+    },
+    "Stat Mastery_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 940
+        }
+      }
+    },
+    "Stat Mastery_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 945
+        }
+      }
+    },
+    "Cradle of Anguish_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 910
+        }
+      }
+    },
+    "Stat Mastery_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 950
+        }
+      }
+    },
+    "Cradle of Anguish_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 915
+        }
+      }
+    },
+    "Stat Mastery_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 955
+        }
+      }
+    },
+    "Stat Versatility_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 920
+        }
+      }
+    },
+    "Stat Versatility_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 925
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 945
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 945
+        }
+      }
+    },
+    "Stat Versatility_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 930
+        }
+      }
+    },
+    "Horn of Valor_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 965
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 940
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 940
+        }
+      }
+    },
+    "Stat Versatility_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 935
+        }
+      }
+    },
+    "Horn of Valor_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 960
+        }
+      }
+    },
+    "Stat Versatility_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 950
+        }
+      }
+    },
+    "Stat Versatility_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 955
+        }
+      }
+    },
+    "Tirathon's Betrayal_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 915
+        }
+      }
+    },
+    "Stat Versatility_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 970
+        }
+      }
+    },
+    "Tirathon's Betrayal_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 910
+        }
+      }
+    },
+    "Stat Versatility_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 975
+        }
+      }
+    },
+    "Aman'Thul's Vision 5-Pantheon_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154172,
+          "item_level": 1000
+        }
+      }
+    },
+    "Stat Versatility_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 980
+        }
+      }
+    },
+    "Stat Versatility_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 985
+        }
+      }
+    },
+    "Terrorbound Nexus_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 945
+        }
+      }
+    },
+    "Stat Haste_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 910
+        }
+      }
+    },
+    "Terrorbound Nexus_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 940
+        }
+      }
+    },
+    "Stat Haste_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 915
+        }
+      }
+    },
+    "Stat Haste_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 920
+        }
+      }
+    },
+    "Chrono Shard_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 935
+        }
+      }
+    },
+    "Stat Haste_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 925
+        }
+      }
+    },
+    "Chrono Shard_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 930
+        }
+      }
+    },
+    "Unstable Arcanocrystal_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 980
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 955
+        }
+      }
+    },
+    "Stat Haste_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 930
+        }
+      }
+    },
+    "Unstable Arcanocrystal_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 985
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 950
+        }
+      }
+    },
+    "Stat Haste_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 935
+        }
+      }
+    },
+    "Stat Haste_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 940
+        }
+      }
+    },
+    "Stat Haste_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 945
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 945
+        }
+      }
+    },
+    "Stat Haste_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 960
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 940
+        }
+      }
+    },
+    "Stat Haste_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 965
+        }
+      }
+    },
+    "Unstable Arcanocrystal_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 930
+        }
+      }
+    },
+    "Stat Haste_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 980
+        }
+      }
+    },
+    "Unstable Arcanocrystal_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 935
+        }
+      }
+    },
+    "Stat Haste_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 985
+        }
+      }
+    },
+    "Stat Crit_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 960
+        }
+      }
+    },
+    "Kiljaeden's Burning Wish_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 144259,
+          "item_level": 1000
+        }
+      }
+    },
+    "Stat Crit_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 965
+        }
+      }
+    },
+    "Void Stalker's Contract_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 975
+        }
+      }
+    },
+    "Six-Feather Fan_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 925
+        }
+      }
+    },
+    "Stat Crit_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 980
+        }
+      }
+    },
+    "Tirathon's Betrayal_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 950
+        }
+      }
+    },
+    "Void Stalker's Contract_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 970
+        }
+      }
+    },
+    "Six-Feather Fan_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 920
+        }
+      }
+    },
+    "Stat Crit_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142506,
+          "item_level": 985
+        }
+      }
+    },
+    "Tirathon's Betrayal_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 955
+        }
+      }
+    },
+    "Unstable Arcanocrystal_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 910
+        }
+      }
+    },
+    "Unstable Arcanocrystal_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 915
+        }
+      }
+    },
+    "Cradle of Anguish_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 945
+        }
+      }
+    },
+    "Unstable Arcanocrystal_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 920
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 910
+        }
+      }
+    },
+    "Cradle of Anguish_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147010,
+          "item_level": 940
+        }
+      }
+    },
+    "Unstable Arcanocrystal_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 925
+        }
+      }
+    },
+    "Unstable Arcanocrystal_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 940
+        }
+      }
+    },
+    "Unstable Arcanocrystal_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 945
+        }
+      }
+    },
+    "Unstable Arcanocrystal_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 950
+        }
+      }
+    },
+    "Unstable Arcanocrystal_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 955
+        }
+      }
+    },
+    "Unstable Arcanocrystal_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 960
+        }
+      }
+    },
+    "Unstable Arcanocrystal_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 965
+        }
+      }
+    },
+    "Specter of Betrayal_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 915
+        }
+      }
+    },
+    "Unstable Arcanocrystal_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 970
+        }
+      }
+    },
+    "Specter of Betrayal_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 910
+        }
+      }
+    },
+    "Unstable Arcanocrystal_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141482,
+          "item_level": 975
+        }
+      }
+    },
+    "Specter of Betrayal_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 975
+        }
+      }
+    },
+    "Tirathon's Betrayal_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 920
+        }
+      }
+    },
+    "Specter of Betrayal_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 970
+        }
+      }
+    },
+    "Tirathon's Betrayal_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 925
+        }
+      }
+    },
+    "Specter of Betrayal_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 955
+        }
+      }
+    },
+    "Tirathon's Betrayal_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 940
+        }
+      }
+    },
+    "Specter of Betrayal_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 950
+        }
+      }
+    },
+    "Tirathon's Betrayal_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 945
+        }
+      }
+    },
+    "Tirathon's Betrayal_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 960
+        }
+      }
+    },
+    "Tirathon's Betrayal_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 965
+        }
+      }
+    },
+    "Tirathon's Betrayal_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 970
+        }
+      }
+    },
+    "Tirathon's Betrayal_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137537,
+          "item_level": 975
+        }
+      }
+    },
+    "Void Stalker's Contract_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 960
+        }
+      }
+    },
+    "Six-Feather Fan_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 930
+        }
+      }
+    },
+    "Void Stalker's Contract_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 965
+        }
+      }
+    },
+    "Six-Feather Fan_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 935
+        }
+      }
+    },
+    "Six-Feather Fan_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 950
+        }
+      }
+    },
+    "Six-Feather Fan_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 955
+        }
+      }
+    },
+    "Shadow-singed Fang_985": {
+    },
+    "Void Stalker's Contract_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 920
+        }
+      }
+    },
+    "Six-Feather Fan_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 970
+        }
+      }
+    },
+    "Shadow-singed Fang_980": {
+    },
+    "Void Stalker's Contract_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151307,
+          "item_level": 925
+        }
+      }
+    },
+    "Six-Feather Fan_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 975
+        }
+      }
+    },
+    "Gorshalach's Legacy_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 940
+        }
+      }
+    },
+    "Six-Feather Fan_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 980
+        }
+      }
+    },
+    "Gorshalach's Legacy_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 945
+        }
+      }
+    },
+    "Six-Feather Fan_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141585,
+          "item_level": 985
+        }
+      }
+    },
+    "Chrono Shard_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 910
+        }
+      }
+    },
+    "Toe Knee's Promise_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 915
+        }
+      }
+    },
+    "Chrono Shard_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 915
+        }
+      }
+    },
+    "Toe Knee's Promise_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 910
+        }
+      }
+    },
+    "Chrono Shard_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 950
+        }
+      }
+    },
+    "Chrono Shard_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 955
+        }
+      }
+    },
+    "Chrono Shard_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 970
+        }
+      }
+    },
+    "Chrono Shard_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 975
+        }
+      }
+    },
+    "Chrono Shard_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 980
+        }
+      }
+    },
+    "Chrono Shard_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137419,
+          "item_level": 985
+        }
+      }
+    },
+    "Thrice Accursed Compass_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 910
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 955
+        }
+      }
+    },
+    "Thrice Accursed Compass_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 915
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 950
+        }
+      }
+    },
+    "Windscar Whetstone_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 965
+        }
+      }
+    },
+    "Thrice Accursed Compass_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 920
+        }
+      }
+    },
+    "Windscar Whetstone_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 960
+        }
+      }
+    },
+    "Thrice Accursed Compass_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 925
+        }
+      }
+    },
+    "Thrice Accursed Compass_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 930
+        }
+      }
+    },
+    "Thrice Accursed Compass_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 935
+        }
+      }
+    },
+    "Aman'Thul's Vision_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154172,
+          "item_level": 1000
+        }
+      }
+    },
+    "Windscar Whetstone_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 945
+        }
+      }
+    },
+    "Thrice Accursed Compass_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 940
+        }
+      }
+    },
+    "Windscar Whetstone_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 940
+        }
+      }
+    },
+    "Thrice Accursed Compass_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 945
+        }
+      }
+    },
+    "Thrice Accursed Compass_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 950
+        }
+      }
+    },
+    "Thrice Accursed Compass_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 955
+        }
+      }
+    },
+    "Thrice Accursed Compass_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 960
+        }
+      }
+    },
+    "Thrice Accursed Compass_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 965
+        }
+      }
+    },
+    "Thrice Accursed Compass_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 970
+        }
+      }
+    },
+    "Thrice Accursed Compass_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 975
+        }
+      }
+    },
+    "Thrice Accursed Compass_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 980
+        }
+      }
+    },
+    "Thrice Accursed Compass_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 141537,
+          "item_level": 985
+        }
+      }
+    },
+    "Windscar Whetstone_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 910
+        }
+      }
+    },
+    "Windscar Whetstone_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 915
+        }
+      }
+    },
+    "Windscar Whetstone_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 930
+        }
+      }
+    },
+    "Windscar Whetstone_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 935
+        }
+      }
+    },
+    "Windscar Whetstone_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 950
+        }
+      }
+    },
+    "Windscar Whetstone_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 955
+        }
+      }
+    },
+    "Toe Knee's Promise_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 985
+        }
+      }
+    },
+    "Windscar Whetstone_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 970
+        }
+      }
+    },
+    "Toe Knee's Promise_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 980
+        }
+      }
+    },
+    "Windscar Whetstone_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 975
+        }
+      }
+    },
+    "Windscar Whetstone_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 980
+        }
+      }
+    },
+    "Windscar Whetstone_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137486,
+          "item_level": 985
+        }
+      }
+    },
+    "Bloodstained Handkerchief_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 920
+        }
+      }
+    },
+    "Bloodstained Handkerchief_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 925
+        }
+      }
+    },
+    "Seeping Scourgewing_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 925
+        }
+      }
+    },
+    "Bloodstained Handkerchief_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 930
+        }
+      }
+    },
+    "Seeping Scourgewing_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 920
+        }
+      }
+    },
+    "Bloodstained Handkerchief_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 935
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 965
+        }
+      }
+    },
+    "Bloodstained Handkerchief_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 940
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 960
+        }
+      }
+    },
+    "Bloodstained Handkerchief_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 945
+        }
+      }
+    },
+    "Bloodstained Handkerchief_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 950
+        }
+      }
+    },
+    "Bloodstained Handkerchief_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 955
+        }
+      }
+    },
+    "Bloodstained Handkerchief_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 960
+        }
+      }
+    },
+    "Bloodstained Handkerchief_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 965
+        }
+      }
+    },
+    "Bloodstained Handkerchief_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 980
+        }
+      }
+    },
+    "Bloodstained Handkerchief_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142159,
+          "item_level": 985
+        }
+      }
+    },
+    "Spiked Counterweight_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 920
+        }
+      }
+    },
+    "Spiked Counterweight_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 925
+        }
+      }
+    },
+    "Spiked Counterweight_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 960
+        }
+      }
+    },
+    "Spiked Counterweight_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 965
+        }
+      }
+    },
+    "Spiked Counterweight_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 970
+        }
+      }
+    },
+    "Spiked Counterweight_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136715,
+          "item_level": 975
+        }
+      }
+    },
+    "Nightmare Egg Shell_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 910
+        }
+      }
+    },
+    "Terrorbound Nexus_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 915
+        }
+      }
+    },
+    "Mark of Dargrul_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 955
+        }
+      }
+    },
+    "Nightmare Egg Shell_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 915
+        }
+      }
+    },
+    "Terrorbound Nexus_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 910
+        }
+      }
+    },
+    "Mark of Dargrul_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 950
+        }
+      }
+    },
+    "Memento of Angerboda_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 965
+        }
+      }
+    },
+    "Nightmare Egg Shell_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 920
+        }
+      }
+    },
+    "Memento of Angerboda_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 960
+        }
+      }
+    },
+    "Nightmare Egg Shell_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 925
+        }
+      }
+    },
+    "Nightmare Egg Shell_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 940
+        }
+      }
+    },
+    "Nightmare Egg Shell_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 945
+        }
+      }
+    },
+    "Nightmare Egg Shell_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 950
+        }
+      }
+    },
+    "Nightmare Egg Shell_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 955
+        }
+      }
+    },
+    "Infernal Cinders_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 985
+        }
+      }
+    },
+    "Nightmare Egg Shell_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 960
+        }
+      }
+    },
+    "Infernal Cinders_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 980
+        }
+      }
+    },
+    "Nightmare Egg Shell_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 965
+        }
+      }
+    },
+    "Nightmare Egg Shell_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 970
+        }
+      }
+    },
+    "Terrorbound Nexus_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 935
+        }
+      }
+    },
+    "Mark of Dargrul_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 975
+        }
+      }
+    },
+    "Nightmare Egg Shell_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 975
+        }
+      }
+    },
+    "Terrorbound Nexus_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 930
+        }
+      }
+    },
+    "Mark of Dargrul_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 970
+        }
+      }
+    },
+    "Nightmare Egg Shell_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 980
+        }
+      }
+    },
+    "Nightmare Egg Shell_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137312,
+          "item_level": 985
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 920
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 925
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 960
+        }
+      }
+    },
+    "Tempered Egg of Serpentrix_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137373,
+          "item_level": 965
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 930
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 930
+        }
+      }
+    },
+    "Horn of Valor_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 910
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 935
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 935
+        }
+      }
+    },
+    "Horn of Valor_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 915
+        }
+      }
+    },
+    "Horn of Valor_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 920
+        }
+      }
+    },
+    "Horn of Valor_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 925
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 910
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 910
+        }
+      }
+    },
+    "Horn of Valor_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 930
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 915
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 915
+        }
+      }
+    },
+    "Horn of Valor_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 935
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 960
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 960
+        }
+      }
+    },
+    "Horn of Valor_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 940
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 965
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 965
+        }
+      }
+    },
+    "Horn of Valor_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 945
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 970
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 970
+        }
+      }
+    },
+    "Horn of Valor_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 950
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 975
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 975
+        }
+      }
+    },
+    "Horn of Valor_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 955
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 950
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 950
+        }
+      }
+    },
+    "Horn of Valor_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 970
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 955
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 955
+        }
+      }
+    },
+    "Horn of Valor_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 975
+        }
+      }
+    },
+    "Horn of Valor_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 980
+        }
+      }
+    },
+    "Toe Knee's Promise_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 955
+        }
+      }
+    },
+    "Horn of Valor_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133642,
+          "item_level": 985
+        }
+      }
+    },
+    "Toe Knee's Promise_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 950
+        }
+      }
+    },
+    "Hunger of the Pack_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 910
+        }
+      }
+    },
+    "Hunger of the Pack_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 915
+        }
+      }
+    },
+    "Hunger of the Pack_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 930
+        }
+      }
+    },
+    "Hunger of the Pack_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 935
+        }
+      }
+    },
+    "Hunger of the Pack_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 950
+        }
+      }
+    },
+    "Hunger of the Pack_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 955
+        }
+      }
+    },
+    "Hunger of the Pack_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 970
+        }
+      }
+    },
+    "Hunger of the Pack_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 975
+        }
+      }
+    },
+    "Hunger of the Pack_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 980
+        }
+      }
+    },
+    "Hunger of the Pack_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 136975,
+          "item_level": 985
+        }
+      }
+    },
+    "Forgefiend's Fabricator_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 915
+        }
+      }
+    },
+    "Memento of Angerboda_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 910
+        }
+      }
+    },
+    "Memento of Angerboda_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 915
+        }
+      }
+    },
+    "Memento of Angerboda_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 920
+        }
+      }
+    },
+    "Memento of Angerboda_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 925
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 925
+        }
+      }
+    },
+    "Memento of Angerboda_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 930
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 920
+        }
+      }
+    },
+    "Memento of Angerboda_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 935
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 985
+        }
+      }
+    },
+    "Memento of Angerboda_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 940
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 980
+        }
+      }
+    },
+    "Memento of Angerboda_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 945
+        }
+      }
+    },
+    "Memento of Angerboda_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 980
+        }
+      }
+    },
+    "Memento of Angerboda_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 133644,
+          "item_level": 985
+        }
+      }
+    },
+    "Terrorbound Nexus_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 950
+        }
+      }
+    },
+    "Mark of Dargrul_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 910
+        }
+      }
+    },
+    "Terrorbound Nexus_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 955
+        }
+      }
+    },
+    "Mark of Dargrul_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 915
+        }
+      }
+    },
+    "Terrorbound Nexus_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 960
+        }
+      }
+    },
+    "Terminus Signaling Beacon_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 975
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_990": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 990
+        }
+      }
+    },
+    "Engine of Eradication_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 945
+        }
+      }
+    },
+    "Mark of Dargrul_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 920
+        }
+      }
+    },
+    "Terrorbound Nexus_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 965
+        }
+      }
+    },
+    "Terminus Signaling Beacon_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 970
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_995": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 995
+        }
+      }
+    },
+    "Engine of Eradication_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 940
+        }
+      }
+    },
+    "Mark of Dargrul_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 925
+        }
+      }
+    },
+    "Terrorbound Nexus_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 970
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 980
+        }
+      }
+    },
+    "Mark of Dargrul_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 930
+        }
+      }
+    },
+    "Terrorbound Nexus_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 975
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 985
+        }
+      }
+    },
+    "Mark of Dargrul_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 935
+        }
+      }
+    },
+    "Terminus Signaling Beacon_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 955
+        }
+      }
+    },
+    "Engine of Eradication_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 965
+        }
+      }
+    },
+    "Mark of Dargrul_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 940
+        }
+      }
+    },
+    "Terminus Signaling Beacon_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 950
+        }
+      }
+    },
+    "Engine of Eradication_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 960
+        }
+      }
+    },
+    "Mark of Dargrul_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 945
+        }
+      }
+    },
+    "Terrorbound Nexus_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 920
+        }
+      }
+    },
+    "Mark of Dargrul_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 960
+        }
+      }
+    },
+    "Terrorbound Nexus_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 925
+        }
+      }
+    },
+    "Mark of Dargrul_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 965
+        }
+      }
+    },
+    "Mark of Dargrul_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 980
+        }
+      }
+    },
+    "Toe Knee's Promise_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 945
+        }
+      }
+    },
+    "Mark of Dargrul_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137357,
+          "item_level": 985
+        }
+      }
+    },
+    "Toe Knee's Promise_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 940
+        }
+      }
+    },
+    "Terrorbound Nexus_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 980
+        }
+      }
+    },
+    "Terrorbound Nexus_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137406,
+          "item_level": 985
+        }
+      }
+    },
+    "Faulty Countermeasure_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 910
+        }
+      }
+    },
+    "Faulty Countermeasure_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 915
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 985
+        }
+      }
+    },
+    "Faulty Countermeasure_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 920
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 980
+        }
+      }
+    },
+    "Faulty Countermeasure_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 925
+        }
+      }
+    },
+    "Faulty Countermeasure_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 930
+        }
+      }
+    },
+    "Faulty Countermeasure_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 935
+        }
+      }
+    },
+    "Faulty Countermeasure_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 950
+        }
+      }
+    },
+    "Faulty Countermeasure_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 955
+        }
+      }
+    },
+    "Faulty Countermeasure_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 960
+        }
+      }
+    },
+    "Faulty Countermeasure_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 965
+        }
+      }
+    },
+    "Faulty Countermeasure_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 970
+        }
+      }
+    },
+    "Faulty Countermeasure_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 975
+        }
+      }
+    },
+    "Faulty Countermeasure_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 980
+        }
+      }
+    },
+    "Faulty Countermeasure_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137539,
+          "item_level": 985
+        }
+      }
+    },
+    "Toe Knee's Promise_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 920
+        }
+      }
+    },
+    "Toe Knee's Promise_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 925
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 985
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 985
+        }
+      }
+    },
+    "Toe Knee's Promise_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 930
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 980
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 980
+        }
+      }
+    },
+    "Toe Knee's Promise_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 935
+        }
+      }
+    },
+    "Toe Knee's Promise_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 970
+        }
+      }
+    },
+    "Toe Knee's Promise_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 142164,
+          "item_level": 975
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 915
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 930
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 935
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 940
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 945
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 950
+        }
+      }
+    },
+    "Tiny Oozeling in a Jar_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 137439,
+          "item_level": 955
+        }
+      }
+    },
+    "Specter of Betrayal_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 920
+        }
+      }
+    },
+    "Specter of Betrayal_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 925
+        }
+      }
+    },
+    "Specter of Betrayal_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 930
+        }
+      }
+    },
+    "Specter of Betrayal_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 935
+        }
+      }
+    },
+    "Specter of Betrayal_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 940
+        }
+      }
+    },
+    "Specter of Betrayal_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 945
+        }
+      }
+    },
+    "Specter of Betrayal_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 960
+        }
+      }
+    },
+    "Specter of Betrayal_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 965
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 920
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 920
+        }
+      }
+    },
+    "Engine of Eradication (No Orbs)_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 925
+        }
+      }
+    },
+    "Specter of Betrayal (No Overlap)_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151190,
+          "item_level": 925
+        }
+      }
+    },
+    "Terminus Signaling Beacon_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 920
+        }
+      }
+    },
+    "Engine of Eradication_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 910
+        }
+      }
+    },
+    "Terminus Signaling Beacon_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 925
+        }
+      }
+    },
+    "Engine of Eradication_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 915
+        }
+      }
+    },
+    "Engine of Eradication_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 920
+        }
+      }
+    },
+    "Terminus Signaling Beacon_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 915
+        }
+      }
+    },
+    "Engine of Eradication_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 925
+        }
+      }
+    },
+    "Engine of Eradication_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 930
+        }
+      }
+    },
+    "Engine of Eradication_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 935
+        }
+      }
+    },
+    "Terminus Signaling Beacon_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 960
+        }
+      }
+    },
+    "Engine of Eradication_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 950
+        }
+      }
+    },
+    "Terminus Signaling Beacon_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 965
+        }
+      }
+    },
+    "Engine of Eradication_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 955
+        }
+      }
+    },
+    "Terminus Signaling Beacon_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 940
+        }
+      }
+    },
+    "Engine of Eradication_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 970
+        }
+      }
+    },
+    "Terminus Signaling Beacon_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 945
+        }
+      }
+    },
+    "Engine of Eradication_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 975
+        }
+      }
+    },
+    "Engine of Eradication_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 980
+        }
+      }
+    },
+    "Engine of Eradication_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147015,
+          "item_level": 985
+        }
+      }
+    },
+    "Umbral Moonglaives_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 910
+        }
+      }
+    },
+    "Umbral Moonglaives_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 915
+        }
+      }
+    },
+    "Umbral Moonglaives_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 920
+        }
+      }
+    },
+    "Umbral Moonglaives_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 925
+        }
+      }
+    },
+    "Umbral Moonglaives_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 930
+        }
+      }
+    },
+    "Umbral Moonglaives_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 935
+        }
+      }
+    },
+    "Umbral Moonglaives_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 940
+        }
+      }
+    },
+    "Umbral Moonglaives_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 945
+        }
+      }
+    },
+    "Umbral Moonglaives_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 950
+        }
+      }
+    },
+    "Umbral Moonglaives_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 955
+        }
+      }
+    },
+    "Umbral Moonglaives_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 960
+        }
+      }
+    },
+    "Umbral Moonglaives_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 965
+        }
+      }
+    },
+    "Umbral Moonglaives_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 970
+        }
+      }
+    },
+    "Umbral Moonglaives_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147012,
+          "item_level": 975
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 910
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 915
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 920
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 925
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 930
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 935
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 940
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 945
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 950
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 955
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 960
+        }
+      }
+    },
+    "Vial of Ceaseless Toxins_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147011,
+          "item_level": 965
+        }
+      }
+    },
+    "Infernal Cinders_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 910
+        }
+      }
+    },
+    "Infernal Cinders_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 915
+        }
+      }
+    },
+    "Infernal Cinders_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 920
+        }
+      }
+    },
+    "Infernal Cinders_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 925
+        }
+      }
+    },
+    "Infernal Cinders_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 930
+        }
+      }
+    },
+    "Infernal Cinders_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 935
+        }
+      }
+    },
+    "Infernal Cinders_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 940
+        }
+      }
+    },
+    "Infernal Cinders_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 945
+        }
+      }
+    },
+    "Infernal Cinders_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 960
+        }
+      }
+    },
+    "Infernal Cinders_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 965
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 910
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 915
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 930
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 935
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 940
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 945
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 950
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 955
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 970
+        }
+      }
+    },
+    "Infernal Cinders (3 Users)_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147009,
+          "item_level": 975
+        }
+      }
+    },
+    "Gorshalach's Legacy_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 965
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_910": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 910
+        }
+      }
+    },
+    "Gorshalach's Legacy_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 960
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 915
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 920
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 925
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 950
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 955
+        }
+      }
+    },
+    "Terminus Signaling Beacon_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 985
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 970
+        }
+      }
+    },
+    "Terminus Signaling Beacon_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151969,
+          "item_level": 980
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 975
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 980
+        }
+      }
+    },
+    "Tome of Unraveling Sanity_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 147019,
+          "item_level": 985
+        }
+      }
+    },
+    "Infernal Alchemist Stone_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 127842,
+          "item_level": 935
+        }
+      }
+    },
+    "Aman'Thul's Vision 15-Pantheon_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154172,
+          "item_level": 1000
+        }
+      }
+    },
+    "Golganneth's Vitality_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 940
+        }
+      }
+    },
+    "Golganneth's Vitality_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 945
+        }
+      }
+    },
+    "Golganneth's Vitality_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 950
+        }
+      }
+    },
+    "Golganneth's Vitality_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 955
+        }
+      }
+    },
+    "Golganneth's Vitality_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 960
+        }
+      }
+    },
+    "Golganneth's Vitality_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 965
+        }
+      }
+    },
+    "Golganneth's Vitality_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 970
+        }
+      }
+    },
+    "Golganneth's Vitality_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 975
+        }
+      }
+    },
+    "Golganneth's Vitality_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 980
+        }
+      }
+    },
+    "Golganneth's Vitality_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 985
+        }
+      }
+    },
+    "Golganneth's Vitality_990": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 990
+        }
+      }
+    },
+    "Golganneth's Vitality_995": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 995
+        }
+      }
+    },
+    "Golganneth's Vitality_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 1000
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 940
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 945
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 960
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 965
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 970
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 975
+        }
+      }
+    },
+    "Golganneth's Vitality 5-Pantheon_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 1000
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 950
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 955
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 980
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 985
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_990": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 990
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_995": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 995
+        }
+      }
+    },
+    "Golganneth's Vitality 15-Pantheon_1000": {
+      "gear": {
+        "trinket1": {
+          "item_id": 154174,
+          "item_level": 1000
+        }
+      }
+    },
+    "Seeping Scourgewing_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 935
+        }
+      }
+    },
+    "Forgefiend's Fabricator_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 920
+        }
+      }
+    },
+    "Seeping Scourgewing_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 930
+        }
+      }
+    },
+    "Forgefiend's Fabricator_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 925
+        }
+      }
+    },
+    "Forgefiend's Fabricator_930": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 930
+        }
+      }
+    },
+    "Forgefiend's Fabricator_935": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 935
+        }
+      }
+    },
+    "Forgefiend's Fabricator_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 940
+        }
+      }
+    },
+    "Forgefiend's Fabricator_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 945
+        }
+      }
+    },
+    "Forgefiend's Fabricator_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 950
+        }
+      }
+    },
+    "Forgefiend's Fabricator_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 955
+        }
+      }
+    },
+    "Forgefiend's Fabricator_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 960
+        }
+      }
+    },
+    "Forgefiend's Fabricator_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 965
+        }
+      }
+    },
+    "Forgefiend's Fabricator_970": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 970
+        }
+      }
+    },
+    "Forgefiend's Fabricator_975": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 975
+        }
+      }
+    },
+    "Forgefiend's Fabricator_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 980
+        }
+      }
+    },
+    "Forgefiend's Fabricator_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151963,
+          "item_level": 985
+        }
+      }
+    },
+    "Seeping Scourgewing_915": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 915
+        }
+      }
+    },
+    "Seeping Scourgewing_940": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 940
+        }
+      }
+    },
+    "Seeping Scourgewing_945": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 945
+        }
+      }
+    },
+    "Seeping Scourgewing_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 950
+        }
+      }
+    },
+    "Seeping Scourgewing_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 955
+        }
+      }
+    },
+    "Seeping Scourgewing_960": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 960
+        }
+      }
+    },
+    "Seeping Scourgewing_965": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 965
+        }
+      }
+    },
+    "Seeping Scourgewing_980": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 980
+        }
+      }
+    },
+    "Seeping Scourgewing_985": {
+      "gear": {
+        "trinket1": {
+          "item_id": 151964,
+          "item_level": 985
+        }
+      }
+    },
+    "Gorshalach's Legacy_920": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 920
+        }
+      }
+    },
+    "Gorshalach's Legacy_925": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 925
+        }
+      }
+    },
+    "Gorshalach's Legacy_950": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 950
+        }
+      }
+    },
+    "Gorshalach's Legacy_955": {
+      "gear": {
+        "trinket1": {
+          "item_id": 152093,
+          "item_level": 955
+        }
+      }
+    },
+    "Shadow-singed Fang_920": {
+    },
+    "Shadow-singed Fang_925": {
+    }
+  }
+}

@@ -1,0 +1,1166 @@
+{
+  "build_date": "Nov 29 2017",
+  "build_time": "14:16:31",
+  "git_revision": null,
+  "options": {
+    "debug": false,
+    "max_time": 300.0,
+    "expected_iteration_time": 240.0,
+    "vary_combat_length": 0.2,
+    "iterations": 22004,
+    "target_error": 0.05,
+    "threads": 7,
+    "seed": 7102536277156782459,
+    "single_actor_batch": true,
+    "queue_lag": 0.005,
+    "queue_lag_stddev": 0.001,
+    "gcd_lag": 0.15,
+    "gcd_lag_stddev": 0.037,
+    "channel_lag": 0.25,
+    "channel_lag_stddev": 0.062,
+    "queue_gcd_reduction": 0.1,
+    "strict_gcd_queue": 0,
+    "confidence": 0.95,
+    "confidence_estimator": 1.9599639854088815,
+    "world_lag": 0.1,
+    "world_lag_stddev": 0.01,
+    "travel_variance": 0.0,
+    "default_skill": 1.0,
+    "reaction_time": 0.5,
+    "regen_periodicity": 0.25,
+    "ignite_sampling_delta": 0.2,
+    "fixed_time": false,
+    "optimize_expressions": true,
+    "optimal_raid": 1,
+    "log": 0,
+    "debug_each": 0,
+    "auto_ready_trigger": 0,
+    "stat_cache": 1,
+    "max_aoe_enemies": 20,
+    "show_etmi": false,
+    "tmi_window_global": 0.0,
+    "tmi_bin_size": 0.5,
+    "enemy_death_pct": 0.0,
+    "challenge_mode": false,
+    "timewalk": -1,
+    "pvp_crit": false,
+    "rng": {
+      "name": "sse2-sfmt"
+    },
+    "deterministic": 0,
+    "average_range": 1,
+    "average_gauss": 0,
+    "fight_style": "Patchwerk",
+    "default_aura_delay": 0.03,
+    "default_aura_delay_stddev": 0.005,
+    "dbc": {
+      "Live": {
+        "build_level": 25383,
+        "wow_version": "7.3.2"
+      },
+      "version_used": "Live"
+    }
+  },
+  "overrides": {
+    "mortal_wounds": 1,
+    "bleeding": 1,
+    "bloodlust": 1,
+    "bloodlust_percent": 25,
+    "bloodlust_time": 0.5
+  },
+  "statistics": {
+    "elapsed_cpu_seconds": 89.984375,
+    "elapsed_time_seconds": 12.909337,
+    "init_time_seconds": 0.155938759,
+    "merge_time_seconds": 0.0016483460000000002,
+    "analyze_time_seconds": 0.029047358000000002,
+    "simulation_length": {
+      "sum": 6597692.649,
+      "count": 21997,
+      "mean": 299.93602077556034,
+      "min": 201.63400000000001,
+      "max": 403.851,
+      "median": 299.982,
+      "variance": 1450.1175229395594,
+      "std_dev": 38.08040864984985,
+      "mean_variance": 0.06592342241849158,
+      "mean_std_dev": 0.25675556940111655
+    },
+    "raid_dps": {
+      "sum": 38866749323.65149,
+      "count": 21997,
+      "mean": 1766911.366261376
+    },
+    "total_dmg": {
+      "sum": 11632475438852.926,
+      "count": 21997,
+      "mean": 528820995.5381609
+    }
+  },
+  "player": {
+    "name": "Template",
+    "race": "dwarf",
+    "level": 110,
+    "role": "attack",
+    "specialization": "Outlaw Rogue",
+    "talents": [
+      {
+        "tier": 1,
+        "id": 22118,
+        "spell_id": 196937,
+        "name": "Ghostly Strike"
+      },
+      {
+        "tier": 2,
+        "id": 19238,
+        "spell_id": 196922,
+        "name": "Hit and Run"
+      },
+      {
+        "tier": 3,
+        "id": 19239,
+        "spell_id": 193531,
+        "name": "Deeper Stratagem"
+      },
+      {
+        "tier": 6,
+        "id": 19249,
+        "spell_id": 193539,
+        "name": "Alacrity"
+      },
+      {
+        "tier": 7,
+        "id": 22125,
+        "spell_id": 5171,
+        "name": "Slice and Dice"
+      }
+    ],
+    "artifact": [
+      {
+        "id": 1052,
+        "spell_id": 202665,
+        "name": "Curse of the Dreadblades",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1053,
+        "spell_id": 202897,
+        "name": "Blunderbuss",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1054,
+        "spell_id": 202820,
+        "name": "Greed",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1055,
+        "spell_id": 202769,
+        "name": "Blurred Time",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1056,
+        "spell_id": 202755,
+        "name": "Deception",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1057,
+        "spell_id": 202753,
+        "name": "Hidden Blade",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1058,
+        "spell_id": 202628,
+        "name": "Blademaster",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1059,
+        "spell_id": 216230,
+        "name": "Black Powder",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1060,
+        "spell_id": 202507,
+        "name": "Blade Dancer",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1061,
+        "spell_id": 202514,
+        "name": "Fate's Thirst",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1062,
+        "spell_id": 202521,
+        "name": "Fortune's Strike",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1063,
+        "spell_id": 202522,
+        "name": "Gunslinger",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1064,
+        "spell_id": 202524,
+        "name": "Fatebringer",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1065,
+        "spell_id": 202530,
+        "name": "Fortune Strikes",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1066,
+        "spell_id": 202533,
+        "name": "Ghostly Shell",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1067,
+        "spell_id": 202907,
+        "name": "Fortune's Boon",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1348,
+        "spell_id": 202463,
+        "name": "Cursed Edges",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1385,
+        "spell_id": 214929,
+        "name": "Cursed Steel",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1581,
+        "spell_id": 238067,
+        "name": "Sabermetrics",
+        "total_rank": 4,
+        "purchased_rank": 4,
+        "crucible_rank": 0,
+        "relic_rank": 0,
+        "override_rank": 4
+      },
+      {
+        "id": 1582,
+        "spell_id": 238103,
+        "name": "Dreadblade's Vigor",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1583,
+        "spell_id": 238139,
+        "name": "Loaded Dice",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1584,
+        "spell_id": 239042,
+        "name": "Concordance of the Legionfall",
+        "total_rank": 24,
+        "purchased_rank": 24,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      },
+      {
+        "id": 1652,
+        "spell_id": 241153,
+        "name": "Bravado of the Uncrowned",
+        "total_rank": 1,
+        "purchased_rank": 1,
+        "crucible_rank": 0,
+        "relic_rank": 0
+      }
+    ],
+    "party": 0,
+    "ready_type": 1,
+    "bugs": true,
+    "scale_player": true,
+    "potion_used": false,
+    "timeofday": "DAY_TIME",
+    "invert_scaling": 0,
+    "reaction_offset": 0.1,
+    "reaction_max": 1.4000000000000001,
+    "reaction_mean": 0.3,
+    "reaction_stddev": 0.06,
+    "reaction_nu": 0.25,
+    "world_lag": 0.1,
+    "brain_lag": 0.0,
+    "brain_lag_stddev": 0.0,
+    "world_lag_override": false,
+    "world_lag_stddev_override": false,
+    "dbc": {
+      "Live": {
+        "build_level": 25383,
+        "wow_version": "7.3.2"
+      },
+      "version_used": "Live"
+    },
+    "base_energy_regen_per_second": 12.0,
+    "collected_data": {
+      "fight_length": {
+        "sum": 6597692.649,
+        "count": 21997,
+        "mean": 299.93602077556034,
+        "min": 201.63400000000001,
+        "max": 403.851,
+        "median": 299.982,
+        "variance": 1450.1175229395594,
+        "std_dev": 38.08040864984985,
+        "mean_variance": 0.06592342241849158,
+        "mean_std_dev": 0.25675556940111655
+      },
+      "waiting_time": {
+        "sum": 230446.16399999996,
+        "count": 21997,
+        "mean": 10.476254216484064,
+        "min": 0.7010000000000001,
+        "max": 35.007
+      },
+      "executed_foreground_actions": {
+        "sum": 6976787.0,
+        "count": 21997,
+        "mean": 317.16993226349047,
+        "min": 222.0,
+        "max": 406.0
+      },
+      "dmg": {
+        "sum": 11632475438852.926,
+        "count": 21997,
+        "mean": 528820995.5381609,
+        "min": 422671114.59828603,
+        "max": 640267587.5851377
+      },
+      "compound_dmg": {
+        "sum": 11632475438852.926,
+        "count": 21997,
+        "mean": 528820995.5381609,
+        "min": 422671114.59828603,
+        "max": 640267587.5851377
+      },
+      "timeline_dmg": {
+        "mean": 1721319.2379862221,
+        "mean_std_dev": 512467.1389165378,
+        "min": 399345.20607716194,
+        "max": 5966008.3846351225,
+        "data": [
+          1961834.0298939648,
+          1104613.2767506342,
+          4225149.153108376,
+          3577680.0312816184,
+          4680899.581554558,
+          2888438.32882787,
+          5609075.662901188,
+          5966008.3846351225,
+          2796741.84141713,
+          4495489.001414477,
+          4063232.1103033726,
+          1583933.8612730242,
+          2985761.5254867775,
+          1027931.1457613966,
+          2627462.8031007373,
+          2274016.8801897224,
+          2060603.9051355603,
+          1830292.2481271322,
+          3021584.4270388894,
+          1931347.7387131448,
+          1775592.8631633222,
+          1951585.6469525949,
+          1891514.778404856,
+          1848276.7403154636,
+          1765329.4694504454,
+          1768520.1332603774,
+          1857601.042086536,
+          1172189.637164885,
+          1835115.6465062085,
+          1799482.1514812685,
+          1847975.3049356786,
+          1862882.9224488551,
+          1920263.69656788,
+          1911332.7728757667,
+          1909909.001768709,
+          1929530.9103810273,
+          1968613.9753744148,
+          1972757.8499627956,
+          1960450.5439702654,
+          1953970.2900319623,
+          1983472.897471323,
+          836320.3800572347,
+          818100.1473130756,
+          1300259.761129467,
+          1479005.222683223,
+          1621465.8409797696,
+          1894306.6158551353,
+          1637352.3556696728,
+          1417006.1240889672,
+          1462109.6253640964,
+          1473287.0902367719,
+          1424617.3935010128,
+          1412189.8874601906,
+          1396305.2823157327,
+          1451056.5123002962,
+          1464140.0635723395,
+          1390853.6196008788,
+          1079389.8135554546,
+          1201595.5750816814,
+          1366089.1409934352,
+          1361917.3682511172,
+          1401596.0928353162,
+          1391524.3558880745,
+          1399315.141218553,
+          1411676.7523537823,
+          1450954.9018434442,
+          1465022.1117184332,
+          1494184.2894163227,
+          1466318.6671276146,
+          1500841.569129098,
+          1565996.6294881422,
+          1613056.320937946,
+          1382961.6793035623,
+          1520783.2639442086,
+          1739110.4516423994,
+          1773678.0352253232,
+          1789891.3626208643,
+          1752273.983461485,
+          1704745.2616992772,
+          1677250.868868931,
+          1622121.4515316351,
+          1621433.4250516482,
+          1647863.750104423,
+          1657243.9513729238,
+          1727777.4667708965,
+          1816687.762515888,
+          1956796.2035953193,
+          1725604.5150868432,
+          1948158.3494780262,
+          2381374.1354563073,
+          2516690.1364903194,
+          2619706.091317526,
+          2465006.6043126523,
+          2632837.576590036,
+          2559439.5931844735,
+          2489759.6220560847,
+          2603702.2315913755,
+          2438283.650957744,
+          2333109.7647944624,
+          2140625.74981948,
+          1965837.863597202,
+          2010128.7983673431,
+          1543816.9268336233,
+          1579846.9498223716,
+          1761363.7626164989,
+          1760295.9959874053,
+          1712739.3215132665,
+          1682336.0647849042,
+          1672583.6415268232,
+          1669616.548694285,
+          1649021.8930008525,
+          1636035.6364776008,
+          1623924.157801278,
+          1614621.7791345478,
+          1604485.5064083755,
+          1614372.347872581,
+          1603506.9756633115,
+          1296781.352351732,
+          1386329.9018418093,
+          1570898.9127623304,
+          1584827.1145667196,
+          1585029.9736308276,
+          1613640.2779532333,
+          1624222.3074568335,
+          1648225.230886455,
+          1619860.399008044,
+          1640127.1333089722,
+          1649117.635823995,
+          1646686.810025311,
+          1677200.0736997097,
+          1694236.803615056,
+          1698089.7833999286,
+          1388916.7721350493,
+          1467227.0052408183,
+          1680865.468846115,
+          1717966.5639533307,
+          1713640.4420151433,
+          1590358.6052679343,
+          1593778.1352169502,
+          1545904.568380386,
+          1427680.7608365444,
+          1424004.4061045626,
+          1486601.7448394895,
+          1460624.2973398399,
+          1491853.4080377296,
+          1510335.463265006,
+          1472883.4713071669,
+          1178769.719420604,
+          1277184.1504244038,
+          1432834.8380692594,
+          1462500.079941207,
+          1475844.5918061053,
+          1490530.7568071818,
+          1517463.9502080076,
+          1523041.5258331425,
+          1515984.8572220437,
+          1540410.42112986,
+          1569236.8393216191,
+          1575383.8840696246,
+          1587051.5539522744,
+          1604144.5350297617,
+          1617217.1795286906,
+          1300360.1682055374,
+          1441598.303542201,
+          1634183.0852139827,
+          1671319.23853633,
+          1707937.9066584918,
+          1716416.8266179156,
+          1724760.6393946877,
+          1746702.116292396,
+          1749581.8910538382,
+          1802001.0528854486,
+          1876500.7344967304,
+          1942349.4174467302,
+          2031885.171021515,
+          2098371.564494587,
+          2156077.0979910125,
+          1928787.3611089366,
+          1826534.7445246503,
+          2070178.8958564992,
+          2172787.570044998,
+          2156332.190139629,
+          2163742.981400125,
+          2111375.0266011236,
+          2074310.4571311101,
+          1958907.1109496246,
+          1876376.7078558218,
+          1805719.5179397496,
+          1777054.585085215,
+          1720649.8073788192,
+          1720231.6702477543,
+          1714914.0990661585,
+          1382258.2632464017,
+          1460028.8921937637,
+          1650971.171963174,
+          1692381.0734049038,
+          1701426.656405749,
+          1703228.6515775784,
+          1717812.5145907507,
+          1704144.0033891397,
+          1680706.3843277306,
+          1663255.4491022218,
+          1660298.922484732,
+          1619869.4089302856,
+          1594414.6044042357,
+          1568258.4258393894,
+          1551066.8103586168,
+          1251134.5052992373,
+          1309456.8384230414,
+          1462651.9902453567,
+          1481455.5787635045,
+          1466868.4866097134,
+          1463288.9576571512,
+          1451610.3285449212,
+          1460552.5733857597,
+          1436121.5355550123,
+          1434852.6867771489,
+          1446571.1013754732,
+          1426771.464249955,
+          1427808.055137125,
+          1449663.0780580675,
+          1433788.604710395,
+          1178098.696269755,
+          1265389.7608160612,
+          1437398.1242423395,
+          1462336.4846094162,
+          1470384.4883593447,
+          1482910.0195879145,
+          1493193.5604240114,
+          1507935.6069009078,
+          1522788.9780715874,
+          1555500.6890176323,
+          1572646.4128409051,
+          1572808.3432909336,
+          1586598.4752391025,
+          1614345.4352782792,
+          1611173.6200143015,
+          1341270.224562445,
+          1415142.623383911,
+          1629604.6449309026,
+          1686305.4382214958,
+          1713450.745046859,
+          1727456.770747772,
+          1754669.4253636082,
+          1775352.5755888952,
+          1770809.1126965457,
+          1798232.410882934,
+          1823440.5785164074,
+          1821182.6230152263,
+          1828204.9342747726,
+          1861784.0005996437,
+          1842287.5329784658,
+          1475836.0528967169,
+          1613115.2933569585,
+          1821141.757173985,
+          1860262.8263857847,
+          1848826.307512818,
+          1864111.5633574163,
+          1874954.346597178,
+          1922930.5044729689,
+          1943081.6113469442,
+          1988825.0104094085,
+          2025726.1434488578,
+          2027239.4655790299,
+          2059535.5432802378,
+          2087991.0632593352,
+          2072222.4618247645,
+          1855887.4145920128,
+          1776416.1715106836,
+          1955013.3435629841,
+          2006783.814906513,
+          1961873.594086702,
+          1888230.3493820096,
+          1797734.25836083,
+          1719338.0448977652,
+          1639104.4979528352,
+          1586363.0840930394,
+          1555864.7909069848,
+          1536947.423115016,
+          1528997.5063240216,
+          1512505.229151985,
+          1513507.8130620602,
+          1209681.9312394315,
+          1299454.6381193725,
+          1468968.4417958173,
+          1477976.7415707314,
+          1463908.6018148633,
+          1484312.612437604,
+          1474664.9861893991,
+          1490934.9225160705,
+          1472602.7631370358,
+          1476538.1679279844,
+          1490048.4854862757,
+          1482940.4954528695,
+          1477836.1451828217,
+          1486631.1075388705,
+          1486223.828646125,
+          1208458.4226317164,
+          1292828.7358276374,
+          1431240.2429787547,
+          1481430.2600151491,
+          1490304.7400391721,
+          1521499.990341218,
+          1524161.4792088044,
+          1539043.4018101036,
+          1528074.2956516403,
+          1523587.245070213,
+          1573576.4153526009,
+          1565902.72355117,
+          1585592.7078209175,
+          1603538.9845008133,
+          1633757.2543673515,
+          1355384.7376852394,
+          1411985.1542568086,
+          1633076.7256702376,
+          1639976.5865409677,
+          1719071.3207052299,
+          1729199.309780567,
+          1755378.2389467827,
+          1767432.4415436243,
+          1782195.572230535,
+          1782721.1086039806,
+          1768924.765218663,
+          1810287.7784194814,
+          1820112.3320983842,
+          1849939.9711514425,
+          1821796.7073847614,
+          1552287.4570304349,
+          1609136.9023876775,
+          1819462.4973572288,
+          1874526.4995484084,
+          1895997.8497048332,
+          1936175.424324061,
+          1943116.960004363,
+          1934843.3386147916,
+          1923071.6061123621,
+          1924349.9233517156,
+          1967340.7813474066,
+          1951829.010446604,
+          1953511.8681556399,
+          1976276.6916648124,
+          1955370.873591765,
+          1571522.103540725,
+          1664839.3019359903,
+          1819913.8734402044,
+          1858405.3657246863,
+          1868489.570782507,
+          1910437.6286928405,
+          1883052.5950854968,
+          1926693.3933459432,
+          1902450.9082122084,
+          1899109.9089207144,
+          1858210.7660853097,
+          1817297.0147654992,
+          1760925.4468599719,
+          1796886.2022171377,
+          1756210.3618163827,
+          1426180.8664785558,
+          1441610.8284317434,
+          1542993.6612736466,
+          1563833.809458902,
+          1548038.2968829728,
+          1489077.0428474997,
+          1489778.2026479535,
+          1435069.76359127,
+          1388155.2198335503,
+          1475342.2597478323,
+          1488094.783585035,
+          1516699.188100388,
+          1515542.0690120438,
+          1534452.0023907796,
+          1467521.8938350242,
+          1258448.9369365587,
+          1302319.597964985,
+          1545010.1121127836,
+          1381068.1454455056,
+          1532195.835775267,
+          1320155.3765588552,
+          1319754.050377451,
+          1438838.3550471042,
+          1579155.4418781453,
+          1257830.9405483094,
+          1432325.732339583,
+          1387793.6802483867,
+          1237969.32294406,
+          1409079.088355078,
+          1362241.5273483733,
+          1044031.277584988,
+          1639681.5279867498,
+          1572481.4828246979,
+          1033401.4597397743,
+          1344690.046160728,
+          1949905.022379693,
+          2043499.0300388988,
+          2540456.4804967823,
+          1020073.1033151615,
+          1246151.5106705753,
+          2397498.9528727676,
+          2422772.0379964686,
+          399345.20607716194,
+          1215078.6860087204,
+          784909.3939548726,
+          1312968.570722696,
+          1609488.4250233122
+        ]
+      },
+      "dps": {
+        "sum": 38866749323.65158,
+        "count": 21997,
+        "mean": 1766911.3662613803,
+        "min": 1540767.3380741016,
+        "max": 2112903.8287758874,
+        "median": 1764976.9379753845,
+        "variance": 4467636224.273883,
+        "std_dev": 66840.37869636799,
+        "mean_variance": 203102.06956739022,
+        "mean_std_dev": 450.66846968407964
+      },
+      "dpse": {
+        "sum": 38866749323.65148,
+        "count": 21997,
+        "mean": 1766911.3662613756,
+        "min": 1540767.3380741016,
+        "max": 2112903.8287758874
+      },
+      "target_metric": {
+        "sum": 38856247748.91653,
+        "count": 21997,
+        "mean": 1766915.9087315958,
+        "min": 1540767.3380741016,
+        "max": 2112903.8287758874,
+        "median": 0.0,
+        "variance": 4467403766.137558,
+        "std_dev": 66838.6397687562,
+        "mean_variance": 203146.91310706915,
+        "mean_std_dev": 450.71821918696514
+      }
+    },
+    "gear": {
+      "head": {
+        "name": "headdress_of_living_brambles",
+        "encoded_item": "headdress_of_living_brambles,id=152681,bonus_id=3612/1502",
+        "ilevel": 960,
+        "stamina": 5693,
+        "agiint": 3795,
+        "haste_rating": 1330,
+        "crit_rating": 738
+      },
+      "neck": {
+        "name": "vulcanarcore_pendant",
+        "encoded_item": "vulcanarcore_pendant,id=151965,bonus_id=3612/1502,enchant=mark_of_the_hidden_satyr",
+        "ilevel": 960,
+        "stamina": 3203,
+        "versatility_rating": 2292,
+        "crit_rating": 1930
+      },
+      "shoulders": {
+        "name": "mantle_of_the_master_assassin",
+        "encoded_item": "mantle_of_the_master_assassin,id=144236,bonus_id=3630",
+        "ilevel": 1000,
+        "stamina": 6199,
+        "agiint": 4133,
+        "haste_rating": 514,
+        "mastery_rating": 1287
+      },
+      "chest": {
+        "name": "vest_of_the_dashing_scoundrel",
+        "encoded_item": "vest_of_the_dashing_scoundrel,id=152160,bonus_id=3612/1502",
+        "ilevel": 960,
+        "stamina": 5693,
+        "agiint": 3795,
+        "mastery_rating": 1300,
+        "versatility_rating": 768
+      },
+      "waist": {
+        "name": "deathenveloping_cincture",
+        "encoded_item": "deathenveloping_cincture,id=151986,bonus_id=3612/1502",
+        "ilevel": 970,
+        "stamina": 4687,
+        "agiint": 3124,
+        "haste_rating": 920,
+        "mastery_rating": 690
+      },
+      "legs": {
+        "name": "pants_of_the_dashing_scoundrel",
+        "encoded_item": "pants_of_the_dashing_scoundrel,id=152164,bonus_id=3612/1502",
+        "ilevel": 960,
+        "stamina": 5693,
+        "agiint": 3795,
+        "crit_rating": 1330,
+        "versatility_rating": 738
+      },
+      "feet": {
+        "name": "vicious_flamepaws",
+        "encoded_item": "vicious_flamepaws,id=151983,bonus_id=3612/1502",
+        "ilevel": 960,
+        "stamina": 4270,
+        "agiint": 2847,
+        "mastery_rating": 886,
+        "versatility_rating": 665
+      },
+      "wrists": {
+        "name": "bracers_of_wanton_morality",
+        "encoded_item": "bracers_of_wanton_morality,id=152414,bonus_id=3612/1502",
+        "ilevel": 960,
+        "stamina": 3203,
+        "agiint": 2135,
+        "haste_rating": 731,
+        "versatility_rating": 432
+      },
+      "hands": {
+        "name": "gloves_of_the_dashing_scoundrel",
+        "encoded_item": "gloves_of_the_dashing_scoundrel,id=152162,bonus_id=3612/1502",
+        "ilevel": 960,
+        "stamina": 4270,
+        "agiint": 2847,
+        "mastery_rating": 975,
+        "haste_rating": 576
+      },
+      "finger1": {
+        "name": "insignia_of_ravenholdt",
+        "encoded_item": "insignia_of_ravenholdt,id=137049,bonus_id=3630,gem_id=151585,enchant=binding_of_versatility",
+        "ilevel": 1000,
+        "stamina": 4649,
+        "crit_rating": 3460,
+        "haste_rating": 1922
+      },
+      "finger2": {
+        "name": "sullied_seal_of_the_pantheon",
+        "encoded_item": "sullied_seal_of_the_pantheon,id=151972,bonus_id=3612/1502,enchant=binding_of_versatility",
+        "ilevel": 970,
+        "stamina": 3515,
+        "mastery_rating": 2563,
+        "versatility_rating": 1922
+      },
+      "trinket1": {
+        "name": "gorshalachs_legacy",
+        "encoded_item": "gorshalachs_legacy,id=152093,bonus_id=3612/1502",
+        "ilevel": 960,
+        "haste_rating": 1477
+      },
+      "trinket2": {
+        "name": "golganneths_vitality",
+        "encoded_item": "golganneths_vitality,id=154174,bonus_id=3997",
+        "ilevel": 1000,
+        "agility": 5238
+      },
+      "back": {
+        "name": "cloak_of_the_dashing_scoundrel",
+        "encoded_item": "cloak_of_the_dashing_scoundrel,id=152161,bonus_id=3612/1502,enchant=binding_of_agility",
+        "ilevel": 960,
+        "stamina": 3203,
+        "stragiint": 2135,
+        "versatility_rating": 698,
+        "crit_rating": 465
+      },
+      "main_hand": {
+        "name": "the_dreadblades",
+        "encoded_item": "the_dreadblades,id=128872,bonus_id=742,ilevel=970",
+        "ilevel": 970,
+        "agility": 1785,
+        "stamina": 2678,
+        "crit_rating": 467,
+        "mastery_rating": 449
+      },
+      "off_hand": {
+        "name": "the_dreadblades",
+        "encoded_item": "the_dreadblades,id=134552",
+        "ilevel": 970,
+        "agility": 1785,
+        "stamina": 2678,
+        "crit_rating": 467,
+        "mastery_rating": 449
+      }
+    },
+    "custom": {
+    }
+  },
+  "profilesets_overrides": {
+    "DarkSorrows_1": {
+      "crucible": "1781:1"
+    },
+    "WeaponItemLevel_12": {
+    },
+    "WeaponItemLevel_3": {
+    },
+    "MasterOfShadows_3": {
+      "crucible": "1771:3"
+    },
+    "FortunesBoon_1": {
+    },
+    "WeaponItemLevel_6": {
+    },
+    "WeaponItemLevel_18": {
+    },
+    "FatesThirst_1": {
+    },
+    "BlackPowder_2": {
+    },
+    "WeaponItemLevel_21": {
+    },
+    "FortuneStrikes_2": {
+    },
+    "WeaponItemLevel_9": {
+    },
+    "Gunslinger_3": {
+    },
+    "WeaponItemLevel_15": {
+    },
+    "BlackPowder_1": {
+    },
+    "MurderousIntent_1": {
+      "crucible": "1774:1"
+    },
+    "ChaoticDarkness_1": {
+      "crucible": "1779:1"
+    },
+    "FortunesStrike_1": {
+    },
+    "Gunslinger_1": {
+    },
+    "Fatebringer_1": {
+    },
+    "FortuneStrikes_1": {
+    },
+    "Sabermetrics_1": {
+    },
+    "BladeDancer_1": {
+    },
+    "TormentTheWeak_1": {
+      "crucible": "1780:1"
+    },
+    "Shadowbind_1": {
+      "crucible": "1778:1"
+    },
+    "FortunesBoon_3": {
+    },
+    "SecureInTheLight_2": {
+      "crucible": "1782:2"
+    },
+    "MasterOfShadows_1": {
+      "crucible": "1771:1"
+    },
+    "InfusionOfLight_3": {
+      "crucible": "1783:3"
+    },
+    "LightSpeed_2": {
+      "crucible": "1770:2"
+    },
+    "Shocklight_1": {
+      "crucible": "1777:1"
+    },
+    "Shocklight_2": {
+      "crucible": "1777:2"
+    },
+    "LightSpeed_1": {
+      "crucible": "1770:1"
+    },
+    "MasterOfShadows_2": {
+      "crucible": "1771:2"
+    },
+    "SecureInTheLight_1": {
+      "crucible": "1782:1"
+    },
+    "Shocklight_3": {
+      "crucible": "1777:3"
+    },
+    "InfusionOfLight_1": {
+      "crucible": "1783:1"
+    },
+    "FatesThirst_2": {
+    },
+    "MurderousIntent_2": {
+      "crucible": "1774:2"
+    },
+    "ChaoticDarkness_2": {
+      "crucible": "1779:2"
+    },
+    "FortunesStrike_2": {
+    },
+    "Gunslinger_2": {
+    },
+    "Fatebringer_2": {
+    },
+    "SecureInTheLight_3": {
+      "crucible": "1782:3"
+    },
+    "FortunesBoon_2": {
+    },
+    "Sabermetrics_2": {
+    },
+    "BladeDancer_2": {
+    },
+    "Shadowbind_3": {
+      "crucible": "1778:3"
+    },
+    "TormentTheWeak_2": {
+      "crucible": "1780:2"
+    },
+    "TormentTheWeak_3": {
+      "crucible": "1780:3"
+    },
+    "Shadowbind_2": {
+      "crucible": "1778:2"
+    },
+    "DarkSorrows_2": {
+      "crucible": "1781:2"
+    },
+    "LightSpeed_3": {
+      "crucible": "1770:3"
+    },
+    "InfusionOfLight_2": {
+      "crucible": "1783:2"
+    },
+    "BlackPowder_3": {
+    },
+    "FatesThirst_3": {
+    },
+    "MurderousIntent_3": {
+      "crucible": "1774:3"
+    },
+    "ChaoticDarkness_3": {
+      "crucible": "1779:3"
+    },
+    "FortunesStrike_3": {
+    },
+    "Fatebringer_3": {
+    },
+    "FortuneStrikes_3": {
+    },
+    "Sabermetrics_3": {
+    },
+    "BladeDancer_3": {
+    },
+    "DarkSorrows_3": {
+      "crucible": "1781:3"
+    }
+  }
+}
