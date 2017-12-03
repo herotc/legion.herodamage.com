@@ -3,9 +3,7 @@ title: Rogue
 description: Class theorycrafting community, latest simulation results and resources -based on SimulationCraft- for World of Warcraft.
 ---
 
-This is the website of the Ravenholdt Theorycrafting Community! Here you can find our latest simulation results and resources.
-
-Besides, the Rogue Theorycrafting community is happy to introduce you to our new community hub: The Ravenholdt-TC Organization on GitHub! This will let you follow what is going on behind the scenes. You can also contribute via the issues panel to suggest ideas and report bugs.
+The Rogue Theorycrafting community is happy to introduce you to our new community hub: The Ravenholdt-TC Organization on GitHub! This will let you follow what is going on behind the scenes. You can also contribute via the issues panel to suggest ideas and report bugs.
 
 Here are links you may want to check out for further information:
 
