@@ -168,7 +168,7 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
       Dir.mkdir viewDirectory
     end
     viewFile = "#{viewDirectory}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}"
-    viewFile += "-#{gearVariationRaw.gsub('_', '-')}" if gearVariationRaw
+    viewFile += "-#{gearVariationRaw.gsub('_', '-').gsub('+', '-')}" if gearVariationRaw
     viewFile += '.html'
     File.open(viewFile.downcase, 'w') do |view|
       view.puts "---"
