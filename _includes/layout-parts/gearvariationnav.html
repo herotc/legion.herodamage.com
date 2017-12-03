@@ -1,6 +1,6 @@
 <p>
   <ul id="gear-variation-tabs" class="nav nav-pills sub-nav">
-    {% assign variations = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | where: "fightstyle", page.fightstyle | sort: "name" %}
+    {% assign variations = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | where: "fightstyle", page.fightstyle | sort: "url" %}
     {% assign numVariations = variations | size %}
     {% if numVariations > 1 %}
       {% for variation in variations %}

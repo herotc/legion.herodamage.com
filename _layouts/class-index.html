@@ -22,7 +22,7 @@ layout: default
           <div class="list-group">
           {% assign specs = tier.items | group_by: "spec" | sort: "name" %}
           {% for spec in specs %}
-            {% assign entry = spec.items | sort: "name" | first %}
+            {% assign entry = spec.items | sort: "url" | first %}
             {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
               <a class="list-group-item" href="{{ entry.url }}">
                 <h4 class="h5">{{ spec.name }}</h4>
