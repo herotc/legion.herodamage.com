@@ -3,16 +3,16 @@ layout: default
 ---
 
 <div id="content" class="container">
-  {% assign classParts = page.collectionClass | split: "_" %}
+  {% assign classParts = page.wow_class | split: "_" %}
   <h1>{% for classPart in classParts %}{{ classPart | capitalize }} {% endfor %}Theorycrafting</h1>
 
-  {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+  {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
   {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
   {% for simulation in simulations %}
     {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
     {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
     {% if simulationNameShorten == classCollectionPrefix %}
-      {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
+      {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
       <h2>{{ simulationName | capitalize }}</h2>
       <div class="row">
         {% assign tiers = simulation.items | group_by: "tier" | sort: "name" %}

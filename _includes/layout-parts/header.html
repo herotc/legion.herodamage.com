@@ -16,15 +16,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% if page.collectionClass %}
-          {% capture classCollectionPrefix %}{{ page.collectionClass }}-{% endcapture %}
+        {% if page.wow_class %}
+          {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
           {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
           {% for simulation in simulations %}
             {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
             {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
             {% if simulationNameShorten == classCollectionPrefix %}
               <li class="dropdown">
-                {% assign simulationName = simulation.name | remove: page.collectionClass | remove: "-" %}
+                {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   {{ simulationName | capitalize }} <span class="caret"></span>
                 </a>
@@ -47,9 +47,17 @@
               </li>
             {% endif %}
           {% endfor %}
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  About <span class="caret"></span>
+                </a>
+            <ul class="dropdown-menu">
+                {% include layout-parts/headermainnav.html %}
+            </ul>
+          </li>
         {% endif %}
-        {% unless page.collectionClass %}
-          <li><a href="/changelog">Changelog</a></li>
+        {% unless page.wow_class %}
+          {% include layout-parts/headermainnav.html %}
         {% endunless %}
       </ul>
     </div>
@@ -60,8 +68,8 @@
     {% include layout-parts/wowclasspicker.html %}
   </aside>
 {% endunless %}
-{% if page.collectionClass %}
+{% if page.wow_class %}
   <nav id="header" class="navbar navbar-inverse container">
-    <a title="{{ site.name }}" href="/{{ page.collectionClass | replace: '_', '-' }}"><img src="/assets/img/wow-class/{{ page.collectionClass }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
+    <a title="{{ page.wow_class | replace: '_', ' ' | capitalize }}" href="/{{ page.wow_class | replace: '_', '-' }}"><img src="/assets/img/wow-class/{{ page.wow_class }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
   </nav>
 {% endif %}

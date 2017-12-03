@@ -5,7 +5,7 @@ require 'active_support'
 require 'active_support/all'
 require 'yaml'
 
-Config = YAML.load(File.read("_config.yml"))
+# Config = YAML.load(File.read("_config.yml"))
 
 dataFolder = "data"
 metaFolder = "data/meta"
@@ -14,7 +14,7 @@ simCollections = {
   'Relics' => 'relics',
   'Trinkets' => 'trinkets'
 }
-wowClasses = ['death_knight', 'demon_hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'shaman', 'warlock', 'warrior']
+wowClasses = ['death_knight', 'demon_hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior']
 
 # TODO: Make cleaner fancy things
 fancyCollection = {
@@ -45,15 +45,9 @@ fancyTierExpanded = {
 }
 
 # Empty each collections
-if Config['repository'] == 'Ravenholdt-TC/ravenholdt-tc.github.io'
-  simCollections.each do |simType, simColection|
-    FileUtils.rm_f Dir.glob("_#{simColection}/*")
-  end
-elsif Config['repository'] == 'SimCMinMax/herodamage'
-  simCollections.each do |simType, simColection|
-    wowClasses.each do |wowClass|
-      FileUtils.rm_f Dir.glob("_#{wowClass}-#{simColection}/*")
-    end
+simCollections.each do |simType, simColection|
+  wowClasses.each do |wowClass|
+    FileUtils.rm_f Dir.glob("_#{wowClass}-#{simColection}/*")
   end
 end
 
@@ -158,16 +152,12 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
 
     # Special hotfix for T19 Relics to hide NC T2 traits
     if reportInfos['type'] == "Relics" && reportInfos['tier'] == 'T19'
-      front['chartclass'] = ' half-height'
+      front['chart_class'] = ' half-height'
     end
 
 
     # Write the view
-    if Config['repository'] == 'Ravenholdt-TC/ravenholdt-tc.github.io'
-      viewDirectory = "_#{simCollections[reportInfos['type']]}"
-    elsif Config['repository'] == 'SimCMinMax/herodamage'
-      viewDirectory = "_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}"
-    end
+    viewDirectory = "_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}"
     viewDirectory = viewDirectory.downcase
     if !Dir.exist?(viewDirectory)
       Dir.mkdir viewDirectory

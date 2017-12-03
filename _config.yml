@@ -1,7 +1,7 @@
 name: Hero Damage
 title: Hero Damage
 description: Hero Damage TC Data Collection Site
-url: http://www.herodamage.com
+url: https://www.herodamage.com
 encoding: utf-8
 timezone: Europe/Paris
 
@@ -12,6 +12,10 @@ sass:
 collections:
   # Until we got Jekyll 3.7.0, this is gonna be a bit a mess for collections
   # Since they have to be in the root folder
+  # About
+  about:
+    output: true
+    permalink: /about/:name
   # Simulations
   death_knight:
     output: true
@@ -109,6 +113,18 @@ collections:
   priest-trinkets:
     output: true
     permalink: /priest/trinkets/:name
+  rogue:
+    output: true
+    permalink: /rogue/:name
+  rogue-combinations:
+    output: true
+    permalink: /rogue/combinations/:name
+  rogue-relics:
+    output: true
+    permalink: /rogue/relics/:name
+  rogue-trinkets:
+    output: true
+    permalink: /rogue/trinkets/:name
   shaman:
     output: true
     permalink: /shaman/:name
@@ -159,22 +175,22 @@ defaults:
       type: "death_knight"
     values:
       layout: "class-index"
-      collectionClass: "death_knight"
+      wow_class: "death_knight"
   -
     scope:
       path: ""
       type: "death_knight-combinations"
     values:
       layout: "combinations"
-      collectionClass: "death_knight"
+      wow_class: "death_knight"
   -
     scope:
       path: ""
       type: "death_knight-relics"
     values:
       layout: "relics"
-      collectionClass: "death_knight"
-      chartclass: "full-height"
+      wow_class: "death_knight"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -182,30 +198,30 @@ defaults:
       type: "death_knight-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "death_knight"
-      chartclass: "full-height"
+      wow_class: "death_knight"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "demon_hunter"
     values:
       layout: "class-index"
-      collectionClass: "demon_hunter"
+      wow_class: "demon_hunter"
   -
     scope:
       path: ""
       type: "demon_hunter-combinations"
     values:
       layout: "combinations"
-      collectionClass: "demon_hunter"
+      wow_class: "demon_hunter"
   -
     scope:
       path: ""
       type: "demon_hunter-relics"
     values:
       layout: "relics"
-      collectionClass: "demon_hunter"
-      chartclass: "full-height"
+      wow_class: "demon_hunter"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -213,30 +229,30 @@ defaults:
       type: "demon_hunter-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "demon_hunter"
-      chartclass: "full-height"
+      wow_class: "demon_hunter"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "druid"
     values:
       layout: "class-index"
-      collectionClass: "druid"
+      wow_class: "druid"
   -
     scope:
       path: ""
       type: "druid-combinations"
     values:
       layout: "combinations"
-      collectionClass: "druid"
+      wow_class: "druid"
   -
     scope:
       path: ""
       type: "druid-relics"
     values:
       layout: "relics"
-      collectionClass: "druid"
-      chartclass: "full-height"
+      wow_class: "druid"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -244,30 +260,30 @@ defaults:
       type: "druid-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "druid"
-      chartclass: "full-height"
+      wow_class: "druid"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "hunter"
     values:
       layout: "class-index"
-      collectionClass: "hunter"
+      wow_class: "hunter"
   -
     scope:
       path: ""
       type: "hunter-combinations"
     values:
       layout: "combinations"
-      collectionClass: "hunter"
+      wow_class: "hunter"
   -
     scope:
       path: ""
       type: "hunter-relics"
     values:
       layout: "relics"
-      collectionClass: "hunter"
-      chartclass: "full-height"
+      wow_class: "hunter"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -275,30 +291,30 @@ defaults:
       type: "hunter-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "hunter"
-      chartclass: "full-height"
+      wow_class: "hunter"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "mage"
     values:
       layout: "class-index"
-      collectionClass: "mage"
+      wow_class: "mage"
   -
     scope:
       path: ""
       type: "mage-combinations"
     values:
       layout: "combinations"
-      collectionClass: "mage"
+      wow_class: "mage"
   -
     scope:
       path: ""
       type: "mage-relics"
     values:
       layout: "relics"
-      collectionClass: "mage"
-      chartclass: "full-height"
+      wow_class: "mage"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -306,30 +322,30 @@ defaults:
       type: "mage-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "mage"
-      chartclass: "full-height"
+      wow_class: "mage"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "monk"
     values:
       layout: "class-index"
-      collectionClass: "monk"
+      wow_class: "monk"
   -
     scope:
       path: ""
       type: "monk-combinations"
     values:
       layout: "combinations"
-      collectionClass: "monk"
+      wow_class: "monk"
   -
     scope:
       path: ""
       type: "monk-relics"
     values:
       layout: "relics"
-      collectionClass: "monk"
-      chartclass: "full-height"
+      wow_class: "monk"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -337,30 +353,30 @@ defaults:
       type: "monk-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "monk"
-      chartclass: "full-height"
+      wow_class: "monk"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "paladin"
     values:
       layout: "class-index"
-      collectionClass: "paladin"
+      wow_class: "paladin"
   -
     scope:
       path: ""
       type: "paladin-combinations"
     values:
       layout: "combinations"
-      collectionClass: "paladin"
+      wow_class: "paladin"
   -
     scope:
       path: ""
       type: "paladin-relics"
     values:
       layout: "relics"
-      collectionClass: "paladin"
-      chartclass: "full-height"
+      wow_class: "paladin"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -368,30 +384,30 @@ defaults:
       type: "paladin-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "paladin"
-      chartclass: "full-height"
+      wow_class: "paladin"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "priest"
     values:
       layout: "class-index"
-      collectionClass: "priest"
+      wow_class: "priest"
   -
     scope:
       path: ""
       type: "priest-combinations"
     values:
       layout: "combinations"
-      collectionClass: "priest"
+      wow_class: "priest"
   -
     scope:
       path: ""
       type: "priest-relics"
     values:
       layout: "relics"
-      collectionClass: "priest"
-      chartclass: "full-height"
+      wow_class: "priest"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -399,30 +415,61 @@ defaults:
       type: "priest-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "priest"
-      chartclass: "full-height"
+      wow_class: "priest"
+      chart_class: "full-height"
+  -
+    scope:
+      path: ""
+      type: "rogue"
+    values:
+      layout: "class-index"
+      wow_class: "rogue"
+  -
+    scope:
+      path: ""
+      type: "rogue-combinations"
+    values:
+      layout: "combinations"
+      wow_class: "rogue"
+  -
+    scope:
+      path: ""
+      type: "rogue-relics"
+    values:
+      layout: "relics"
+      wow_class: "rogue"
+      chart_class: "full-height"
+      num_ilevel_values: 20
+  -
+    scope:
+      path: ""
+      type: "rogue-trinkets"
+    values:
+      layout: "trinkets"
+      wow_class: "rogue"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "shaman"
     values:
       layout: "class-index"
-      collectionClass: "shaman"
+      wow_class: "shaman"
   -
     scope:
       path: ""
       type: "shaman-combinations"
     values:
       layout: "combinations"
-      collectionClass: "shaman"
+      wow_class: "shaman"
   -
     scope:
       path: ""
       type: "shaman-relics"
     values:
       layout: "relics"
-      collectionClass: "shaman"
-      chartclass: "full-height"
+      wow_class: "shaman"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -430,30 +477,30 @@ defaults:
       type: "shaman-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "shaman"
-      chartclass: "full-height"
+      wow_class: "shaman"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "warlock"
     values:
       layout: "class-index"
-      collectionClass: "warlock"
+      wow_class: "warlock"
   -
     scope:
       path: ""
       type: "warlock-combinations"
     values:
       layout: "combinations"
-      collectionClass: "warlock"
+      wow_class: "warlock"
   -
     scope:
       path: ""
       type: "warlock-relics"
     values:
       layout: "relics"
-      collectionClass: "warlock"
-      chartclass: "full-height"
+      wow_class: "warlock"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -461,30 +508,30 @@ defaults:
       type: "warlock-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "warlock"
-      chartclass: "full-height"
+      wow_class: "warlock"
+      chart_class: "full-height"
   -
     scope:
       path: ""
       type: "warrior"
     values:
       layout: "class-index"
-      collectionClass: "warrior"
+      wow_class: "warrior"
   -
     scope:
       path: ""
       type: "warrior-combinations"
     values:
       layout: "combinations"
-      collectionClass: "warrior"
+      wow_class: "warrior"
   -
     scope:
       path: ""
       type: "warrior-relics"
     values:
       layout: "relics"
-      collectionClass: "warrior"
-      chartclass: "full-height"
+      wow_class: "warrior"
+      chart_class: "full-height"
       num_ilevel_values: 20
   -
     scope:
@@ -492,8 +539,8 @@ defaults:
       type: "warrior-trinkets"
     values:
       layout: "trinkets"
-      collectionClass: "warrior"
-      chartclass: "full-height"
+      wow_class: "warrior"
+      chart_class: "full-height"
 
 
 exclude:
@@ -511,5 +558,5 @@ plugins:
   - jekyll-sitemap # Generate the sitemap.xml
   - jemoji # Enable GitHub emojis
 
-# GitHub Pages metadata
-repository: SimCMinMax/herodamage
+repository: SimCMinMax/herodamage # GitHub Pages metadata
+wow_classes: [death_knight, demon_hunter, druid, hunter, mage, monk, paladin, priest, rogue, shaman, warlock, warrior]
