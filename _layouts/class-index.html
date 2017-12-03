@@ -3,8 +3,7 @@ layout: default
 ---
 
 <div id="content" class="container">
-  {% assign classParts = page.wow_class | split: "_" %}
-  <h1>{% for classPart in classParts %}{{ classPart | capitalize }} {% endfor %}Theorycrafting</h1>
+  <h1>{{ page.title }} Theorycrafting</h1>
 
   {{ content }}
 
