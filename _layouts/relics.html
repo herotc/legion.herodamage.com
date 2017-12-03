@@ -39,6 +39,12 @@ layout: default
     </ul>
   </p>
   {% include layout-parts/googlechart.html %}
+  {% if page.crucibleweight %}
+  <p>
+    <b>CrucibleWeight Import String:</b>
+  </p>
+  <pre>{{ page.crucibleweight }}</pre>
+  {% endif %}
 </div>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">

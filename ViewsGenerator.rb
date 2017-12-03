@@ -141,6 +141,11 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
       front['legendaries'] = "\n  - #{player['legendariesName'].join("\n  - ")}"
     end
 
+    # Write crucibleweight string if it exists
+    if reportInfos['type'] == "Relics" && json['crucibleweight']
+      front['crucibleweight'] = " #{json['crucibleweight']}"
+    end
+
     front['csvfile'] = " #{csvFile}"
     front['targeterror'] = " #{simc['targetError']}"
     front['lastupdate'] = " #{simc['buildDate']}"
