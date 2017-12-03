@@ -6,6 +6,8 @@ layout: default
   {% assign classParts = page.wow_class | split: "_" %}
   <h1>{% for classPart in classParts %}{{ classPart | capitalize }} {% endfor %}Theorycrafting</h1>
 
+  {{ content }}
+
   {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
   {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
   {% for simulation in simulations %}
