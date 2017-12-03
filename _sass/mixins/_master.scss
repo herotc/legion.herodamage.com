@@ -11,7 +11,7 @@ $MD: 768px;
 $LG: 992px;
 $XL: 1200px;
 @mixin MQ($canvas, $width: min-width) {
-  @if $width == max {
+  @if $width != min-width {
     $width: max-width;
     $canvas: $canvas - 1px;
   }
