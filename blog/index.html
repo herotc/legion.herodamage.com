@@ -1,0 +1,40 @@
+---
+title: Blog
+description: Latest news posted on the website.
+---
+
+<h1>Ravenholdt Theorycrafting Blog</h1>
+
+<p>This is our Theorycrafting blog. Here, you will be able to find news and articles about our tools and results.</p>
+
+{% for post in paginator.posts %}
+  <a class="blog-post" href="{{ post.url }}">
+    <h2>{{ post.title }}
+      <small>{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} &ndash; {{ post.author }}{% endif %}</small>
+    </h2>
+    {{ post.excerpt }}
+    <p class="read-more">Read more...</p>
+  </a>
+  {% unless forloop.last %}
+  <hr>
+  {% endunless %}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+  <div id="blog-table-nav" class="text-right">
+    <ul class="pagination">
+      {% if paginator.previous_page %}
+        <li class="page-item prev"><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></li>
+      {% else %}
+        <li class="page-item prev disabled"><a href="#" class="previous">Previous</a></li>
+      {% endif %}
+      <li class="page-item active">
+        <a href="#" class="page-link">Page: {{ paginator.page }} of {{ paginator.total_pages }}</a></li>
+      {% if paginator.next_page %}
+        <li class="page-item next"><a href="{{ paginator.next_page_path }}" class="next">Next</a></li>
+      {% else %}
+        <li class="page-item next disabled"><a href="#" class="next">Next</a></li>
+      {% endif %}
+    </ul>
+  </div>
+{% endif %}

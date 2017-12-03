@@ -172,6 +172,13 @@ defaults:
   -
     scope:
       path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /:year/:month/:day/:title
+  -
+    scope:
+      path: ""
       type: "death_knight"
     values:
       layout: "class-index"
@@ -555,8 +562,24 @@ exclude:
   - data/meta
 
 plugins:
+  - jekyll-feed # Create RSS Feed for the blogposts
+  - jekyll-avatar # Allow to embed GitHub profiles avatar
   - jekyll-sitemap # Generate the sitemap.xml
+  - jekyll-mentions # Allow to mention GitHub profiles
+  - jekyll-paginate # Posts pagination
   - jemoji # Enable GitHub emojis
 
-repository: SimCMinMax/herodamage # GitHub Pages metadata
+# Blog
+paginate: 5
+paginate_path: "/blog/page:num/"
+excerpt_separator: <!--more--> 
+authors:
+  Aethys:
+    github: Aethys256
+  Mystler:
+    github: Mystler
+  Nia:
+    github: Nianel
+
+repository: SimCMinMax/herodamage# GitHub Pages metadata
 wow_classes: [death_knight, demon_hunter, druid, hunter, mage, monk, paladin, priest, rogue, shaman, warlock, warrior]

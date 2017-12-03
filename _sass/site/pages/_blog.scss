@@ -1,0 +1,19 @@
+a.blog-post {
+  background-color: $content-bg-lt;
+  color: inherit;
+  display: block;
+  padding: .5rem 2rem;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $content-bg-lt2;
+  }
+
+  &:nth-of-type(1) {
+    margin-top: 3rem;
+  }
+
+  p.read-more {
+    color: $link-dark;
+  }
+}
