@@ -1,74 +1,12 @@
 <nav>
-  <a href="/death-knight">
+  {% for wow_class in site.wow_classes %}
+  {% assign wowClassParts = wow_class | split: "_" %}
+  {% capture wow_class_titleized %}{% for wowClassPart in wowClassParts %}{% if forloop.last %}{{ wowClassPart | capitalize }}{% else %}{% assign wowClassPart2 = wowClassPart | append: " " %}{{ wowClassPart2 | capitalize }}{% endif %}{% endfor %}{% endcapture %}
+  <a href="/{{ wow_class | replace: '_', '-' }}">
     <figure>
-      <img src="/assets/img/wow-class/death_knight.svg" alt="Death Knight WoW Icon">
-      <figcaption>Death Knight</figcaption>
+      <img src="/assets/img/wow-class/{{ wow_class }}.svg" alt="{{ wow_class_titleized }} WoW Icon">
+      <figcaption>{{ wow_class_titleized }}</figcaption>
     </figure>
   </a>
-  <a href="/demon-hunter">
-    <figure>
-      <img src="/assets/img/wow-class/demon_hunter.svg" alt="Demon Hunter WoW Icon">
-      <figcaption>Demon Hunter</figcaption>
-    </figure>
-  </a>
-  <a href="/druid">
-    <figure>
-      <img src="/assets/img/wow-class/druid.svg" alt="Druid WoW Icon">
-      <figcaption>Druid</figcaption>
-    </figure>
-  </a>
-  <a href="/hunter">
-    <figure>
-      <img src="/assets/img/wow-class/hunter.svg" alt="Hunter WoW Icon">
-      <figcaption>Hunter</figcaption>
-    </figure>
-  </a>
-  <a href="/mage">
-    <figure>
-      <img src="/assets/img/wow-class/mage.svg" alt="Mage WoW Icon">
-      <figcaption>Mage</figcaption>
-    </figure>
-  </a>
-  <a href="/monk">
-    <figure>
-      <img src="/assets/img/wow-class/monk.svg" alt="Monk WoW Icon">
-      <figcaption>Monk</figcaption>
-    </figure>
-  </a>
-  <a href="/paladin">
-    <figure>
-      <img src="/assets/img/wow-class/paladin.svg" alt="Paladin WoW Icon">
-      <figcaption>Paladin</figcaption>
-    </figure>
-  </a>
-  <a href="/priest">
-    <figure>
-      <img src="/assets/img/wow-class/priest.svg" alt="Priest WoW Icon">
-      <figcaption>Priest</figcaption>
-    </figure>
-  </a>
-  <a href="http://tc.ravenholdt.net/" target="_blank">
-    <figure>
-      <img src="/assets/img/wow-class/rogue.svg" alt="Rogue WoW Icon">
-      <figcaption>Rogue</figcaption>
-    </figure>
-  </a>
-  <a href="/shaman">
-    <figure>
-      <img src="/assets/img/wow-class/shaman.svg" alt="Shaman WoW Icon">
-      <figcaption>Shaman</figcaption>
-    </figure>
-  </a>
-  <a href="/warlock">
-    <figure>
-      <img src="/assets/img/wow-class/warlock.svg" alt="Warlock WoW Icon">
-      <figcaption>Warlock</figcaption>
-    </figure>
-  </a>
-  <a href="/warrior">
-    <figure>
-      <img src="/assets/img/wow-class/warrior.svg" alt="Warrior WoW Icon">
-      <figcaption>Warrior</figcaption>
-    </figure>
-  </a>
+  {% endfor %}
 </nav>
