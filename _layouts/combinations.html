@@ -64,17 +64,16 @@ layout: default
 <script src="/assets/js/jquery.twbsPagination-1.4.1.min.js"></script>
 <script src="/assets/js/bootstrap-select-1.12.4.min.js"></script>
 <script>
-  var combinatorData = null;
-  var combinatorRows = null;
+  var combinatorData;
   var hasBossDPS = false;
 
   function updateCombinatorTable() {
-    if (combinatorData === null)
+    if (!combinatorData)
       return;
     var filterTalents = document.getElementById("combinator-table-filter-talents").value;
     var filterSets = $('#combinator-table-filter-sets').val();
     var filterLegendaries = $('#combinator-table-filter-legendaries').val();
-    combinatorRows = $.grep(combinatorData, function (columns) {
+    var combinatorRows = $.grep(combinatorData, function (columns) {
       if (filterTalents !== "" && columns[0].indexOf(filterTalents) === -1)
         return false;
       if (filterSets.indexOf(columns[1]) < 0)
@@ -113,7 +112,6 @@ layout: default
     });
   }
 
-  $(document).ready(function () {
     $.get("/" + "{{ page.csvfile }}", function (data) {
       combinatorData = $.csv.toArrays(data);
       combinatorData.sort(function (a, b) {
@@ -159,7 +157,6 @@ layout: default
         document.getElementById("combinator-table-filters").insertAdjacentHTML("beforeend", "<th></th>");
       }
       updateCombinatorTable();
-      document.getElementById("combinator-loading").style.display = "none";
+      $(document.getElementById("combinator-loading")).remove();
     });
-  });
 </script>
