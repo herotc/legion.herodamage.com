@@ -19,25 +19,22 @@ body {
 
   // Ads
   .container {
-    &#top-ad, &#bot-ad {
+    &#a-top-d, &#a-bot-d {
       padding: 0;
+
+      p.blockers-text {
+        border: 1px solid $border-dark-lt;
+        border-radius: 12px;
+        margin: 0;
+        padding: 24px;
+        text-align: center;
+      }
     }
-    &#top-ad {
+    &#a-top-d {
       margin-bottom: 12px;
     }
-    &#bot-ad {
+    &#a-bot-d {
       margin-top: 12px;
-    }
-  }
-  ins.adsbygoogle {
-    text-decoration: none;
-
-    p.blockers-text {
-      border: 1px solid $border-dark-lt;
-      border-radius: 12px;
-      margin: 0;
-      padding: 24px;
-      text-align: center;
     }
   }
 

@@ -5,10 +5,12 @@
       for (var i = 0; i < ads.length; i++) {
         var ad = ads[i];
         if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
-          ad.style.cssText = 'display:block !important';
-          ad.innerHTML = '<p class="blockers-text">Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.</p>';
+          var blockersMessage = document.createElement('p');
+          blockersMessage.className = 'blockers-text';
+          blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.';
+          ad.parentElement.appendChild(blockersMessage);
         }
       }
-    }, 2500);
+    }, 1500);
   };
 </script>
