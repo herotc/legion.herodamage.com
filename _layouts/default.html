@@ -46,11 +46,12 @@
   {% endif %}
 </head>
 <body>
-  <header>
-    {% include layout-parts/header.html %}
-  </header>
+  {% include layout-parts/header.html %}
+  {% include layout-parts/ads/default.html element_id="top-ad" %}
   <main>
     {{ content }}
   </main>
+  {% include layout-parts/ads/default.html element_id="bot-ad" %}
+  {% include layout-parts/footer.html %}
 </body>
 </html>

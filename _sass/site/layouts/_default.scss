@@ -16,6 +16,18 @@ body {
     }
   }
 
+  .container {
+    &#top-ad, &#bot-ad {
+      padding: 0;
+    }
+    &#top-ad {
+      margin-bottom: 12px;
+    }
+    &#bot-ad {
+      margin-top: 12px;
+    }
+  }
+
   #content {
     background-color: $content-bg;
     border: 1px solid $border-dark;

@@ -1,75 +1,77 @@
-<nav id="navigation" class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/" title="Home">
-        <img src="/assets/img/logo.svg" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
-        {{ site.name }}
-      </a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        {% if page.wow_class %}
-          {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
-          {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
-          {% for simulation in simulations %}
-            {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
-            {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
-            {% if simulationNameShorten == classCollectionPrefix %}
-              <li class="dropdown">
-                {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
-                <a class="dropdown-toggle" href="#" title="{{ simulationName | capitalize }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  {{ simulationName | capitalize }} <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  {% assign tiers = simulation.items | group_by: "tier" | sort: "name" %}
-                  {% for tier in tiers reversed %}
-                    {% unless forloop.first %}
-                    <li role="separator" class="divider"></li>
-                    {% endunless %}
-                    <li class="dropdown-header text-center"><b>{{ tier.name }}</b></li>
-                    {% assign specs = tier.items | group_by: "spec" | sort: "name" %}
-                    {% for spec in specs %}
-                      {% assign entry = spec.items | sort: "url" | first %}
-                      {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-                        <li><a href="{{ entry.url }}" title="{{ spec.name }}">{{ spec.name }}</a></li>
-                      {% endif %}
+<header>
+  <nav id="navigation" class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" title="Home">
+          <img src="/assets/img/logo.svg" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
+          {{ site.name }}
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          {% if page.wow_class %}
+            {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
+            {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
+            {% for simulation in simulations %}
+              {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
+              {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
+              {% if simulationNameShorten == classCollectionPrefix %}
+                <li class="dropdown">
+                  {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
+                  <a class="dropdown-toggle" href="#" title="{{ simulationName | capitalize }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ simulationName | capitalize }} <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    {% assign tiers = simulation.items | group_by: "tier" | sort: "name" %}
+                    {% for tier in tiers reversed %}
+                      {% unless forloop.first %}
+                      <li role="separator" class="divider"></li>
+                      {% endunless %}
+                      <li class="dropdown-header text-center"><b>{{ tier.name }}</b></li>
+                      {% assign specs = tier.items | group_by: "spec" | sort: "name" %}
+                      {% for spec in specs %}
+                        {% assign entry = spec.items | sort: "url" | first %}
+                        {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
+                          <li><a href="{{ entry.url }}" title="{{ spec.name }}">{{ spec.name }}</a></li>
+                        {% endif %}
+                      {% endfor %}
                     {% endfor %}
-                  {% endfor %}
-                </ul>
-              </li>
-            {% endif %}
-          {% endfor %}
-          <li class="dropdown">
-              <a class="dropdown-toggle" href="#" title="About" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  About <span class="caret"></span>
-                </a>
-            <ul class="dropdown-menu">
-                {% include layout-parts/headermainnav.html %}
-            </ul>
-          </li>
-        {% endif %}
-        {% unless page.wow_class %}
-          {% include layout-parts/headermainnav.html %}
-        {% endunless %}
-      </ul>
+                  </ul>
+                </li>
+              {% endif %}
+            {% endfor %}
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" title="About" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    About <span class="caret"></span>
+                  </a>
+              <ul class="dropdown-menu">
+                  {% include layout-parts/headermainnav.html %}
+              </ul>
+            </li>
+          {% endif %}
+          {% unless page.wow_class %}
+            {% include layout-parts/headermainnav.html %}
+          {% endunless %}
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-{% unless page.url == "/" %}
+  </nav>
+  {% unless page.url == "/" %}
   <aside id="sidebar">
     {% include layout-parts/wowclasspicker.html %}
   </aside>
-{% endunless %}
-{% if page.wow_class %}
+  {% endunless %}
+  {% if page.wow_class %}
   <nav id="header" class="navbar navbar-inverse container">
     <a href="/{{ page.wow_class | replace: '_', '-' }}" title="{{ page.wow_class | replace: '_', ' ' | capitalize }}"><img src="/assets/img/wow-class/{{ page.wow_class }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
   </nav>
-{% endif %}
+  {% endif %}
+</header>
