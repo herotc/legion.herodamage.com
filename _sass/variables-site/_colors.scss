@@ -1,10 +1,11 @@
-$bg: #111;
-$content-bg: #222;
+$bg: #111111;
+$content-bg: #222222;
 $content-bg-lt: lighten($content-bg, 8%);
 $content-bg-lt2: lighten($content-bg, 16%);
-$text: #CCC;
+$text: #CCCCCC;
 $text-dk: darken($text, 8%);
 $text-dk2: darken($text, 16%);
 $text-dk3: darken($text, 24%);
 $link-dark: #B77C33;
 $border-dark: #080808;
+$border-dark-lt: lighten($border-dark, 32%);

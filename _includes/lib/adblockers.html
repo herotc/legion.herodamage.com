@@ -1,0 +1,14 @@
+<script> 
+  window.onload = function(){
+    setTimeout(function() {
+      var ads = document.querySelectorAll("ins.adsbygoogle");
+      for (var i = 0; i < ads.length; i++) {
+        var ad = ads[i];
+        if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+          ad.style.cssText = 'display:block !important';
+          ad.innerHTML = '<p class="blockers-text">Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.</p>';
+        }
+      }
+    }, 2500);
+  };
+</script>

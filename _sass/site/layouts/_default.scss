@@ -4,6 +4,7 @@ body {
   padding: $body-inner-padding;
   padding-top: $body-inner-padding + 50px;
 
+  // General
   hr {
     width: 30%
   }
@@ -16,6 +17,7 @@ body {
     }
   }
 
+  // Ads
   .container {
     &#top-ad, &#bot-ad {
       padding: 0;
@@ -27,7 +29,19 @@ body {
       margin-top: 12px;
     }
   }
+  ins.adsbygoogle {
+    text-decoration: none;
 
+    p.blockers-text {
+      border: 1px solid $border-dark-lt;
+      border-radius: 12px;
+      margin: 0;
+      padding: 24px;
+      text-align: center;
+    }
+  }
+
+  // Main content
   #content {
     background-color: $content-bg;
     border: 1px solid $border-dark;
@@ -46,6 +60,7 @@ body {
     }
   }
 
+  // Home article
   article#home {
     > section {
       background-color: $content-bg;
