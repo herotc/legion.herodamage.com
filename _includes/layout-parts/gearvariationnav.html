@@ -5,7 +5,9 @@
     {% if numVariations > 1 %}
       {% for variation in variations %}
         <li role="presentation" {% if variation.url == page.url %} class="active" {% endif %}>
-          <a href="{{ variation.url }}">{% if variation.gearvariation == nil %}SimC Default{% else %}{{ variation.gearvariation }}{% endif %}</a>
+          <a href="{{ variation.url }}" title="{% if variation.gearvariation == nil %}SimC Default{% else %}{{ variation.gearvariation }}{% endif %} Gear Variation">
+            {% if variation.gearvariation == nil %}SimC Default{% else %}{{ variation.gearvariation }}{% endif %}
+          </a>
         </li>
       {% endfor %}
     {% endif %}

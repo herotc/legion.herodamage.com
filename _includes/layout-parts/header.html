@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/" title="Home">
         <img src="/assets/img/logo.svg" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
         {{ site.name }}
       </a>
@@ -25,7 +25,7 @@
             {% if simulationNameShorten == classCollectionPrefix %}
               <li class="dropdown">
                 {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" href="#" title="{{ simulationName | capitalize }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   {{ simulationName | capitalize }} <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -39,7 +39,7 @@
                     {% for spec in specs %}
                       {% assign entry = spec.items | sort: "url" | first %}
                       {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-                        <li><a href="{{ entry.url }}">{{ spec.name }}</a></li>
+                        <li><a href="{{ entry.url }}" title="{{ spec.name }}">{{ spec.name }}</a></li>
                       {% endif %}
                     {% endfor %}
                   {% endfor %}
@@ -48,7 +48,7 @@
             {% endif %}
           {% endfor %}
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="dropdown-toggle" href="#" title="About" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   About <span class="caret"></span>
                 </a>
             <ul class="dropdown-menu">
@@ -70,6 +70,6 @@
 {% endunless %}
 {% if page.wow_class %}
   <nav id="header" class="navbar navbar-inverse container">
-    <a title="{{ page.wow_class | replace: '_', ' ' | capitalize }}" href="/{{ page.wow_class | replace: '_', '-' }}"><img src="/assets/img/wow-class/{{ page.wow_class }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
+    <a href="/{{ page.wow_class | replace: '_', '-' }}" title="{{ page.wow_class | replace: '_', ' ' | capitalize }}"><img src="/assets/img/wow-class/{{ page.wow_class }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
   </nav>
 {% endif %}

@@ -30,7 +30,7 @@ As of now, you can see an example for this in the results. For Assassination wit
 
 When we say that you should **simulate you own character** all the time, this is not just a disclaimer in case our results do not match yours. We encourage you to sim yourself because, especially due to special slots like trinkets, as well as warforging and titanforging, what gear you have available can have a noticeable impact. For example, with good T20 pieces available, targeted relics, and a good stat distribution - despite Combinator results - Exsanguiate is likely to beat the poison build in Antorus.
 
-Here is my recommendation on how to use Combinator (and in a way also all of our other) results: Check out what the results are for what you have or care about and don't be afraid to look at more than just the top build. Based on what you can see in the results, run something like <a href="https://www.raidbots.com/simbot/topgear" target="_blank">Raidbots Top Gear</a> for one or more talents in order to find something that is actually tailored for your own character.
+Here is my recommendation on how to use Combinator (and in a way also all of our other) results: Check out what the results are for what you have or care about and don't be afraid to look at more than just the top build. Based on what you can see in the results, run something like <a href="https://www.raidbots.com/simbot/topgear" title="Raidbots Top Gear" target="_blank">Raidbots Top Gear</a> for one or more talents in order to find something that is actually tailored for your own character.
 
 ![Sim Yoself](/assets/blogposts/combinator/simyoself.gif){: .img-responsive .center}
 

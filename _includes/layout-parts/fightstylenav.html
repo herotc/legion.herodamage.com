@@ -6,7 +6,7 @@
       {% for fightstyle in fightstyles %}
         {% if fightstyle.name != nil %}
           <li role="presentation" {% if fightstyle.name == page.fightstyle %} class="active" {% endif %}>
-            <a href="{{ fightstyle.items.first.url }}">{{ fightstyle.name }}</a>
+            <a href="{{ fightstyle.items.first.url }}" title="{{ fightstyle.name }} Fightstyle">{{ fightstyle.name }}</a>
           </li>
         {% endif %}
       {% endfor %}

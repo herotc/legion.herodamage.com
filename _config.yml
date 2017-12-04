@@ -580,6 +580,7 @@ authors:
     github: Mystler
   Nia:
     github: Nianel
-
-repository: SimCMinMax/herodamage# GitHub Pages metadata
+# GitHub Pages metadata
+repository: SimCMinMax/herodamage
+# WoW Classes list
 wow_classes: [death_knight, demon_hunter, druid, hunter, mage, monk, paladin, priest, rogue, shaman, warlock, warrior]

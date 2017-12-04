@@ -2,10 +2,15 @@
   {% for wow_class in site.wow_classes %}
   {% assign wowClassParts = wow_class | split: "_" %}
   {% capture wow_class_titleized %}{% for wowClassPart in wowClassParts %}{% if forloop.last %}{{ wowClassPart | capitalize }}{% else %}{% assign wowClassPart2 = wowClassPart | append: " " %}{{ wowClassPart2 | capitalize }}{% endif %}{% endfor %}{% endcapture %}
-  <a href="/{{ wow_class | replace: '_', '-' }}">
+  <a href="/{{ wow_class | replace: '_', '-' }}" title="{{ wow_class_titleized }}">
     <figure>
       <img src="/assets/img/wow-class/{{ wow_class }}.svg" alt="{{ wow_class_titleized }} WoW Icon">
-      <figcaption>{{ wow_class_titleized }}</figcaption>
+      {% if page.url == "/" %}
+        {% assign wowClassTitleLevel = 2 %}
+      {% else %}
+        {% assign wowClassTitleLevel = 5 %}
+      {% endif %}
+      <figcaption><h{{ wowClassTitleLevel }}>{{ wow_class_titleized }}</h{{ wowClassTitleLevel }}></figcaption>
     </figure>
   </a>
   {% endfor %}

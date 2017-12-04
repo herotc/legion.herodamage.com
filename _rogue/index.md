@@ -7,9 +7,9 @@ The Rogue Theorycrafting community is happy to introduce you to our new communit
 
 Here are links you may want to check out for further information:
 
-- <a target="blank" href="https://github.com/Ravenholdt-TC/Rogue/projects/1">TC Dashboard</a> / <a target="blank" href="https://github.com/Ravenholdt-TC/Rogue/issues">Rogue Issues</a>
-- <a target="blank" href="https://github.com/Ravenholdt-TC">Ravenholdt-TC GitHub Organization</a>
-- <a target="blank" href="https://discord.gg/x3R9z9g">Ravenholdt Discord</a> for class discussion
-- <a target="blank" href="http://www.ravenholdt.net/">Ravenholdt Website</a> for news and general rogue information
+- <a href="https://github.com/Ravenholdt-TC/Rogue/projects/1" title="Ravenholdt Theorycrafting Dashboard" target="_blank">TC Dashboard</a> / <a href="https://github.com/Ravenholdt-TC/Rogue/issues" title="Report a rogue issue" target="_blank">Rogue Issues</a>
+- <a href="https://github.com/Ravenholdt-TC" title="Ravenholdt-TC GitHub Organization" target="_blank">Ravenholdt-TC GitHub Organization</a>
+- <a  href="https://discord.gg/x3R9z9g" title="Ravenholdt Discord" target="_blank">Ravenholdt Discord</a> for class discussion
+- <a  href="http://www.ravenholdt.net/" title="Ravenholdt Website" target="_blank">Ravenholdt Website</a> for news and general rogue information
 
 If you have any questions, feel free to visit the class Discord and contact Aethys or Mystler.

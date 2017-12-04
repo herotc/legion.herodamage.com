@@ -25,7 +25,7 @@ layout: default
           {% for spec in specs %}
             {% assign entry = spec.items | sort: "url" | first %}
             {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-              <a class="list-group-item" href="{{ entry.url }}">
+              <a class="list-group-item" href="{{ entry.url }}" title="{{ spec.name }}">
                 <h4 class="h5">{{ spec.name }}</h4>
                 <span class="update-date">{{ entry.lastupdate | truncatewords: 2 | remove: '...' }}</span>
               </a>
