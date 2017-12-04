@@ -1,5 +1,4 @@
 header {
-  
   nav#navigation {
     left: 0;
     position: absolute;
@@ -22,6 +21,7 @@ header {
       }
     }
   }
+
   aside#sidebar {
     nav {
       $body-padding: 12px;
@@ -61,6 +61,7 @@ header {
       }
     }
   }
+
   nav#header {
     margin-bottom: 12px;
     padding: 6px;

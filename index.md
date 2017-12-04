@@ -17,6 +17,6 @@ description: Theorycrafting community, latest simulation results and resources -
   </section>
 
   <section id="home-picker" class="container">
-    {% include layout-parts/wowclasspicker.html element="nav" elementID="home-picker" %}
+    {% include layout-parts/wowclasspicker.html %}
   </section>
 </article>
