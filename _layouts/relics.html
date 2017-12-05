@@ -41,9 +41,9 @@ layout: default
   {% include layout-parts/ads/inarticle.html %}
   {% if page.crucibleweight %}
   <p><b>CrucibleWeight Import String</b></p>
-  <p id="crucibleweight">
-    <textarea class="form-control" readonly>{{ page.crucibleweight }}</textarea>
-    <button class="btn btn-default" onclick="copyToClipboard('crucibleweight');">Copy</button>
+  <p class="crucibleweight">
+    <textarea id="crucibleweightstring" class="form-control" readonly>{{ page.crucibleweight }}</textarea>
+    <button class="btn btn-default" onclick="copyToClipboard('crucibleweightstring');">Copy</button>
   </p>
   {% endif %}
   {% include layout-parts/googlechart.html %}
