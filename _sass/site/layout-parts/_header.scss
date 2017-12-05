@@ -23,25 +23,42 @@ header {
   }
 
   aside#sidebar {
+    $body-padding: 12px;
+    $body-padding-top: 62px;
+    $padding-offset: $body-padding-top + $body-padding * 2;
+
+    $icon-size: calc((100vh - #{$padding-offset}) / 12 / 1.4);
+    $icon-size-hover: calc((100vh - #{$padding-offset}) / 12);
+
+    @include MQ(1300px, max-width) {
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+          margin: 6px 18px;
+        }
+      }
+    }
+    @include MQ(1300px) {
+      nav {
+        position: fixed;
+        left: 12px;
+        margin-top: ($body-padding-top - $body-padding) / 2;
+        top: 50%;
+        @include translate(0, -50%);
+        width: $icon-size-hover;
+
+        a {
+          margin: 0 auto 0 0;
+        }
+      }
+    }
     nav {
-      $body-padding: 12px;
-      $body-padding-top: 62px;
-      $padding-offset: $body-padding-top + $body-padding * 2;
-
-      $icon-size: calc((100vh - #{$padding-offset}) / 12 / 1.4);
-      $icon-size-hover: calc((100vh - #{$padding-offset}) / 12);
-
-      position: fixed;
-      left: 12px;
-      margin-top: ($body-padding-top - $body-padding) / 2;
-      top: 50%;
-      @include translate(0, -50%);
-      width: $icon-size-hover;
-
       a {
         display: block;
         height: $icon-size-hover;
-        margin: 0 auto 0 0;
         position: relative;
         @include t-scale(0.2s);
         width: $icon-size;
