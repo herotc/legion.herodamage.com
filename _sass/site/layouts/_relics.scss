@@ -1,5 +1,14 @@
 #crucibleweight {
-  min-height: 80px;
-  overflow: hidden;
-  //resize: none;
+  align-items: stretch;
+  display: flex;
+
+  textarea {
+    border-radius: 4px 0 0 4px;
+    min-height: 80px;
+    overflow: hidden;
+  }
+  button {
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 4px 4px 0;
+  }
 }

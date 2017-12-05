@@ -25,26 +25,26 @@ layout: default
     <b>Last Update:</b> {{ page.lastupdate }}<br>
     <b>WoW-Build:</b> {{ page.build }}<br>
     <b>Target Error:</b> {{ page.targeterror }}%<br>
-    <b>Talents:</b>
-    <ul>
-      {% for talent in page.talents %}
-        <li>{{ talent }}</li>
-      {% endfor %}
-    </ul>
-    <b>Legendaries:</b>
-    <ul>
-      {% for legendary in page.legendaries %}
-        <li>{{ legendary }}</li>
-      {% endfor %}
-    </ul>
+    <b>Talents</b>
   </p>
+  <ul>
+    {% for talent in page.talents %}
+      <li>{{ talent }}</li>
+    {% endfor %}
+  </ul>
+  <p><b>Legendaries</b></p>
+  <ul>
+    {% for legendary in page.legendaries %}
+      <li>{{ legendary }}</li>
+    {% endfor %}
+  </ul>
   {% include layout-parts/ads/inarticle.html %}
   {% if page.crucibleweight %}
-  <p class="clearfix">
-    <b>CrucibleWeight Import String:</b>
-    <button class="btn btn-default pull-right" onclick="copyToClipboard('crucibleweight');">Copy Import String</button>
+  <p><b>CrucibleWeight Import String</b></p>
+  <p id="crucibleweight">
+    <textarea class="form-control" readonly>{{ page.crucibleweight }}</textarea>
+    <button class="btn btn-default" onclick="copyToClipboard('crucibleweight');">Copy</button>
   </p>
-  <p><textarea id="crucibleweight" class="form-control" readonly>{{ page.crucibleweight }}</textarea></p>
   {% endif %}
   {% include layout-parts/googlechart.html %}
 </div>
