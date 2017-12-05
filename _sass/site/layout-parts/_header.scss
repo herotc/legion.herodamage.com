@@ -27,10 +27,10 @@ header {
       $body-padding: 12px;
       $body-padding-top: 62px;
       $padding-offset: $body-padding-top + $body-padding * 2;
-    
+
       $icon-size: calc((100vh - #{$padding-offset}) / 12 / 1.4);
       $icon-size-hover: calc((100vh - #{$padding-offset}) / 12);
-    
+
       position: fixed;
       left: 12px;
       margin-top: ($body-padding-top - $body-padding) / 2;
@@ -39,14 +39,20 @@ header {
       width: $icon-size-hover;
 
       a {
-        align-items: center;
-        display: flex;
+        display: block;
         height: $icon-size-hover;
         margin: 0 auto 0 0;
+        position: relative;
         @include t-scale(0.2s);
         width: $icon-size;
     
         figure {
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          @include translate(-50%, -50%);
+          width: 100%;
+
           img {
             width: 100%;
           }
