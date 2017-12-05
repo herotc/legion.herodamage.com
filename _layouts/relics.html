@@ -39,13 +39,14 @@ layout: default
     </ul>
   </p>
   {% include layout-parts/ads/inarticle.html %}
-  {% include layout-parts/googlechart.html %}
   {% if page.crucibleweight %}
-  <p>
+  <p class="clearfix">
     <b>CrucibleWeight Import String:</b>
+    <button class="btn btn-default pull-right" onclick="copyToClipboard('crucibleweight');">Copy Import String</button>
   </p>
-  <pre>{{ page.crucibleweight }}</pre>
+  <p><textarea id="crucibleweight" class="form-control" readonly>{{ page.crucibleweight }}</textarea></p>
   {% endif %}
+  {% include layout-parts/googlechart.html %}
 </div>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">

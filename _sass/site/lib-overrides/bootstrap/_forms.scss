@@ -1,4 +1,6 @@
-.form-control {
+.form-control,
+.form-control[disabled],
+.form-control[readonly] {
   @include bootstrap-button-lt;
 
   &:focus {
