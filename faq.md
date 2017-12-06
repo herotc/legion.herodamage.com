@@ -1,67 +1,71 @@
 ---
 title: FAQ
-description: Frequenty Asked Question.
+description: Frequently Asked Questions.
 permalink: /faq/
 ---
 
-Frequently Asked Question
-=========================
+Frequently Asked Questions
+==========================
 
 
 <ul>
   <li>
     <h3>What is the purpose of this website?</h3>
     <p>
-      The purpose of this website is to provide a centralized base of theorycrafting for all World of Warcraft classes.<br>
-      Our goal is to make accessible all the tools you need to optimize your character, with a clear and simple website.
+      We aim to provide a centralized base of Theorycrafting and SimulationCraft results for all World of Warcraft classes.<br>
+      Our goal is to make all the information you need to optimize your character accessible on a clear and simple website.
     </p>
   </li>
   <li>
     <h3>Who is it intended for?</h3>
-    <p>This site is intended for all players who wants to learn more about the optimization of their characters.</p>
+    <p>Everyone who wants to learn more about the optimization and possibilities of their characters. With the results we want to give an overview how different
+    builds compare in different situations, what you can do to improve your gear and what options may be interesting to you.</p>
   </li>
   <li>
-    <h3>How are these results generated ?</h3>
-    <p>These results are generated using SimulationCraft, by combining several profiles to obtain an overall view of the specialization concerned.</p>
+    <h3>How are these results generated?</h3>
+    <p>These results are generated using the <a href="http://www.simulationcraft.org/" target="_blank">SimulationCraft</a> software, our <a href="https://github.com/Ravenholdt-TC/SimcScripts" target="_blank">Ruby scripts</a>, and several simulation profiles to obtain an overview on multiple aspects of a specialization.</p>
   </li>
   <li>
-    <h3>How to see the gear of the combinator?</h3>
-    <p>It's not possible to fully see it yet, but it will be soon !</p>
+    <h3>What Raid difficulty are the combinations based on?</h3>
+    <p>If not specified otherwise, our profiles use unforged Mythic Raid gear. Heroic profiles are marked as such.</p>
   </li>
   <li>
-    <h3>With which T2 of the Netherlight Crucible is sim the Crucible ring ?</h3>
-    <p>The profiles of the specialization are all simmmed with Torment the Weak, so the T2 used for the Crucible ring is Torment the Weak. Because of this, if you don't have 3 Torment the Weak, it's highly advisable to sim your own character with the Crucible ring.</p>
+    <h3>How can I see the gear of a specific combination simulation?</h3>
+    <p>It's not possible to see the details yet but we are working on it!</p>
   </li>
   <li>
-    <h3>Can I compare my character to the combinator?</h3>
-    <p>Your character has different gear than the combinator (mythic +, warforged / titanforged, ...). The combinator, has only the gear of its tier and without wf/tf. It's highly advised to sim your own character to find the best possible setup. </p>
+    <h3>What T2 traits of the Netherlight Crucible do the Crucible ring simulations use?</h3>
+    <p>The profiles of each specialization always use three of what we know to be the best possible tier two trait for it. This means that the Crucible ring will likely have the best impact and if you have different tier two traits, you should run a simulation for your own character.</p>
   </li>
   <li>
-    <h3>But if I have to sim my character in any case, the combinator doesn't help ?</h3>
-    <p>The main goal of the combinator is to highlight outliers and also to get an idea of the set, so you can test the best combination with your own character, even if the combinator has a different gear than yours, the best combination is often the right one !</p>
+    <h3>Can I compare my character to the combinations?</h3>
+    <p>Your character has different gear than the Combinator profile (Mythic+, Warforged / Titanforged, etc. can lead to very noticeable differences). We usually only simulate unforged gear for each Tier and difficulty. It's highly advisable to sim your own character in order to find the best possible setup.</p>
   </li>
   <li>
-    <h3>Does the combinator represent the specific raid conditions?</h3>
+    <h3>But if I have to sim my character anyway, what are the combinations for?</h3>
+    <p>The main goal of combination sims is to find and highlight outliers and also to get a general idea promising setups. Based on the combinations, you can narrow down what builds you would like to investigate for your own character. Even if the combinations use different gear than you, the best combination usually gets you on the right track!</p>
+  </li>
+  <li>
+    <h3>Do the combinations represent actual raid conditions?</h3>
     <p>
-    Not really at this moment, it's a single target patchwerk simulation, without x players with you.<br>
-    Also, the 100 > 90% phase of the boss might be longer making some legendary like Cinidaria or talents that work well above 80% hp overrated.<br>
-    This reasoning does apply for the execute phase, there is no ideal solution to this.</p>
+    Not really, at this moment. If not specified otherwise, we usually have single target patchwerk simulations without other players or mechanics.<br>
+    Also, the 100%-90% phase as well as the execute phase of the boss might be shorter or longer in a simulation, making some legendaries like Cinidaria or talents that work well at certain HP thresholds valued differently.<br>
+    There is no ideal solution to this. It depends highly on your group.</p>
   </li>
   <li>
-    <h3>How are the trinket sim?</h3>
-    <p>Only one trinket is simmed, so some combinations that make a strong trinket with another aren't taken account, the option will be added in the future.</p>
+    <h3>How are the trinket simulations generated?</h3>
+    <p>Only one trinket is simulated at multiple item levels for the given base profile. Hence, the impact of two strong trinkets working very well together may not be taken into account. We want to add an option for that in the future.</p>
+  </li>
+  <li>
+    <h3>Is empowerment mechanic for the Pantheon trinkets included?</h3>
+    <p>If a Pantheon trinket has a "X-Pantheon" suffix, it means that the simulation assumed X other players with the trinket in your raid. Without that suffix, only the baseline proc has been considered.</p>
   </li>
   <li>
     <h3>Where can I find the SimC profiles that are used for the website?</h3>
-    <p>We are almost always using default Simulationcraft profiles.</p>
+    <p>We are almost always using SimulationCraft default profiles with our scripts changing things as necessary for each setup. If you are interested in the details behind the scenes, you can check out our base profiles <a href="https://github.com/Ravenholdt-TC/SimcScripts/tree/master/profiles" target="_blank">here</a>.</p>
   </li>
   <li>
     <h3>How to read the relics graph?</h3>
-    <p>With the indicator of the ilvl of the weapon on the first line, you can know how much ilvl equals your trait.<br>
-    Moreover by hovering it you can know the exact dps gain.</p>
-  </li>
-  <li>
-    <h3>Are pantheon trinkets proc triggered?</h3>
-    <p>They are not except in the Trinkets simulation where there is the "x-Pantheon" suffix.</p>
+    <p>If you compare a trait to the weapon item level on the first line, you can see how many item levels the trait is worth. By hovering over it, you can check out the exact DPS increase.</p>
   </li>
 </ul>
