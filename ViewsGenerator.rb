@@ -127,14 +127,14 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
       }
       # TODO: Also get encoded talents from simc (to add in simc report)
       json['player']['talents'].each do |talent|
-        player['talentsName'].push(talent['name'])
+        player['talentsName'].push("\"#{talent['name']}\"")
       end
       # TODO: Remove legendaries at 970 once everything will be at 1000
       # TODO: Blacklist pantheon trinkets
       # TODO: Use bnet api to retrieve localized item name & quality
       json['player']['gear'].each do |slot, item|
         if (reportInfos['tier'] != 'T21' && item['ilevel'] >= 970) || item['ilevel'] >= 1000
-          player['legendariesName'].push(item['name'].gsub('_', ' ').titleize)
+          player['legendariesName'].push("\"#{item['name'].gsub('_', ' ').titleize}\"")
         end
       end
       front['talents'] = "\n  - #{player['talentsName'].join("\n  - ")}"
