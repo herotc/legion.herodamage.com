@@ -72,10 +72,11 @@ layout: default
     if (!combinatorData)
       return;
     var filterTalents = document.getElementById("combinator-table-filter-talents").value;
+    var filterTalentsRegex = new RegExp("^" + filterTalents.replace(new RegExp("x|\\*", "ig"), "[0-3]"), "i");
     var filterSets = $('#combinator-table-filter-sets').val();
     var filterLegendaries = $('#combinator-table-filter-legendaries').val();
     var combinatorRows = $.grep(combinatorData, function (columns) {
-      if (filterTalents !== "" && columns[0].indexOf(filterTalents) === -1)
+      if (filterTalents !== "" && !filterTalentsRegex.test(columns[0]))
         return false;
       if (filterSets.indexOf(columns[1]) < 0)
         return false;

@@ -26,6 +26,11 @@ Frequently Asked Questions
     <p>These results are generated using the <a href="http://www.simulationcraft.org/" target="_blank">SimulationCraft</a> software, our <a href="https://github.com/Ravenholdt-TC/SimcScripts" target="_blank">Ruby scripts</a>, and several simulation profiles to obtain an overview on multiple aspects of a specialization.</p>
   </li>
   <li>
+    <h3>How do the combination filters work?</h3>
+    <p>For the talent filter you can specify a template for the talent string with the numbers 1-3 for the left/middle/right talent of each tier and an x (or *) as a wildcard. For example, entering "xx1xx3x" will show only setups with the first talent in the third row and the third talent in the sixth row.<br>
+    The set and legendary filters allow you to select only what you have available to exclude results you are not interested in.</p>
+  </li>
+  <li>
     <h3>What Raid difficulty are the combinations based on?</h3>
     <p>If not specified otherwise, our profiles use unforged Mythic Raid gear. Heroic profiles are marked as such.</p>
   </li>
