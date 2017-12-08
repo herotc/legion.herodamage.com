@@ -16,10 +16,10 @@ description: Latest news posted on the website.
     <p class="read-more">Read more...</p>
   </a>
   {% if jekyll.environment == "production" %}
-    {% assign index_modulo = forloop.index | minus:1 | modulo:3 %}
-    {% if forloop.index == 1 or index_modulo == 0 %}
-    <hr>
-    {% include layout-parts/ads/inarticle.html %}
+    {% assign index_modulo = forloop.index | minus:2 | modulo:5 %}
+    {% if index_modulo == 0 %}
+      <hr>
+      {% include layout-parts/ads/inarticle.html %}
     {% endif %}
   {% endif %}
   {% unless forloop.last %}
