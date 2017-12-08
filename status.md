@@ -27,7 +27,8 @@ simulationNames:
           {% for simCollection in simCollections %}
             {% for simPage in simCollection.items %}
               {% assign simName = simPage.path | split: '/' %}
-              <li>{{ simName.last | replace: '.html', '' }} - {{ simPage.lastupdate }}</li>
+              {% assign simtype = simName.first | split: '-' %}
+              <li>{{ simName.last | replace: '.html', '' }} - {{ simtype.last }} - {{ simPage.lastupdate }}</li>
             {% endfor %}
           {% endfor %}
         </ul>
