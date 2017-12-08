@@ -35,6 +35,10 @@ layout: default
         </div>
         {% endfor %}
       </div>
+      {% if forloop.first %}
+        <hr>
+        {% include layout-parts/ads/inarticle.html %}
+      {% endif %}
       {% unless forloop.last %}
       <hr>
       {% endunless %}
