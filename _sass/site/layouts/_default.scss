@@ -33,11 +33,11 @@ body {
         align-items: center;
         display: flex;
         justify-content: center;
+        height: calc(100vh - #{$body-padding-top-offset});
         position: fixed;
-        margin-top: ($body-padding-top - $body-padding) / 2;
+        margin: $body-padding-top 0;
         right: 0;
-        top: 50%;
-        @include translate(0, -50%);
+        top: 0;
         width: calc(((100vw - #{$container-max-width}) / 2) - #{$scrollbar-width});
       }
     }
