@@ -38,7 +38,7 @@ body {
         right: 0;
         top: 50%;
         @include translate(0, -50%);
-        width: calc((100vw - #{$container-max-width}) / 2 );
+        width: calc(((100vw - #{$container-max-width}) / 2) - #{$scrollbar-width});
       }
     }
   }
