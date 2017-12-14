@@ -1,2 +1,7 @@
-$body-inner-padding: 12px;
+$body-padding: 12px;
+$body-padding-top: $body-padding + 50px;
+$body-padding-top-offset: $body-padding-top + $body-padding * 2;
+
+$container-max-width: 1170px;
+
 $content-inner-padding: 24px;

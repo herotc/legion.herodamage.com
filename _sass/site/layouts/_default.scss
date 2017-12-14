@@ -1,8 +1,8 @@
 body {
   background-color: $bg;
   color: $text;
-  padding: $body-inner-padding;
-  padding-top: $body-inner-padding + 50px;
+  padding: $body-padding;
+  padding-top: $body-padding-top;
 
   // General
   hr {
@@ -26,7 +26,20 @@ body {
       margin-bottom: 12px;
     }
     &#a-bot-d {
-      margin-top: 12px;
+      @include MQ(1440px, max-width) {
+        margin-top: 12px;
+      }
+      @include MQ(1440px) {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        margin-top: ($body-padding-top - $body-padding) / 2;
+        right: 0;
+        top: 50%;
+        @include translate(0, -50%);
+        width: calc((100vw - #{$container-max-width}) / 2 );
+      }
     }
   }
   p.blockers-text {

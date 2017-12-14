@@ -23,12 +23,8 @@ header {
   }
 
   aside#sidebar {
-    $body-padding: 12px;
-    $body-padding-top: 62px;
-    $padding-offset: $body-padding-top + $body-padding * 2;
-
-    $icon-size: calc((100vh - #{$padding-offset}) / 12 / 1.4);
-    $icon-size-hover: calc((100vh - #{$padding-offset}) / 12);
+    $icon-size: calc((100vh - #{$body-padding-top-offset}) / 12 / 1.4);
+    $icon-size-hover: calc((100vh - #{$body-padding-top-offset}) / 12);
 
     @include MQ(1300px, max-width) {
       nav {
