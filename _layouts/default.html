@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% if jekyll.environment == "production" %}
-    {% include lib/google-analytics.html %}
-  {% endif %}
+  {% include lib/google-analytics.html %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,9 +39,7 @@
   <script src="/assets/js/site.min.js"></script>
   {% if page.head %}{{ page.head }}{% endif %}
   {% include lib/cookie-consent.html %}
-  {% if jekyll.environment == "production" %}
-    {% include lib/google-adsense.html %}
-  {% endif %}
+  {% include lib/google-adsense.html %}
 </head>
 <body>
   {% include layout-parts/header.html %}

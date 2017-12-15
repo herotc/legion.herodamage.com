@@ -30,15 +30,16 @@ body {
         margin-top: 12px;
       }
       @include MQ(1440px) {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        height: calc(100vh - #{$body-padding-top-offset});
+        height: calc(100vh - #{$body-padding-top} - #{$body-padding});
         position: fixed;
-        margin: $body-padding-top 0;
+        margin: $body-padding-top 0 $body-padding 0;
         right: 0;
         top: 0;
         width: calc(((100vw - #{$container-max-width}) / 2) - #{$scrollbar-width});
+
+        ins {
+          margin: auto;
+        }
       }
     }
   }
