@@ -30,11 +30,12 @@ body {
         margin-top: 12px;
       }
       @include MQ(1440px) {
-        height: calc(100vh - #{$body-padding-top} - #{$body-padding});
+        max-height: calc(100vh - #{$body-height-top});
+        margin-top: $body-height-top / 2;
         position: fixed;
-        margin: $body-padding-top 0 $body-padding 0;
         right: 0;
-        top: 0;
+        top: 50%;
+        @include translate(0, -50%);
         width: calc(((100vw - #{$container-max-width}) / 2) - #{$scrollbar-width});
 
         ins {
