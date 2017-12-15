@@ -26,10 +26,10 @@ body {
       margin-bottom: 12px;
     }
     &#a-bot-d {
-      @include MQ(1440px, max-width) {
+      @include MQ(1540px, max-width) {
         margin-top: 12px;
       }
-      @include MQ(1440px) {
+      @include MQ(1540px) {
         max-height: calc(100vh - #{$body-height-top});
         margin-top: $body-height-top / 2;
         position: fixed;
