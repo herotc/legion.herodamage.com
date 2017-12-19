@@ -1,7 +1,7 @@
 body {
   background-color: $bg;
   color: $text;
-  padding: $body-padding;
+  padding: $base-padding;
   padding-top: $body-padding-top;
 
   // General
@@ -23,20 +23,20 @@ body {
       padding: 0;
     }
     &#a-top-d {
-      margin-bottom: 12px;
+      margin-bottom: $base-padding;
     }
     &#a-bot-d {
       @include MQ(1540px, max-width) {
-        margin-top: 12px;
+        margin-top: $base-padding;
       }
       @include MQ(1540px) {
         max-height: calc(100vh - #{$body-height-top});
         margin-top: $body-height-top / 2;
         position: fixed;
-        right: 0;
+        right: $base-padding;
         top: 50%;
         @include translate(0, -50%);
-        width: calc((100% - #{$container-max-width}) / 2);
+        width: calc(((100% - #{$container-max-width}) / 2) - $base-padding);
 
         ins {
           margin: auto;
@@ -83,7 +83,7 @@ body {
     }
 
     section#home-introduction {
-      margin-bottom: 12px;
+      margin-bottom: $base-padding;
 
       @include MQ($MD) {
         align-items: center;
@@ -92,7 +92,7 @@ body {
       }
 
       > * {
-        padding: 12px;
+        padding: $base-padding;
       }
 
       figure {

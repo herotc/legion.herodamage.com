@@ -40,8 +40,8 @@ header {
     @include MQ(1300px) {
       nav {
         position: fixed;
-        left: 12px;
-        margin-top: ($body-padding-top - $body-padding) / 2;
+        left: $base-padding;
+        margin-top: ($body-padding-top - $base-padding) / 2;
         top: 50%;
         @include translate(0, -50%);
         width: $icon-size-hover;
@@ -82,7 +82,7 @@ header {
   }
 
   nav#header {
-    margin-bottom: 12px;
+    margin-bottom: $base-padding;
     padding: 6px;
     text-align: center;
   }
