@@ -36,7 +36,7 @@ body {
         right: $base-padding;
         top: 50%;
         @include translate(0, -50%);
-        width: calc(((100% - #{$container-max-width}) / 2) - $base-padding);
+        width: calc(((100% - #{$container-max-width}) / 2) - #{$base-padding});
 
         ins {
           margin: auto;
