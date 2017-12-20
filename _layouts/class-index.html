@@ -27,7 +27,8 @@ layout: default
             {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
               <a class="list-group-item" href="{{ entry.url }}" title="{{ spec.name }}">
                 <h4 class="h5">{{ spec.name }}</h4>
-                <span class="update-date">{{ entry.lastupdate | truncatewords: 2 | remove: '...' }}</span>
+                {% assign mostRecentEntry = spec.items | sort: "lastupdate" | last %}
+                <span class="update-date">{{ mostRecentEntry.lastupdate | truncatewords: 2 | remove: '...' }}</span>
               </a>
             {% endif %}
           {% endfor %}
