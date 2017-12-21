@@ -1,3 +1,3 @@
 call bundle install
-call bundle exec jekyll serve --incremental
+call bundle exec jekyll serve
 pause
