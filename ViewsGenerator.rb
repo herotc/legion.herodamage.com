@@ -98,7 +98,9 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
     json = JSON.parse(File.read(metaFile))
     simc = {
       'buildDate' => json['build_date'].gsub('  ', ' '),
-      'targetError' => json['options']['target_error']
+      'targetError' => json['options']['target_error'],
+      'buildTimestamp' => json['build_timestamp'],
+      'resultTimestamp' => json['result_timestamp']
     }
     wow = {
       'build' => json['options']['dbc'][json['options']['dbc']['version_used']]['build_level'],
@@ -149,6 +151,8 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
     front['csvfile'] = " #{csvFile}"
     front['targeterror'] = " #{simc['targetError']}"
     front['lastupdate'] = " #{simc['buildDate']}"
+    front['buildtimestamp'] = " #{simc['buildTimestamp']}"
+    front['resulttimestamp'] = " #{simc['resultTimestamp']}"
     front['build'] = " #{wow['version']} ##{wow['build']}"
 
     if reportInfos['type'] == "Relics" || reportInfos['type'] == "Trinkets"
