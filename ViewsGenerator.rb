@@ -54,7 +54,7 @@ end
 # Generate the new views
 Dir.glob("#{dataFolder}/*.csv").each do |file|
   reportFilename = file.gsub("#{dataFolder}/", '').gsub(".csv", '')
-  csvFile = "#{dataFolder}/#{reportFilename}.csv"
+  reportFile = "#{dataFolder}/#{reportFilename}.csv"
   metaFile = "#{metaFolder}/#{reportFilename}.json"
 
   if File.exist?(metaFile)
@@ -148,7 +148,7 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
       front['crucibleweight'] = " #{json['crucibleweight']}"
     end
 
-    front['csvfile'] = " #{csvFile}"
+    front['reportfile'] = " #{reportFile}"
     front['targeterror'] = " #{simc['targetError']}"
     front['lastupdate'] = " #{simc['buildDate']}"
     front['buildtimestamp'] = " #{simc['buildTimestamp']}"
@@ -177,7 +177,7 @@ Dir.glob("#{dataFolder}/*.csv").each do |file|
     File.open(viewFile.downcase, 'w') do |view|
       view.puts "---"
       front.each do |key, value|
-        if key == 'csvfile'
+        if key == 'reportfile'
           view.puts
         end
         view.puts "#{key}:#{value}"
