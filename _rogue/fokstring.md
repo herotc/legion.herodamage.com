@@ -22,7 +22,7 @@ With the **latest Raidbots version set to "Nightly"**, you can simply use:
 copy=FoK
 fok_rotation=1
   </textarea>
-  <button class="btn btn-default" onclick="copyToClipboard('fokstring');">Copy</button>
+  <button class="btn btn-default" onclick="window.herodamage.copyToClipboard('fokstring');">Copy</button>
 </p>
 
 With a somewhat older version of SimC, you can use:
@@ -164,5 +164,5 @@ actions.maintain+=/pool_resource,for_next=1
 actions.maintain+=/garrote,cycle_targets=1,if=(!talent.subterfuge.enabled|!(cooldown.vanish.up&cooldown.vendetta.remains<=4))&combo_points.deficit>=1&refreshable&(pmultiplier<=1|remains<=tick_time)&(!exsanguinated|remains<=tick_time*2)&target.time_to_die-remains>4
 actions.maintain+=/garrote,if=set_bonus.tier20_4pc&talent.exsanguinate.enabled&prev_gcd.1.rupture&cooldown.exsanguinate.remains<1&(!cooldown.vanish.up|time>12)
   </textarea>
-  <button class="btn btn-default" onclick="copyToClipboard('fokstring');">Copy</button>
+  <button class="btn btn-default" onclick="window.herodamage.copyToClipboard('fokstring');">Copy</button>
 </p>

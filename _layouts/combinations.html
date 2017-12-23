@@ -26,139 +26,44 @@ layout: default
     <b>Target Error:</b> {{ page.targeterror }}%
   </p>
   {% include layout-parts/ads/inarticle.html %}
-  <table id="combinator-table" class="table table-hover">
+  <table id="combinations-table" class="table table-hover">
     <thead>
-    <tr id="combinator-table-headers">
+    <tr id="combinations-table-headers">
       <th>#</th>
       <th>Talents</th>
       <th>Sets</th>
       <th>Legendaries</th>
       <th>DPS</th>
     </tr>
-    <tr id="combinator-table-filters">
+    <tr id="combinations-table-filters">
       <th></th>
       <th>
-        <input id="combinator-table-filter-talents" type="text" class="form-control" onkeyup="updateCombinatorTable();">
+        <input id="combinations-table-filter-talents" type="text" class="form-control" onkeyup="window.herodamage.combinationsUpdate();">
       </th>
       <th>
-        <select id="combinator-table-filter-sets" title="Sets" class="selectpicker"
-          data-selected-text-format="static" onchange="updateCombinatorTable();" multiple>
+        <select id="combinations-table-filter-sets" title="Sets" class="selectpicker"
+          data-selected-text-format="static" onchange="window.herodamage.combinationsUpdate();" multiple>
         </select>
       </th>
       <th>
-        <select id="combinator-table-filter-legendaries" title="Legendaries" class="selectpicker"
-          data-selected-text-format="static" onchange="updateCombinatorTable();" multiple>
+        <select id="combinations-table-filter-legendaries" title="Legendaries" class="selectpicker"
+          data-selected-text-format="static" onchange="window.herodamage.combinationsUpdate();" multiple>
         </select>
       </th>
       <th></th>
     </tr>
     </thead>
-    <tbody id="combinator-table-data">
+    <tbody id="combinations-table-data">
     </tbody>
   </table>
-  <div id="combinator-loading" class="text-center">
+  <div id="combinations-loading" class="text-center">
     <h2>Loading...</h2>
   </div>
-  <div id="combinator-table-nav" class="text-right"></div>
+  <div id="combinations-table-nav" class="text-right"></div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 <script>
-  var combinatorData;
-  var hasBossDPS = false;
-
-  function updateCombinatorTable() {
-    if (!combinatorData)
-      return;
-    var filterTalents = document.getElementById("combinator-table-filter-talents").value;
-    var filterTalentsRegex = new RegExp("^" + filterTalents.replace(new RegExp("x|\\*", "ig"), "[0-3]"), "i");
-    var filterSets = $('#combinator-table-filter-sets').val();
-    var filterLegendaries = $('#combinator-table-filter-legendaries').val();
-    var combinatorRows = $.grep(combinatorData, function (columns) {
-      if (filterTalents !== "" && !filterTalentsRegex.test(columns[0]))
-        return false;
-      if (filterSets.indexOf(columns[1]) < 0)
-        return false;
-      var legos = columns[2].split(", ");
-      if ($(filterLegendaries).filter(legos).length < legos.length && columns[2] !== "None")
-        return false;
-      return true;
-    });
-    var tableData = document.getElementById("combinator-table-data");
-    var $tableNav = $(document.getElementById("combinator-table-nav"));
-    if ($tableNav.data("twbs-pagination"))
-      $tableNav.twbsPagination("destroy");
-    $tableNav.twbsPagination({
-      totalPages: Math.max(1, Math.ceil(combinatorRows.length / 15)),
-      visiblePages: 3,
-      onPageClick: function (event, page) {
-        var html = "";
-        combinatorRows.slice((page - 1) * 15, page * 15).forEach(function (columns) {
-          html += "<tr>";
-          html += "<td>" + columns[columns.length - 1] + "</td>";
-          html += "<td>" + columns[0] + "</td>";
-          html += "<td>" + columns[1] + "</td>";
-          html += "<td>" + columns[2] + "</td>";
-          html += "<td>" + formatNumber(columns[3]) + "</td>";
-          if (hasBossDPS) {
-            html += "<td>";
-            if (columns.length === 6)
-              html += formatNumber(columns[4]);
-            html += "</td>";
-          }
-          html += "</tr>";
-        });
-        tableData.innerHTML = html;
-      }
-    });
-  }
-
-    $.get("/" + "{{ page.csvfile }}", function (data) {
-      combinatorData = $.csv.toArrays(data);
-      combinatorData.sort(function (a, b) {
-        return b[3] - a[3];
-      });
-      var idx = 0;
-      var sets = [];
-      var legos = [];
-      combinatorData.forEach(function (columns) {
-        idx++;
-        columns.push(idx);
-        if ($.inArray(columns[1], sets) < 0) {
-          sets.push(columns[1]);
-        }
-        columns[2].split(", ").forEach(function (lego) {
-          if (lego !== "None" && $.inArray(lego, legos) < 0) {
-            legos.push(lego);
-          }
-        });
-        if (!hasBossDPS && columns.length === 6)
-          hasBossDPS = true;
-      });
-      sets.sort().reverse();
-      sets.forEach(function (set) {
-        document.getElementById("combinator-table-filter-sets").insertAdjacentHTML("beforeend", "<option>" + set + "</option>");
-      });
-      var setSelect = $("#combinator-table-filter-sets");
-      setSelect.selectpicker("val", sets);
-      setSelect.selectpicker("refresh");
-      legos.sort();
-      legos.forEach(function (lego) {
-        document.getElementById("combinator-table-filter-legendaries").insertAdjacentHTML("beforeend", "<option>" + lego + "</option>");
-      });
-      var legoSelect = $("#combinator-table-filter-legendaries");
-      var beltIdx = legos.indexOf("Cinidaria"); // Don't show Cinidaria by default
-      if (beltIdx > -1) {
-        legos.splice(beltIdx, 1);
-      }
-      legoSelect.selectpicker("val", legos);
-      legoSelect.selectpicker("refresh");
-      if (hasBossDPS) {
-        document.getElementById("combinator-table-headers").insertAdjacentHTML("beforeend", "<th>Boss DPS</th>");
-        document.getElementById("combinator-table-filters").insertAdjacentHTML("beforeend", "<th></th>");
-      }
-      updateCombinatorTable();
-      $(document.getElementById("combinator-loading")).remove();
-    });
+  window.herodamage.combinationsInit("{{ page.csvfile }}");
 </script>
