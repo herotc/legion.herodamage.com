@@ -1,0 +1,9 @@
+exclude:
+  - .editorconfig
+  - Gemfile
+  - Gemfile.lock
+  - devserve.bat
+  - README.md
+  - ViewsGenerator.rb
+  - assets/img/src
+  - data/meta
