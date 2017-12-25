@@ -29,12 +29,12 @@
       var filterSets = $("#combinations-table-filter-sets").val();
       var filterLegendaries = $("#combinations-table-filter-legendaries").val();
       var combinationsRows = $.grep(combinationsData, function (columns) {
-        if (filterTalents !== "" && !filterTalentsRegex.test(columns[0]))
+        if (filterTalents !== "" && !filterTalentsRegex.test(columns[1]))
           return false;
-        if (filterSets.indexOf(columns[1]) < 0)
+        if (filterSets.indexOf(columns[2]) < 0)
           return false;
-        var legos = columns[2].split(", ");
-        if ($(filterLegendaries).filter(legos).length < legos.length && columns[2] !== "None")
+        var legos = columns[3].split(", ");
+        if ($(filterLegendaries).filter(legos).length < legos.length && columns[3] !== "None")
           return false;
         return true;
       });
@@ -49,15 +49,15 @@
           var html = "";
           combinationsRows.slice((page - 1) * 15, page * 15).forEach(function (columns) {
             html += "<tr>";
-            html += "<td>" + columns[columns.length - 1] + "</td>";
             html += "<td>" + columns[0] + "</td>";
             html += "<td>" + columns[1] + "</td>";
             html += "<td>" + columns[2] + "</td>";
-            html += "<td>" + formatNumber(columns[3]) + "</td>";
+            html += "<td>" + columns[3] + "</td>";
+            html += "<td>" + formatNumber(columns[4]) + "</td>";
             if (hasBossDPS) {
               html += "<td>";
               if (columns.length === 6)
-                html += formatNumber(columns[4]);
+                html += formatNumber(columns[5]);
               html += "</td>";
             }
             html += "</tr>";
@@ -69,20 +69,14 @@
 
     hd.combinationsInit = function combinationsInit(reportPath) {
       $.get("/" + reportPath, function (data) {
-        combinationsData = $.csv.toArrays(data);
-        combinationsData.sort(function (a, b) {
-          return b[3] - a[3];
-        });
-        var idx = 0;
+        combinationsData = data;
         var sets = [];
         var legos = [];
         combinationsData.forEach(function (columns) {
-          idx++;
-          columns.push(idx);
-          if ($.inArray(columns[1], sets) < 0) {
-            sets.push(columns[1]);
+          if ($.inArray(columns[2], sets) < 0) {
+            sets.push(columns[2]);
           }
-          columns[2].split(", ").forEach(function (lego) {
+          columns[3].split(", ").forEach(function (lego) {
             if (lego !== "None" && $.inArray(lego, legos) < 0) {
               legos.push(lego);
             }
