@@ -40,8 +40,8 @@ layout: default
   </ul>
   {% if page.crucibleweight %}
     <p><b>CrucibleWeight Import String</b></p>
-    <p class="crucibleweight">
-      <textarea id="crucibleweightstring" class="form-control" readonly>{{ page.crucibleweight }}</textarea>
+    <p class="copybox">
+      <textarea id="crucibleweightstring" class="form-control" rows="3" readonly>{{ page.crucibleweight }}</textarea>
       <button class="btn btn-default" onclick="window.herodamage.copyToClipboard('crucibleweightstring');">Copy</button>
     </p>
   {% endif %}

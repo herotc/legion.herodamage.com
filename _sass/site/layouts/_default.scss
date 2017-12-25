@@ -151,4 +151,19 @@ body {
     display: block;
     margin: 0 auto;
   }
+
+  .copybox {
+    align-items: stretch;
+    display: flex;
+  
+    textarea {
+      border-radius: 4px 0 0 4px;
+      overflow: hidden;
+      resize: vertical;
+    }
+    button {
+      border-width: 1px 1px 1px 0;
+      border-radius: 0 4px 4px 0;
+    }
+  }
 }
