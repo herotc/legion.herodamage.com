@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% include lib/google-analytics.html %}
+  {% include lib/google-analytics.jekyll %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,17 +42,17 @@
     <script src="/assets/js/src/main.js"></script>
   {% endif %}
   {% if page.head %}{{ page.head }}{% endif %}
-  {% include lib/cookie-consent.html %}
-  {% include lib/google-adsense.html %}
+  {% include lib/cookie-consent.jekyll %}
+  {% include lib/google-adsense.jekyll %}
 </head>
 <body>
-  {% include layout-parts/header.html %}
-  {% include layout-parts/ads/top.html %}
+  {% include layout-parts/header.jekyll %}
+  {% include layout-parts/ads/top.jekyll %}
   <main>
     {{ content }}
   </main>
-  {% include layout-parts/ads/bot.html %}
-  {% include layout-parts/footer.html %}
-  {% include lib/adblockers.html %}
+  {% include layout-parts/ads/bot.jekyll %}
+  {% include layout-parts/footer.jekyll %}
+  {% include lib/adblockers.jekyll %}
 </body>
 </html>

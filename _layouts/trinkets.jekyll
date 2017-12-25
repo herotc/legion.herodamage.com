@@ -14,8 +14,8 @@ layout: default
     <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook.
     If your character is different from the setup used here, personal simulations are recommended.
   </p>
-  {% include layout-parts/fightstylenav.html %}
-  {% include layout-parts/gearvariationnav.html %}
+  {% include layout-parts/fightstylenav.jekyll %}
+  {% include layout-parts/gearvariationnav.jekyll %}
   <p>
     <b>Last Update:</b> {{ page.lastupdate }}<br>
     <b>WoW-Build:</b> {{ page.build }}<br>
@@ -33,8 +33,8 @@ layout: default
       {% endfor %}
     </ul>
   </p>
-  {% include layout-parts/ads/inarticle.html %}
-  {% include layout-parts/googlechart.html %}
+  {% include layout-parts/ads/inarticle.jekyll %}
+  {% include layout-parts/googlechart.jekyll %}
 </div>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
 <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>

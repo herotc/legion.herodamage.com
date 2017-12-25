@@ -18,14 +18,14 @@ layout: default
     taken into account. This is why you, as always, should
     <u><b>simulate your own character</b></u> to find your optimal setup.
   </p>
-  {% include layout-parts/fightstylenav.html %}
-  {% include layout-parts/gearvariationnav.html %}
+  {% include layout-parts/fightstylenav.jekyll %}
+  {% include layout-parts/gearvariationnav.jekyll %}
   <p>
     <b>Last Update:</b> {{ page.lastupdate }}<br>
     <b>WoW-Build:</b> {{ page.build }}<br>
     <b>Target Error:</b> {{ page.targeterror }}%
   </p>
-  {% include layout-parts/ads/inarticle.html %}
+  {% include layout-parts/ads/inarticle.jekyll %}
   <table id="combinations-table" class="table table-hover">
     <thead>
     <tr id="combinations-table-headers">

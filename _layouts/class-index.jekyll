@@ -38,7 +38,7 @@ layout: default
       </div>
       {% if forloop.first %}
         <hr>
-        {% include layout-parts/ads/inarticle.html %}
+        {% include layout-parts/ads/inarticle.jekyll %}
       {% endif %}
       {% unless forloop.last %}
       <hr>

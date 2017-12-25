@@ -19,8 +19,8 @@ layout: default
     <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook.
     If your character is different from the setup used here, personal simulations are recommended.
   </p>
-  {% include layout-parts/fightstylenav.html %}
-  {% include layout-parts/gearvariationnav.html %}
+  {% include layout-parts/fightstylenav.jekyll %}
+  {% include layout-parts/gearvariationnav.jekyll %}
   <p>
     <b>Last Update:</b> {{ page.lastupdate }}<br>
     <b>WoW-Build:</b> {{ page.build }}<br>
@@ -38,7 +38,7 @@ layout: default
       <li>{{ legendary }}</li>
     {% endfor %}
   </ul>
-  {% include layout-parts/ads/inarticle.html %}
+  {% include layout-parts/ads/inarticle.jekyll %}
   {% if page.crucibleweight %}
     <p><b>CrucibleWeight Import String</b></p>
     <p class="crucibleweight">
@@ -46,9 +46,9 @@ layout: default
       <button class="btn btn-default" onclick="window.herodamage.copyToClipboard('crucibleweightstring');">Copy</button>
     </p>
   {% endif %}
-  {% include layout-parts/googlechart.html %}
+  {% include layout-parts/googlechart.jekyll %}
 </div>
 <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-  window.herodamage.relicsInit("{{ page.reportfile }}", "{{ page.charttitle }}", {{ page.num_ilevel_values }});
+  window.herodamage.relicsInit("{{ page.reportfile }}", "{{ page.charttitle }}");
 </script>

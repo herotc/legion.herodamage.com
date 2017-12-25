@@ -1,7 +1,7 @@
 ---
+permalink: /changelog/
 title: Changelog
 description: Latest changes made to the website.
-permalink: /changelog/
 ---
 
 Website Changelog
