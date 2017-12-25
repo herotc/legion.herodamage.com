@@ -114,9 +114,6 @@
 
   // Relics
   hd.relicsInit = function relicsInit(reportPath, chartTitle, iLevelValues) {
-    google.charts.load("current", {"packages": ["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-
     function excludeEmptyRows(dataTable) {
       var view = new google.visualization.DataView(dataTable);
       var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
@@ -125,152 +122,139 @@
     }
 
     function drawChart() {
-      var columntypes = ["string"];
-      for (var i = 0; i < iLevelValues; i++) {
-        columntypes.push("number"); // Value
-        columntypes.push("string"); // Annotation
-      }
-      var query = new google.visualization.Query("/" + reportPath, {
-        csvColumns: columntypes,
-        csvHasHeader: false
+      $.get("/data/RelicSimulation_1T_T21_Rogue_Subtlety_DfA-Mantle+Hands.json", function (data) {
+        var data = new google.visualization.arrayToDataTable(data);
+        var col, row;
+
+        // Sort by last column (relic ilevel), then 3 relics (column 5)
+        data.sort([{column: data.getNumberOfColumns() - 1, desc: true}, {column: 5, desc: true}]);
+
+        // Mark annotation columns
+        for (col = 2; col < data.getNumberOfColumns(); col += 2) {
+          data.setColumnProperties(col, {type: "string", role: "annotation"});
+        }
+
+        // Add Tooltip and Style columns
+        for (col = 3; col <= data.getNumberOfColumns(); col += 4) {
+          data.insertColumn(col, {type: "string", role: "tooltip", "p": {"html": true}});
+          data.insertColumn(col + 1, {type: "string", role: "style"});
+        }
+
+        // Define Crucible T2
+        var CrucibleLightTraits = ["Light Speed", "Infusion of Light", "Secure in the Light", "Shocklight"];
+        var CrucibleShadowTraits = ["Master of Shadows", "Murderous Intent", "Shadowbind", "Torment the Weak", "Chaotic Darkness", "Dark Sorrows"];
+
+        // Calculate Differences
+        for (row = 0; row < data.getNumberOfRows(); row++) {
+          var relicStyle = "";
+          if ($.inArray(data.getValue(row, 0), CrucibleLightTraits) >= 0) {
+            relicStyle = "stroke-width: 4; stroke-color: #bb8800; color: #ffcc00";
+          } else if ($.inArray(data.getValue(row, 0), CrucibleShadowTraits) >= 0) {
+            relicStyle = "stroke-width: 4; stroke-color: #5500aa; color: #8800ff";
+          }
+          var prevVal = 0;
+          for (col = 1; col < data.getNumberOfColumns(); col += 4) {
+            var curVal = data.getValue(row, col);
+            var stepVal = curVal - prevVal;
+            var tooltip = "<div class=\"chart-tooltip\"><b>" + data.getValue(row, col + 1) + "x " + data.getValue(row, 0) +
+              "</b><br><b>Total:</b> " + formatNumber(curVal.toFixed()) +
+              "<br><b>Increase:</b> " + formatNumber(stepVal.toFixed()) + "</div>";
+            data.setValue(row, col + 2, tooltip);
+            data.setValue(row, col + 3, relicStyle);
+            data.setValue(row, col, stepVal);
+            if (stepVal < 0) {
+              data.setValue(row, col, 0);
+              data.setValue(row, col + 1, "");
+            }
+            prevVal = curVal > prevVal ? curVal : prevVal;
+          }
+        }
+
+        // Sort crucible traits to the bottom using a temporary column
+        var sortCol = data.addColumn("number");
+        for (row = 0; row < data.getNumberOfRows(); row++) {
+          if ($.inArray(data.getValue(row, 0), CrucibleLightTraits) >= 0 || $.inArray(data.getValue(row, 0), CrucibleShadowTraits) >= 0) {
+            data.setValue(row, sortCol, 1);
+          } else {
+            data.setValue(row, sortCol, 0);
+          }
+        }
+        data.sort([{column: sortCol, desc: false}]);
+        data.removeColumn(sortCol);
+
+        // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
+        var content = document.getElementById("fightstyle-tabs");
+        var contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue("padding-left") * 2;
+
+        // Set chart options
+        var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
+        var bgcol = "#222";
+        var textcol = "#CCC";
+        var options = {
+          title: chartTitle,
+          backgroundColor: bgcol,
+          chartArea: {
+            top: 50,
+            bottom: 100,
+            left: 150,
+            right: 50
+          },
+          hAxis: {
+            gridlines: {
+              count: 20
+            },
+            format: 'short',
+            textStyle: {
+              color: textcol
+            },
+            title: "DPS Increase",
+            titleTextStyle: {
+              color: textcol
+            },
+            viewWindow: {
+              min: 0
+            }
+          },
+          vAxis: {
+            textStyle: {
+              fontSize: 12,
+              color: textcol
+            },
+            titleTextStyle: {
+              color: textcol
+            }
+          },
+          annotations: {
+            textStyle: {
+              fontSize: 10
+            },
+            alwaysOutside: true,
+            stem: {
+              length: -10,
+              color: "transparent"
+            }
+          },
+          titleTextStyle: {
+            color: textcol
+          },
+          tooltip: {
+            isHtml: true
+          },
+          legend: {
+            position: "none"
+          },
+          isStacked: true,
+          width: chartWidth
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
+        chart.draw(excludeEmptyRows(data), options);
       });
-      query.send(handleQueryResponse);
     }
 
-    function handleQueryResponse(response) {
-      if (response.isError()) {
-        alert("Error in query: " + response.getMessage() + " " + response.getDetailedMessage());
-        return;
-      }
-      var col, row;
-
-      var data = response.getDataTable();
-
-      // Sort by last column (relic ilevel), then 3 relics (column 5)
-      data.sort([{column: data.getNumberOfColumns() - 1, desc: true}, {column: 5, desc: true}]);
-
-      // Mark annotation columns
-      for (col = 2; col < data.getNumberOfColumns(); col += 2) {
-        data.setColumnProperties(col, {type: "string", role: "annotation"});
-      }
-
-      // Add Tooltip and Style columns
-      for (col = 3; col <= data.getNumberOfColumns(); col += 4) {
-        data.insertColumn(col, {type: "string", role: "tooltip", "p": {"html": true}});
-        data.insertColumn(col + 1, {type: "string", role: "style"});
-      }
-
-      // Define Crucible T2
-      var CrucibleLightTraits = ["LightSpeed", "InfusionOfLight", "SecureInTheLight", "Shocklight"];
-      var CrucibleShadowTraits = ["MasterOfShadows", "MurderousIntent", "Shadowbind", "TormentTheWeak", "ChaoticDarkness", "DarkSorrows"];
-
-      // Calculate Differences
-      for (row = 0; row < data.getNumberOfRows(); row++) {
-        var relicStyle = "";
-        if ($.inArray(data.getValue(row, 0), CrucibleLightTraits) >= 0) {
-          relicStyle = "stroke-width: 4; stroke-color: #bb8800; color: #ffcc00";
-        } else if ($.inArray(data.getValue(row, 0), CrucibleShadowTraits) >= 0) {
-          relicStyle = "stroke-width: 4; stroke-color: #5500aa; color: #8800ff";
-        }
-        var prevVal = 0;
-        for (col = 1; col < data.getNumberOfColumns(); col += 4) {
-          var curVal = data.getValue(row, col);
-          var stepVal = curVal - prevVal;
-          var tooltip = "<div class=\"chart-tooltip\"><b>" + data.getValue(row, col + 1) + "x " + data.getValue(row, 0) +
-            "</b><br><b>Total:</b> " + formatNumber(curVal.toFixed()) +
-            "<br><b>Increase:</b> " + formatNumber(stepVal.toFixed()) + "</div>";
-          data.setValue(row, col + 2, tooltip);
-          data.setValue(row, col + 3, relicStyle);
-          data.setValue(row, col, stepVal);
-          if (stepVal < 0) {
-            data.setValue(row, col, 0);
-            data.setValue(row, col + 1, "");
-          }
-          prevVal = curVal > prevVal ? curVal : prevVal;
-        }
-      }
-
-      // Sort crucible traits to the bottom using a temporary column
-      var sortCol = data.addColumn("number");
-      for (row = 0; row < data.getNumberOfRows(); row++) {
-        if ($.inArray(data.getValue(row, 0), CrucibleLightTraits) >= 0 || $.inArray(data.getValue(row, 0), CrucibleShadowTraits) >= 0) {
-          data.setValue(row, sortCol, 1);
-        } else {
-          data.setValue(row, sortCol, 0);
-        }
-      }
-      data.sort([{column: sortCol, desc: false}]);
-      data.removeColumn(sortCol);
-
-      // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
-      var content = document.getElementById("fightstyle-tabs");
-      var contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue("padding-left") * 2;
-
-      // Set chart options
-      var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
-      var bgcol = "#222";
-      var textcol = "#CCC";
-      var options = {
-        title: chartTitle,
-        backgroundColor: bgcol,
-        chartArea: {
-          top: 50,
-          bottom: 100,
-          left: 150,
-          right: 50
-        },
-        hAxis: {
-          gridlines: {
-            count: 20
-          },
-          format: 'short',
-          textStyle: {
-            color: textcol
-          },
-          title: "DPS Increase",
-          titleTextStyle: {
-            color: textcol
-          },
-          viewWindow: {
-            min: 0
-          }
-        },
-        vAxis: {
-          textStyle: {
-            fontSize: 12,
-            color: textcol
-          },
-          titleTextStyle: {
-            color: textcol
-          }
-        },
-        annotations: {
-          textStyle: {
-            fontSize: 10
-          },
-          alwaysOutside: true,
-          stem: {
-            length: -10,
-            color: "transparent"
-          }
-        },
-        titleTextStyle: {
-          color: textcol
-        },
-        tooltip: {
-          isHtml: true
-        },
-        legend: {
-          position: "none"
-        },
-        isStacked: true,
-        width: chartWidth
-      };
-
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
-      chart.draw(excludeEmptyRows(data), options);
-    }
+    google.charts.load("current", {"packages": ["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
   };
 
   // Trinkets
@@ -284,8 +268,7 @@
 
     function drawChart() {
       $.get("/" + reportPath, function (data) {
-        arrayData = data;
-        var data = new google.visualization.arrayToDataTable(arrayData);
+        var data = new google.visualization.arrayToDataTable(data);
         var col, row;
 
         // Sorting
