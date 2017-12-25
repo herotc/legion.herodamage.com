@@ -161,7 +161,7 @@ Dir.glob("#{dataFolder}/*.json").each do |file|
 
     # Special hotfix for T19 Relics to hide NC T2 traits
     if reportInfos['type'] == "Relics" && reportInfos['tier'] == 'T19'
-      front['chart_class'] = ' half-height'
+      front['chartStyleClass'] = ' half-height'
     end
 
 
