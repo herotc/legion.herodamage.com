@@ -7,16 +7,23 @@ layout: default
 
   {{ content }}
 
-  {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
-  {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
-  {% for simulation in simulations %}
-    {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
-    {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
-    {% if simulationNameShorten == classCollectionPrefix %}
-      {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
-      <h2>{{ simulationName | capitalize }}</h2>
+  {% assign wowClass = page.wowClass %}
+  {% assign wowClassSize = wowClass | size %}
+  {% assign validCollections = "" %}
+  {% for name in site.simulationTypes %}
+    {% assign validCollections = validCollections | append: wowClass | append: "-" | append: name %}
+    {% unless forloop.last %}
+      {% assign validCollections = validCollections | append: ", " %}
+    {% endunless %}
+  {% endfor %}
+  {% assign simCollections = site.documents | where_exp: "item", "validCollections contains item.collection" | where_exp: "item", "item.collection != wowClass" | group_by: "collection" | sort: "name" %}
+  {% for simCollection in simCollections %}
+    {% assign simCollectionNamePrefix = simCollection.name | slice: 0, wowClassSize %}
+    {% if simCollectionNamePrefix == wowClass %}
+      {% assign simType = simCollection.name | split: '-' | last %}
+      <h2>{{ simType | capitalize }}</h2>
       <div class="row">
-        {% assign tiers = simulation.items | group_by: "tier" | sort: "name" %}
+        {% assign tiers = simCollection.items | group_by: "tier" | sort: "name" %}
         {% for tier in tiers reversed %}
         <div class="col-sm-6">
           <h3>{{ tier.name }}</h3>

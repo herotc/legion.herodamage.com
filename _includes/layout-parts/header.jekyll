@@ -17,20 +17,27 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          {% if page.wow_class %}
-            {% capture classCollectionPrefix %}{{ page.wow_class }}-{% endcapture %}
-            {% assign simulations = site.documents | where_exp: "item", "item.collection contains classCollectionPrefix" | group_by: "collection" | sort: "name" %}
-            {% for simulation in simulations %}
-              {% assign classCollectionPrefixSize = classCollectionPrefix | size %}
-              {% assign simulationNameShorten = simulation.name | slice: 0, classCollectionPrefixSize %}
-              {% if simulationNameShorten == classCollectionPrefix %}
+          {% if page.wowClass %}
+            {% assign wowClass = page.wowClass %}
+            {% assign wowClassSize = wowClass | size %}
+            {% assign validCollections = "" %}
+            {% for name in site.simulationTypes %}
+              {% assign validCollections = validCollections | append: wowClass | append: "-" | append: name %}
+              {% unless forloop.last %}
+                {% assign validCollections = validCollections | append: ", " %}
+              {% endunless %}
+            {% endfor %}
+            {% assign simCollections = site.documents | where_exp: "item", "validCollections contains item.collection" | where_exp: "item", "item.collection != wowClass" | group_by: "collection" | sort: "name" %}
+            {% for simCollection in simCollections %}
+              {% assign simCollectionNamePrefix = simCollection.name | slice: 0, wowClassSize %}
+              {% if simCollectionNamePrefix == wowClass %}
                 <li class="dropdown">
-                  {% assign simulationName = simulation.name | remove: page.wow_class | remove: "-" %}
-                  <a class="dropdown-toggle" href="#" title="{{ simulationName | capitalize }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{ simulationName | capitalize }} <span class="caret"></span>
+                  {% assign simType = simCollection.name | split: '-' | last %}
+                  <a class="dropdown-toggle" href="#" title="{{ simType | capitalize }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ simType | capitalize }} <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    {% assign tiers = simulation.items | group_by: "tier" | sort: "name" %}
+                    {% assign tiers = simCollection.items | group_by: "tier" | sort: "name" %}
                     {% for tier in tiers reversed %}
                       {% unless forloop.first %}
                       <li role="separator" class="divider"></li>
@@ -57,7 +64,7 @@
               </ul>
             </li>
           {% endif %}
-          {% unless page.wow_class %}
+          {% unless page.wowClass %}
             {% include layout-parts/headermainnav.jekyll %}
           {% endunless %}
         </ul>
@@ -69,9 +76,9 @@
     {% include layout-parts/wowclasspicker.jekyll %}
   </aside>
   {% endunless %}
-  {% if page.wow_class %}
+  {% if page.wowClass %}
   <nav id="header" class="navbar navbar-inverse container">
-    <a href="/{{ page.wow_class | replace: '_', '-' }}" title="{{ page.wow_class | replace: '_', ' ' | capitalize }}"><img src="/assets/img/wow-class/{{ page.wow_class }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
+    <a href="/{{ page.wowClass | replace: '_', '-' }}" title="{{ page.wowClass | replace: '_', ' ' | capitalize }}"><img src="/assets/img/wow-class/{{ page.wowClass }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
   </nav>
   {% endif %}
 </header>
