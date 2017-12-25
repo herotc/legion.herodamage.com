@@ -38,7 +38,6 @@ layout: default
       <li>{{ legendary }}</li>
     {% endfor %}
   </ul>
-  {% include layout-parts/ads/inarticle.jekyll %}
   {% if page.crucibleweight %}
     <p><b>CrucibleWeight Import String</b></p>
     <p class="crucibleweight">
@@ -46,6 +45,7 @@ layout: default
       <button class="btn btn-default" onclick="window.herodamage.copyToClipboard('crucibleweightstring');">Copy</button>
     </p>
   {% endif %}
+  {% include layout-parts/ads/inarticle.jekyll %}
   {% include layout-parts/googlechart.jekyll %}
 </div>
 <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
