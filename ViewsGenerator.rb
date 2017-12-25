@@ -52,9 +52,9 @@ simCollections.each do |simType, simColection|
 end
 
 # Generate the new views
-Dir.glob("#{dataFolder}/*.csv").each do |file|
-  reportFilename = file.gsub("#{dataFolder}/", '').gsub(".csv", '')
-  reportFile = "#{dataFolder}/#{reportFilename}.csv"
+Dir.glob("#{dataFolder}/*.json").each do |file|
+  reportFilename = file.gsub("#{dataFolder}/", '').gsub(".json", '')
+  reportFile = "#{dataFolder}/#{reportFilename}.json"
   metaFile = "#{metaFolder}/#{reportFilename}.json"
 
   if File.exist?(metaFile)
