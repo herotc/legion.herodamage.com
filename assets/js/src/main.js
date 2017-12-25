@@ -113,7 +113,7 @@
   })();
 
   // Relics
-  hd.relicsInit = function relicsInit(reportPath, chartTitle, iLevelValues) {
+  hd.relicsInit = function relicsInit(reportPath, chartTitle) {
     function excludeEmptyRows(dataTable) {
       var view = new google.visualization.DataView(dataTable);
       var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
@@ -122,7 +122,7 @@
     }
 
     function drawChart() {
-      $.get("/data/RelicSimulation_1T_T21_Rogue_Subtlety_DfA-Mantle+Hands.json", function (data) {
+      $.get("/" + reportPath, function (data) {
         var data = new google.visualization.arrayToDataTable(data);
         var col, row;
 
