@@ -283,15 +283,8 @@
     }
 
     function drawChart() {
-      $.get("/" + reportPath, function (csvString) {
-        var arrayData = $.csv.toArrays(csvString, {
-          onParseValue: function (value, state) {
-            if (state.rowNum <= 1) {
-              return value.toString();
-            }
-            return $.csv.hooks.castToScalar(value, state);
-          }
-        });
+      $.get("/" + reportPath, function (data) {
+        arrayData = data;
         var data = new google.visualization.arrayToDataTable(arrayData);
         var col, row;
 
