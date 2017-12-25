@@ -181,7 +181,6 @@ defaults:
       path: ""
       type: "death_knight"
     values:
-      layout: "class-index"
       wow_class: "death_knight"
   -
     scope:
@@ -198,7 +197,6 @@ defaults:
       layout: "relics"
       wow_class: "death_knight"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -212,7 +210,6 @@ defaults:
       path: ""
       type: "demon_hunter"
     values:
-      layout: "class-index"
       wow_class: "demon_hunter"
   -
     scope:
@@ -229,7 +226,6 @@ defaults:
       layout: "relics"
       wow_class: "demon_hunter"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -243,7 +239,6 @@ defaults:
       path: ""
       type: "druid"
     values:
-      layout: "class-index"
       wow_class: "druid"
   -
     scope:
@@ -260,7 +255,6 @@ defaults:
       layout: "relics"
       wow_class: "druid"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -274,7 +268,6 @@ defaults:
       path: ""
       type: "hunter"
     values:
-      layout: "class-index"
       wow_class: "hunter"
   -
     scope:
@@ -291,7 +284,6 @@ defaults:
       layout: "relics"
       wow_class: "hunter"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -305,7 +297,6 @@ defaults:
       path: ""
       type: "mage"
     values:
-      layout: "class-index"
       wow_class: "mage"
   -
     scope:
@@ -322,7 +313,6 @@ defaults:
       layout: "relics"
       wow_class: "mage"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -336,7 +326,6 @@ defaults:
       path: ""
       type: "monk"
     values:
-      layout: "class-index"
       wow_class: "monk"
   -
     scope:
@@ -353,7 +342,6 @@ defaults:
       layout: "relics"
       wow_class: "monk"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -367,7 +355,6 @@ defaults:
       path: ""
       type: "paladin"
     values:
-      layout: "class-index"
       wow_class: "paladin"
   -
     scope:
@@ -384,7 +371,6 @@ defaults:
       layout: "relics"
       wow_class: "paladin"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -398,7 +384,6 @@ defaults:
       path: ""
       type: "priest"
     values:
-      layout: "class-index"
       wow_class: "priest"
   -
     scope:
@@ -415,7 +400,6 @@ defaults:
       layout: "relics"
       wow_class: "priest"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -429,7 +413,6 @@ defaults:
       path: ""
       type: "rogue"
     values:
-      layout: "class-index"
       wow_class: "rogue"
   -
     scope:
@@ -446,7 +429,6 @@ defaults:
       layout: "relics"
       wow_class: "rogue"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -460,7 +442,6 @@ defaults:
       path: ""
       type: "shaman"
     values:
-      layout: "class-index"
       wow_class: "shaman"
   -
     scope:
@@ -477,7 +458,6 @@ defaults:
       layout: "relics"
       wow_class: "shaman"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -491,7 +471,6 @@ defaults:
       path: ""
       type: "warlock"
     values:
-      layout: "class-index"
       wow_class: "warlock"
   -
     scope:
@@ -508,7 +487,6 @@ defaults:
       layout: "relics"
       wow_class: "warlock"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
@@ -522,7 +500,6 @@ defaults:
       path: ""
       type: "warrior"
     values:
-      layout: "class-index"
       wow_class: "warrior"
   -
     scope:
@@ -539,7 +516,6 @@ defaults:
       layout: "relics"
       wow_class: "warrior"
       chart_class: "full-height"
-      num_ilevel_values: 20
   -
     scope:
       path: ""
