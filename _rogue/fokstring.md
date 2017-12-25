@@ -1,7 +1,6 @@
 ---
 title: Fan of Knives Import
 description: Code to simulate Mutilate vs Fan of Knives using SimulationCraft
-layout: page
 ---
 
 Fan of Knives Comparison
@@ -13,7 +12,7 @@ To sim yourself and check whether using FoK as the main builder for Assassinatio
 
 If you click on "Copy", the input will be automatically copied to your clipboard.
 
-{% include layout-parts/ads/inarticle.html %}
+{% include layout-parts/ads/inarticle.jekyll %}
 
 With the **latest Raidbots version set to "Nightly"**, you can simply use:
 
