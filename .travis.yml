@@ -16,13 +16,21 @@ addons:
       - sourceline: 'ppa:jonathonf/python-3.5'
     packages:
       - python3.5
+      - python3-setuptools
+      - build-essential
+      - libssl-dev
+      - libffi-dev
+      - python-dev
       - python3-pip
+      - python3-wheel
 
 before_install:
   # Needed to do pip install
   - export PATH=$HOME/.local/bin:$PATH
   # Upgrade pip from 1.5.4 -> 9.0.1+
   - python3.5 -m pip install --upgrade pip --user `whoami`
+  - python3.5 -m pip install --upgrade python-apt --user `whoami`
+  - python3.5 -m pip install --upgrade dbus-python --user `whoami`
   - python3.5 -m pip install https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz --user `whoami`
   - wget -c https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz -O css-html-js-minify.tar.gz
   - tar xvf css-html-js-minify.tar.gz
