@@ -1,6 +1,6 @@
 {% if jekyll.environment == "production" %}
 <script>
-  window.onload = function(){
+  window.addEventListener("load", function () {
     setTimeout(function() {
       var ads = document.querySelectorAll("ins.adsbygoogle");
       for (var i = 0; i < ads.length; i++) {
@@ -13,6 +13,6 @@
         }
       }
     }, 1500);
-  };
+  });
 </script>
 {% endif %}

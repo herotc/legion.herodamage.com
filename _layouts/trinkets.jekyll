@@ -34,10 +34,13 @@ layout: default
     </ul>
   </p>
   {% include layout-parts/ads/inarticle.jekyll %}
+  {% include layout-parts/loading.jekyll %}
   {% include layout-parts/googlechart.jekyll %}
 </div>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
-<script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  window.herodamage.trinketsInit("{{ page.reportfile }}", "{{ page.charttitle }}");
+<script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+<script async src="//www.gstatic.com/charts/loader.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    window.herodamage.trinketsInit("{{ page.reportfile }}", "{{ page.charttitle }}");
+  });
 </script>

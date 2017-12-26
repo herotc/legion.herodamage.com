@@ -8,6 +8,20 @@
     return new Intl.NumberFormat("en-US").format(number);
   }
 
+  // Exclude empty rows for Google Charts, only used here
+  function excludeEmptyRows(dataTable) {
+    var view = new google.visualization.DataView(dataTable);
+    var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
+    view.hideRows(rowIndexes);
+    return view.toDataTable();
+  }
+
+  // Remove the loading message
+  function removeLoading () {
+    var el = document.getElementById("herodamage-loading");
+    el.parentNode.removeChild(el)
+  }
+
   // Copy the content to the clipboard
   hd.copyToClipboard = function copyToClipboard(elementId) {
     var copyText = document.getElementById(elementId);
@@ -20,14 +34,15 @@
   (function () {
     var combinationsData;
     var hasBossDPS = false;
+    var setSelect, legoSelect;
 
     hd.combinationsUpdate = function combinationsUpdate() {
       if (!combinationsData)
         return;
       var filterTalents = document.getElementById("combinations-table-filter-talents").value;
       var filterTalentsRegex = new RegExp("^" + filterTalents.replace(new RegExp("x|\\*", "ig"), "[0-3]"), "i");
-      var filterSets = $("#combinations-table-filter-sets").val();
-      var filterLegendaries = $("#combinations-table-filter-legendaries").val();
+      var filterSets = setSelect.val();
+      var filterLegendaries = legoSelect.val();
       var combinationsRows = $.grep(combinationsData, function (columns) {
         if (filterTalents !== "" && !filterTalentsRegex.test(columns[1]))
           return false;
@@ -69,9 +84,11 @@
 
     hd.combinationsInit = function combinationsInit(reportPath) {
       $.get("/" + reportPath, function (data) {
-        combinationsData = data;
         var sets = [];
         var legos = [];
+        var beltIdx;
+
+        combinationsData = data;
         combinationsData.forEach(function (columns) {
           if ($.inArray(columns[2], sets) < 0) {
             sets.push(columns[2]);
@@ -84,43 +101,40 @@
           if (!hasBossDPS && columns.length === 6)
             hasBossDPS = true;
         });
+        // Sets
         sets.sort().reverse();
         sets.forEach(function (set) {
           document.getElementById("combinations-table-filter-sets").insertAdjacentHTML("beforeend", "<option>" + set + "</option>");
         });
-        var setSelect = $("#combinations-table-filter-sets");
+        setSelect = $("#combinations-table-filter-sets");
         setSelect.selectpicker("val", sets);
         setSelect.selectpicker("refresh");
+        // Legendaries
         legos.sort();
         legos.forEach(function (lego) {
           document.getElementById("combinations-table-filter-legendaries").insertAdjacentHTML("beforeend", "<option>" + lego + "</option>");
         });
-        var legoSelect = $("#combinations-table-filter-legendaries");
-        var beltIdx = legos.indexOf("Cinidaria"); // Don't show Cinidaria by default
+        legoSelect = $("#combinations-table-filter-legendaries");
+        // Don't show Cinidaria by default
+        beltIdx = legos.indexOf("Cinidaria");
         if (beltIdx > -1) {
           legos.splice(beltIdx, 1);
         }
         legoSelect.selectpicker("val", legos);
         legoSelect.selectpicker("refresh");
+        // Boss DPS
         if (hasBossDPS) {
           document.getElementById("combinations-table-headers").insertAdjacentHTML("beforeend", "<th>Boss DPS</th>");
           document.getElementById("combinations-table-filters").insertAdjacentHTML("beforeend", "<th></th>");
         }
         hd.combinationsUpdate();
-        $(document.getElementById("combinations-loading")).remove();
+        removeLoading();
       });
     };
   })();
 
   // Relics
   hd.relicsInit = function relicsInit(reportPath, chartTitle) {
-    function excludeEmptyRows(dataTable) {
-      var view = new google.visualization.DataView(dataTable);
-      var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
-      view.hideRows(rowIndexes);
-      return view.toDataTable();
-    }
-
     function drawChart() {
       $.get("/" + reportPath, function (data) {
         var data = new google.visualization.arrayToDataTable(data);
@@ -250,6 +264,7 @@
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
         chart.draw(excludeEmptyRows(data), options);
+        removeLoading();
       });
     }
 
@@ -259,13 +274,6 @@
 
   // Trinkets
   hd.trinketsInit = function trinketsInit(reportPath, chartTitle) {
-    function excludeEmptyRows(dataTable) {
-      var view = new google.visualization.DataView(dataTable);
-      var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
-      view.hideRows(rowIndexes);
-      return view.toDataTable();
-    }
-
     function drawChart() {
       $.get("/" + reportPath, function (data) {
         var data = new google.visualization.arrayToDataTable(data);
@@ -365,6 +373,7 @@
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
         chart.draw(excludeEmptyRows(data), options);
+        removeLoading();
       });
     }
 

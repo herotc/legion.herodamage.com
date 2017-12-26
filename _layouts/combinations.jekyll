@@ -56,14 +56,13 @@ layout: default
     <tbody id="combinations-table-data">
     </tbody>
   </table>
-  <div id="combinations-loading" class="text-center">
-    <h2>Loading...</h2>
-  </div>
+  {% include layout-parts/loading.jekyll %}
   <div id="combinations-table-nav" class="text-right"></div>
 </div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<script defer src="//cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
+<script defer src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 <script>
-  window.herodamage.combinationsInit("{{ page.reportfile }}");
+  window.addEventListener("load", function () {
+    window.herodamage.combinationsInit("{{ page.reportfile }}");
+  });
 </script>
