@@ -13,7 +13,7 @@ rvm:
 addons:
   apt:
     sources:
-      - sourceline: 'ppa:jonathonf/python-3.6'
+      - sourceline: 'ppa:jonathonf/python-3.5'
     packages:
       - python3.5
       - python3-pip
