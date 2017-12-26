@@ -22,7 +22,6 @@ addons:
       - libffi-dev
       - python-dev
       - python3-pip
-      - python3-wheel
 
 before_install:
   # Needed to do pip install
