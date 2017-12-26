@@ -1,15 +1,11 @@
 branches:
   only:
-  - master
+    master
 sudo: false
 language: ruby
 rvm:
-- 2.4.1
+  2.4.1
 before_script:
-- chmod +x ./script/cibuild
-script: ./script/cibuild
+  chmod +x ./script/deploy.sh
+script: bash ./script/deploy.sh
 exclude: [vendor]
-
-env:
-  global:
-    secure: "xUMV40A5o9qKWC8Cbgi51A"
