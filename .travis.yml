@@ -21,13 +21,12 @@ addons:
 before_install:
   - compgen -c python
   - export PATH=$HOME/.local/bin:$PATH
-  - pip3.5 install css-html-js-minify --user `whoami`
   - python3 -V
   - python3.5 -V
   - python3.5 -m pip -V
   - pip3 -V
-  - pip3.5 -V
   - python3.5 -m pip install css-html-js-minify --user `whoami`
+  - pip3 install css-html-js-minify --user `whoami`
 
 before_script:
   - chmod +x ./script/deploy.sh
