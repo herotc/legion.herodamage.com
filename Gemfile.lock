@@ -10,6 +10,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     colorator (1.1.0)
     concurrent-ruby (1.0.5)
+    ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
     ffi (1.9.18-x86-mingw32)
     forwardable-extended (2.6.0)
@@ -59,6 +60,8 @@ GEM
     mercenary (0.3.6)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     nokogiri (1.8.1-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     nokogiri (1.8.1-x86-mingw32)
@@ -83,6 +86,7 @@ GEM
       tzinfo (>= 1.0.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
   x86-mingw32
 
@@ -99,4 +103,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
