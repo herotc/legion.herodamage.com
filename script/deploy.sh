@@ -59,7 +59,7 @@ fi
 # The delta will show diffs between new and old versions.
 echo "Adding all changes and committing"
 git add --all .
-git commit -m "Travis #${TRAVIS_BUILD_NUMBER} - Deploy ${SHA}"
+git commit -m "Deploy: ${SHA}"
 
 # Now that we're all set up, we can push.
 echo "Pushing changes to the target branch on repo"
