@@ -3,21 +3,31 @@ branches:
     - master
 
 dist: trusty
-sudo: required
+sudo: false
 
 language: ruby
 
 rvm:
   2.4.1
 
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:jonathonf/python-3.5'
+    packages:
+      - python3.5
+      - python3-pip
+
 before_install:
-  - sudo add-apt-repository ppa:jonathonf/python-3.5
-  - sudo apt-get update -q
-  - sudo apt-get install python3.5 -y
-  - sudo apt-get install python3-pip -y
-  - sudo pip3 install css-html-js-minify
+  - compgen -c python
+  - export PATH=$HOME/.local/bin:$PATH
+  - pip3.5 install css-html-js-minify --user `whoami`
   - python3 -V
+  - python3.5 -V
+  - python3.5 -m pip -V
   - pip3 -V
+  - pip3.5 -V
+  - python3.5 -m pip install css-html-js-minify --user `whoami`
 
 before_script:
   - chmod +x ./script/deploy.sh
