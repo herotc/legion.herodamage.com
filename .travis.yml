@@ -19,14 +19,9 @@ addons:
       - python3-pip
 
 before_install:
-  - compgen -c python
+  - compgen -c pip
   - export PATH=$HOME/.local/bin:$PATH
-  - python3 -V
-  - python3.5 -V
-  - python3.5 -m pip -V
-  - pip3 -V
-  - python3.5 -m pip install css-html-js-minify --user `whoami`
-  - pip3 install css-html-js-minify --user `whoami`
+  - python3.5 -m pip install https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz --user `whoami`
 
 before_script:
   - chmod +x ./script/deploy.sh
