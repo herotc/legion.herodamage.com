@@ -1,0 +1,6 @@
+{% if include.type == "preload" %}
+  <link rel="preload" href="/assets/css/{{ include.name }}.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/{{ include.name }}.css"></noscript>
+{% else %}
+  <link rel="stylesheet" href="/assets/css/{{ include.name }}.css">
+{% endif %}

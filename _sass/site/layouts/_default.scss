@@ -1,6 +1,6 @@
 body {
-  background-color: $bg;
-  color: $text;
+  color: $text-color;
+  background-color: $body-bg;
   padding: $base-padding;
   padding-top: $body-padding-top;
 
@@ -10,10 +10,10 @@ body {
   }
 
   a {
-    color: $link-dark;
+    color: $link-color;
 
     &:hover {
-      color: lighten($link-dark, 20%);
+      color: lighten($link-color, 20%);
     }
   }
 
@@ -67,7 +67,7 @@ body {
         display: inline;
       }
       span.update-date {
-        color: $text-dk3;
+        color: $text-color-dk3;
         font-weight: bold;
         float: right;
       }
