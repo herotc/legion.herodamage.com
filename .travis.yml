@@ -27,7 +27,7 @@ before_install:
   - wget -c https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz -O css-html-js-minify.tar.gz
   - tar xvf css-html-js-minify.tar.gz
   - cd css-html-js-minify-master
-  - python3.5 setup.py install
+  - python3.5 setup.py install --user `whoami`
   - cd ../
 
 before_script:
