@@ -5,7 +5,7 @@ set -e # Exit with nonzero exit code if anything fails
 
 echo "Setting the source and destination branches"
 SOURCE_BRANCH="master"
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH="gh-pages-wip"
 
 echo "Defining the function to build the site"
 function doCompile {
