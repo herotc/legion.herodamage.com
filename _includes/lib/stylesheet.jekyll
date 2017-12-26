@@ -1,6 +1,11 @@
-{% if include.type == "preload" %}
-  <link rel="preload" href="/assets/css/{{ include.name }}.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/{{ include.name }}.css"></noscript>
+{% if include.href %}
+  {% assign href = include.href %}
 {% else %}
-  <link rel="stylesheet" href="/assets/css/{{ include.name }}.css">
+  {% assign href = "/assets/css/" | append: include.name | append: ".css" %}
+{% endif %}
+{% if include.type == "preload" %}
+  <link rel="preload" type="text/css" href="{{ href }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" type="text/css" href="{{ href }}"></noscript>
+{% else %}
+  <link rel="stylesheet" type="text/css" href="{{ href }}">
 {% endif %}
