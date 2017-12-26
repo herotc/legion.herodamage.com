@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 ## Tools for local development
-# ViewsGenerator
-gem 'activesupport' # Used by ViewsGenerator only
-gem 'json' # Used by ViewsGenerator only
+group :development do
+  # ViewsGenerator
+  gem 'activesupport' # Used by ViewsGenerator only
+  gem 'json' # Used by ViewsGenerator only
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 ## Jekyll
 gem 'jekyll'
 group :jekyll_plugins do
