@@ -21,7 +21,8 @@ addons:
 before_install:
   - compgen -c pip
   - export PATH=$HOME/.local/bin:$PATH
-  - python -m pip install --upgrade pip --user `whoami`
+  - export PYPATH=$HOME/.local/bin
+  - python3.5 -m pip install --upgrade pip --user `whoami`
   - python3.5 -m pip install https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz --user `whoami`
 
 before_script:
