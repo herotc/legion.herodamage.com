@@ -16,6 +16,10 @@
   {% include lib/favicons.jekyll %}
   {% include lib/stylesheet.jekyll name="style" %}
   {% include lib/stylesheet.jekyll type="preload" name="lib" %}
+  {% if page.reportfile %}
+    {% comment %}If the page contains a report, let's prefetch it.{% endcomment %}
+    {% include layout-parts/prefetchreport.jekyll href=page.reportfile %}
+  {% endif %}
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   {% if jekyll.environment == "production" %}

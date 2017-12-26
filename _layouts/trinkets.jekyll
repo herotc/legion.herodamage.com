@@ -34,7 +34,6 @@ layout: default
   {% include layout-parts/fightstylenav.jekyll %}
   {% include layout-parts/gearvariationnav.jekyll %}
   {% include layout-parts/ads/inarticle.jekyll %}
-  {% include layout-parts/prefetchreport.jekyll href=page.reportfile %}
   {% include layout-parts/loading.jekyll %}
   {% include layout-parts/googlechart.jekyll %}
 </div>
