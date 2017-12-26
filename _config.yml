@@ -538,6 +538,7 @@ exclude:
   - assets/js/src
   - data/meta
   - script
+  - vendor
 
 plugins:
   - jekyll-feed # Create RSS Feed for the blogposts
