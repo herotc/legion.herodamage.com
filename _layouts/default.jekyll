@@ -33,7 +33,6 @@
   <meta name="msapplication-square150x150logo" content="/assets/img/favicon/mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="/assets/img/favicon/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="/assets/img/favicon/mstile-310x310.png" />
-  <link rel="stylesheet" href="/assets/css/style.css">
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   {% if jekyll.environment == "production" %}
@@ -51,6 +50,7 @@
   <main>
     {{ content }}
   </main>
+  <link rel="stylesheet" href="/assets/css/style.css">
   {% include layout-parts/ads/bot.jekyll %}
   {% include layout-parts/footer.jekyll %}
   {% include lib/adblockers.jekyll %}
