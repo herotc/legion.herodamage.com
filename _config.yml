@@ -5,10 +5,6 @@ url: https://www.herodamage.com
 encoding: utf-8
 timezone: Europe/Paris
 
-sass:
-  sass_dir: _sass
-  style: compressed
-
 collections:
   # Until we got Jekyll 3.7.0, this is gonna be a bit a mess for collections
   # Since they have to be in the root folder
@@ -535,12 +531,12 @@ exclude:
   - README.md
   - ViewsGenerator.rb
   - assets/img/src
-  - assets/js/src
   - data/meta
   - script
   - vendor
 
 plugins:
+  - jekyll-assets # Asset pipelines
   - jekyll-feed # Create RSS Feed for the blogposts
   - jekyll-avatar # Allow to embed GitHub profiles avatar
   - jekyll-sitemap # Generate the sitemap.xml
@@ -548,6 +544,15 @@ plugins:
   - jekyll-paginate # Posts pagination
   - jemoji # Enable GitHub emojis
 
+# Assets
+assets:
+  compress:
+    css: false
+    js: false
+  digest: true
+  sources:
+    - _assets/css
+    - _assets/js
 # Blog
 paginate: 5
 paginate_path: "/blog/page:num/"

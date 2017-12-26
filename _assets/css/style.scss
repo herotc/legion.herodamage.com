@@ -1,7 +1,6 @@
----
----
-
 @charset "utf-8";
 
 // Import partials from `sass_dir`
-@import "style";
+@import "common";
+
+@import "site/site";
