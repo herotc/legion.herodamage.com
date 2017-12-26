@@ -1,0 +1,15 @@
+branches:
+  only:
+  - master
+sudo: false
+language: ruby
+rvm:
+- 2.5.0
+before_script:
+- chmod +x ./script/cibuild
+script: ./script/cibuild
+exclude: [vendor]
+
+env:
+  global:
+    secure: "xUMV40A5o9qKWC8Cbgi51A"

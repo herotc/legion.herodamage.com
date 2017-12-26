@@ -528,14 +528,16 @@ defaults:
 
 exclude:
   - .editorconfig
+  - .travis.yml
+  - devserve.bat
   - Gemfile
   - Gemfile.lock
-  - devserve.bat
   - README.md
   - ViewsGenerator.rb
   - assets/img/src
   - assets/js/src
   - data/meta
+  - script
 
 plugins:
   - jekyll-feed # Create RSS Feed for the blogposts
