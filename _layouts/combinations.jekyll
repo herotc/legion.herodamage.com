@@ -56,6 +56,7 @@ layout: default
     <tbody id="combinations-table-data">
     </tbody>
   </table>
+  {% include layout-parts/prefetchreport.jekyll href=page.reportfile %}
   {% include layout-parts/loading.jekyll %}
   <div id="combinations-table-nav" class="text-right"></div>
 </div>
