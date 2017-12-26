@@ -16,7 +16,7 @@ function doCompile {
 echo "Defining the function to minify the site"
 function doMinify {
     echo "Minifying the site"
-    python3.5 css-html-js-minify-master/css-html-js-minify.py ${$PWD}/out/ --overwrite
+    python3.5 css-html-js-minify-master/css-html-js-minify.py ${PWD}/out/ --overwrite
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
