@@ -23,12 +23,9 @@ before_install:
   - export PATH=$HOME/.local/bin:$PATH
   # Upgrade pip from 1.5.4 -> 9.0.1+
   - python3.5 -m pip install --upgrade pip --user `whoami`
-  #- python3.5 -m pip install https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz --user `whoami`
+  - python3.5 -m pip install https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz --user `whoami`
   - wget -c https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz -O css-html-js-minify.tar.gz
   - tar xvf css-html-js-minify.tar.gz
-  - cd css-html-js-minify-master
-  - python3.5 setup.py install --user `whoami`
-  - cd ../
 
 before_script:
   - chmod +x ./script/deploy.sh
