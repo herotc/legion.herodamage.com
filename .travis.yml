@@ -20,6 +20,9 @@ addons:
 env:
   global:
     - PATH=$HOME/.local/bin:$PATH
+    - GH_SOURCE_BRANCH=master
+    - GH_TARGET_BRANCH=gh-pages-wip
+    - JEKYLL_ENV=production
 
 before_install:
   - rvm use 2.4 --default --install --binary --fuzzy
@@ -31,9 +34,15 @@ before_install:
   - bundle install
 
 before_script:
-  - chmod +x ./script/deploy.sh
+  - chmod +x ./script/generate
+  - chmod +x ./script/build
+  - chmod +x ./script/compress
+  - chmod +x ./script/deploy
 
 script:
-  - bash ./script/deploy.sh
+  - ./script/generate
+  - ./script/build
+  - ./script/compress
+  - ./script/deploy
 
 exclude: [vendor]

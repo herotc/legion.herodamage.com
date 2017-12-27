@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e # Exit with nonzero exit code if anything fails
+
+# Pull requests and commits to other branches shouldn't try to deploy
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$GH_SOURCE_BRANCH" ]; then
+    echo "Skipping deploy."
+    exit 0
+fi
+
+# Now let's go have some fun with the cloned repo
+echo "Navigating to out"
+cd out
+echo "Setting Git username and email"
+git config user.name ${GH_USERNAME}
+git config user.email ${GH_EMAIL}
+
+# If there are no changes to the compiled out (e.g. this is a README update) then just bail.
+if [ -z `git diff --exit-code` ]; then
+    echo "No changes to the output on this push; exiting."
+    exit 0
+fi
+
+# Commit the "changes", i.e. the new version.
+# The delta will show diffs between new and old versions.
+echo "Adding all changes and committing"
+git add --all .
+git commit -m "Deploy: ${GH_SHA}"
+
+# Now that we're all set up, we can push.
+echo "Pushing changes to the target branch on repo"
+git push ${GH_REPO} ${GH_TARGET_BRANCH}

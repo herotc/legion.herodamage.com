@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e # Exit with nonzero exit code if anything fails
+
+# echo "Defining the function to compress the site"
+# function doCompress {
+#     echo "Compressing the site"
+# }
+
+# Run our compress script
+# doCompress

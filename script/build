@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e # Exit with nonzero exit code if anything fails
+
+echo "Defining the function to build the site"
+function doBuild {
+    echo "Building the site"
+    bundle exec jekyll build -d out/
+}
+
+# Pull requests and commits to other branches shouldn't try to deploy, just build to verify
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$GH_SOURCE_BRANCH" ]; then
+    echo "Will skip deploy; just doing a build."
+    doBuild
+    exit 0
+fi
+
+# Save some useful information
+export GH_REPO="https://${GH_TOKEN}@github.com/SimCMinMax/herodamage.git"
+export GH_SHA=`git rev-parse --verify HEAD`
+
+# Clone the existing gh-pages for this repo into out/
+# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deploy)
+echo "Cloning the repository to out"
+git clone ${GH_REPO} out
+echo "Navigating to out"
+cd out
+echo "Checking out the target branch"
+git checkout ${GH_TARGET_BRANCH} || git checkout --orphan ${GH_TARGET_BRANCH}
+echo "Going back to root"
+cd ..
+
+# Clean out existing contents
+echo "Cleaning up contents from out"
+rm -rf out/**/* || exit 0
+
+# Run our Build script
+doBuild
