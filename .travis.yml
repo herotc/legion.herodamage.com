@@ -22,7 +22,7 @@ env:
     - PATH=$HOME/.local/bin:$PATH
     - GH_REPO=https://${GH_TOKEN}@github.com/SimCMinMax/herodamage.git
     - GH_SOURCE_BRANCH=master
-    - GH_TARGET_BRANCH=gh-pages-wip
+    - GH_TARGET_BRANCH=gh-pages
     - JEKYLL_ENV=production
 
 before_install:
