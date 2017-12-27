@@ -5,34 +5,29 @@ branches:
 dist: trusty
 sudo: false
 
-language: ruby
+language: node_js
 
-rvm:
-  2.4.1
+node_js:
+  - "8"
 
 addons:
   apt:
     sources:
-      - sourceline: 'ppa:jonathonf/python-3.5'
+      - sourceline: 'ppa:rael-gc/rvm'
     packages:
-      - python3.5
-      - python3-setuptools
-      - build-essential
-      - libssl-dev
-      - libffi-dev
-      - python-dev
-      - python3-pip
+      - rvm
+
+env:
+  global:
+    - PATH=$HOME/.local/bin:$PATH
 
 before_install:
-  # Needed to do pip install
-  - export PATH=$HOME/.local/bin:$PATH
-  # Upgrade pip from 1.5.4 -> 9.0.1+
-  - python3.5 -m pip install --upgrade pip --user `whoami`
-  - python3.5 -m pip install python-apt --user `whoami`
-  - python3.5 -m pip install dbus-python --user `whoami`
-  - python3.5 -m pip install https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz --user `whoami`
-  - wget -c https://github.com/juancarlospaco/css-html-js-minify/archive/master.tar.gz -O css-html-js-minify.tar.gz
-  - tar xvf css-html-js-minify.tar.gz
+  - rvm install 2.4.3
+  - rvm use 2.4.3 --install --binary --fuzzy
+  - ruby --version
+  - rvm --version
+  - bundle --version
+  - gem --version
 
 before_script:
   - chmod +x ./script/deploy.sh
