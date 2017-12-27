@@ -15,8 +15,8 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$GH_SOURCE_BRANCH
     exit 0
 fi
 
-# Save some useful information
-export GH_REPO="https://${GH_TOKEN}@github.com/SimCMinMax/herodamage.git"
+# Git informations
+GH_REPO="https://${GH_TOKEN}@github.com/SimCMinMax/herodamage.git"
 export GH_SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into out/

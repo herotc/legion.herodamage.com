@@ -8,6 +8,9 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$GH_SOURCE_BRANCH
     exit 0
 fi
 
+# Git informations
+GH_REPO="https://${GH_TOKEN}@github.com/SimCMinMax/herodamage.git"
+
 # Now let's go have some fun with the cloned repo
 echo "Navigating to out"
 cd out
