@@ -20,7 +20,6 @@
     "uglify-js": "latest"
   },
   "scripts": {
-    "gulp": "gulp",
-    "test": "gulp"
+    "gulp": "gulp"
   }
 }
