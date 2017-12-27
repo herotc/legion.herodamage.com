@@ -7,8 +7,10 @@ echo "Setting the source and destination branches"
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages-wip"
 
-echo "Defining the function to build the site"
+echo "Defining the function to fully build the site"
 function doCompile {
+    echo "Generating the views"
+    bundle exec ruby ViewsGenerator.rb
     echo "Building the site"
     bundle exec jekyll build -d out/
 }
