@@ -1,6 +1,12 @@
 {
   "name": "herodamage-compressor",
   "description": "herodamage-compressor: A simple application to compress HTML/CSS/JS/SVG files before deploy",
+  "homepage": "http://www.herodamage.com/",
+  "license": "EUPL-1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimCMinMax/herodamage.git"
+  },
   "devDependencies": {
     "crass": "latest",
     "gulp-crass": "latest",
@@ -10,10 +16,11 @@
     "gulp": "latest",
     "html-minifier": "latest",
     "pump": "latest",
-    "uglify-js": "latest",
-    "svgo": "latest"
+    "svgo": "latest",
+    "uglify-js": "latest"
   },
   "scripts": {
+    "gulp": "gulp",
     "test": "gulp"
   }
 }

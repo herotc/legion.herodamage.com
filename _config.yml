@@ -530,6 +530,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - gulpfile.js
+  - package-lock.json
+  - package.json
   - README.md
   - ViewsGenerator.rb
   - assets/img/src
