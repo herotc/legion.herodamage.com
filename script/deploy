@@ -12,15 +12,15 @@ fi
 GH_SHA=`git rev-parse --verify HEAD`
 
 # Now let's go have some fun with the cloned repo
-echo "Navigating to out"
-cd out
+echo "Navigating to deploy"
+cd deploy
 echo "Setting Git username and email"
 git config user.name ${GH_USERNAME}
 git config user.email ${GH_EMAIL}
 
-# If there are no changes to the compiled out (e.g. this is a README update) then just bail.
+# If there are no changes to the deploy (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
-    echo "No changes to the output on this push; exiting."
+    echo "No changes on this push; exiting deploy."
     exit 0
 fi
 

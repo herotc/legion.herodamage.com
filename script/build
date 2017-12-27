@@ -5,7 +5,7 @@ set -e # Exit with nonzero exit code if anything fails
 echo "Defining the function to build the site"
 function doBuild {
     echo "Building the site"
-    bundle exec jekyll build -d out/
+    bundle exec jekyll build -d deploy/
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
@@ -15,20 +15,20 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$GH_SOURCE_BRANCH
     exit 0
 fi
 
-# Clone the existing target branch for this repo into out/
+# Clone the existing target branch for this repo into deploy/
 # Create a new empty branch if the target branch doesn't exist yet (should only happen on first deploy)
-echo "Cloning the repository to out"
-git clone ${GH_REPO} out
-echo "Navigating to out"
-cd out
+echo "Cloning the repository to deploy"
+git clone ${GH_REPO} deploy
+echo "Navigating to deploy"
+cd deploy
 echo "Checking out the target branch"
 git checkout ${GH_TARGET_BRANCH} || git checkout --orphan ${GH_TARGET_BRANCH}
 echo "Going back to root"
 cd ..
 
-# Clean out existing contents
-echo "Cleaning up contents from out"
-rm -rf out/**/* || exit 0
+# Clean deploy existing contents
+echo "Cleaning up contents from deploy"
+rm -rf deploy/**/* || exit 0
 
 # Run our Build script
 doBuild

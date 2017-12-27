@@ -1,0 +1,19 @@
+{
+  "name": "herodamage-compressor",
+  "description": "herodamage-compressor: A simple application to compress HTML/CSS/JS/SVG files before deploy",
+  "devDependencies": {
+    "crass": "latest",
+    "gulp-crass": "latest",
+    "gulp-html-minifier": "latest",
+    "gulp-svgmin": "latest",
+    "gulp-uglify": "latest",
+    "gulp": "latest",
+    "html-minifier": "latest",
+    "pump": "latest",
+    "uglify-js": "latest",
+    "svgo": "latest"
+  },
+  "scripts": {
+    "test": "gulp"
+  }
+}

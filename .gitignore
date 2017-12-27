@@ -4,6 +4,10 @@
 .jekyll-metadata
 _site/
 
+# Node #
+########
+node_modules/
+
 # IDE #
 #######
 .idea/*

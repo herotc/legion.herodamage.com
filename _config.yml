@@ -529,10 +529,12 @@ exclude:
   - devserve.bat
   - Gemfile
   - Gemfile.lock
+  - gulpfile.js
   - README.md
   - ViewsGenerator.rb
   - assets/img/src
   - data/meta
+  - node_modules
   - script
   - vendor
 
