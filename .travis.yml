@@ -22,7 +22,7 @@ env:
     - PATH=$HOME/.local/bin:$PATH
 
 before_install:
-  - rvm use 2.4 --default --install
+  - rvm use 2.4 --default --install --binary --fuzzy
   - gem update
   - ruby --version
   - rvm --version
