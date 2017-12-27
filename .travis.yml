@@ -22,13 +22,13 @@ env:
     - PATH=$HOME/.local/bin:$PATH
 
 before_install:
-  - rvm install 2.4.3
-  - rvm use 2.4.3 --install --binary --fuzzy
+  - rvm use 2.4 --default --install
   - gem update
   - ruby --version
   - rvm --version
   - bundle --version
   - gem --version
+  - bundle install
 
 before_script:
   - chmod +x ./script/deploy.sh
