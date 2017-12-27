@@ -52,12 +52,17 @@ simCollections.each do |simType, simColection|
 end
 
 # Generate the new views
-Dir.glob("#{dataFolder}/*.json").each do |file|
+reports = Dir.glob("#{dataFolder}/*.json")
+reportsCount = reports.length
+reportsProcessed = 0
+puts "Starting to generate views for #{reportsCount} potential reports."
+reports.each do |file|
   reportFilename = file.gsub("#{dataFolder}/", '').gsub(".json", '')
   reportFile = "#{dataFolder}/#{reportFilename}.json"
   metaFile = "#{metaFolder}/#{reportFilename}.json"
 
   if File.exist?(metaFile)
+    puts "#{reportsProcessed + 1}/#{reportsCount} - Generating #{reportFilename} view."
     # Report Infos
     filenameParts = reportFilename.split('-', 2)
     #Variation name starts after first hyphen, format nicely
@@ -184,10 +189,13 @@ Dir.glob("#{dataFolder}/*.json").each do |file|
       end
       view.puts "---"
     end
+
+    # Reports counter
+    reportsProcessed += 1
   else
     puts "No meta corresponding to #{reportFilename} report."
   end
 end
 
-puts 'Done! Press enter to quit...'
-gets
+reportsSkipped = reportsCount - reportsProcessed
+puts "Generated #{reportsProcessed}/#{reportsCount} views, #{reportsSkipped} skipped."
