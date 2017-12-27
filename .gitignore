@@ -1,3 +1,9 @@
+# Generated #
+#############
+*-combinations/*
+*-relics/*
+*-trinkets/*
+
 # Jekyll #
 ##########
 .asset-cache/

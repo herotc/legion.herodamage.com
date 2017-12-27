@@ -524,7 +524,6 @@ defaults:
 
 exclude:
   - .editorconfig
-  - .gitignore
   - .travis.yml
   - devserve.bat
   - Gemfile

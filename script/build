@@ -32,3 +32,6 @@ rm -rf deploy/**/* || exit 0
 
 # Run our Build script
 doBuild
+
+echo "Force delete deploy .gitignore"
+rm -f deploy/.gitignore || exit 0
