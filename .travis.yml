@@ -20,6 +20,7 @@ addons:
 env:
   global:
     - PATH=$HOME/.local/bin:$PATH
+    - GH_REPO=https://${GH_TOKEN}@github.com/SimCMinMax/herodamage.git
     - GH_SOURCE_BRANCH=master
     - GH_TARGET_BRANCH=gh-pages-wip
     - JEKYLL_ENV=production
