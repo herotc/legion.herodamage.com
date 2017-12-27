@@ -24,6 +24,7 @@ env:
 before_install:
   - rvm install 2.4.3
   - rvm use 2.4.3 --install --binary --fuzzy
+  - gem update
   - ruby --version
   - rvm --version
   - bundle --version

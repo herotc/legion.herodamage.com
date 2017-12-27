@@ -13,10 +13,10 @@ function doCompile {
     bundle exec jekyll build -d out/
 }
 
-echo "Defining the function to minify the site"
-function doMinify {
-    # echo "Minifying the site"
-}
+# echo "Defining the function to minify the site"
+# function doMinify {
+#     echo "Minifying the site"
+# }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
@@ -48,7 +48,7 @@ rm -rf out/**/* || exit 0
 doCompile
 
 # Run our minify script
-doMinify
+# doMinify
 
 # Now let's go have some fun with the cloned repo
 echo "Navigating to out"
