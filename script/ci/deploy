@@ -43,9 +43,8 @@ if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
     echo "[CI] No meaningful changes detected; deploy aborted"
     exit 0
 fi
-# TODO: List the changed file and clear CF cache for those files (and parents) through their API
-# Convert the filenames into web url with their parents
-# bundle exec ruby script/ci/diff_to_url.rb
+# Convert the filenames into urls in a JSON array to purge CF cache later on
+bundle exec ruby script/ci/jsondiff.rb
 rm filenames.diff
 
 # Raw build push
@@ -87,3 +86,7 @@ git add --all .
 git commit -m "Deployment ${GH_SHA}"
 git push --quiet ${GH_REPO} ${GH_TARGET_BRANCH}
 cd ..
+
+# Sleep 30s before purging the CF cache
+sleep 30s
+curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @urls_to_purge.json
