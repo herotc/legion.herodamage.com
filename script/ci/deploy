@@ -40,7 +40,7 @@ echo "Checking if it's worth to deploy"
 cd deploy
 # TODO: Continue the deploy only if it's worth it
 git diff --name-only > filenames.diff
-if [ `git rev-parse --verify HEAD` > DEPLOY_THRESHOLD ]; then
+if [ `cat filenames.diff | wc -l` -gt DEPLOY_THRESHOLD ]; then
     echo "No meaningful changes detected; deploy aborted"
 fi
 # TODO: List the changed file and clear CF cache for those files (and parents) through their API
