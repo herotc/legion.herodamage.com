@@ -25,6 +25,7 @@ env:
     - GH_RAW_BRANCH=gh-pages-raw
     - GH_TARGET_BRANCH=gh-pages-wip
     - JEKYLL_ENV=production
+    - DEPLOY_THRESHOLD=3 # The number of file changes required to deploy, put the nunmber of build generated files
 
 before_install:
   - rvm use 2.4 --default --install --binary --fuzzy

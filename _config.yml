@@ -534,7 +534,6 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - ViewsGenerator.rb
   - assets/img/src
   - data/meta
   - node_modules

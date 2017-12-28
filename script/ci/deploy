@@ -4,7 +4,7 @@ set -e # Exit with nonzero exit code if anything fails
 
 # Pull requests shouldn't try to deploy
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    echo "Skipping deploy."
+    echo "Skipping deploy"
     exit 0
 fi
 
@@ -35,15 +35,17 @@ bundle exec jekyll build -d deploy/
 echo "Force delete .gitignore"
 rm -f deploy/.gitignore
 
+# Do we deploy ?
 echo "Checking if it's worth to deploy"
-
 cd deploy
 # TODO: Continue the deploy only if it's worth it
-git diff --name-only > filenames.diff # diff
-wc -l filenames.diff # line count
-cat filenames.diff # verif
-# bundle exec ruby script/ci/diff.rb
+git diff --name-only > filenames.diff
+if [ `git rev-parse --verify HEAD` > DEPLOY_THRESHOLD ]; then
+    echo "No meaningful changes detected; deploy aborted"
+fi
 # TODO: List the changed file and clear CF cache for those files (and parents) through their API
+# Convert the filenames into web url
+# bundle exec ruby script/ci/diff_to_url.rb
 rm filenames.diff
 
 # Raw build push
@@ -52,18 +54,18 @@ git add --all .
 git commit -m "Deployment ${GH_SHA}"
 git push ${GH_REPO} ${GH_RAW_BRANCH}
 
+# Target branch checkout
+echo "Checking out the target branch"
+git checkout ${GH_TARGET_BRANCH} || git checkout --orphan ${GH_TARGET_BRANCH}
+
 # Compress using Gulp
 echo "Gulp run"
 cd ..
 npm run gulp
 
-# Target branch checkout
-cd deploy
-echo "Checking out the target branch"
-git checkout ${GH_TARGET_BRANCH} || git checkout --orphan ${GH_TARGET_BRANCH}
-
 # Final build push
 echo "Commit and push the final build"
+cd deploy
 git add --all .
 git commit -m "Deployment ${GH_SHA}"
 git push ${GH_REPO} ${GH_TARGET_BRANCH}
