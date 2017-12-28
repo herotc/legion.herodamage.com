@@ -44,7 +44,9 @@ if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
     # exit 0
 fi
 # Convert the filenames into urls in a JSON array to purge CF cache later on
+cd ..
 bundle exec ruby script/ci/jsondiff.rb
+cd deploy
 rm filenames.diff
 
 # Raw build push
