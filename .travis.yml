@@ -36,13 +36,13 @@ before_install:
   - bundle install
 
 before_script:
-  - chmod +x ./script/generate
-  - chmod +x ./script/build
-  - chmod +x ./script/deploy
-  - ./script/generate
+  - chmod +x ./script/ci/generate
+  - chmod +x ./script/ci/build
+  - chmod +x ./script/ci/deploy
+  - ./script/ci/generate
 
 script:
-  - ./script/build
-  - ./script/deploy
+  - ./script/ci/build
+  - ./script/ci/deploy
 
 exclude: [vendor]
