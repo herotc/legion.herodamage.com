@@ -36,7 +36,7 @@ bundle exec jekyll build -d deploy/
 # Do we deploy ?
 echo "[CI] Check if it's worth to deploy"
 cd deploy
-# TODO: Continue the deploy only if it's worth it
+# Continue the deploy if there are more file changes than what is set as deploy threshold
 git diff --name-only > filenames.diff
 filechanges=`cat filenames.diff | wc -l`
 if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
