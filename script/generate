@@ -2,11 +2,6 @@
 
 set -e # Exit with nonzero exit code if anything fails
 
-echo "Defining the function to generate the views"
-function doGenerate {
-    echo "Generating the views"
-    bundle exec ruby ViewsGenerator.rb
-}
-
-# Run our generate script
-doGenerate
+# Generate views
+echo "Generating the views"
+bundle exec ruby ViewsGenerator.rb
