@@ -140,8 +140,29 @@
         var data = new google.visualization.arrayToDataTable(data);
         var col, row;
 
-        // Sort by last column (relic ilevel), then 3 relics (column 5)
-        data.sort([{column: data.getNumberOfColumns() - 1, desc: true}, {column: 5, desc: true}]);
+        // Sort by 3 relics dps (column 5)
+        data.sort({column: 5, desc: true});
+
+        // Move %DPSGain & WILvl at the top
+        var specialRows = ['Weapon Item Level', '% DPS Gain']; // Last item will be displayed first
+        for (i = 0; i < specialRows.length; i++) {
+          for (row = 0; row < data.getNumberOfRows(); row++) {
+            if (data.getValue(row, 0) == specialRows[i]) {
+              // Do nothing if it's already the first row
+              if ( row != 0 ) {
+                // Insert an empty row at the top, copy the wanted row properties in the first one
+                data.insertRows(0, 1); // Be careful, it shiftes the index
+                row = row + 1;
+                data.setRowProperties(0, data.getRowProperties(row));
+                for (col = 0; col < data.getNumberOfColumns(); col++) {
+                  data.setValue(0, col, data.getValue(row, col));
+                }
+                data.removeRow(row);
+              }
+              break;
+            }
+          }
+        }
 
         // Mark annotation columns
         for (col = 2; col < data.getNumberOfColumns(); col += 2) {
