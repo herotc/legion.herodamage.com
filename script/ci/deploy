@@ -41,7 +41,7 @@ git diff --name-only > filenames.diff
 filechanges=`cat filenames.diff | wc -l`
 if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
     echo "[CI] No meaningful changes detected; deploy aborted"
-    exit 0
+    # exit 0
 fi
 # Convert the filenames into urls in a JSON array to purge CF cache later on
 bundle exec ruby script/ci/jsondiff.rb
