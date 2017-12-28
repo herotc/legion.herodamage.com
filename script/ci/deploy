@@ -38,7 +38,7 @@ echo "Check if it's worth to deploy"
 cd deploy
 # TODO: Continue the deploy only if it's worth it
 git diff --name-only > filenames.diff
-filechanges = `cat filenames.diff | wc -l`
+filechanges=`cat filenames.diff | wc -l`
 echo $filechanges
 if [ $filechanges -gt DEPLOY_THRESHOLD ]; then
     echo "No meaningful changes detected; deploy aborted"
