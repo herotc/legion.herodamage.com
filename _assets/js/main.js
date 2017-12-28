@@ -225,9 +225,7 @@
             titleTextStyle: {
               color: textcol
             },
-            viewWindow: {
-              min: 0
-            }
+            viewWindowMode: 'maximized'
           },
           vAxis: {
             textStyle: {
@@ -342,9 +340,7 @@
             titleTextStyle: {
               color: textcol
             },
-            viewWindow: {
-              min: 0
-            }
+            viewWindowMode: 'maximized'
           },
           vAxis: {
             textStyle: {
