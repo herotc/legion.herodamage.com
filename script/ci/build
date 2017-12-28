@@ -4,7 +4,7 @@ set -e # Exit with nonzero exit code if anything fails
 
 # Pull requests shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    echo "Will skip deploy; just doing a build"
+    echo "[CI] Will skip deploy; just doing a build"
     bundle exec jekyll build
     exit 0
 fi

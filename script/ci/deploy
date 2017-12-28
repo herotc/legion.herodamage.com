@@ -4,43 +4,43 @@ set -e # Exit with nonzero exit code if anything fails
 
 # Pull requests shouldn't try to deploy
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    echo "Skipping deploy"
+    echo "[CI] Skipping deploy"
     exit 0
 fi
 
 # Clear deploy/ content
 function cleanDeploy {
-    echo "Cleaning up contents from deploy directory"
+    echo "[CI] Cleaning up contents from deploy directory"
     rm -rf deploy/**/*
 }
 
 # Git informations
-echo "Get the SHA of the commit we are deploying"
+echo "[CI] Get the SHA of the commit we are deploying"
 GH_SHA=`git rev-parse --verify HEAD`
 
 # Raw branch checkout
-echo "Cloning the repository in deploy directory (without master checkout)"
-git clone ${GH_REPO} deploy -n
-echo "Checking out the raw branch"
+echo "[CI] Cloning the repository in deploy directory (without master checkout)"
+git clone --quiet --no-checkout ${GH_REPO} deploy
+echo "[CI] Checking out the raw branch"
 cd deploy
-git checkout ${GH_RAW_BRANCH} || git checkout --orphan ${GH_RAW_BRANCH}
+git checkout --quiet ${GH_RAW_BRANCH} || git checkout --quiet --orphan ${GH_RAW_BRANCH}
 cd ..
 
 # Clean deploy existing contents
 cleanDeploy
 
 # Build
-echo "Jekyll build"
+echo "[CI] Jekyll build"
 bundle exec jekyll build -d deploy/
 
 # Do we deploy ?
-echo "Check if it's worth to deploy"
+echo "[CI] Check if it's worth to deploy"
 cd deploy
 # TODO: Continue the deploy only if it's worth it
 git diff --name-only > filenames.diff
 filechanges=`cat filenames.diff | wc -l`
 if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
-    echo "No meaningful changes detected; deploy aborted"
+    echo "[CI] No meaningful changes detected; deploy aborted"
     exit 0
 fi
 # TODO: List the changed file and clear CF cache for those files (and parents) through their API
@@ -49,7 +49,7 @@ fi
 rm filenames.diff
 
 # Raw build push
-echo "Commit and push the raw build"
+echo "[CI] Commit and push the raw build"
 git config user.name ${GH_USERNAME}
 git config user.email ${GH_EMAIL}
 git add --all .
@@ -65,9 +65,9 @@ cp -r deploy/* deploy_raw
 cleanDeploy
 
 # Target branch checkout
-echo "Checking out the target branch"
+echo "[CI] Checking out the target branch"
 cd deploy
-git checkout ${GH_TARGET_BRANCH} || git checkout --orphan ${GH_TARGET_BRANCH}
+git checkout --quiet ${GH_TARGET_BRANCH} || git checkout --quiet --orphan ${GH_TARGET_BRANCH}
 cd ..
 
 # Clean deploy in case the target branch does exists and copy back the raw build
@@ -75,15 +75,15 @@ cleanDeploy
 cp -r deploy_raw/* deploy
 
 # Compress using Gulp
-echo "Gulp run"
+echo "[CI] Gulp run"
 npm run gulp
 
 # Final build push
-echo "Commit and push the final build"
+echo "[CI] Commit and push the final build"
 cd deploy
 git config user.name ${GH_USERNAME}
 git config user.email ${GH_EMAIL}
 git add --all .
 git commit -m "Deployment ${GH_SHA}"
-git push ${GH_REPO} ${GH_TARGET_BRANCH}
+git push --quiet ${GH_REPO} ${GH_TARGET_BRANCH}
 cd ..
