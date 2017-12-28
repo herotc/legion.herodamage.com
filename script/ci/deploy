@@ -39,8 +39,9 @@ cd deploy
 # TODO: Continue the deploy only if it's worth it
 git diff --name-only > filenames.diff
 filechanges=`cat filenames.diff | wc -l`
-if [ $filechanges -gt $DEPLOY_THRESHOLD ]; then
+if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
     echo "No meaningful changes detected; deploy aborted"
+    exit 0
 fi
 # TODO: List the changed file and clear CF cache for those files (and parents) through their API
 # Convert the filenames into web url with their parents
