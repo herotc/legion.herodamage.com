@@ -25,6 +25,8 @@ File.readlines('deploy/filenames.diff').each do |line|
 end
 urlsToPurge['files'] = urls
 
+puts JSON.pretty_generate(urlsToPurge)
+
 File.open('urls_to_purge.json', 'w') do |file|
   file.write JSON.generate(urlsToPurge)
 end
