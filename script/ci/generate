@@ -4,4 +4,4 @@ set -e # Exit with nonzero exit code if anything fails
 
 # Generate views
 echo "Generating the views"
-bundle exec ruby ViewsGenerator.rb
+bundle exec ruby script/generate/views.rb

@@ -11,13 +11,13 @@ fi
 # Git informations
 echo "Get the SHA of the commit we are deploying"
 GH_SHA=`git rev-parse --verify HEAD`
-echo "Setting Git username and email"
-git config user.name ${GH_USERNAME}
-git config user.email ${GH_EMAIL}
 
 # Raw branch checkout
 echo "Cloning the repository in deploy directory"
 git clone ${GH_REPO} deploy
+echo "Setting Git username and email"
+git config user.name ${GH_USERNAME}
+git config user.email ${GH_EMAIL}
 echo "Checking out the raw branch"
 cd deploy
 git checkout ${GH_RAW_BRANCH} || git checkout --orphan ${GH_RAW_BRANCH}
@@ -38,14 +38,13 @@ rm -f deploy/.gitignore
 echo "Checking if it's worth to deploy"
 
 cd deploy
-# TODO: Make a non-compressed branch where we do the diff and then continue the deploy only if it's worth it
-# # If there are no changes to the deploy (e.g. this is a README update) then just bail.
-# if [ -z `git diff --exit-code` ]; then
-#     echo "No changes on this push; exiting deploy."
-#     exit 0
-# fi
-
+# TODO: Continue the deploy only if it's worth it
+git diff --name-only > filenames.diff # diff
+wc -l filenames.diff # line count
+cat filenames.diff # verif
+# bundle exec ruby script/ci/diff.rb
 # TODO: List the changed file and clear CF cache for those files (and parents) through their API
+rm filenames.diff
 
 # Raw build push
 echo "Commit and push the raw build"
