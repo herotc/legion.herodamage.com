@@ -58,8 +58,8 @@ git commit --quiet -m "Deployment ${GH_SHA}"
 git push --quiet ${GH_REPO} ${GH_TARGET_BRANCH}
 cd ..
 
-# Sleep 30s before purging the CF cache
+# Sleep 45s before purging the CF cache, it takes roughly 15s to GitHub to actually push the new content
 echo "[CI] Wait for 30s before clearing CF cache"
-sleep 30s
+sleep 45s
 echo "[CI] Clear CF cache for changed files"
 curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @urls_to_purge.json
