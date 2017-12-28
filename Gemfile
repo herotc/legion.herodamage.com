@@ -13,6 +13,7 @@ group :jekyll_plugins do
   gem 'sass'
   gem 'uglifier'
   # Standalone
+  gem 'jekyll-redirect-from'
   gem 'jekyll-feed'
   gem 'jekyll-avatar'
   gem 'jekyll-sitemap'
