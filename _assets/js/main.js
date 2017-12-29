@@ -223,11 +223,11 @@
 
         // Set chart options
         var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
-        var bgcol = "#222";
-        var textcol = "#CCC";
+        var bgColor = "#222";
+        var textColor = "#CCC";
         var options = {
           title: chartTitle,
-          backgroundColor: bgcol,
+          backgroundColor: bgColor,
           chartArea: {
             top: 50,
             bottom: 100,
@@ -240,11 +240,11 @@
             },
             format: 'short',
             textStyle: {
-              color: textcol
+              color: textColor
             },
             title: "DPS Increase",
             titleTextStyle: {
-              color: textcol
+              color: textColor
             },
             viewWindowMode: 'maximized',
             viewWindow: {
@@ -254,24 +254,24 @@
           vAxis: {
             textStyle: {
               fontSize: 12,
-              color: textcol
+              color: textColor
             },
             titleTextStyle: {
-              color: textcol
+              color: textColor
             }
           },
           annotations: {
+            highContrast: false,
             textStyle: {
-              fontSize: 10
-            },
-            alwaysOutside: true,
-            stem: {
-              length: -10,
-              color: "transparent"
+              fontName: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: 13,
+              bold: true,
+              color: bgColor,
+              auraColor: "transparent"
             }
           },
           titleTextStyle: {
-            color: textcol
+            color: textColor
           },
           tooltip: {
             isHtml: true
@@ -341,11 +341,11 @@
 
         // Set chart options
         var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
-        var bgcol = "#222";
-        var textcol = "#CCC";
+        var bgColor = "#222";
+        var textColor = "#CCC";
         var options = {
           title: chartTitle,
-          backgroundColor: bgcol,
+          backgroundColor: bgColor,
           chartArea: {
             top: 50,
             bottom: 100,
@@ -358,11 +358,11 @@
             },
             format: "short",
             textStyle: {
-              color: textcol
+              color: textColor
             },
             title: "DPS Increase",
             titleTextStyle: {
-              color: textcol
+              color: textColor
             },
             viewWindowMode: 'maximized',
             viewWindow: {
@@ -372,19 +372,19 @@
           vAxis: {
             textStyle: {
               fontSize: 12,
-              color: textcol
+              color: textColor
             },
             titleTextStyle: {
-              color: textcol
+              color: textColor
             }
           },
           legend: {
             textStyle: {
-              color: textcol
+              color: textColor
             }
           },
           titleTextStyle: {
-            color: textcol
+            color: textColor
           },
           tooltip: {
             isHtml: true
