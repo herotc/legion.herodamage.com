@@ -19,7 +19,7 @@ description: Latest news posted on the website.
     {% assign index_modulo = forloop.index | minus:2 | modulo:5 %}
     {% if index_modulo == 0 %}
       <hr>
-      {% include layout-parts/ads/inarticle.jekyll %}
+      {% include layout-parts/ads/infeed.jekyll %}
     {% endif %}
   {% endif %}
   {% unless forloop.last %}
