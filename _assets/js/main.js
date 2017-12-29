@@ -3,17 +3,24 @@
   // Avoid initializing it twice
   if (hd.hasInitialized) return;
 
-  // Format number the US way, only used here
+  /*
+   * Utils
+  */
+
+  // Copy the content to the clipboard
+  hd.copyToClipboard = function copyToClipboard(elementId) {
+    var copyText = document.getElementById(elementId);
+    copyText.select();
+    document.execCommand("Copy");
+  };
+
+  /*
+   * Data Helpers
+  */
+
+  // Format number the US way
   function formatNumber(number) {
     return new Intl.NumberFormat("en-US").format(number);
-  }
-
-  // Exclude empty rows for Google Charts, only used here
-  function excludeEmptyRows(dataTable) {
-    var view = new google.visualization.DataView(dataTable);
-    var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
-    view.hideRows(rowIndexes);
-    return view.toDataTable();
   }
 
   // Remove the loading message
@@ -22,12 +29,41 @@
     el.parentNode.removeChild(el)
   }
 
-  // Copy the content to the clipboard
-  hd.copyToClipboard = function copyToClipboard(elementId) {
-    var copyText = document.getElementById(elementId);
-    copyText.select();
-    document.execCommand("Copy");
-  };
+  // Google Charts: Exclude empty rows
+  function excludeEmptyRows(dataTable) {
+    var view = new google.visualization.DataView(dataTable);
+    var rowIndexes = view.getFilteredRows([{column: 1, value: null}]);
+    view.hideRows(rowIndexes);
+    return view.toDataTable();
+  }
+
+  // Google Charts:  Put rows whereas first column match array items at the top (last item will be displayed first)
+  function putAtTheTop(data, specialRows) {
+    var i, col, row;
+    for (i = 0; i < specialRows.length; i++) {
+      for (row = 0; row < data.getNumberOfRows(); row++) {
+        if (data.getValue(row, 0) == specialRows[i]) {
+          // Do nothing if it's already the first row
+          if ( row != 0 ) {
+            // Insert an empty row at the top, copy the wanted row properties in the first one
+            data.insertRows(0, 1); // Be careful, it shiftes the index
+            row = row + 1;
+            data.setRowProperties(0, data.getRowProperties(row));
+            for (col = 0; col < data.getNumberOfColumns(); col++) {
+              data.setValue(0, col, data.getValue(row, col));
+            }
+            data.removeRow(row);
+          }
+          break;
+        }
+      }
+    }
+    return data;
+  }
+
+  /*
+   * Data Loaders
+  */
 
   // Combinations
   // Wrap is due to variable having function scope (could implement OOP at some point)
@@ -144,25 +180,13 @@
         data.sort({column: 5, desc: true});
 
         // Move %DPSGain & WILvl at the top
-        var specialRows = ['Weapon Item Level', '% DPS Gain']; // Last item will be displayed first
-        for (i = 0; i < specialRows.length; i++) {
-          for (row = 0; row < data.getNumberOfRows(); row++) {
-            if (data.getValue(row, 0) == specialRows[i]) {
-              // Do nothing if it's already the first row
-              if ( row != 0 ) {
-                // Insert an empty row at the top, copy the wanted row properties in the first one
-                data.insertRows(0, 1); // Be careful, it shiftes the index
-                row = row + 1;
-                data.setRowProperties(0, data.getRowProperties(row));
-                for (col = 0; col < data.getNumberOfColumns(); col++) {
-                  data.setValue(0, col, data.getValue(row, col));
-                }
-                data.removeRow(row);
-              }
-              break;
-            }
-          }
-        }
+        data = putAtTheTop(
+          data,
+          [
+            'Weapon Item Level',
+            '% DPS Gain'
+          ]
+        );
 
         // Mark annotation columns
         for (col = 2; col < data.getNumberOfColumns(); col += 2) {
@@ -262,9 +286,13 @@
           },
           annotations: {
             highContrast: false,
+            stem: {
+              color: "transparent",
+              length: -12
+            },
             textStyle: {
               fontName: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-              fontSize: 13,
+              fontSize: 10,
               bold: true,
               color: bgColor,
               auraColor: "transparent"
