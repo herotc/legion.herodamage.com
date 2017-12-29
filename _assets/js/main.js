@@ -180,12 +180,13 @@
         data.sort({column: 5, desc: true});
 
         // Move %DPSGain & WILvl at the top
+        var specialRows = [
+          'Weapon Item Level',
+          '% DPS Gain'
+        ];
         data = putAtTheTop(
           data,
-          [
-            'Weapon Item Level',
-            '% DPS Gain'
-          ]
+          specialRows
         );
 
         // Mark annotation columns
@@ -206,16 +207,21 @@
         // Calculate Differences
         for (row = 0; row < data.getNumberOfRows(); row++) {
           var relicStyle = "";
-          if ($.inArray(data.getValue(row, 0), CrucibleLightTraits) >= 0) {
-            relicStyle = "stroke-width: 4; stroke-color: #bb8800; color: #ffcc00";
-          } else if ($.inArray(data.getValue(row, 0), CrucibleShadowTraits) >= 0) {
-            relicStyle = "stroke-width: 4; stroke-color: #5500aa; color: #8800ff";
+          var rowName = data.getValue(row, 0);
+          if (rowName == specialRows[1]) { // % DPS Gain
+            relicStyle = "stroke-width: 1; stroke-color: #808080; color: #b3b3b3"
+          } else if (rowName == specialRows[0]) { // Weapon Item Level
+            relicStyle = "stroke-width: 0.5; stroke-color: #4d4d4d; color: #808080"
+          } else if ($.inArray(rowName, CrucibleLightTraits) >= 0) { // Light T2
+            relicStyle = "stroke-width: 3; stroke-color: #bb8800; color: #ffcc00";
+          } else if ($.inArray(rowName, CrucibleShadowTraits) >= 0) { // Shadow T2
+            relicStyle = "stroke-width: 3; stroke-color: #5500aa; color: #8800ff";
           }
           var prevVal = 0;
           for (col = 1; col < data.getNumberOfColumns(); col += 4) {
             var curVal = data.getValue(row, col);
             var stepVal = curVal - prevVal;
-            var tooltip = "<div class=\"chart-tooltip\"><b>" + data.getValue(row, col + 1) + "x " + data.getValue(row, 0) +
+            var tooltip = "<div class=\"chart-tooltip\"><b>" + data.getValue(row, col + 1) + "x " + rowName +
               "</b><br><b>Total:</b> " + formatNumber(curVal.toFixed()) +
               "<br><b>Increase:</b> " + formatNumber(stepVal.toFixed()) + "</div>";
             data.setValue(row, col + 2, tooltip);
@@ -247,8 +253,8 @@
 
         // Set chart options
         var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
-        var bgColor = "#222";
-        var textColor = "#CCC";
+        var bgColor = "#222222";
+        var textColor = "#cccccc";
         var options = {
           title: chartTitle,
           backgroundColor: bgColor,
@@ -369,8 +375,8 @@
 
         // Set chart options
         var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
-        var bgColor = "#222";
-        var textColor = "#CCC";
+        var bgColor = "#222222";
+        var textColor = "#cccccc";
         var options = {
           title: chartTitle,
           backgroundColor: bgColor,
