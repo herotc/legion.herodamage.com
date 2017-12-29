@@ -43,11 +43,13 @@ layout: default
         </div>
         {% endfor %}
       </div>
-      {% if forloop.first %}
+      {% if forloop.first and jekyll.environment == "production" %}
         <hr>
         {% include layout-parts/ads/inarticle.jekyll %}
       {% endif %}
-      <hr>
+      {% unless forloop.last %}
+        <hr>
+      {% endunless %}
     {% endif %}
   {% endfor %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
