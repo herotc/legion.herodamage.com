@@ -14,6 +14,7 @@ layout: default
     </header>
     <article>
       {{ content }}
+      {% include layout-parts/ads/matchedcontent.jekyll %}
     </article>
   </div>
 </div>

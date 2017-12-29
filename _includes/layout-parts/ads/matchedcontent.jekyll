@@ -1,0 +1,18 @@
+
+{% if jekyll.environment == "production" %}
+  {% unless page.url == "/" %}
+  <p class="a-matchedcontent-d">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5677349133508739"
+         data-ad-slot="3956909192"
+         data-matched-content-ui-type="image_stacked"
+         data-matched-content-rows-num="2,1"
+         data-matched-content-columns-num="1,4"
+         data-ad-format="autorelaxed"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </p>
+  {% endunless %}
+{% endif %}

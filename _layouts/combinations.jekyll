@@ -58,6 +58,7 @@ layout: default
   </table>
   {% include layout-parts/loading.jekyll %}
   <div id="combinations-table-nav" class="text-right"></div>
+  {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
 <script defer src="//cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 <script defer src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>

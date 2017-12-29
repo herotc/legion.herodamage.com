@@ -36,6 +36,7 @@ layout: default
   {% include layout-parts/ads/inarticle.jekyll %}
   {% include layout-parts/loading.jekyll %}
   {% include layout-parts/googlechart.jekyll %}
+  {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
 <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
 <script async src="//www.gstatic.com/charts/loader.js"></script>

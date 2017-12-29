@@ -47,9 +47,8 @@ layout: default
         <hr>
         {% include layout-parts/ads/inarticle.jekyll %}
       {% endif %}
-      {% unless forloop.last %}
       <hr>
-      {% endunless %}
     {% endif %}
   {% endfor %}
+  {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
