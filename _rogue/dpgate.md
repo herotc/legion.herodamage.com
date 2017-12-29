@@ -24,8 +24,8 @@ talent_override=nightstalker
 
 {% include layout-parts/ads/inarticle.jekyll %}
 
-At the time I'm writing this, Raidbots isn't updated. The only way to check it is to build SimulationCraft from the sources. I'll update this post once it'll be done.
-Until then, here is two pics showing how big the impact is, see how we went from bottom to top in 2 weeks. Do remember that we are still working on this, so we might optimize it furthermore.
+At this moment, the only way to check it is to build SimulationCraft from the sources or use Raidbots 'nightly'.
+Here is two pics showing how big the impact is, see how we went from bottom to top in 2 weeks. Do remember that we are still working on this, so we might optimize it furthermore.
 
 ![Assassination buildswith and without the bug](/assets/wow/img/rogue/dpgate/assassination.png "Assassination buildswith and without the bug")
 
