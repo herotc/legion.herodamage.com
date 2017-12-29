@@ -30,6 +30,10 @@ File.readlines('deploy/filenames.diff').each do |line|
   if relativeUrl.include? '/index.html'
     urls.push("#{baseUrl}/#{relativeUrl.gsub("/index.html", '')}")
   end
+  # Dirty hotfix for the homepage
+  if relativeUrl == 'index.html'
+    urls.push("#{baseUrl}")
+  end
 end
 jsonFiles.push({ 'files' => urls })
 
