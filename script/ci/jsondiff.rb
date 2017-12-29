@@ -4,9 +4,17 @@ require 'yaml'
 Config = YAML.load(File.read("_config.yml"))
 
 baseUrl = Config['url']
-urlsToPurge = { }
-urls = []
+jsonFiles = [ ]
+urls = [ ]
+
+# Convert every changed files into urls
 File.readlines('deploy/filenames.diff').each do |line|
+  # Make a new jsonFile each time we go past 450 urls
+  if urls.length > 450
+    jsonFiles.push({ 'files' => urls })
+    urls = [ ]
+  end
+
   relativeUrl = line.chomp
   # Complete filename version, i.e.: https://www.herodamage.com/blog/index.html
   urls.push("#{baseUrl}/#{relativeUrl}")
@@ -23,10 +31,13 @@ File.readlines('deploy/filenames.diff').each do |line|
     urls.push("#{baseUrl}/#{relativeUrl.gsub("/index.html", '')}")
   end
 end
-urlsToPurge['files'] = urls
+jsonFiles.push({ 'files' => urls })
 
-puts JSON.pretty_generate(urlsToPurge)
-
-File.open('urls_to_purge.json', 'w') do |file|
-  file.write JSON.generate(urlsToPurge)
+jsonFiles.each_with_index do |hash, index|
+  filename = "urls_to_purge_#{index+1}.json"
+  puts filename
+  puts JSON.pretty_generate(hash)
+  File.open(filename, 'w') do |file|
+    file.write JSON.generate(hash)
+  end
 end
