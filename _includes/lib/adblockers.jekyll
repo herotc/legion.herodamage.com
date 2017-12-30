@@ -8,7 +8,11 @@
         if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
           var blockersMessage = document.createElement('p');
           blockersMessage.className = 'blockers-text';
-          blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.';
+          if (ad.parentElement.classList.contains("a-matchedcontent-d")) {
+            blockersMessage.innerHTML = 'This block suggests you recommended content from HeroTC using Google Adsense.<br>You might want to disable your ad blocker to see its content.';
+          } else {
+            blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.';
+          }
           ad.parentElement.appendChild(blockersMessage);
         }
       }
