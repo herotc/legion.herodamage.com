@@ -1,5 +1,5 @@
 ---
-title: Deadly Poison Bug \#DPGate
+title: "Deadly Poison Bug #DPGate"
 description: Code to compare Deadly Poison bug impact using SimulationCraft
 ---
 
@@ -25,7 +25,7 @@ talent_override=nightstalker
 {% include layout-parts/ads/inarticle.jekyll %}
 
 At this moment, the only way to check it is to build SimulationCraft from the sources or use Raidbots 'nightly'.
-Here is two pics showing how big the impact is, see how we went from bottom to top in 2 weeks. Do remember that we are still working on this, so we might optimize it furthermore.
+Here is two pics showing how big the impact is, see how we went from last to first in 2 weeks thanks to bugs. Do remember that we are still working on this, so we might optimize it furthermore.
 
 ![Assassination buildswith and without the bug](/assets/wow/img/rogue/dpgate/assassination.png "Assassination buildswith and without the bug")
 
