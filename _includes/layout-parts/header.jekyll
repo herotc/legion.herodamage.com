@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/" title="Home">
-          <img src="/assets/img/logo.svg" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
+          <img src="{% asset_path logo.svg %}" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
           {{ site.name }}
         </a>
       </div>
@@ -78,7 +78,9 @@
   {% endunless %}
   {% if page.wowClass %}
   <nav id="header" class="navbar navbar-inverse container">
-    <a href="/{{ page.wowClass | replace: '_', '-' }}" title="{{ page.wowClass | replace: '_', ' ' | capitalize }}"><img src="/assets/img/wow-class/{{ page.wowClass }}.svg" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo"></a>
+    <a href="/{{ page.wowClass | replace: '_', '-' }}" title="{{ page.wowClass | replace: '_', ' ' | capitalize }}">
+      <img src="{% asset_path wowclasspicker/'{{page.wowClass}}'.svg %}" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo">
+    </a>
   </nav>
   {% endif %}
 </header>

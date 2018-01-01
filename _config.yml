@@ -534,7 +534,6 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - assets/img/src
   - data/meta
   - node_modules
   - script
@@ -559,6 +558,7 @@ assets:
   sources:
     - _assets/css
     - _assets/js
+    - _assets/img
 # Blog
 paginate: 5
 paginate_path: "/blog/page:num/"

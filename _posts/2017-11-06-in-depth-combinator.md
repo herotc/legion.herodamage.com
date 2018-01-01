@@ -32,7 +32,7 @@ When we say that you should **simulate you own character** all the time, this is
 
 Here is my recommendation on how to use Combinator (and in a way also all of our other) results: Check out what the results are for what you have or care about and don't be afraid to look at more than just the top build. Based on what you can see in the results, run something like <a href="https://www.raidbots.com/simbot/topgear" title="Raidbots Top Gear" target="_blank" rel="nofollow">Raidbots Top Gear</a> for one or more talents in order to find something that is actually tailored for your own character.
 
-![Sim Yoself](/assets/blogposts/combinator/simyoself.gif){: .img-responsive .center}
+![Sim Yoself]({% asset_path blogposts/combinator/simyoself.gif %}){: .img-responsive .center}
 
 ### An outlook into the future
 

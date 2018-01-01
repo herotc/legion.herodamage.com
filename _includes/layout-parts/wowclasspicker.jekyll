@@ -4,7 +4,7 @@
   {% capture wowClassTitleized %}{% for wowClassPart in wowClassParts %}{% if forloop.last %}{{ wowClassPart | capitalize }}{% else %}{% assign wowClassPart2 = wowClassPart | append: " " %}{{ wowClassPart2 | capitalize }}{% endif %}{% endfor %}{% endcapture %}
   <a href="/{{ wowClass | replace: '_', '-' }}" title="{{ wowClassTitleized }}">
     <figure>
-      <img src="/assets/img/wow-class/{{ wowClass }}.svg" alt="{{ wowClassTitleized }} WoW Icon">
+      <img src="{% asset_path wowclasspicker/'{{wowClass}}'.svg %}" alt="{{ wowClassTitleized }} WoW Icon">
       {% if page.url == "/" %}
         {% assign wowClassTitleLevel = 2 %}
       {% else %}
