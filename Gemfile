@@ -6,6 +6,7 @@ gem 'json'
 
 ## Jekyll
 gem 'jekyll'
+gem 'boostrap-sass'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows zoneinfo
 group :jekyll_plugins do
   # Jekyll Assets
