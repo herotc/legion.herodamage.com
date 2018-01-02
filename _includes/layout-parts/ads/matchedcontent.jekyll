@@ -1,5 +1,4 @@
-
-{% if jekyll.environment == "production" %}
+{% if false %}
   {% unless page.url == "/" %}
     <hr>
     <p class="a-matchedcontent-d">
