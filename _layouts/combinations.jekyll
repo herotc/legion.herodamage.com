@@ -18,8 +18,10 @@ layout: default
     taken into account. This is why you, as always, should
     <u><b>simulate your own character</b></u> to find your optimal setup.
   </p>
-  {% include layout-parts/simulations/fightstylenav.jekyll %}
-  {% include layout-parts/simulations/gearvariationnav.jekyll %}
+  <div class="subnavs-sticky">
+    {% include layout-parts/simulations/fightstylenav.jekyll %}
+    {% include layout-parts/simulations/gearvariationnav.jekyll %}
+  </div>
   {% include layout-parts/simulations/metas.jekyll %}
   {% include layout-parts/ads/inarticle.jekyll %}
   <table id="combinations-table" class="table table-hover">

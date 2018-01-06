@@ -1,7 +1,7 @@
 {% assign fightstyles = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | group_by: "fightstyle" %}
 {% assign numFightstyles = fightstyles | size %}
 {% if numFightstyles > 1 %}
-  <hr>
+  <p><b>Fightstyle</b></p>
   <ul id="fightstyle-tabs" class="nav nav-pills sub-nav">
     {% for fightstyle in fightstyles %}
       {% if fightstyle.name != nil %}

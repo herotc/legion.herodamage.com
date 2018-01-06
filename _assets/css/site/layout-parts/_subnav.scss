@@ -1,13 +1,34 @@
-.sub-nav.nav-pills > li {
-  display: inline-block;
-  float: none;
-  zoom: 1;
-}
-
 .sub-nav {
   text-align: center;
+
+  &.nav-pills > li {
+    margin: 0px 4px;
+    display: inline-block;
+    float: none;
+    zoom: 1;
+
+    > a {
+      border: 1px solid $border-dark;
+    }
+  }
 }
 
-.sub-nav.nav-pills > li > a {
-  border: 1px solid $border-dark;
+.subnavs-sticky {
+  text-align: center;
+
+  p {
+    padding-top: 6px;
+  }
+
+  ul {
+    padding-bottom: 6px;
+  }
+
+  @include MQ($MD) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    background-color: $content-bg;
+    z-index: 10;
+  }
 }

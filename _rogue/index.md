@@ -19,7 +19,7 @@ If you have any questions, feel free to visit the class Discord and contact Aeth
   <strong>Important note for Assassination Rogues!</strong><br><br>
   With enough Mastery or Poison Knives relics, dropping Mutilate and using Fan of Knives as the main generator actually becomes an increase. If you see variations including "FoK" for Combinations or Relics, those are profiles using Fan of Knives instead of Mutilate.<br><br>
   To sim yourself and check whether using FoK is an increase, you can copy and paste <a href="/rogue/fokstring" title="How to enabled Fan of Knives rotation on SimC">this code</a> after your /simc output. E.g. on Raidbots, open "Advanced", insert your /simc Addon output and then, right after, the code from the link.<br><br>
-  <strong>However, this interaction will be hotfixed on Jan 9! Results from 06 Jan includes the hotfix.</strong>
+  <strong>However, this interaction will be hotfixed ingame on Jan 9! Our results from Jan 6 already include the hotfix.</strong>
 </div>
 
 <div class="alert alert-info">
