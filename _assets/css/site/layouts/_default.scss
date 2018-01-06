@@ -30,12 +30,13 @@ body {
         margin-top: $base-padding;
       }
       @include MQ(1540px) {
+        margin: $body-height-top / 2 $base-padding 0 $base-padding;
         max-height: calc(100vh - #{$body-height-top});
-        margin-top: $body-height-top / 2;
+        max-width: 300px;
         position: fixed;
-        right: $base-padding;
+        right: calc((100% - #{$container-max-width}) / 4 - #{$base-padding});
         top: 50%;
-        @include translate(0, -50%);
+        @include translate(50%, -50%);
         width: calc(((100% - #{$container-max-width}) / 2) - (#{$base-padding} * 2));
 
         ins {
