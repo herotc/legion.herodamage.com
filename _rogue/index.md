@@ -16,14 +16,13 @@ Here are links you may want to check out for further information:
 If you have any questions, feel free to visit the class Discord and contact Aethys or Mystler.
 
 <div class="alert alert-warning">
-  <strong>Another important note for Assassination Rogues!</strong><br><br>
-  There is currently a bug affecting Deadly Poison and Nightstalker that you can abuse to gain more dps, more info <a href="/rogue/dpgate" title="How to see the impact of Deadly Poison bug on SimC">here</a>.<br><br>
-  Be careful about bug abuse, even if it's not a big one it still remains a bug abuse, you're warned.
-</div>
-
-<div class="alert alert-warning">
   <strong>Important note for Assassination Rogues!</strong><br><br>
   With enough Mastery or Poison Knives relics, dropping Mutilate and using Fan of Knives as the main generator actually becomes an increase. If you see variations including "FoK" for Combinations or Relics, those are profiles using Fan of Knives instead of Mutilate.<br><br>
   To sim yourself and check whether using FoK is an increase, you can copy and paste <a href="/rogue/fokstring" title="How to enabled Fan of Knives rotation on SimC">this code</a> after your /simc output. E.g. on Raidbots, open "Advanced", insert your /simc Addon output and then, right after, the code from the link.<br><br>
-  Be careful about changing your gear too much, it's not unlikely that this will be hotfixed.
+  <strong>However, this interaction will be hotfixed on Jan 9!</strong>
+</div>
+
+<div class="alert alert-info">
+  <strong>Info for Assassination Rogues!</strong><br><br>
+  The bug allowing Deadly Poison to retain the Nightstalker modifier for the whole fight (see <a href="/rogue/dpgate" title="How to see the impact of Deadly Poison bug on SimC">#DPGate</a> has already been hotfixed.
 </div>

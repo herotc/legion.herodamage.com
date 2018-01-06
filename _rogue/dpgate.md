@@ -6,8 +6,9 @@ description: Code to compare Deadly Poison bug impact using SimulationCraft
 Deadly Poison Bug \#DPGate
 ==========================
 
-UPDATE:
-As of 01/03/2018, the bug has been hotfixed. You can no longer use it.
+<div class="alert alert-danger">
+  <strong>UPDATE!</strong> As of 01/03/2018, the bug has been hotfixed. You can no longer use it.
+</div>
 
 Following the report made by Kojiyama (a WoW Theorycrafter that plays rogue) after seeing Asians logs about Deadly Poison bug (see: [this link](https://github.com/Ravenholdt-TC/Rogue/issues/81)), we implemented it in SimulationCraft.
 
