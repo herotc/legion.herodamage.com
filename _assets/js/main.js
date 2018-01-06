@@ -248,7 +248,7 @@
         data.removeColumn(sortCol);
 
         // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
-        var content = document.getElementById("fightstyle-tabs");
+        var content = document.getElementById("simulations-metas");
         var contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue("padding-left") * 2;
 
         // Set chart options
@@ -370,7 +370,7 @@
         }
 
         // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
-        var content = document.getElementById("fightstyle-tabs");
+        var content = document.getElementById("simulations-metas");
         var contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue("padding-left") * 2;
 
         // Set chart options

@@ -14,28 +14,12 @@ layout: default
     <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook.
     If your character is different from the setup used here, personal simulations are recommended.
   </p>
-  {% include layout-parts/fightstylenav.jekyll %}
-  {% include layout-parts/gearvariationnav.jekyll %}
-  <p>
-    <b>Last Update:</b> {{ page.lastupdate }}<br>
-    <b>WoW-Build:</b> {{ page.build }}<br>
-    <b>Target Error:</b> {{ page.targeterror }}%<br>
-    <b>Talents:</b>
-    <ul>
-      {% for talent in page.talents %}
-        <li>{{ talent }}</li>
-      {% endfor %}
-    </ul>
-    <b>Legendaries:</b>
-    <ul>
-      {% for legendary in page.legendaries %}
-        <li>{{ legendary }}</li>
-      {% endfor %}
-    </ul>
-  </p>
+  {% include layout-parts/simulations/fightstylenav.jekyll %}
+  {% include layout-parts/simulations/gearvariationnav.jekyll %}
+  {% include layout-parts/simulations/metas.jekyll %}
   {% include layout-parts/ads/inarticle.jekyll %}
-  {% include layout-parts/loading.jekyll %}
-  {% include layout-parts/googlechart.jekyll %}
+  {% include layout-parts/simulations/loading.jekyll %}
+  {% include layout-parts/simulations/googlechart.jekyll %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
 <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>

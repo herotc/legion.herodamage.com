@@ -18,13 +18,9 @@ layout: default
     taken into account. This is why you, as always, should
     <u><b>simulate your own character</b></u> to find your optimal setup.
   </p>
-  {% include layout-parts/fightstylenav.jekyll %}
-  {% include layout-parts/gearvariationnav.jekyll %}
-  <p>
-    <b>Last Update:</b> {{ page.lastupdate }}<br>
-    <b>WoW-Build:</b> {{ page.build }}<br>
-    <b>Target Error:</b> {{ page.targeterror }}%
-  </p>
+  {% include layout-parts/simulations/fightstylenav.jekyll %}
+  {% include layout-parts/simulations/gearvariationnav.jekyll %}
+  {% include layout-parts/simulations/metas.jekyll %}
   {% include layout-parts/ads/inarticle.jekyll %}
   <table id="combinations-table" class="table table-hover">
     <thead>
@@ -56,7 +52,7 @@ layout: default
     <tbody id="combinations-table-data">
     </tbody>
   </table>
-  {% include layout-parts/loading.jekyll %}
+  {% include layout-parts/simulations/loading.jekyll %}
   <div id="combinations-table-nav" class="text-right"></div>
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>

@@ -1,0 +1,24 @@
+<hr>
+<div id="simulations-metas">
+  <p>
+    <b>Last Update:</b> {{ page.lastupdate }}<br>
+    <b>WoW-Build:</b> {{ page.build }}<br>
+    <b>Target Error:</b> {{ page.targeterror }}%<br>
+  </p>
+  {% if page.legendaries %}
+    <ul>
+      <span><b>Talents</b></span>
+      {% for talent in page.talents %}
+        <li>{{ talent }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if page.legendaries %}
+    <ul>
+      <span><b>Legendaries</b></span>
+      {% for legendary in page.legendaries %}
+        <li>{{ legendary }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

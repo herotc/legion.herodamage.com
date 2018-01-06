@@ -1,7 +1,8 @@
-<ul id="gear-variation-tabs" class="nav nav-pills sub-nav">
-  {% assign variations = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | where: "fightstyle", page.fightstyle | sort: "url" %}
-  {% assign numVariations = variations | size %}
-  {% if numVariations > 1 %}
+{% assign variations = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | where: "fightstyle", page.fightstyle | sort: "url" %}
+{% assign numVariations = variations | size %}
+{% if numVariations > 1 %}
+  <hr>
+  <ul id="gear-variation-tabs" class="nav nav-pills sub-nav">
     {% for variation in variations %}
       <li role="presentation" {% if variation.url == page.url %} class="active" {% endif %}>
         <a href="{{ variation.url }}" title="{% if variation.gearvariation == nil %}SimC Default{% else %}{{ variation.gearvariation }}{% endif %} Gear Variation">
@@ -9,5 +10,5 @@
         </a>
       </li>
     {% endfor %}
-  {% endif %}
-</ul>
+  </ul>
+{% endif %}
