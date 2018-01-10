@@ -21,7 +21,7 @@ layout: default
     {% assign simCollectionNamePrefix = simCollection.name | slice: 0, wowClassSize %}
     {% if simCollectionNamePrefix == wowClass %}
       {% assign simType = simCollection.name | split: '-' | last %}
-      <h2>{{ simType | capitalize }}</h2>
+      <h2 id="{{ simType}}">{{ simType | capitalize }}</h2>
       <div class="row">
         {% assign tiers = simCollection.items | group_by: "tier" | sort: "name" %}
         {% for tier in tiers reversed %}
