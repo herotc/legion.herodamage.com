@@ -28,6 +28,7 @@ fancyFightstyles = {
   '3T' => 'Triple Target',
   '1T_Adds' => 'Single Target w/ Adds',
   'Mistress' => 'Mistress',
+  'Composite' => 'Composite',
 }
 fancyTier = {
   'PR' => 'PreRaids',
