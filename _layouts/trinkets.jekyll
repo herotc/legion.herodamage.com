@@ -28,6 +28,6 @@ layout: default
 <script async src="//www.gstatic.com/charts/loader.js"></script>
 <script>
   window.addEventListener("load", function () {
-    window.herodamage.trinketsInit("{{ page.reportfile }}", "{{ page.charttitle }}");
+    window.herodamage.trinketsInit("{{ page.reportfile }}", "{{ page.charttitle }}", {{ page.templateDPS }});
   });
 </script>
