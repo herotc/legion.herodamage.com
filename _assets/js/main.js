@@ -170,7 +170,7 @@
   })();
 
   // Relics
-  hd.relicsInit = function relicsInit(reportPath, chartTitle) {
+  hd.relicsInit = function relicsInit(reportPath, chartTitle, templateDPS) {
     function drawChart() {
       $.get("/" + reportPath, function (data) {
         var data = new google.visualization.arrayToDataTable(data);
@@ -218,12 +218,16 @@
             relicStyle = "stroke-width: 3; stroke-color: #5500aa; color: #8800ff";
           }
           var prevVal = 0;
+          var prevAbsVal = 0;
           for (col = 1; col < data.getNumberOfColumns(); col += 4) {
-            var curVal = data.getValue(row, col);
+            var curAbsVal = data.getValue(row, col);
+            var absStepVal = curAbsVal - prevAbsVal;
+            var curVal = 100 * ((templateDPS + curAbsVal) / templateDPS - 1);
+            console.log(curVal);
             var stepVal = curVal - prevVal;
             var tooltip = "<div class=\"chart-tooltip\"><b>" + data.getValue(row, col + 1) + "x " + rowName +
-              "</b><br><b>Total:</b> " + formatNumber(curVal.toFixed()) +
-              "<br><b>Increase:</b> " + formatNumber(stepVal.toFixed()) + "</div>";
+              "</b><br><b>Total:</b> " + formatNumber(curVal.toFixed(2)) + "% (" + formatNumber(curAbsVal.toFixed()) +
+              ")<br><b>Increase:</b> " + formatNumber(stepVal.toFixed(2)) + "% (" + formatNumber(absStepVal.toFixed()) + ")</div>";
             data.setValue(row, col + 2, tooltip);
             data.setValue(row, col + 3, relicStyle);
             data.setValue(row, col, stepVal);
@@ -232,6 +236,7 @@
               data.setValue(row, col + 1, "");
             }
             prevVal = curVal > prevVal ? curVal : prevVal;
+            prevAbsVal = curAbsVal > prevAbsVal ? curAbsVal : prevAbsVal;
           }
         }
 
@@ -268,11 +273,11 @@
             gridlines: {
               count: 20
             },
-            format: 'short',
+            format: "#.#'%'",
             textStyle: {
               color: textColor
             },
-            title: "DPS Increase",
+            title: "% DPS Gain",
             titleTextStyle: {
               color: textColor
             },
