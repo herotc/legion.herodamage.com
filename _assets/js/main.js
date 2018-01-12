@@ -61,6 +61,26 @@
     return data;
   }
 
+  function initOverlay(chartArea) {
+    var chartEl = document.getElementById('google-chart');
+    var overlayEl = document.getElementById("chart-overlay");
+    chartEl.onmousemove = function(e) {
+      var bounds = chartEl.getBoundingClientRect();
+      var areaLeft = bounds.left + chartArea.left + window.scrollX;
+      var areaRight = bounds.right - chartArea.right + window.scrollX;
+      var areaTop = bounds.top + chartArea.top + window.scrollY;
+      var areaBottom = bounds.bottom - chartArea.bottom + window.scrollY;
+      if (e.pageX >= areaLeft && e.pageX <= areaRight && e.pageY >= areaTop && e.pageY <= areaBottom) {
+        overlayEl.style.display = "block";
+        overlayEl.style.top = areaTop + "px";
+        overlayEl.style.left = e.pageX + "px";
+        overlayEl.style.height = chartEl.offsetHeight - chartArea.top - chartArea.bottom + "px";
+      } else {
+        overlayEl.style.display = "none";
+      }
+    }
+  }
+
   /*
    * Data Loaders
   */
@@ -326,6 +346,7 @@
         var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
         chart.draw(excludeEmptyRows(data), options);
         removeLoading();
+        initOverlay(options.chartArea);
       });
     }
 
@@ -440,6 +461,7 @@
         var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
         chart.draw(excludeEmptyRows(data), options);
         removeLoading();
+        initOverlay(options.chartArea);
       });
     }
 
