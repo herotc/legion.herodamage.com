@@ -129,6 +129,7 @@ reports.each do |file|
     end
 
     if reportInfos['type'] == "Relics" || reportInfos['type'] == "Trinkets"
+      front['templateDPS'] = " #{json['player']['collected_data']['dps']['mean'].round(0)}"
       player = {
         'talentsName' => [],
         'legendariesName' => []
