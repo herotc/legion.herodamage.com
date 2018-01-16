@@ -1,0 +1,13 @@
+{% assign fightstyles = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | group_by: "fightstyle" %}
+{% assign numFightstyles = fightstyles | size %}
+{% if numFightstyles > 1 %}
+  {% for fightstyle in fightstyles %}
+    {% if fightstyle.name != "Composite" %}
+      <p>
+        Composite fight style is an aggregation of current raid tier fightstyles. We take every encounter and regroup them into different fightstyles that SimulationCraft understands. 
+        Then we sim all the combination and apply weights to them depending on the previous result. 
+        Finally we combine all that into one chart that represents more closely the raid tier than Single Target.
+      </p>
+    {% endif %}
+  {% endfor %}
+{% endif %}

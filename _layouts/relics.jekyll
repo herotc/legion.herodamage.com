@@ -19,6 +19,7 @@ layout: default
     <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook.
     If your character is different from the setup used here, personal simulations are recommended.
   </p>
+  {% include layout-parts/simulations/composite.jekyll %}
   <div class="subnavs-sticky">
     {% include layout-parts/simulations/fightstylenav.jekyll %}
     {% include layout-parts/simulations/gearvariationnav.jekyll %}
