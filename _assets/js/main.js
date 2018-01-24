@@ -89,6 +89,7 @@
   // Wrap is due to variable having function scope (could implement OOP at some point)
   (function () {
     var combinationsData;
+    var maxDPS = 0;
     var hasBossDPS = false;
     var setSelect, legoSelect;
 
@@ -131,6 +132,10 @@
                 html += formatNumber(columns[5]);
               html += "</td>";
             }
+            if (columns[4] == maxDPS)
+              html += "<td></td>";
+            else
+              html += "<td>" + (100 * columns[4] / maxDPS - 100).toFixed(1) + "%</td>";
             html += "</tr>";
           });
           tableData.innerHTML = html;
@@ -154,6 +159,8 @@
               legos.push(lego);
             }
           });
+          if (columns[4] > maxDPS)
+            maxDPS = columns[4];
           if (!hasBossDPS && columns.length === 6)
             hasBossDPS = true;
         });
@@ -178,11 +185,16 @@
         }
         legoSelect.selectpicker("val", legos);
         legoSelect.selectpicker("refresh");
+        var headerSection = document.getElementById("combinations-table-headers");
+        var filterSection = document.getElementById("combinations-table-filters");
         // Boss DPS
         if (hasBossDPS) {
-          document.getElementById("combinations-table-headers").insertAdjacentHTML("beforeend", "<th>Boss DPS</th>");
-          document.getElementById("combinations-table-filters").insertAdjacentHTML("beforeend", "<th></th>");
+          headerSection.insertAdjacentHTML("beforeend", "<th>Boss DPS</th>");
+          filterSection.insertAdjacentHTML("beforeend", "<th></th>");
         }
+        // Add relative % comparison column
+        headerSection.insertAdjacentHTML("beforeend", "<th></th>");
+        filterSection.insertAdjacentHTML("beforeend", "<th></th>");
         hd.combinationsUpdate();
         removeLoading();
       });
