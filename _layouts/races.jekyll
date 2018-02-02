@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div id="content" class="container">
+  <h1>{{ page.title }}</h1>
+  <p>
+    If you are interested in how the different races in World of Warcraft compare for this build, you can check out the following chart. However, keep in
+    mind that race differences are usually rather small and can change with balance and gameplay changes. You can always play the race you want
+    to play and don't have to feel compelled to choose based on this chart.
+  </p>
+  {% include layout-parts/simulations/composite.jekyll %}
+  <div class="subnavs-sticky">
+    {% include layout-parts/simulations/fightstylenav.jekyll %}
+    {% include layout-parts/simulations/gearvariationnav.jekyll %}
+  </div>
+  {% include layout-parts/simulations/metas.jekyll %}
+  {% include layout-parts/ads/inarticle.jekyll %}
+  {% include layout-parts/simulations/loading.jekyll %}
+  {% include layout-parts/simulations/googlechart.jekyll %}
+  {% include layout-parts/ads/matchedcontent.jekyll %}
+</div>
+<script async src="//www.gstatic.com/charts/loader.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    window.herodamage.racesInit("{{ page.reportfile }}", "{{ page.charttitle }}", {{ page.templateDPS }});
+  });
+</script>

@@ -19,6 +19,9 @@ collections:
   death_knight-combinations:
     output: true
     permalink: /death-knight/combinations/:name
+  death_knight-races:
+    output: true
+    permalink: /death-knight/races/:name
   death_knight-relics:
     output: true
     permalink: /death-knight/relics/:name
@@ -31,6 +34,9 @@ collections:
   demon_hunter-combinations:
     output: true
     permalink: /demon-hunter/combinations/:name
+  demon_hunter-races:
+    output: true
+    permalink: /demon-hunter/races/:name
   demon_hunter-relics:
     output: true
     permalink: /demon-hunter/relics/:name
@@ -43,6 +49,9 @@ collections:
   druid-combinations:
     output: true
     permalink: /druid/combinations/:name
+  druid-races:
+    output: true
+    permalink: /druid/races/:name
   druid-relics:
     output: true
     permalink: /druid/relics/:name
@@ -55,6 +64,9 @@ collections:
   hunter-combinations:
     output: true
     permalink: /hunter/combinations/:name
+  hunter-races:
+    output: true
+    permalink: /hunter/races/:name
   hunter-relics:
     output: true
     permalink: /hunter/relics/:name
@@ -67,6 +79,9 @@ collections:
   mage-combinations:
     output: true
     permalink: /mage/combinations/:name
+  mage-races:
+    output: true
+    permalink: /mage/races/:name
   mage-relics:
     output: true
     permalink: /mage/relics/:name
@@ -79,6 +94,9 @@ collections:
   monk-combinations:
     output: true
     permalink: /monk/combinations/:name
+  monk-races:
+    output: true
+    permalink: /monk/races/:name
   monk-relics:
     output: true
     permalink: /monk/relics/:name
@@ -91,6 +109,9 @@ collections:
   paladin-combinations:
     output: true
     permalink: /paladin/combinations/:name
+  paladin-races:
+    output: true
+    permalink: /paladin/races/:name
   paladin-relics:
     output: true
     permalink: /paladin/relics/:name
@@ -103,6 +124,9 @@ collections:
   priest-combinations:
     output: true
     permalink: /priest/combinations/:name
+  priest-races:
+    output: true
+    permalink: /priest/races/:name
   priest-relics:
     output: true
     permalink: /priest/relics/:name
@@ -115,6 +139,9 @@ collections:
   rogue-combinations:
     output: true
     permalink: /rogue/combinations/:name
+  rogue-races:
+    output: true
+    permalink: /rogue/races/:name
   rogue-relics:
     output: true
     permalink: /rogue/relics/:name
@@ -127,6 +154,9 @@ collections:
   shaman-combinations:
     output: true
     permalink: /shaman/combinations/:name
+  shaman-races:
+    output: true
+    permalink: /shaman/races/:name
   shaman-relics:
     output: true
     permalink: /shaman/relics/:name
@@ -139,6 +169,9 @@ collections:
   warlock-combinations:
     output: true
     permalink: /warlock/combinations/:name
+  warlock-races:
+    output: true
+    permalink: /warlock/races/:name
   warlock-relics:
     output: true
     permalink: /warlock/relics/:name
@@ -151,6 +184,9 @@ collections:
   warrior-combinations:
     output: true
     permalink: /warrior/combinations/:name
+  warrior-races:
+    output: true
+    permalink: /warrior/races/:name
   warrior-relics:
     output: true
     permalink: /warrior/relics/:name
@@ -188,6 +224,14 @@ defaults:
   -
     scope:
       path: ""
+      type: "death_knight-races"
+    values:
+      layout: "races"
+      wowClass: "death_knight"
+      chartStyleClass: "full-height"
+  -
+    scope:
+      path: ""
       type: "death_knight-relics"
     values:
       layout: "relics"
@@ -214,6 +258,14 @@ defaults:
     values:
       layout: "combinations"
       wowClass: "demon_hunter"
+  -
+    scope:
+      path: ""
+      type: "demon_hunter-races"
+    values:
+      layout: "races"
+      wowClass: "demon_hunter"
+      chartStyleClass: "full-height"
   -
     scope:
       path: ""
@@ -246,6 +298,14 @@ defaults:
   -
     scope:
       path: ""
+      type: "druid-races"
+    values:
+      layout: "races"
+      wowClass: "druid"
+      chartStyleClass: "full-height"
+  -
+    scope:
+      path: ""
       type: "druid-relics"
     values:
       layout: "relics"
@@ -272,6 +332,14 @@ defaults:
     values:
       layout: "combinations"
       wowClass: "hunter"
+  -
+    scope:
+      path: ""
+      type: "hunter-races"
+    values:
+      layout: "races"
+      wowClass: "hunter"
+      chartStyleClass: "full-height"
   -
     scope:
       path: ""
@@ -304,6 +372,14 @@ defaults:
   -
     scope:
       path: ""
+      type: "mage-races"
+    values:
+      layout: "races"
+      wowClass: "mage"
+      chartStyleClass: "full-height"
+  -
+    scope:
+      path: ""
       type: "mage-relics"
     values:
       layout: "relics"
@@ -330,6 +406,14 @@ defaults:
     values:
       layout: "combinations"
       wowClass: "monk"
+  -
+    scope:
+      path: ""
+      type: "monk-races"
+    values:
+      layout: "races"
+      wowClass: "monk"
+      chartStyleClass: "full-height"
   -
     scope:
       path: ""
@@ -362,6 +446,14 @@ defaults:
   -
     scope:
       path: ""
+      type: "paladin-races"
+    values:
+      layout: "races"
+      wowClass: "paladin"
+      chartStyleClass: "full-height"
+  -
+    scope:
+      path: ""
       type: "paladin-relics"
     values:
       layout: "relics"
@@ -388,6 +480,14 @@ defaults:
     values:
       layout: "combinations"
       wowClass: "priest"
+  -
+    scope:
+      path: ""
+      type: "priest-races"
+    values:
+      layout: "races"
+      wowClass: "priest"
+      chartStyleClass: "full-height"
   -
     scope:
       path: ""
@@ -420,6 +520,14 @@ defaults:
   -
     scope:
       path: ""
+      type: "rogue-races"
+    values:
+      layout: "races"
+      wowClass: "rogue"
+      chartStyleClass: "full-height"
+  -
+    scope:
+      path: ""
       type: "rogue-relics"
     values:
       layout: "relics"
@@ -446,6 +554,14 @@ defaults:
     values:
       layout: "combinations"
       wowClass: "shaman"
+  -
+    scope:
+      path: ""
+      type: "shaman-races"
+    values:
+      layout: "races"
+      wowClass: "shaman"
+      chartStyleClass: "full-height"
   -
     scope:
       path: ""
@@ -478,6 +594,14 @@ defaults:
   -
     scope:
       path: ""
+      type: "warlock-races"
+    values:
+      layout: "races"
+      wowClass: "warlock"
+      chartStyleClass: "full-height"
+  -
+    scope:
+      path: ""
       type: "warlock-relics"
     values:
       layout: "relics"
@@ -504,6 +628,14 @@ defaults:
     values:
       layout: "combinations"
       wowClass: "warrior"
+  -
+    scope:
+      path: ""
+      type: "warrior-races"
+    values:
+      layout: "races"
+      wowClass: "warrior"
+      chartStyleClass: "full-height"
   -
     scope:
       path: ""
@@ -562,7 +694,7 @@ assets:
 # Blog
 paginate: 5
 paginate_path: "/blog/page:num/"
-excerpt_separator: <!--more--> 
+excerpt_separator: <!--more-->
 authors:
   Aethys:
     github: Aethys256
@@ -576,5 +708,6 @@ repository: SimCMinMax/herodamage
 wowClasses: [death_knight, demon_hunter, druid, hunter, mage, monk, paladin, priest, rogue, shaman, warlock, warrior]
 simulationTypes:
   - "combinations"
+  - "races"
   - "relics"
   - "trinkets"

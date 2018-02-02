@@ -201,6 +201,125 @@
     };
   })();
 
+  // Races
+  hd.racesInit = function racesInit(reportPath, chartTitle, templateDPS) {
+    function drawChart() {
+      $.get("/" + reportPath, function (data) {
+        var data = new google.visualization.arrayToDataTable(data);
+        var row;
+
+        // Sort
+        data.sort({column: 1, desc: true});
+
+        // Add Tooltip and Style column
+        data.insertColumn(2, {type: "string", role: "tooltip", "p": {"html": true}});
+        data.insertColumn(3, {type: "string", role: "style"});
+
+        var AllianceRaces = ["Human", "Dwarf", "Night Elf", "Gnome", "Worgen", "Draenei", "Lightforged Draenei", "Void Elf"];
+        var HordeRaces = ["Orc", "Troll", "Tauren", "Goblin", "Undead", "Blood Elf", "Highmountain Tauren", "Nightborne"];
+
+        // Process data
+        for (row = 0; row < data.getNumberOfRows(); row++) {
+          var raceStyle = "";
+          var rowName = data.getValue(row, 0);
+          if ($.inArray(rowName, AllianceRaces) >= 0) {
+            raceStyle = "stroke-width: 3; stroke-color: #1144AA; color: #3366CC";
+          } else if ($.inArray(rowName, HordeRaces) >= 0) {
+            raceStyle = "stroke-width: 3; stroke-color: #770000; color: #AA0000";
+          } else {
+            raceStyle = "stroke-width: 3; stroke-color: #4d4d4d; color: #808080";
+          }
+          var curAbsVal = data.getValue(row, 1);
+          var curVal = 100 * ((templateDPS + curAbsVal) / templateDPS - 1);
+          var tooltip = "<div class=\"chart-tooltip\"><b>" + rowName +
+            "</b><br><b>Increase:</b> " + formatNumber(curVal.toFixed(2)) + "% (" + formatNumber(curAbsVal) + ")</div>";
+          data.setValue(row, 3, raceStyle);
+          data.setValue(row, 2, tooltip);
+          data.setValue(row, 1, curVal);
+        }
+
+        // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
+        var content = document.getElementById("simulations-metas");
+        var contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue("padding-left") * 2;
+
+        // Set chart options
+        var chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700;
+        var bgColor = "#222222";
+        var textColor = "#cccccc";
+        var options = {
+          title: chartTitle,
+          backgroundColor: bgColor,
+          chartArea: {
+            top: 50,
+            bottom: 100,
+            left: 150,
+            right: 50
+          },
+          hAxis: {
+            gridlines: {
+              count: 20
+            },
+            format: "#.#'%'",
+            textStyle: {
+              color: textColor
+            },
+            title: "% DPS Gain",
+            titleTextStyle: {
+              color: textColor
+            },
+            viewWindowMode: 'maximized',
+            viewWindow: {
+              min: 0
+            }
+          },
+          vAxis: {
+            textStyle: {
+              fontSize: 12,
+              color: textColor
+            },
+            titleTextStyle: {
+              color: textColor
+            }
+          },
+          annotations: {
+            highContrast: false,
+            stem: {
+              color: "transparent",
+              length: -12
+            },
+            textStyle: {
+              fontName: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: 10,
+              bold: true,
+              color: bgColor,
+              auraColor: "transparent"
+            }
+          },
+          titleTextStyle: {
+            color: textColor
+          },
+          tooltip: {
+            isHtml: true
+          },
+          legend: {
+            position: "none"
+          },
+          isStacked: true,
+          width: chartWidth
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById("google-chart"));
+        chart.draw(excludeEmptyRows(data), options);
+        removeLoading();
+        initOverlay(options.chartArea);
+      });
+    }
+
+    google.charts.load("current", {"packages": ["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+  };
+
   // Relics
   hd.relicsInit = function relicsInit(reportPath, chartTitle, templateDPS) {
     function drawChart() {
@@ -255,7 +374,6 @@
             var curAbsVal = data.getValue(row, col);
             var absStepVal = curAbsVal - prevAbsVal;
             var curVal = 100 * ((templateDPS + curAbsVal) / templateDPS - 1);
-            console.log(curVal);
             var stepVal = curVal - prevVal;
             var tooltip = "<div class=\"chart-tooltip\"><b>" + data.getValue(row, col + 1) + "x " + rowName +
               "</b><br><b>Total:</b> " + formatNumber(curVal.toFixed(2)) + "% (" + formatNumber(curAbsVal.toFixed()) +

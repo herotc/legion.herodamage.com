@@ -12,7 +12,8 @@ metaFolder = "data/meta"
 simCollections = {
   'Combinator' => 'combinations',
   'Relics' => 'relics',
-  'Trinkets' => 'trinkets'
+  'Trinkets' => 'trinkets',
+  'Races' => 'races'
 }
 wowClasses = ['death_knight', 'demon_hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior']
 
@@ -20,7 +21,8 @@ wowClasses = ['death_knight', 'demon_hunter', 'druid', 'hunter', 'mage', 'monk',
 fancyCollection = {
   'Combinator' => 'Combinations',
   'Relics' => 'Relics',
-  'Trinkets' => 'Trinkets'
+  'Trinkets' => 'Trinkets',
+  'Races' => 'Races'
 }
 fancyFightstyles = {
   '1T' => 'Single Target',
@@ -128,7 +130,7 @@ reports.each do |file|
       front['gearvariation'] = " #{reportInfos['gearvariation']}"
     end
 
-    if reportInfos['type'] == "Relics" || reportInfos['type'] == "Trinkets"
+    if ['Relics', 'Trinkets', 'Races'].include?(reportInfos['type'])
       front['templateDPS'] = " #{json['player']['collected_data']['dps']['mean'].round(0)}"
       player = {
         'talentsName' => [],
@@ -162,7 +164,7 @@ reports.each do |file|
     front['resulttimestamp'] = " #{simc['resultTimestamp']}"
     front['build'] = " #{wow['version']} ##{wow['build']}"
 
-    if reportInfos['type'] == "Relics" || reportInfos['type'] == "Trinkets"
+    if ['Relics', 'Trinkets', 'Races'].include?(reportInfos['type'])
       front['charttitle'] = " #{wow['version']} #{reportSpecWithSuffix} #{reportInfos['type']} (#{reportInfos['tier']} SimC Profile, #{simc['buildDate']})"
     end
 
