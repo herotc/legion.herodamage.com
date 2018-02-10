@@ -8,7 +8,12 @@ layout: default
       <div class="page-header">
         <h1>{{ page.title }}
           <small>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} &ndash; {{ page.author }}{% endif %}</small>
-          <div class="pull-right">{% avatar {{ site.authors[page.author].github }} %}</div>
+          <div class="pull-right">
+            {% assign gh-user=site.authors[page.author].github %}
+            <img class="avatar avatar-small" src="https://avatars3.githubusercontent.com/{{ gh-user }}?v=3&amp;s=40" alt="{{ gh-user }}"
+              srcset="https://avatars3.githubusercontent.com/{{ gh-user }}?v=3&amp;s=40 1x, https://avatars3.githubusercontent.com/{{ gh-user }}?v=3&amp;s=80 2x, https://avatars3.githubusercontent.com/{{ gh-user }}?v=3&amp;s=120 3x, https://avatars3.githubusercontent.com/{{ gh-user }}?v=3&amp;s=160 4x"
+              width="40" height="40">
+          </div>
         </h1>
       </div>
     </header>

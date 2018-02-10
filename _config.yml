@@ -675,9 +675,7 @@ plugins:
   - jekyll-assets # Asset pipelines
   - jekyll-redirect-from # Allow multiple permalink for one page
   - jekyll-feed # Create RSS Feed for the blogposts
-  - jekyll-avatar # Allow to embed GitHub profiles avatar
   - jekyll-sitemap # Generate the sitemap.xml
-  - jekyll-mentions # Allow to mention GitHub profiles
   - jekyll-paginate # Posts pagination
   - jemoji # Enable GitHub emojis
 
