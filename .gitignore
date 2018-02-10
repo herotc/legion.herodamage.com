@@ -1,9 +1,9 @@
 # Generated #
 #############
-*-combinations/*
-*-races/*
-*-relics/*
-*-trinkets/*
+collections/*-combinations/*
+collections/*-races/*
+collections/*-relics/*
+collections/*-trinkets/*
 
 # Jekyll #
 ##########

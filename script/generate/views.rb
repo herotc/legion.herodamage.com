@@ -7,8 +7,9 @@ require 'yaml'
 
 # Config = YAML.load(File.read("_config.yml"))
 
-dataFolder = "data"
-metaFolder = "data/meta"
+collectionsDir = "collections"
+dataDir = "data"
+metaDir = "data/meta"
 simCollections = {
   'Combinator' => 'combinations',
   'Relics' => 'relics',
@@ -50,19 +51,19 @@ fancyTierExpanded = {
 # Empty each collections
 simCollections.each do |simType, simColection|
   wowClasses.each do |wowClass|
-    FileUtils.rm_f Dir.glob("_#{wowClass}-#{simColection}/*")
+    FileUtils.rm_f Dir.glob("#{dataDir}/_#{wowClass}-#{simColection}/*")
   end
 end
 
 # Generate the new views
-reports = Dir.glob("#{dataFolder}/*.json")
+reports = Dir.glob("#{dataDir}/*.json")
 reportsCount = reports.length
 reportsProcessed = 0
 puts "Starting to generate views for #{reportsCount} potential reports."
 reports.each do |file|
-  reportFilename = file.gsub("#{dataFolder}/", '').gsub(".json", '')
-  reportFile = "#{dataFolder}/#{reportFilename}.json"
-  metaFile = "#{metaFolder}/#{reportFilename}.json"
+  reportFilename = file.gsub("#{dataDir}/", '').gsub(".json", '')
+  reportFile = "#{dataDir}/#{reportFilename}.json"
+  metaFile = "#{metaDir}/#{reportFilename}.json"
 
   if File.exist?(metaFile)
     puts "#{reportsProcessed + 1}/#{reportsCount} - Generating #{reportFilename} view."
@@ -175,12 +176,12 @@ reports.each do |file|
 
 
     # Write the view
-    viewDirectory = "_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}"
-    viewDirectory = viewDirectory.downcase
-    if !Dir.exist?(viewDirectory)
-      Dir.mkdir viewDirectory
+    viewDir = "#{collectionsDir}/_#{reportInfos['class']}-#{simCollections[reportInfos['type']]}"
+    viewDir = viewDir.downcase
+    if !Dir.exist?(viewDir)
+      Dir.mkdir viewDir
     end
-    viewFile = "#{viewDirectory}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}"
+    viewFile = "#{viewDir}/#{reportInfos['fightstyle']}-#{reportInfos['tier']}-#{reportInfos['class'].gsub('_', '-')}-#{reportSpecWithSuffix.gsub(' ', '-')}"
     viewFile += "-#{gearVariationRaw.gsub('_', '-').gsub('+', '-')}" if gearVariationRaw
     viewFile += '.html'
     File.open(viewFile.downcase, 'w') do |view|

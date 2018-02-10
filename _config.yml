@@ -5,9 +5,12 @@ url: https://www.herodamage.com
 encoding: utf-8
 timezone: Europe/Paris
 
+collections_dir: collections # Shouldn't start with a '_' else posts aren't generated
+plugins_dir:     _plugins
+layouts_dir:     _layouts
+data_dir:        _data
+includes_dir:    _includes
 collections:
-  # Until we got Jekyll 3.7.0, this is gonna be a bit a mess for collections
-  # Since they have to be in the root folder
   # About
   about:
     output: true
