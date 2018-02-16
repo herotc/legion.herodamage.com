@@ -8,8 +8,8 @@ require 'yaml'
 # Config = YAML.load(File.read("_config.yml"))
 
 collectionsDir = "collections"
-dataDir = "data"
-metaDir = "data/meta"
+reportDir = "report"
+metaDir = "report/meta"
 simCollections = {
   'Combinator' => 'combinations',
   'Relics' => 'relics',
@@ -51,18 +51,18 @@ fancyTierExpanded = {
 # Empty each collections
 simCollections.each do |simType, simColection|
   wowClasses.each do |wowClass|
-    FileUtils.rm_f Dir.glob("#{dataDir}/_#{wowClass}-#{simColection}/*")
+    FileUtils.rm_f Dir.glob("#{reportDir}/_#{wowClass}-#{simColection}/*")
   end
 end
 
 # Generate the new views
-reports = Dir.glob("#{dataDir}/*.json")
+reports = Dir.glob("#{reportDir}/*.json")
 reportsCount = reports.length
 reportsProcessed = 0
 puts "Starting to generate views for #{reportsCount} potential reports."
 reports.each do |file|
-  reportFilename = file.gsub("#{dataDir}/", '').gsub(".json", '')
-  reportFile = "#{dataDir}/#{reportFilename}.json"
+  reportFilename = file.gsub("#{reportDir}/", '').gsub(".json", '')
+  reportFile = "#{reportDir}/#{reportFilename}.json"
   metaFile = "#{metaDir}/#{reportFilename}.json"
 
   if File.exist?(metaFile)

@@ -13,6 +13,7 @@ In this list, you can see the last 30 changes to our website repository on GitHu
 <script>
   window.addEventListener("load", function () {
     $.getJSON("https://api.github.com/repos/{{ site.repository }}/commits", function(data) {
+      var changelog = $("#github-changelog");
       $.each(data, function(idx, commit) {
         var messageLines = commit.commit.message.split("\n").filter(Boolean);
         var title = messageLines.shift();
@@ -22,7 +23,7 @@ In this list, you can see the last 30 changes to our website repository on GitHu
           '<div class="media-body"><h4 class="media-heading">' + title + '</h4>' +
           messageString + new Date(commit.commit.author.date).toLocaleString("en-US") + ' by ' + commit.author.login +
           '</div></div></a>';
-        $("#github-changelog").append(entry);
+        changelog.append(entry);
       });
     });
   });

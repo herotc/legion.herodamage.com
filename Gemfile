@@ -14,6 +14,7 @@ group :jekyll_plugins do
   gem 'jekyll-assets'
   gem 'sass'
   # Standalone
+  gem 'jekyll-polyglot'
   gem 'jekyll-redirect-from'
   gem 'jekyll-feed'
   gem 'jekyll-sitemap'

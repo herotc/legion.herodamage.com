@@ -669,13 +669,14 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - data/meta
+  - report/meta
   - node_modules
   - script
   - vendor
 
 plugins:
   - jekyll-assets # Asset pipelines
+  - jekyll-polyglot # Internationalization and localization
   - jekyll-redirect-from # Allow multiple permalink for one page
   - jekyll-feed # Create RSS Feed for the blogposts
   - jekyll-sitemap # Generate the sitemap.xml
