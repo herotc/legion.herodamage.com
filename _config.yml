@@ -685,10 +685,7 @@ plugins:
 
 # Assets
 assets:
-  compress:
-    css: false
-    js: false
-  digest: true
+  compression: false
   sources:
     - _assets/css
     - _assets/js

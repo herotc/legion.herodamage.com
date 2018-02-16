@@ -31,6 +31,6 @@ talent_override=nightstalker
 To sim it yourself, you have to use the 'nightly' version of SimulationCraft or Raidbots.
 Here is two pics showing how big the impact is, see how we went from last to first in 2 weeks thanks to bugs. Do remember that we are still working on this, so we might optimize it furthermore.
 
-![Assassination builds with and without the bug]({% asset_path wow/rogue/dpgate/assassination.png %} "Assassination builds with and without the bug")
+![Assassination builds with and without the bug]({% asset wow/rogue/dpgate/assassination.png @path %} "Assassination builds with and without the bug")
 
-![Assassination in stacked chart with and without the bug]({% asset_path wow/rogue/dpgate/stacked.png %} "Assassination in stacked chart with and without the bug")
+![Assassination in stacked chart with and without the bug]({% asset wow/rogue/dpgate/stacked.png @path %} "Assassination in stacked chart with and without the bug")

@@ -6,7 +6,6 @@ gem 'json'
 
 ## Jekyll
 gem 'jekyll'
-gem 'boostrap-sass'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows zoneinfo
 gem 'wdm', '>= 0.1.0' if Gem.win_platform? # Avoid polling for changes on Windows
 group :jekyll_plugins do

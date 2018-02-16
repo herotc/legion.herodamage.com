@@ -14,9 +14,9 @@
     {% endfor %}
   {% endif %}
   {% include lib/favicons.jekyll %}
-  {% capture assetPathStyle %}{% asset_path style.css %}{% endcapture %}
+  {% capture assetPathStyle %}{% asset style.css @path %}{% endcapture %}
   {% include lib/stylesheet.jekyll href=assetPathStyle %}
-  {% capture assetPathLib %}{% asset_path lib.css %}{% endcapture %}
+  {% capture assetPathLib %}{% asset lib.css @path %}{% endcapture %}
   {% include lib/stylesheet.jekyll type="preload" href=assetPathLib %}
   {% if page.reportfile %}
     {% comment %}If the page contains a report, let's prefetch it.{% endcomment %}
@@ -24,7 +24,7 @@
   {% endif %}
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script async src="{% asset_path main.js %}"></script>
+  <script async src="{% asset main.js @path %}"></script>
   {% if page.head %}{{ page.head }}{% endif %}
   {% include lib/google-adsense.jekyll %}
 </head>

@@ -7,7 +7,7 @@ collections/*-trinkets/*
 
 # Jekyll #
 ##########
-.asset-cache/
+.jekyll-cache/
 .jekyll-metadata
 _site/
 
