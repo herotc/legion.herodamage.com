@@ -4,16 +4,8 @@ layout: default
 
 <div id="content" class="container">
   <h1>{{ page.title }}</h1>
-  <p>
-    Here, you can compare expected DPS increase from trinkets.
-  </p>
-  <p>
-    In order to compare trinkets with this chart, look for the end of the bars corresponding to the item level of
-    interest. However, you should <b>simulate your own character</b> to find your best setup. These
-    simulations are based on predefined gear sets instead of your own, after all. This means data shown here
-    <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook.
-    If your character is different from the setup used here, personal simulations are recommended.
-  </p>
+  <p>{{ site.data.locale.layouts.simulations.relics.description }}</p>
+  <p>{{ site.data.locale.layouts.simulations.relics.description2 }}</p>
   {% include_cached layout-parts/simulations/composite.jekyll collection=page.collection tier=page.tier spec=page.spec %}
   <div class="subnavs-sticky">
     {% include layout-parts/simulations/fightstylenav.jekyll %}
@@ -25,8 +17,8 @@ layout: default
   {% include_cached layout-parts/simulations/googlechart.jekyll chartStyleClass=page.chartStyleClass %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
-<script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
-<script async src="//www.gstatic.com/charts/loader.js"></script>
+<script defer src=" //cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+<script async src=" //www.gstatic.com/charts/loader.js"></script>
 <script>
   window.addEventListener("load", function () {
     window.herodamage.trinketsInit("{{ page.reportfile }}", "{{ page.charttitle }}", {{ page.templateDPS }});

@@ -4,21 +4,9 @@ layout: default
 
 <div id="content" class="container">
   <h1>{{ page.title }}</h1>
-  <p>
-    This chart shows the impact of artifact relic traits on your DPS. You will see how much an additional
-    trait is worth compared to additional item levels on your weapon.
-  </p>
-  <p>
-    The numbers in the chart show the amount of item levels or traits. Trait simulations <em>only</em> show
-    the increase from that particular trait. This includes crucible T2 traits.
-  </p>
-  <p>
-    In order to compare relics with this chart, you have to add the values for the traits and the weapon item
-    level increase. However, you should <b>simulate your own character</b> to find your best setup. These
-    simulations are based on predefined gear sets instead of your own, after all. This means data shown here
-    <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook.
-    If your character is different from the setup used here, personal simulations are recommended.
-  </p>
+  <p>{{ site.data.locale.layouts.simulations.relics.description }}</p>
+  <p>{{ site.data.locale.layouts.simulations.relics.description2 }}</p>
+  <p>{{ site.data.locale.layouts.simulations.relics.description3 }}</p>
   {% include_cached layout-parts/simulations/composite.jekyll collection=page.collection tier=page.tier spec=page.spec %}
   <div class="subnavs-sticky">
     {% include layout-parts/simulations/fightstylenav.jekyll %}
@@ -37,7 +25,7 @@ layout: default
   {% include_cached layout-parts/simulations/googlechart.jekyll chartStyleClass=page.chartStyleClass %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
-<script async src="//www.gstatic.com/charts/loader.js"></script>
+<script async src=" //www.gstatic.com/charts/loader.js"></script>
 <script>
   window.addEventListener("load", function () {
     window.herodamage.relicsInit("{{ page.reportfile }}", "{{ page.charttitle }}", {{ page.templateDPS }});

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   {% if jekyll.environment == "production" %}
-    <script async src="//www.googletagmanager.com/gtag/js?id=UA-109496873-1"></script>
+    <script async src=" //www.googletagmanager.com/gtag/js?id=UA-109496873-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -31,7 +31,7 @@
   {% include_cached lib/scripts.jekyll %}
   {% if page.head %}{{ page.head }}{% endif %}
   {% if jekyll.environment == "production" %}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src=" //pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5677349133508739",
@@ -106,8 +106,8 @@
       });
     </script>
   {% endif %}
-  <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css">
-  <script async src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.js"></script>
+  <link type="text/css" rel="stylesheet" href=" //cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css">
+  <script async src=" //cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.js"></script>
   <script>
     window.addEventListener("load", function () {
       window.cookieconsent.initialise({
