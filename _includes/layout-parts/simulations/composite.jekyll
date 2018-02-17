@@ -1,4 +1,4 @@
-{% assign fightstyles = site.documents | where: "collection", page.collection | where: "tier", page.tier | where: "spec", page.spec | group_by: "fightstyle" %}
+{% assign fightstyles = site.documents | where: "collection", include.collection | where: "tier", include.tier | where: "spec", include.spec | group_by: "fightstyle" %}
 {% assign numFightstyles = fightstyles | size %}
 {% if numFightstyles > 1 %}
   {% for fightstyle in fightstyles %}

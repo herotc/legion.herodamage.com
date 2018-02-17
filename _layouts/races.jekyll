@@ -9,7 +9,7 @@ layout: default
     mind that race differences are usually rather small and can change with balance and gameplay changes. You can always play the race you want
     to play and don't have to feel compelled to choose based on this chart.
   </p>
-  {% include layout-parts/simulations/composite.jekyll %}
+  {% include_cached layout-parts/simulations/composite.jekyll collection=page.collection tier=page.tier spec=page.spec %}
   <div class="subnavs-sticky">
     {% include layout-parts/simulations/fightstylenav.jekyll %}
     {% include layout-parts/simulations/gearvariationnav.jekyll %}
