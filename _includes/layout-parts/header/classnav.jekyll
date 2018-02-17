@@ -40,6 +40,6 @@
         About <span class="caret"></span>
       </a>
   <ul class="dropdown-menu">
-      {% include_cached layout-parts/headermainnav.jekyll %}
+      {% include_cached layout-parts/header/mainnav.jekyll %}
   </ul>
 </li>
