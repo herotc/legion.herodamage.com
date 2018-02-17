@@ -15,51 +15,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           {% if page.wowClass %}
-            {% assign wowClass = page.wowClass %}
-            {% assign wowClassSize = wowClass | size %}
-            {% assign validCollections = "" %}
-            {% for name in site.simulationTypes %}
-              {% assign validCollections = validCollections | append: wowClass | append: "-" | append: name %}
-              {% unless forloop.last %}
-                {% assign validCollections = validCollections | append: ", " %}
-              {% endunless %}
-            {% endfor %}
-            {% assign simCollections = site.documents | where_exp: "item", "validCollections contains item.collection" | where_exp: "item", "item.collection != wowClass" | group_by: "collection" | sort: "name" %}
-            {% for simCollection in simCollections %}
-              {% assign simCollectionNamePrefix = simCollection.name | slice: 0, wowClassSize %}
-              {% if simCollectionNamePrefix == wowClass %}
-                <li class="dropdown">
-                  {% assign simType = simCollection.name | split: '-' | last %}
-                  <a class="dropdown-toggle" href="#" title="{{ simType | capitalize }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{ simType | capitalize }} <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    {% assign tiers = simCollection.items | group_by: "tier" | sort: "name" %}
-                    {% for tier in tiers reversed %}
-                      {% unless forloop.first %}
-                      <li role="separator" class="divider"></li>
-                      {% endunless %}
-                      <li class="dropdown-header text-center"><b>{{ tier.name }}</b></li>
-                      {% assign specs = tier.items | group_by: "spec" | sort: "name" %}
-                      {% for spec in specs %}
-                        {% assign entry = spec.items | sort: "url" | first %}
-                        {% if entry.fightstyle == nil or entry.fightstyle == "Single Target" %}
-                          <li><a href="{{ entry.url }}" title="{{ spec.name }}">{{ spec.name }}</a></li>
-                        {% endif %}
-                      {% endfor %}
-                    {% endfor %}
-                  </ul>
-                </li>
-              {% endif %}
-            {% endfor %}
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="#" title="About" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    About <span class="caret"></span>
-                  </a>
-              <ul class="dropdown-menu">
-                  {% include_cached layout-parts/headermainnav.jekyll %}
-              </ul>
-            </li>
+            {% include_cached layout-parts/headerclassnav.jekyll wowClass=page.wowClass %}
           {% endif %}
           {% unless page.wowClass %}
             {% include_cached layout-parts/headermainnav.jekyll %}
@@ -74,10 +30,6 @@
   </aside>
   {% endunless %}
   {% if page.wowClass %}
-  <nav id="header" class="navbar navbar-inverse container">
-    <a href="/{{ page.wowClass | replace: '_', '-' }}" title="{{ page.wowClass | replace: '_', ' ' | capitalize }}">
-      <img src="{% asset wowclasspicker/'{{page.wowClass}}'.svg  @path %}" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo">
-    </a>
-  </nav>
+    {% include_cached layout-parts/headerclasslogo.jekyll wowClass=page.wowClass %}
   {% endif %}
 </header>

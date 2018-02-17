@@ -1,0 +1,5 @@
+<nav id="header" class="navbar navbar-inverse container">
+  <a href="/{{ include.wowClass | replace: '_', '-' }}" title="{{ include.wowClass | replace: '_', ' ' | capitalize }}">
+    <img src="{% asset wowclasspicker/'{{include.wowClass}}'.svg  @path %}" alt="{{ site.name }} Logo" height="150" width="150" itemprop="logo">
+  </a>
+</nav>

@@ -17,7 +17,7 @@
   {% include_cached lib/stylesheets.jekyll %}
   {% if page.reportfile %}
     {% comment %}If the page contains a report, let's prefetch it.{% endcomment %}
-    {% include layout-parts/prefetchreport.jekyll href=page.reportfile %}
+    <link rel="prefetch" href="/{{ page.reportfile }}">
   {% endif %}
   {% include_cached lib/scripts.jekyll %}
   {% if page.head %}{{ page.head }}{% endif %}
