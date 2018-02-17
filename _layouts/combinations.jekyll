@@ -24,7 +24,7 @@ layout: default
     {% include layout-parts/simulations/gearvariationnav.jekyll %}
   </div>
   {% include layout-parts/simulations/metas.jekyll %}
-  {% include layout-parts/ads/inarticle.jekyll %}
+  {% include_cached layout-parts/ads/inarticle.jekyll %}
   <table id="combinations-table" class="table table-hover">
     <thead>
     <tr id="combinations-table-headers">
@@ -55,7 +55,7 @@ layout: default
     <tbody id="combinations-table-data">
     </tbody>
   </table>
-  {% include layout-parts/simulations/loading.jekyll %}
+  {% include_cached layout-parts/simulations/loading.jekyll %}
   <div id="combinations-table-nav" class="text-right"></div>
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>

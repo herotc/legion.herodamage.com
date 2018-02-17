@@ -32,8 +32,8 @@ layout: default
       <button class="btn btn-default" onclick="window.herodamage.copyToClipboard('crucibleweightstring');">Copy</button>
     </p>
   {% endif %}
-  {% include layout-parts/ads/inarticle.jekyll %}
-  {% include layout-parts/simulations/loading.jekyll %}
+  {% include_cached layout-parts/ads/inarticle.jekyll %}
+  {% include_cached layout-parts/simulations/loading.jekyll %}
   {% include layout-parts/simulations/googlechart.jekyll %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>

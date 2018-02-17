@@ -9,10 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/" title="Home">
-          <img src="{% asset logo.svg @path %}" alt="{{ site.name }} Logo" height="32" width="32" itemprop="logo">
-          {{ site.name }}
-        </a>
+        {% include_cached layout-parts/headerlogo.jekyll %}
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,12 +57,12 @@
                     About <span class="caret"></span>
                   </a>
               <ul class="dropdown-menu">
-                  {% include layout-parts/headermainnav.jekyll %}
+                  {% include_cached layout-parts/headermainnav.jekyll %}
               </ul>
             </li>
           {% endif %}
           {% unless page.wowClass %}
-            {% include layout-parts/headermainnav.jekyll %}
+            {% include_cached layout-parts/headermainnav.jekyll %}
           {% endunless %}
         </ul>
       </div>
@@ -73,7 +70,7 @@
   </nav>
   {% unless page.url == "/" %}
   <aside id="sidebar">
-    {% include layout-parts/wowclasspicker.jekyll %}
+    {% include_cached layout-parts/wowclasspicker.jekyll wowClassTitleLevel=5 %}
   </aside>
   {% endunless %}
   {% if page.wowClass %}

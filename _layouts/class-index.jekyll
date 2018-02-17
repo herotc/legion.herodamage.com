@@ -45,7 +45,7 @@ layout: default
       </div>
       {% if forloop.first and jekyll.environment == "production" %}
         <hr>
-        {% include layout-parts/ads/inarticle.jekyll %}
+        {% include_cached layout-parts/ads/inarticle.jekyll %}
       {% endif %}
       {% unless forloop.last %}
         <hr>

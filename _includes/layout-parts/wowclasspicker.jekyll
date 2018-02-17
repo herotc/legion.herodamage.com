@@ -5,12 +5,7 @@
   <a href="/{{ wowClass | replace: '_', '-' }}" title="{{ wowClassTitleized }}">
     <figure>
       <img src="{% asset wowclasspicker/'{{wowClass}}'.svg @path %}" alt="{{ wowClassTitleized }} WoW Icon">
-      {% if page.url == "/" %}
-        {% assign wowClassTitleLevel = 2 %}
-      {% else %}
-        {% assign wowClassTitleLevel = 5 %}
-      {% endif %}
-      <figcaption><h{{ wowClassTitleLevel }}>{{ wowClassTitleized }}</h{{ wowClassTitleLevel }}></figcaption>
+      <figcaption><h{{ include.wowClassTitleLevel }}>{{ wowClassTitleized }}</h{{ include.wowClassTitleLevel }}></figcaption>
     </figure>
   </a>
   {% endfor %}

@@ -1,0 +1,2 @@
+<link type="text/css" rel="stylesheet" href="{% asset lib.css @path %}">
+<link type="text/css" rel="stylesheet" href="{% asset style.css @path %}">

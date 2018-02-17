@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% include lib/google-analytics.jekyll %}
+  {% include_cached lib/google-analytics.jekyll %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,30 +13,25 @@
       <meta name="{{ meta.name }}" content="{{ meta.content }}">
     {% endfor %}
   {% endif %}
-  {% include lib/favicons.jekyll %}
-  {% capture assetPathStyle %}{% asset style.css @path %}{% endcapture %}
-  {% include lib/stylesheet.jekyll href=assetPathStyle %}
-  {% capture assetPathLib %}{% asset lib.css @path %}{% endcapture %}
-  {% include lib/stylesheet.jekyll type="preload" href=assetPathLib %}
+  {% include_cached lib/favicons.jekyll %}
+  {% include_cached lib/stylesheets.jekyll %}
   {% if page.reportfile %}
     {% comment %}If the page contains a report, let's prefetch it.{% endcomment %}
     {% include layout-parts/prefetchreport.jekyll href=page.reportfile %}
   {% endif %}
-  <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script defer src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script async src="{% asset main.js @path %}"></script>
+  {% include_cached lib/scripts.jekyll %}
   {% if page.head %}{{ page.head }}{% endif %}
-  {% include lib/google-adsense.jekyll %}
+  {% include_cached lib/google-adsense.jekyll %}
 </head>
 <body>
   {% include layout-parts/header.jekyll %}
-  {% include layout-parts/ads/top.jekyll %}
+  {% include_cached layout-parts/ads/top.jekyll %}
   <main>
     {{ content }}
   </main>
-  {% include layout-parts/ads/bot.jekyll %}
-  {% include layout-parts/footer.jekyll %}
-  {% include lib/adblockers.jekyll %}
-  {% include lib/cookie-consent.jekyll %}
+  {% include_cached layout-parts/ads/bot.jekyll %}
+  {% include_cached layout-parts/footer.jekyll %}
+  {% include_cached lib/adblockers.jekyll %}
+  {% include_cached lib/cookie-consent.jekyll %}
 </body>
 </html>
