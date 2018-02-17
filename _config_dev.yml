@@ -1,3 +1,4 @@
+# Assets
 assets:
   defaults:
     # Integrity seems to be forced with jekyll serve, let's force disable it

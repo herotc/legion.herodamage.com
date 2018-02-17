@@ -1,0 +1,3 @@
+# Adding one or more language means the site needs to be rebuilt for each of them
+# It's rare we need to build other language to dev, but including it in another fily let us remove it quite easily from the serve command
+languages: ["en"]
