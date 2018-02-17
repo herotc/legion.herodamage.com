@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% include_cached lib/google-analytics.jekyll %}
+  {% if jekyll.environment == "production" %}
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-109496873-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109496873-1');
+    </script>
+  {% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,17 +30,97 @@
   {% endif %}
   {% include_cached lib/scripts.jekyll %}
   {% if page.head %}{{ page.head }}{% endif %}
-  {% include_cached lib/google-adsense.jekyll %}
+  {% if jekyll.environment == "production" %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5677349133508739",
+        enable_page_level_ads: true
+      });
+    </script>
+  {% endif %}
 </head>
 <body>
-  {% include layout-parts/header.jekyll %}
+  <header>
+    <nav id="navigation" class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          {% include_cached layout-parts/headerlogo.jekyll %}
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            {% if page.wowClass %}
+              {% include_cached layout-parts/headerclassnav.jekyll wowClass=page.wowClass %}
+            {% endif %}
+            {% unless page.wowClass %}
+              {% include_cached layout-parts/headermainnav.jekyll %}
+            {% endunless %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% unless page.url == "/" %}
+    <aside id="sidebar">
+      {% include_cached layout-parts/wowclasspicker.jekyll wowClassTitleLevel=5 %}
+    </aside>
+    {% endunless %}
+    {% if page.wowClass %}
+      {% include_cached layout-parts/headerclasslogo.jekyll wowClass=page.wowClass %}
+    {% endif %}
+  </header>
   {% include_cached layout-parts/ads/top.jekyll %}
   <main>
     {{ content }}
   </main>
   {% include_cached layout-parts/ads/bot.jekyll %}
-  {% include_cached layout-parts/footer.jekyll %}
-  {% include_cached lib/adblockers.jekyll %}
-  {% include_cached lib/cookie-consent.jekyll %}
+  <footer class="container">
+    <p>© 2017 Hero Damage | <a href="https://github.com/SimCMinMax/herodamage" title="Hero Damage GitHub Repository" target="_blank" rel="nofollow">GitHub</a></p>
+  </footer>
+  {% if jekyll.environment == "production" %}
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function() {
+          var ads = document.querySelectorAll("ins.adsbygoogle");
+          for (var i = 0; i < ads.length; i++) {
+            var ad = ads[i];
+            if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+              var blockersMessage = document.createElement('p');
+              blockersMessage.className = 'blockers-text';
+              if (ad.parentElement.classList.contains("a-matchedcontent-d")) {
+                blockersMessage.innerHTML = 'This block suggests you recommended content from HeroTC using Google Adsense.<br>You might want to disable your ad blocker to see its content.';
+              } else {
+                blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.';
+              }
+              ad.parentElement.appendChild(blockersMessage);
+            }
+          }
+        }, 1500);
+      });
+    </script>
+  {% endif %}
+  <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#222222"
+          },
+          "button": {
+            "background": "#EEEEEE"
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
