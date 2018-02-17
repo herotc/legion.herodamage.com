@@ -39,8 +39,13 @@ merger = proc { |key, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger)
 
 langs.each do |lang|
   # Load the locale infos then merge it with the fallback
-  locale = JSON.parse(File.read("_data/#{lang}/locale.json"))
-  locale = localeFallback.merge(locale, &merger)
+  localeFile = "_data/#{lang}/locale.json"
+  if File.exist?(localeFile)
+    locale = JSON.parse(File.read(localeFile))
+    locale = localeFallback.merge(locale, &merger)
+  else
+    locale = localeFallback
+  end
   localeLS = locale['layouts']['simulations'] # Shortcut to simulations layouts
 
   reports.each do |file|
@@ -49,7 +54,8 @@ langs.each do |lang|
     metaFile = "#{metaDir}/#{reportFilename}.json"
 
     if File.exist?(metaFile)
-      puts "#{reportsProcessed + 1}/#{reportsCount} - Generating #{reportFilename} view."
+      # TODO: Use a progress bar to avoid making really long log and let it with a --verbose arg
+      # puts "#{reportsProcessed + 1}/#{reportsCount} - Generating #{reportFilename} view."
       # Report Infos
       filenameParts = reportFilename.split('-', 2)
       #Variation name starts after first hyphen, format nicely
