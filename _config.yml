@@ -12,12 +12,6 @@ data_dir:        _data
 includes_dir:    _includes
 
 exclude:
-  - _config_collections.yml
-  - _config_defaults.yml
-  - _config_dev.yml
-  - .editorconfig
-  - .gitignore
-  - .travis.yml
   - devserve.bat
   - Gemfile
   - Gemfile.lock
@@ -26,18 +20,10 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - _assets/img/src
-  - _site
-  - .jekyll-cache
   - report/meta
   - node_modules
   - script
   - vendor
-
-keep_files:
-  - assets
-  - report
-  - CNAME
 
 plugins:
   - jekyll-include-cache # Let us cache static includes
@@ -62,7 +48,7 @@ assets:
     - _assets/js
     - _assets/img
 # Polyglot
-languages: ["en", "fr", "de"]
+languages: ["en"]
 default_lang: "en"
 exclude_from_localization: ["assets", "report"]
 parallel_localization: false # Doesn't work on Windows and do crash Travis, see https://github.com/untra/polyglot/issues/78
