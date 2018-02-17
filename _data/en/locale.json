@@ -1,12 +1,60 @@
 {
   "wow": {
+    "classes": {
+      "Death Knight" : "Death Knight",
+      "Demon Hunter" : "Demon Hunter",
+      "Druid" : "Druid",
+      "Hunter" : "Hunter",
+      "Mage" : "Mage",
+      "Monk" : "Monk",
+      "Paladin" : "Paladin",
+      "Priest" : "Priest",
+      "Rogue" : "Rogue",
+      "Shaman" : "Shaman",
+      "Warlock" : "Warlock",
+      "Warrior" : "Warrior"
+    },
+    "specs": {
+      "Blood": "Blood",
+      "Frost": "Frost",
+      "Unholy": "Unholy",
+      "Havoc": "Havoc",
+      "Vengeance": "Vengeance",
+      "Balance": "Balance",
+      "Feral": "Feral",
+      "Guardian": "Guardian",
+      "Restoration": "Restoration",
+      "Beast Mastery": "Beast Mastery",
+      "Marksmanship": "Marksmanship",
+      "Survival": "Survival",
+      "Arcane": "Arcane",
+      "Fire": "Fire",
+      "Brewmaster": "Brewmaster",
+      "Mistweaver": "Mistweaver",
+      "Windwalker": "Windwalker",
+      "Holy": "Holy",
+      "Protection": "Protection",
+      "Retribution": "Retribution",
+      "Discipline": "Discipline",
+      "Shadow": "Shadow",
+      "Assassination": "Assassination",
+      "Outlaw": "Outlaw",
+      "Subtlety": "Subtlety",
+      "Elemental": "Elemental",
+      "Enhancement": "Enhancement",
+      "Affliction": "Affliction",
+      "Demonology": "Demonology",
+      "Destruction": "Destruction",
+      "Arms": "Arms",
+      "Fury": "Fury"
+    },
     "Theorycrafting": "Theorycrafting",
     "Talents": "Talents",
     "Sets": "Sets",
     "Legendaries": "Legendaries",
     "DPS": "DPS"
   },
-  "layouts" : {
+  "layouts": {
     "simulations": {
       "collections": {
         "Combinator": "Combinations",
@@ -56,5 +104,20 @@
     "class-index": {
       "h1": "%s1 Theorycrafting"
     }
+  },
+  "includes": {
+    "layout-parts": {
+      "header" : {
+
+      },
+      "simulations": {
+
+      },
+      "wowclasspicker": {
+
+      }
+    }
+  },
+  "pages": {
   }
 }
