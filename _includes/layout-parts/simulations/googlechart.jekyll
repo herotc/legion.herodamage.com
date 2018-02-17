@@ -1,2 +1,2 @@
 <div id="chart-overlay"></div>
-<div id="google-chart" class="{{ page.chartStyleClass }}"></div>
+<div id="google-chart" class="{{ include.chartStyleClass }}"></div>

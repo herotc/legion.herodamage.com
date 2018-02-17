@@ -34,7 +34,7 @@ layout: default
   {% endif %}
   {% include_cached layout-parts/ads/inarticle.jekyll %}
   {% include_cached layout-parts/simulations/loading.jekyll %}
-  {% include layout-parts/simulations/googlechart.jekyll %}
+  {% include_cached layout-parts/simulations/googlechart.jekyll chartStyleClass=page.chartStyleClass %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
 <script async src="//www.gstatic.com/charts/loader.js"></script>
