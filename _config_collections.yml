@@ -9,178 +9,178 @@ collections:
     permalink: /death-knight/:name
   death_knight-combinations:
     output: true
-    permalink: /death-knight/combinations/:name
+    permalink: /death-knight/combinations/:slug
   death_knight-races:
     output: true
-    permalink: /death-knight/races/:name
+    permalink: /death-knight/races/:slug
   death_knight-relics:
     output: true
-    permalink: /death-knight/relics/:name
+    permalink: /death-knight/relics/:slug
   death_knight-trinkets:
     output: true
-    permalink: /death-knight/trinkets/:name
+    permalink: /death-knight/trinkets/:slug
   demon_hunter:
     output: true
     permalink: /demon-hunter/:name
   demon_hunter-combinations:
     output: true
-    permalink: /demon-hunter/combinations/:name
+    permalink: /demon-hunter/combinations/:slug
   demon_hunter-races:
     output: true
-    permalink: /demon-hunter/races/:name
+    permalink: /demon-hunter/races/:slug
   demon_hunter-relics:
     output: true
-    permalink: /demon-hunter/relics/:name
+    permalink: /demon-hunter/relics/:slug
   demon_hunter-trinkets:
     output: true
-    permalink: /demon-hunter/trinkets/:name
+    permalink: /demon-hunter/trinkets/:slug
   druid:
     output: true
     permalink: /druid/:name
   druid-combinations:
     output: true
-    permalink: /druid/combinations/:name
+    permalink: /druid/combinations/:slug
   druid-races:
     output: true
-    permalink: /druid/races/:name
+    permalink: /druid/races/:slug
   druid-relics:
     output: true
-    permalink: /druid/relics/:name
+    permalink: /druid/relics/:slug
   druid-trinkets:
     output: true
-    permalink: /druid/trinkets/:name
+    permalink: /druid/trinkets/:slug
   hunter:
     output: true
     permalink: /hunter/:name
   hunter-combinations:
     output: true
-    permalink: /hunter/combinations/:name
+    permalink: /hunter/combinations/:slug
   hunter-races:
     output: true
-    permalink: /hunter/races/:name
+    permalink: /hunter/races/:slug
   hunter-relics:
     output: true
-    permalink: /hunter/relics/:name
+    permalink: /hunter/relics/:slug
   hunter-trinkets:
     output: true
-    permalink: /hunter/trinkets/:name
+    permalink: /hunter/trinkets/:slug
   mage:
     output: true
     permalink: /mage/:name
   mage-combinations:
     output: true
-    permalink: /mage/combinations/:name
+    permalink: /mage/combinations/:slug
   mage-races:
     output: true
-    permalink: /mage/races/:name
+    permalink: /mage/races/:slug
   mage-relics:
     output: true
-    permalink: /mage/relics/:name
+    permalink: /mage/relics/:slug
   mage-trinkets:
     output: true
-    permalink: /mage/trinkets/:name
+    permalink: /mage/trinkets/:slug
   monk:
     output: true
     permalink: /monk/:name
   monk-combinations:
     output: true
-    permalink: /monk/combinations/:name
+    permalink: /monk/combinations/:slug
   monk-races:
     output: true
-    permalink: /monk/races/:name
+    permalink: /monk/races/:slug
   monk-relics:
     output: true
-    permalink: /monk/relics/:name
+    permalink: /monk/relics/:slug
   monk-trinkets:
     output: true
-    permalink: /monk/trinkets/:name
+    permalink: /monk/trinkets/:slug
   paladin:
     output: true
     permalink: /paladin/:name
   paladin-combinations:
     output: true
-    permalink: /paladin/combinations/:name
+    permalink: /paladin/combinations/:slug
   paladin-races:
     output: true
-    permalink: /paladin/races/:name
+    permalink: /paladin/races/:slug
   paladin-relics:
     output: true
-    permalink: /paladin/relics/:name
+    permalink: /paladin/relics/:slug
   paladin-trinkets:
     output: true
-    permalink: /paladin/trinkets/:name
+    permalink: /paladin/trinkets/:slug
   priest:
     output: true
     permalink: /priest/:name
   priest-combinations:
     output: true
-    permalink: /priest/combinations/:name
+    permalink: /priest/combinations/:slug
   priest-races:
     output: true
-    permalink: /priest/races/:name
+    permalink: /priest/races/:slug
   priest-relics:
     output: true
-    permalink: /priest/relics/:name
+    permalink: /priest/relics/:slug
   priest-trinkets:
     output: true
-    permalink: /priest/trinkets/:name
+    permalink: /priest/trinkets/:slug
   rogue:
     output: true
     permalink: /rogue/:name
   rogue-combinations:
     output: true
-    permalink: /rogue/combinations/:name
+    permalink: /rogue/combinations/:slug
   rogue-races:
     output: true
-    permalink: /rogue/races/:name
+    permalink: /rogue/races/:slug
   rogue-relics:
     output: true
-    permalink: /rogue/relics/:name
+    permalink: /rogue/relics/:slug
   rogue-trinkets:
     output: true
-    permalink: /rogue/trinkets/:name
+    permalink: /rogue/trinkets/:slug
   shaman:
     output: true
     permalink: /shaman/:name
   shaman-combinations:
     output: true
-    permalink: /shaman/combinations/:name
+    permalink: /shaman/combinations/:slug
   shaman-races:
     output: true
-    permalink: /shaman/races/:name
+    permalink: /shaman/races/:slug
   shaman-relics:
     output: true
-    permalink: /shaman/relics/:name
+    permalink: /shaman/relics/:slug
   shaman-trinkets:
     output: true
-    permalink: /shaman/trinkets/:name
+    permalink: /shaman/trinkets/:slug
   warlock:
     output: true
     permalink: /warlock/:name
   warlock-combinations:
     output: true
-    permalink: /warlock/combinations/:name
+    permalink: /warlock/combinations/:slug
   warlock-races:
     output: true
-    permalink: /warlock/races/:name
+    permalink: /warlock/races/:slug
   warlock-relics:
     output: true
-    permalink: /warlock/relics/:name
+    permalink: /warlock/relics/:slug
   warlock-trinkets:
     output: true
-    permalink: /warlock/trinkets/:name
+    permalink: /warlock/trinkets/:slug
   warrior:
     output: true
     permalink: /warrior/:name
   warrior-combinations:
     output: true
-    permalink: /warrior/combinations/:name
+    permalink: /warrior/combinations/:slug
   warrior-races:
     output: true
-    permalink: /warrior/races/:name
+    permalink: /warrior/races/:slug
   warrior-relics:
     output: true
-    permalink: /warrior/relics/:name
+    permalink: /warrior/relics/:slug
   warrior-trinkets:
     output: true
-    permalink: /warrior/trinkets/:name
+    permalink: /warrior/trinkets/:slug

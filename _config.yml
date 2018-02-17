@@ -48,7 +48,7 @@ assets:
     - _assets/js
     - _assets/img
 # Polyglot
-languages: ["en"]
+languages: ["en", "fr"]
 default_lang: "en"
 exclude_from_localization: ["assets", "report"]
 parallel_localization: false # Doesn't work on Windows and do crash Travis, see https://github.com/untra/polyglot/issues/78
