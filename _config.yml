@@ -34,6 +34,11 @@ exclude:
   - script
   - vendor
 
+keep_files:
+  - assets
+  - report
+  - CNAME
+
 plugins:
   - jekyll-assets # Asset pipelines
   - jekyll-polyglot # Internationalization and localization
