@@ -84,6 +84,8 @@
         "Mistress": "Mistress",
         "Composite": "Composite"
       },
+      "title": "%s1 %s2 %s3 Simulations - %s4",
+      "description": "%s1 results of the %s2 %s3 simulations for the %s4 %s5.",
       "combinations": {
         "description": "<b>Information:</b><br>These simulations are all based on the %s1 default profiles from SimulationCraft. Set pieces and legendaries have been modified accordingly.<br>Furthermore, in order to keep the number of combinations from exploding, only DPS legendaries have been used.<br>The target error was %s2% which means you can consider everything within that DPS range to be mostly equal and requiring a more detailed investigation.",
         "description2": "The purpose of these simulations is to get a general idea of how different setups of this Tier will compare with each other and not to promote any definitive \"best builds\". Several variables (like different trinkets, WF/TF or ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own character</b></u> to find your optimal setup."
