@@ -19,36 +19,6 @@ simCollections = {
 wowClasses = ['death_knight', 'demon_hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior']
 langs = ['en', 'fr']
 
-# TODO: Make cleaner fancy things
-fancyCollection = {
-  'Combinator' => 'Combinations',
-  'Relics' => 'Relics',
-  'Trinkets' => 'Trinkets',
-  'Races' => 'Races'
-}
-fancyFightstyles = {
-  '1T' => 'Single Target',
-  '2T' => 'Dual Target',
-  '3T' => 'Triple Target',
-  '1T_Adds' => 'Single Target w/ Adds',
-  'Mistress' => 'Mistress',
-  'Composite' => 'Composite',
-}
-fancyTier = {
-  'PR' => 'PreRaids',
-  'T19' => 'T19',
-  'T20' => 'T20',
-  'T21' => 'T21',
-  'T21H' => 'T21 Heroic',
-}
-fancyTierExpanded = {
-  'PR' => 'Pre-Raids',
-  'T19' => 'Tier 19',
-  'T20' => 'Tier 20',
-  'T21' => 'Tier 21',
-  'T21H' => 'Tier 21 Heroic',
-}
-
 # Empty each collections
 simCollections.each do |simType, simColection|
   wowClasses.each do |wowClass|
@@ -61,7 +31,18 @@ reports = Dir.glob("#{reportDir}/*.json")
 reportsCount = reports.length * langs.length
 reportsProcessed = 0
 puts "Starting to generate views for #{reportsCount} potential reports."
+
+# Load the locale fallback
+localeFallback = JSON.parse(File.read("_data/en/locale.json"))
+# Merger to override recursively keys, credits to jekyll-polyglot gem
+merger = proc { |key, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : v2 }
+
 langs.each do |lang|
+  # Load the locale infos then merge it with the fallback
+  locale = JSON.parse(File.read("_data/#{lang}/locale.json"))
+  locale = localeFallback.merge(locale, &merger)
+  localeLS = locale['layouts']['simulations'] # Shortcut to simulations layouts
+
   reports.each do |file|
     reportFilename = file.gsub("#{reportDir}/", '').gsub(".json", '')
     reportFile = "#{reportDir}/#{reportFilename}.json"
@@ -92,10 +73,10 @@ langs.each do |lang|
         reportInfos['spec'] = reportInfosRaw[5]
         reportInfos['suffix'] = reportInfosRaw[6]
       end
-      reportFancyCollection = "#{fancyCollection[reportInfos['type']]}"
-      reportFancyFightstyle = "#{fancyFightstyles[reportInfos['fightstyle']]}"
-      reportFancyTier = "#{fancyTier[reportInfos['tier']]}"
-      reportFancyTierExpanded = "#{fancyTierExpanded[reportInfos['tier']]}"
+      reportFancyCollection = "#{localeLS['collections'][reportInfos['type']]}"
+      reportFancyFightstyle = "#{localeLS['fightstyles'][reportInfos['fightstyle']]}"
+      reportFancyTier = "#{localeLS['tiers'][reportInfos['tier']]}"
+      reportFancyTierExpanded = "#{localeLS['tiersExpanded'][reportInfos['tier']]}"
       if reportInfos['type'] == "Combinator" && reportInfos['tier'] == 'T21' # Combinator does have tier distinction
         reportFancyTier += " Mythic"
         reportFancyTierExpanded += " Mythic"
