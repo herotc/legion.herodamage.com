@@ -1,13 +1,13 @@
 <hr>
 <div id="simulations-metas">
   <p>
-    <b>Last Update:</b> {{ page.lastupdate }}<br>
-    <b>WoW-Build:</b> {{ page.build }}<br>
-    <b>Target Error:</b> {{ page.targeterror }}%<br>
+    <b>{{ site.data.locale.includes.layout-parts.simulations.metas['Last Update:'] }}</b> {{ page.lastupdate }}<br>
+    <b>{{ site.data.locale.includes.layout-parts.simulations.metas['WoW-Build:'] }}</b> {{ page.build }}<br>
+    <b>{{ site.data.locale.includes.layout-parts.simulations.metas['Target Error:'] }}</b> {{ page.targeterror }}%<br>
   </p>
   {% if page.legendaries %}
     <ul>
-      <span><b>Talents</b></span>
+      <span><b>{{ site.data.locale.wow.Talents }}</b></span>
       {% for talent in page.talents %}
         <li>{{ talent }}</li>
       {% endfor %}
@@ -15,7 +15,7 @@
   {% endif %}
   {% if page.legendaries %}
     <ul>
-      <span><b>Legendaries</b></span>
+      <span><b>{{ site.data.locale.wow.Legendaries }}</b></span>
       {% for legendary in page.legendaries %}
         <li>{{ legendary }}</li>
       {% endfor %}

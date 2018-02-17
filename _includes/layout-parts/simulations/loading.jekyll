@@ -1,1 +1,1 @@
-<p id="herodamage-loading" class="h2 text-center">Loading...</p>
+<p id="herodamage-loading" class="h2 text-center">{{ site.data.locale.includes.layout-parts.simulations.loading.Loading }}...</p>

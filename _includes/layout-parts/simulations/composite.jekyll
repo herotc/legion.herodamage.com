@@ -3,11 +3,7 @@
 {% if numFightstyles > 1 %}
   {% for fightstyle in fightstyles %}
     {% if fightstyle.name == "Composite" %}
-      <p>
-        Composite fight style is an aggregation of current raid tier fightstyles. We take every encounter and regroup them into different fightstyles that SimulationCraft understands. 
-        Then we sim all the combination and apply weights to them depending on the previous result. 
-        Finally we combine all that into one chart that represents more closely the raid tier than Single Target.
-      </p>
+      <p>{{ site.data.locale.includes.layout-parts.simulations.composite.description }}</p>
     {% endif %}
   {% endfor %}
 {% endif %}

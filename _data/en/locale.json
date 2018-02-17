@@ -111,7 +111,26 @@
 
       },
       "simulations": {
-
+        "composite": {
+          "description": "Composite fight style is an aggregation of current raid tier fightstyles. We take every encounter and regroup them into different fightstyles that SimulationCraft understands. Then we sim all the combination and apply weights to them depending on the previous result. Finally we combine all that into one chart that represents more closely the raid tier than Single Target."
+        },
+        "fightstylenav": {
+          "Fightstyle": "Fightstyle",
+          "linkTitle": "%s1 Fightstyle"
+        },
+        "gearvariationnav": {
+          "Variation": "Variation",
+          "SimC Default": "SimC Default",
+          "linkTitle": "%s1 Gear Variation"
+        },
+        "loading": {
+          "Loading": "Loading"
+        },
+        "metas": {
+          "Last Update:": "Last Update:",
+          "WoW-Build:": "WoW-Build:",
+          "Target Error:": "Target Error:"
+        }
       },
       "wowclasspicker": {
 
