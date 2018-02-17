@@ -1,0 +1,60 @@
+{
+  "wow": {
+    "Theorycrafting": "Theorycrafting",
+    "Talents": "Talents",
+    "Sets": "Sets",
+    "Legendaries": "Legendaires",
+    "DPS": "DPS"
+  },
+  "layouts" : {
+    "simulations": {
+      "collections": {
+        "Combinator": "Combinations",
+        "Relics": "Relics",
+        "Trinkets": "Bijoux",
+        "Races": "Races"
+      },
+      "tiers": {
+        "PR": "PreRaids",
+        "T19": "T19",
+        "T20": "T20",
+        "T21": "T21",
+        "T21H": "T21 Heroic"
+      },
+      "tiersExpanded": {
+        "PR": "Pre-Raids",
+        "T19": "Tier 19",
+        "T20": "Tier 20",
+        "T21": "Tier 21",
+        "T21H": "Tier 21 Heroic"
+      },
+      "fightstyles": {
+        "1T": "Monocible",
+        "2T": "Double cible",
+        "3T": "Triple cible",
+        "1T_Adds": "Monocible avec Adds",
+        "Mistress": "Mistress",
+        "Composite": "Composite"
+      },
+      "combinations": {
+        "description": "<b>Information:</b><br>Ces simulations sont toutes basées sur les profils par défaut du %s1 mythic de SimulationCraft. Set pieces and legendaries have been modified accordingly.<br>De plus, afin d'éviter le surplus de combinaisons, seuls les légendaires DPS ont été utilisés.</br>Le target error est de %s2% ce qui signifie you can consider everything within that DPS range to be mostly equal and requiring a more detailed investigation.",
+        "description2": "Le but de ces simulations est d'avoir une idée générale des différentes combinaisons de ce tier en les comparant les unes aux autres, ce n'est pas forcément les \"best builds\". Plusieurs variables (comme de différents trinkets, WF/TF ou des situations en jeu) ne sont pas prises en compte. C'est pourquoi, comme toujours, vous devez <u><b>simuler votre propre personnage</b></u> pour trouver votre configuration optimale."
+      },
+      "races": {
+        "description": "Si vous êtes intéressé par la comparaison des différentes races dans World of Warcraft pour cette extension, vous pouvez consulter le tableau suivant. Cependant, gardez à l'esprit que les différences de race sont généralement plutôt petites et peuvent changer avec les mises à jours et les changements de gameplay. Vous pouvez toujours jouer la race que vous voulez jouer et ne devez pas vous sentir obligé de la choisir en fonction de ce tableau."
+      },
+      "relics": {
+        "description": "Ce graphique montre l'impact des traits des reliques de votre artefact sur votre DPS. Vous pouvez voir la valeur d'un trait additionnel par rapport à d'autres ou à de l'ilevel d'arme supplémentaire.",
+        "description2": "Les chiffres dans le graphique indiquent le nombre d'ilevel ou de traits. Les simulations des traits montrent <em>seulement</em> le gain obtenu par ce dernier. Cela inclut les traits du creuset T2.",
+        "description3": "Afin de comparer les reliques avec ce tableau, vous devez ajouter les valeurs pour les traits et l'augmentation du niveau d'objet d'arme. Cependant, vous devriez <b>simuler votre propre personnage</b> pour trouver votre meilleure setup. Ces simulations sont basées sur des profils prédéfinis (ceux de SimulationCraft) au lieu des vôtres. Cela signifie que les données présentées ici <b>dépendent fortement</b> du profil utilisé avec ses talents, légendaires, etc. et donnent plutôt une perspective. Si votre personnage est différent de la configuration utilisée ici, des simulations personnelles sont recommandées."
+      },
+      "trinkets": {
+        "description": "Ici, vous pouvez comparer l'augmentation DPS venant des bijoux.",
+        "description2": "Pour comparer les bijoux de ce tableau, recherchez la fin des barres correspondant au niveau d'objets. Cependant, vous devriez <b>simuler votre propre personnage</b> pour trouver votre meilleure setup. Ces simulations sont basées sur des profils prédéfinis (ceux de SimulationCraft) au lieu des vôtres. Cela signifie que les données présentées ici <b>dépendent fortement</b> du profil utilisé avec ses talents, légendaires, etc. et donnent plutôt une perspective. Si votre personnage est différent de la configuration utilisée ici, des simulations personnelles sont recommandées."
+      }
+    },
+    "class-index": {
+      "h1": "%s1 Theorycrafting"
+    }
+  }
+}
