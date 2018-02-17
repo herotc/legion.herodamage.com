@@ -52,16 +52,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {% include_cached layout-parts/headerlogo.jekyll %}
+          {% include_cached layout-parts/header/logo.jekyll %}
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             {% if page.wowClass %}
-              {% include_cached layout-parts/headerclassnav.jekyll wowClass=page.wowClass %}
+              {% include_cached layout-parts/header/classnav.jekyll wowClass=page.wowClass %}
             {% endif %}
             {% unless page.wowClass %}
-              {% include_cached layout-parts/headermainnav.jekyll %}
+              {% include_cached layout-parts/header/mainnav.jekyll %}
             {% endunless %}
           </ul>
         </div>
@@ -73,7 +73,7 @@
     </aside>
     {% endunless %}
     {% if page.wowClass %}
-      {% include_cached layout-parts/headerclasslogo.jekyll wowClass=page.wowClass %}
+      {% include_cached layout-parts/header/classlogo.jekyll wowClass=page.wowClass %}
     {% endif %}
   </header>
   {% include_cached layout-parts/ads/top.jekyll %}
