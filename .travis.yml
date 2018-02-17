@@ -43,7 +43,7 @@ before_script:
   - ./script/ci/generate
 
 script:
-  - ./script/ci/build
-  - ./script/ci/deploy
+  - travis_wait ./script/ci/build
+  - travis_wait ./script/ci/deploy
 
 exclude: [vendor]

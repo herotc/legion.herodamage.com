@@ -26,7 +26,7 @@ rm -rf deploy/**/*
 
 # Build
 echo "[CI] Jekyll build"
-travis_wait bundle exec jekyll build -d deploy/ --config=_config.yml,_config_collections.yml,_config_defaults.yml
+bundle exec jekyll build -d deploy/ --config=_config.yml,_config_collections.yml,_config_defaults.yml
 
 # Compress using Gulp
 echo "[CI] Gulp run"
