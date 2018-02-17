@@ -22,14 +22,14 @@ defaults:
       path: ""
       type: "death_knight-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "death_knight"
   -
     scope:
       path: ""
       type: "death_knight-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "death_knight"
       chartStyleClass: "full-height"
   -
@@ -37,7 +37,7 @@ defaults:
       path: ""
       type: "death_knight-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "death_knight"
       chartStyleClass: "full-height"
   -
@@ -45,7 +45,7 @@ defaults:
       path: ""
       type: "death_knight-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "death_knight"
       chartStyleClass: "full-height"
   -
@@ -59,14 +59,14 @@ defaults:
       path: ""
       type: "demon_hunter-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "demon_hunter"
   -
     scope:
       path: ""
       type: "demon_hunter-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "demon_hunter"
       chartStyleClass: "full-height"
   -
@@ -74,7 +74,7 @@ defaults:
       path: ""
       type: "demon_hunter-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "demon_hunter"
       chartStyleClass: "full-height"
   -
@@ -82,7 +82,7 @@ defaults:
       path: ""
       type: "demon_hunter-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "demon_hunter"
       chartStyleClass: "full-height"
   -
@@ -96,14 +96,14 @@ defaults:
       path: ""
       type: "druid-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "druid"
   -
     scope:
       path: ""
       type: "druid-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "druid"
       chartStyleClass: "full-height"
   -
@@ -111,7 +111,7 @@ defaults:
       path: ""
       type: "druid-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "druid"
       chartStyleClass: "full-height"
   -
@@ -119,7 +119,7 @@ defaults:
       path: ""
       type: "druid-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "druid"
       chartStyleClass: "full-height"
   -
@@ -133,14 +133,14 @@ defaults:
       path: ""
       type: "hunter-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "hunter"
   -
     scope:
       path: ""
       type: "hunter-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "hunter"
       chartStyleClass: "full-height"
   -
@@ -148,7 +148,7 @@ defaults:
       path: ""
       type: "hunter-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "hunter"
       chartStyleClass: "full-height"
   -
@@ -156,7 +156,7 @@ defaults:
       path: ""
       type: "hunter-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "hunter"
       chartStyleClass: "full-height"
   -
@@ -170,14 +170,14 @@ defaults:
       path: ""
       type: "mage-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "mage"
   -
     scope:
       path: ""
       type: "mage-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "mage"
       chartStyleClass: "full-height"
   -
@@ -185,7 +185,7 @@ defaults:
       path: ""
       type: "mage-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "mage"
       chartStyleClass: "full-height"
   -
@@ -193,7 +193,7 @@ defaults:
       path: ""
       type: "mage-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "mage"
       chartStyleClass: "full-height"
   -
@@ -207,14 +207,14 @@ defaults:
       path: ""
       type: "monk-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "monk"
   -
     scope:
       path: ""
       type: "monk-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "monk"
       chartStyleClass: "full-height"
   -
@@ -222,7 +222,7 @@ defaults:
       path: ""
       type: "monk-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "monk"
       chartStyleClass: "full-height"
   -
@@ -230,7 +230,7 @@ defaults:
       path: ""
       type: "monk-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "monk"
       chartStyleClass: "full-height"
   -
@@ -244,14 +244,14 @@ defaults:
       path: ""
       type: "paladin-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "paladin"
   -
     scope:
       path: ""
       type: "paladin-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "paladin"
       chartStyleClass: "full-height"
   -
@@ -259,7 +259,7 @@ defaults:
       path: ""
       type: "paladin-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "paladin"
       chartStyleClass: "full-height"
   -
@@ -267,7 +267,7 @@ defaults:
       path: ""
       type: "paladin-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "paladin"
       chartStyleClass: "full-height"
   -
@@ -281,14 +281,14 @@ defaults:
       path: ""
       type: "priest-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "priest"
   -
     scope:
       path: ""
       type: "priest-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "priest"
       chartStyleClass: "full-height"
   -
@@ -296,7 +296,7 @@ defaults:
       path: ""
       type: "priest-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "priest"
       chartStyleClass: "full-height"
   -
@@ -304,7 +304,7 @@ defaults:
       path: ""
       type: "priest-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "priest"
       chartStyleClass: "full-height"
   -
@@ -318,14 +318,14 @@ defaults:
       path: ""
       type: "rogue-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "rogue"
   -
     scope:
       path: ""
       type: "rogue-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "rogue"
       chartStyleClass: "full-height"
   -
@@ -333,7 +333,7 @@ defaults:
       path: ""
       type: "rogue-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "rogue"
       chartStyleClass: "full-height"
   -
@@ -341,7 +341,7 @@ defaults:
       path: ""
       type: "rogue-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "rogue"
       chartStyleClass: "full-height"
   -
@@ -355,14 +355,14 @@ defaults:
       path: ""
       type: "shaman-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "shaman"
   -
     scope:
       path: ""
       type: "shaman-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "shaman"
       chartStyleClass: "full-height"
   -
@@ -370,7 +370,7 @@ defaults:
       path: ""
       type: "shaman-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "shaman"
       chartStyleClass: "full-height"
   -
@@ -378,7 +378,7 @@ defaults:
       path: ""
       type: "shaman-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "shaman"
       chartStyleClass: "full-height"
   -
@@ -392,14 +392,14 @@ defaults:
       path: ""
       type: "warlock-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "warlock"
   -
     scope:
       path: ""
       type: "warlock-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "warlock"
       chartStyleClass: "full-height"
   -
@@ -407,7 +407,7 @@ defaults:
       path: ""
       type: "warlock-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "warlock"
       chartStyleClass: "full-height"
   -
@@ -415,7 +415,7 @@ defaults:
       path: ""
       type: "warlock-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "warlock"
       chartStyleClass: "full-height"
   -
@@ -429,14 +429,14 @@ defaults:
       path: ""
       type: "warrior-combinations"
     values:
-      layout: "combinations"
+      layout: "simulations/combinations"
       wowClass: "warrior"
   -
     scope:
       path: ""
       type: "warrior-races"
     values:
-      layout: "races"
+      layout: "simulations/races"
       wowClass: "warrior"
       chartStyleClass: "full-height"
   -
@@ -444,7 +444,7 @@ defaults:
       path: ""
       type: "warrior-relics"
     values:
-      layout: "relics"
+      layout: "simulations/relics"
       wowClass: "warrior"
       chartStyleClass: "full-height"
   -
@@ -452,6 +452,6 @@ defaults:
       path: ""
       type: "warrior-trinkets"
     values:
-      layout: "trinkets"
+      layout: "simulations/trinkets"
       wowClass: "warrior"
       chartStyleClass: "full-height"
