@@ -1,0 +1,60 @@
+{
+  "wow": {
+    "Theorycrafting": "Theorycrafting",
+    "Talents": "Talents",
+    "Sets": "Sets",
+    "Legendaries": "Legendaries",
+    "DPS": "DPS"
+  },
+  "layouts" : {
+    "simulations": {
+      "collections": {
+        "Combinator": "Combinations",
+        "Relics": "Relics",
+        "Trinkets": "Trinkets",
+        "Races": "Races"
+      },
+      "tiers": {
+        "PR": "PreRaids",
+        "T19": "T19",
+        "T20": "T20",
+        "T21": "T21",
+        "T21H": "T21 Heroic"
+      },
+      "tiersExpanded": {
+        "PR": "Pre-Raids",
+        "T19": "Tier 19",
+        "T20": "Tier 20",
+        "T21": "Tier 21",
+        "T21H": "Tier 21 Heroic"
+      },
+      "fightstyles": {
+        "1T": "Single Target",
+        "2T": "Dual Target",
+        "3T": "Triple Target",
+        "1T_Adds": "Single Target w/ Adds",
+        "Mistress": "Mistress",
+        "Composite": "Composite"
+      },
+      "combinations": {
+        "description": "<b>Information:</b><br>These simulations are all based on the %s1 default profiles from SimulationCraft. Set pieces and legendaries have been modified accordingly.<br>Furthermore, in order to keep the number of combinations from exploding, only DPS legendaries have been used.<br>The target error was %s2% which means you can consider everything within that DPS range to be mostly equal and requiring a more detailed investigation.",
+        "description2": "The purpose of these simulations is to get a general idea of how different setups of this Tier will compare with each other and not to promote any definitive \"best builds\". Several variables (like different trinkets, WF/TF or ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own character</b></u> to find your optimal setup."
+      },
+      "races": {
+        "description": "If you are interested in how the different races in World of Warcraft compare for this build, you can check out the following chart. However, keep in mind that race differences are usually rather small and can change with balance and gameplay changes. You can always play the race you want to play and don't have to feel compelled to choose based on this chart."
+      },
+      "relics": {
+        "description": "This chart shows the impact of artifact relic traits on your DPS. You will see how much an additional trait is worth compared to additional item levels on your weapon.",
+        "description2": "The numbers in the chart show the amount of item levels or traits. Trait simulations <em>only</em> show the increase from that particular trait. This includes crucible T2 traits.",
+        "description3": "In order to compare relics with this chart, you have to add the values for the traits and the weapon item level increase. However, you should <b>simulate your own character</b> to find your best setup. These simulations are based on predefined gear sets instead of your own, after all. This means data shown here <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook. If your character is different from the setup used here, personal simulations are recommended."
+      },
+      "trinkets": {
+        "description": "Here, you can compare expected DPS increase from trinkets.",
+        "description2": "In order to compare trinkets with this chart, look for the end of the bars corresponding to the item level of interest. However, you should <b>simulate your own character</b> to find your best setup. These simulations are based on predefined gear sets instead of your own, after all. This means data shown here <b>depends heavily</b> on the used profile with its talents, legendaries etc. and is rather giving an outlook. If your character is different from the setup used here, personal simulations are recommended."
+      }
+    },
+    "class-index": {
+      "h1": "%s1 Theorycrafting"
+    }
+  }
+}
