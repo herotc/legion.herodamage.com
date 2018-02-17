@@ -1,16 +1,64 @@
 {
   "wow": {
+    "classes": {
+      "Death Knight": "Chevalier de la mort",
+      "Demon Hunter": "Chasseur de démons",
+      "Druid": "Druide",
+      "Hunter": "Chasseur",
+      "Mage": "Mage",
+      "Monk": "Moine",
+      "Paladin": "Paladin",
+      "Priest": "Prêtre",
+      "Rogue": "Voleur",
+      "Shaman": "Chaman",
+      "Warlock": "Démoniste",
+      "Warrior": "Guerrier"
+    },
+    "specs": {
+      "Blood": "Sang",
+      "Frost": "Givre",
+      "Unholy": "Impie",
+      "Havoc": "Dévastation",
+      "Vengeance": "Vengeance",
+      "Balance": "Équilibre",
+      "Feral": "Farouche",
+      "Guardian": "Guardien",
+      "Restoration": "Restauration",
+      "Beast Mastery": "Maîtrise des bêtes",
+      "Marksmanship": "Précision",
+      "Survival": "Survie",
+      "Arcane": "Arcane",
+      "Fire": "Feu",
+      "Brewmaster": "Maître brasseur",
+      "Mistweaver": "Tisse-brume",
+      "Windwalker": "Marche-vent",
+      "Holy": "Sacré",
+      "Protection": "Protection",
+      "Retribution": "Vindicte",
+      "Discipline": "Discipline",
+      "Shadow": "Ombre",
+      "Assassination": "Assassinat",
+      "Outlaw": "Hors-la-loi",
+      "Subtlety": "Finesse",
+      "Elemental": "Élémentaire",
+      "Enhancement": "Amélioration",
+      "Affliction": "Affliction",
+      "Demonology": "Démonologie",
+      "Destruction": "Destruction",
+      "Arms": "Armes",
+      "Fury": "Fureur"
+    },
     "Theorycrafting": "Theorycrafting",
     "Talents": "Talents",
     "Sets": "Sets",
     "Legendaries": "Legendaires",
     "DPS": "DPS"
   },
-  "layouts" : {
+  "layouts": {
     "simulations": {
       "collections": {
-        "Combinator": "Combinations",
-        "Relics": "Relics",
+        "Combinator": "Combinaisons",
+        "Relics": "Reliques",
         "Trinkets": "Bijoux",
         "Races": "Races"
       },
