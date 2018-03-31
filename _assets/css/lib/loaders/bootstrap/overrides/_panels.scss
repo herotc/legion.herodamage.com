@@ -1,0 +1,11 @@
+.panel-default {
+  @include bootstrap-button-lt;
+
+  .panel-heading {
+    @include bootstrap-button-lt2;
+  }
+  // Special override for collapsed bodies
+  >.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: $border-dark;
+  }
+}
