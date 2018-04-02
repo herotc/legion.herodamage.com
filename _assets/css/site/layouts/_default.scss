@@ -169,6 +169,16 @@ body {
     margin: 0 auto;
   }
 
+  // Helper, mostly for row-class divs
+  .vertical-align {
+    @media (min-width: $MD) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+  }
+
   .copybox {
     align-items: stretch;
     display: flex;

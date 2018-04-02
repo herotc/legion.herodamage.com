@@ -7,77 +7,16 @@ description: Theorycrafting community, latest simulation results and resources -
 <article id="home">
   <section id="home-introduction" class="container">
     <figure>
-      <img src="{% asset minesweeper/logo.png @path %}" alt="{{ site.name }} Logo" height="128" width="128" itemprop="logo">
+      <img src="{% asset logo.svg @path %}" alt="{{ site.name }} Logo" height="128" width="128" itemprop="logo">
     </figure>
     <div id="introduction-text">
       <h1>Hero Damage</h1>
-      <h3>Minesweeper Theorycrafting</h3>
+      <p>Welcome to Hero Damage, the website where you can see the latest World of Warcraft simulations results for every class.<br>
+      Please select your class below.</p>
     </div>
   </section>
 
-  <section id="minesweeper-tc" class="container">
-    <p><img class="center" src="{% asset minesweeper/minesweeper_game.jpg @path %}" alt="Minesweeper"></p>
-    <p>Dear friends of Hero Damage,</p>
-    <p>We have decided to stop publishing simulation resources for World of Warcraft and focus on a different kind of Theorycrafting and research.
-      Since we are all fans of the amazing strategy game Minesweeper, we will dedicate this site to all Theorycrafting related to the game.
-    </p>
-    <hr>
-    <table>
-      <tr>
-        <td class="text-left"><p>As we are removing those useless WoW resources we are preparing an amazing collection of Minesweeper rankings and statistics. It is our goal
-            to give you everything you need in order to become one of the best competitive Minesweeper players. You want those Mythic Minesweep parses and
-            your gray rankings and early explosions do not satisfy you? Then you have come to the right place.</p></td>
-        <td><img src="{% asset minesweeper/msw_strategy_ranking.png @path %}" alt="Strategy Ranking"></td>
-      </tr>
-    </table>
-    <hr>
-    <table>
-      <tr>
-        <td><img src="{% asset minesweeper/msw_parameters_of_success.png @path %}" alt="Parameters of Success"></td>
-        <td class="text-right"><p>You will find everything you need to master the pitfalls of this complex and demanding strategy game. Strategy rankings, playstyle research,
-          and player reports await. Do not miss out on this opportunity. Learn more than you can imagine about the theory behind the game. Formulas, spreadsheets and a whole lot
-          of data will be at your disposal.</p>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <table>
-      <tr>
-        <td class="text-left"><p>We are aware that Minesweeper has driven some impatient players mad, but once you go pro, you will have the advantage on your side. Guides and some
-          tips and tricks will help you to handle the straining and stressful aspects of this highly competitive game. Everything will, of course, be backed up by very
-          renowned statistics and results.</p>
-        </td>
-        <td><img src="{% asset minesweeper/msw_human_sanity_impact.png @path %}" alt="Human Sanity Impact"></td>
-      </tr>
-    </table>
-    <hr>
-    <table>
-      <tr>
-        <td><img src="{% asset minesweeper/msw_time_spent.png @path %}" alt="Hours Spent preparing for Minesweeper Tournaments"></td>
-        <td class="text-right"><p>Furthermore, we will provide you the latest news and insights into competitive Minesweeper. You will learn how the professional
-          players prepare and work hard before their tournament games.</p><p>On your way to the top, you should learn from the best.</p>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <p class="text-center">We know you are eager to experience the advent of amazing Minesweeper Theorycraft with us. Until then, you can have a look at our World of Warcraft results.</p>
-    <section id="home-picker">
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="classIndex">
-            <h4 class="panel-title text-center">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#classIndexCollapse" aria-expanded="false" aria-controls="classIndexCollapse">
-                World of Warcraft Resources
-              </a>
-            </h4>
-          </div>
-          <div id="classIndexCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="classIndex">
-            <div class="panel-body">
-              {% include_cached layout-parts/wowclasspicker.jekyll wowClassTitleLevel=2 %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section id="home-picker" class="container">
+    {% include_cached layout-parts/wowclasspicker.jekyll wowClassTitleLevel=2 %}
   </section>
 </article>
