@@ -242,6 +242,12 @@ body {
   body .center {
     display: block;
     margin: 0 auto; }
+  @media (min-width: 768px) {
+    body .vertical-align {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row; } }
   body .copybox {
     align-items: stretch;
     display: flex; }
