@@ -17,40 +17,46 @@ layout: default
     {% endunless %}
   {% endfor %}
   {% assign simCollections = site.documents | where_exp: "item", "validCollections contains item.collection" | where_exp: "item", "item.collection != wowClass" | group_by: "collection" | sort: "name" %}
-  {% for simCollection in simCollections %}
-    {% assign simCollectionNamePrefix = simCollection.name | slice: 0, wowClassSize %}
-    {% if simCollectionNamePrefix == wowClass %}
-      {% assign simType = simCollection.name | split: '-' | last %}
-      <h2 id="{{ simType}}">{{ simType | capitalize }}</h2>
-      <div class="row">
-        {% assign tiers = simCollection.items | group_by: "tier" | sort: "name" %}
-        {% for tier in tiers reversed %}
-        <div class="col-sm-6">
-          <h3>{{ tier.name }}</h3>
-          <div class="list-group">
-          {% assign specs = tier.items | group_by: "spec" | sort: "name" %}
-          {% for spec in specs %}
-            {% assign entry = spec.items | sort: "url" | first %}
-            {% if entry.fightstyle == nil or entry.fightstyle == site.data.locale.layouts.simulations.fightstyles['1T'] %}
-              <a class="list-group-item" href="{{ entry.url }}" title="{{ spec.name }}">
-                <h4 class="h5">{{ spec.name }}</h4>
-                {% assign mostRecentEntry = spec.items | sort: "lastupdate" | last %}
-                <span class="update-date">{{ mostRecentEntry.lastupdate | truncatewords: 2 | remove: '...' }}</span>
-              </a>
-            {% endif %}
-          {% endfor %}
+  {% assign simCollectionsSize = simCollections | size %}
+  {% for index in (1..simCollectionsSize) %}
+    {% for simCollection in simCollections %}
+      {% assign validCollection = simCollection.items | where_exp: "item", "item.order == index" %}
+      {% if validCollection.first %}
+        {% assign simCollectionNamePrefix = simCollection.name | slice: 0, wowClassSize %}
+        {% if simCollectionNamePrefix == wowClass %}
+          {% assign simType = simCollection.name | split: '-' | last %}
+          <h2 id="{{ simType}}">{{ simType | capitalize }}</h2>
+          <div class="row">
+            {% assign tiers = simCollection.items | group_by: "tier" | sort: "name" %}
+            {% for tier in tiers reversed %}
+            <div class="col-sm-6">
+              <h3>{{ tier.name }}</h3>
+              <div class="list-group">
+              {% assign specs = tier.items | group_by: "spec" | sort: "name" %}
+              {% for spec in specs %}
+                {% assign entry = spec.items | sort: "url" | first %}
+                {% if entry.fightstyle == nil or entry.fightstyle == site.data.locale.layouts.simulations.fightstyles['1T'] %}
+                  <a class="list-group-item" href="{{ entry.url }}" title="{{ spec.name }}">
+                    <h4 class="h5">{{ spec.name }}</h4>
+                    {% assign mostRecentEntry = spec.items | sort: "lastupdate" | last %}
+                    <span class="update-date">{{ mostRecentEntry.lastupdate | truncatewords: 2 | remove: '...' }}</span>
+                  </a>
+                {% endif %}
+              {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
           </div>
-        </div>
-        {% endfor %}
-      </div>
-      {% if forloop.first and jekyll.environment == "production" %}
-        <hr>
-        {% include_cached layout-parts/ads/inarticle.jekyll %}
+          {% if index == 2 and jekyll.environment == "production" %}
+            <hr>
+            {% include_cached layout-parts/ads/inarticle.jekyll %}
+          {% endif %}
+          {% unless index == simCollectionsSize %}
+            <hr>
+          {% endunless %}
+        {% endif %}
       {% endif %}
-      {% unless forloop.last %}
-        <hr>
-      {% endunless %}
-    {% endif %}
+    {% endfor %}
   {% endfor %}
   {% include layout-parts/ads/matchedcontent.jekyll %}
 </div>
