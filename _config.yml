@@ -20,7 +20,7 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - report/meta
+  - deploy
   - node_modules
   - script
   - vendor
