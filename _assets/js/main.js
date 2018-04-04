@@ -149,7 +149,7 @@
         var legos = [];
         var beltIdx;
 
-        combinationsData = data;
+        combinationsData = data.results;
         combinationsData.forEach(function (columns) {
           if ($.inArray(columns[2], sets) < 0) {
             sets.push(columns[2]);
@@ -205,7 +205,7 @@
   hd.racesInit = function racesInit(reportPath, chartTitle, templateDPS) {
     function drawChart() {
       $.get("/" + reportPath, function (data) {
-        var data = new google.visualization.arrayToDataTable(data);
+        var data = new google.visualization.arrayToDataTable(data.results);
         var row;
 
         // Sort
@@ -324,7 +324,7 @@
   hd.relicsInit = function relicsInit(reportPath, chartTitle, templateDPS) {
     function drawChart() {
       $.get("/" + reportPath, function (data) {
-        var data = new google.visualization.arrayToDataTable(data);
+        var data = new google.visualization.arrayToDataTable(data.results);
         var col, row;
 
         // Sort by 3 relics dps (column 5)
@@ -488,7 +488,7 @@
   hd.trinketsInit = function trinketsInit(reportPath, chartTitle, templateDPS) {
     function drawChart() {
       $.get("/" + reportPath, function (data) {
-        var data = new google.visualization.arrayToDataTable(data);
+        var data = new google.visualization.arrayToDataTable(data.results);
         var col, row;
 
         // Sorting
