@@ -20,7 +20,6 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - "*.log"
   - deploy/
   - node_modules/
   - script/

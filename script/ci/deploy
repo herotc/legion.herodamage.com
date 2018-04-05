@@ -28,6 +28,10 @@ rm -rf deploy/**/*
 echo "[CI] Jekyll build"
 bundle exec jekyll build -d deploy/ --config=_config.yml,_config_collections.yml,_config_defaults.yml
 
+# Clean any log copied to deploy (Jekyll can't exclude them easily)
+echo "[CI] Clean any log copied to deploy directory"
+rm -f deploy/**/*.log
+
 # Compress using Gulp
 echo "[CI] Gulp run"
 npm run gulp
