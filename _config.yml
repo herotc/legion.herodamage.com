@@ -20,10 +20,11 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - deploy
-  - node_modules
-  - script
-  - vendor
+  - "*.log"
+  - deploy/
+  - node_modules/
+  - script/
+  - vendor/
 
 plugins:
   - jekyll-include-cache # Let us cache static includes
