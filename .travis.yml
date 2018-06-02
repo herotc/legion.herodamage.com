@@ -28,7 +28,9 @@ env:
     - DEPLOY_THRESHOLD=4
 
 before_install:
-  - yes | rvm get master && rvm reload && yes | rvm upgrade default && rvm use default
+  - npm install npm -g
+  - npm --version
+  - rvm use 2.5.1 --default --install --binary --fuzzy
   - gem update
   - rvm --version
   - ruby --version
