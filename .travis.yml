@@ -28,10 +28,10 @@ env:
     - DEPLOY_THRESHOLD=4
 
 before_install:
-  - rvm use 2.4 --default --install --binary --fuzzy
+  - rvm get master && rvm reload && yes | rvm upgrade default && rvm use default
   - gem update
-  - ruby --version
   - rvm --version
+  - ruby --version
   - bundle --version
   - gem --version
   - bundle install
