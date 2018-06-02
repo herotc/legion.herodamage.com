@@ -82,7 +82,7 @@
   </main>
   {% include_cached layout-parts/ads/bot.jekyll %}
   <footer class="container">
-    <p>© 2017 Hero Damage | <a href="https://github.com/SimCMinMax/herodamage" title="Hero Damage GitHub Repository" target="_blank" rel="nofollow">GitHub</a></p>
+    <p>Copyright © 2017-2018 Hero Damage | <a href="https://github.com/herotc/legion.herodamage.com" title="Hero Damage GitHub Repository" target="_blank" rel="nofollow">GitHub</a></p>
   </footer>
   {% if jekyll.environment == "production" %}
     <script>

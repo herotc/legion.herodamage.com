@@ -64,7 +64,7 @@ authors:
   Nia:
     github: Nianel
 # GitHub Pages metadata
-repository: SimCMinMax/herodamage
+repository: herotc/legion.herodamage.com
 # WoW Classes list
 wowClasses: [death_knight, demon_hunter, druid, hunter, mage, monk, paladin, priest, rogue, shaman, warlock, warrior]
 simulationTypes:
