@@ -28,7 +28,7 @@ env:
     - DEPLOY_THRESHOLD=4
 
 before_install:
-  - rvm get master && rvm reload && yes | rvm upgrade default && rvm use default
+  - yes | rvm get master && rvm reload && yes | rvm upgrade default && rvm use default
   - gem update
   - rvm --version
   - ruby --version
