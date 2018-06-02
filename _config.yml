@@ -58,7 +58,7 @@ paginate_path: "/blog/page:num/"
 excerpt_separator: <!--more-->
 authors:
   Aethys:
-    github: Aethys256
+    github: aethys256
   Mystler:
     github: Mystler
   Nia:
