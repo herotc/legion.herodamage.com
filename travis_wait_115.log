@@ -6,7 +6,7 @@
 Configuration file: _config.yml
 Configuration file: _config_collections.yml
 Configuration file: _config_defaults.yml
-            Source: /home/travis/build/SimCMinMax/herodamage
+            Source: /home/travis/build/herotc/legion.herodamage.com
        Destination: deploy/
  Incremental build: disabled. Enable with --incremental
       Generating... 
