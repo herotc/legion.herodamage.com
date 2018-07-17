@@ -1,7 +1,7 @@
 {
   "name": "herodamage-compressor",
   "description": "herodamage-compressor: A simple application to compress HTML/CSS/JS/SVG files before deploy",
-  "homepage": "https://www.herodamage.com/",
+  "homepage": "https://legion.herodamage.com/",
   "license": "EUPL-1.2",
   "scripts": {
     "gulp": "gulp"
