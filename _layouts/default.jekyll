@@ -41,6 +41,9 @@
   {% endif %}
 </head>
 <body>
+  <div class="container alert alert-info">
+    This is the Legion version of HeroDamage, if you want to see BfA PrePatch simulations, you can go <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch HeroDamage" target="_blank">here</a>.
+  </div>
   <header>
     <nav id="navigation" class="navbar navbar-inverse navbar-static-top">
       <div class="container">
