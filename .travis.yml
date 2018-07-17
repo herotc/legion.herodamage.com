@@ -30,6 +30,7 @@ env:
 before_install:
   - npm install npm -g
   - npm --version
+  - rvm reload
   - rvm use 2.5.1 --default --install --binary --fuzzy
   - gem update
   - rvm --version
