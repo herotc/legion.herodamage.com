@@ -42,7 +42,9 @@
 </head>
 <body>
   <div class="container alert alert-info">
-    This is the Legion version of HeroDamage, if you want to see BfA PrePatch simulations, you can go <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch HeroDamage" target="_blank">here</a>.
+    This is the Legion version of Hero Damage.<br>
+    If you want to see BfA simulations, you can go <a href="https://bfa.herodamage.com/" title="BfA version of Hero Damage" target="_blank" rel="noopener noreferrer nofollow">here</a>.<br>
+    If you want to see BfA PrePatch simulations, you can go <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage" target="_blank" rel="noopener noreferrer nofollow">here</a>.
   </div>
   <header>
     <nav id="navigation" class="navbar navbar-inverse navbar-static-top">
@@ -85,7 +87,14 @@
   </main>
   {% include_cached layout-parts/ads/bot.jekyll %}
   <footer class="container">
-    <p>Copyright © 2017-2018 Hero Damage | <a href="https://github.com/herotc/legion.herodamage.com" title="Hero Damage GitHub Repository" target="_blank" rel="nofollow">GitHub</a></p>
+    <p>Copyright © 2017-2018 Hero Damage |&nbsp;
+        <a href="https://github.com/herotc/legion.herodamage.com"  title="GitHub Repository" target="_blank"
+          rel="noopener noreferrer nofollow">GitHub</a>&nbsp;|&nbsp;
+        <a href="https://bfa.herodamage.com/" title="BfA version of Hero Damage" target="_blank"
+          rel="noopener noreferrer nofollow">BfA Version</a>&nbsp;|&nbsp;
+        <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage" target="_blank"
+          rel="noopener noreferrer nofollow">BfA PrePatch Version</a>
+    </p>
   </footer>
   {% if jekyll.environment == "production" %}
     <script>
